@@ -1,0 +1,11 @@
+/* Shared interior styles are imported before the theme and layout layers. */
+@import url('../shared/interior.css');
+.market-width-full {
+    --width: 100%;
+}
+.market-width-near-full {
+    --width: 97%;
+}
+.market-width-medium {
+    --width: 89%;
+}

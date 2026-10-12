@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+    <head
+        ><script src="../../js/navigation.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Auth · login — Campus Mate</title>
+        <link rel="stylesheet" href="../../css/auth/login.css" />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    </head>
+
+    <body data-section="auth" data-screen="login">
+        <header
+            ><a class="brand" href="../public/index.html"
+                ><span class="mark">⌂</span
+                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
+            ><a class="back" href="../public/index.html">↖ Back to home</a></header
+        >
+        <main>
+            <aside>
+                <p class="eyebrow">YOUR PLACE. YOUR PEOPLE.</p>
+                <h1>Welcome back.<br />Make yourself<br /><em>at home.</em></h1>
+                <p class="lead"
+                    >Your next home and your kind of people are waiting. Pick up where you left
+                    off.</p
+                >
+                <div class="photo"
+                    ><img
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85"
+                        alt="University students studying together"
+                    /><span class="photo-tag">Good spaces. Better company. ↗</span></div
+                >
+                <div class="benefits"
+                    ><span>⌖ Near your campus</span><span>✳ Your kind of people</span></div
+                >
+            </aside>
+            <section class="form-card">
+                <div class="welcome-icon" aria-hidden="true">↗</div>
+                <p class="eyebrow">WELCOME BACK TO CAMPUS MATE</p>
+                <h2>Welcome <em>back.</em></h2>
+                <p class="sub">Log in to continue your journey.</p>
+                <form id="login-form">
+                    <div class="field"
+                        ><label for="email">Email address</label
+                        ><input
+                            id="email"
+                            name="email"
+                            data-regex="email"
+                            type="email"
+                            autocomplete="username"
+                            placeholder="you@example.com"
+                            required
+                            maxlength="254"
+                    /></div>
+                    <div class="field"
+                        ><label for="password">Password</label>
+                        <div class="password-wrap"
+                            ><input
+                                id="password"
+                                name="password"
+                                data-regex="password"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="Enter your password"
+                                required
+                            /><button
+                                type="button"
+                                class="toggle"
+                                id="toggle-password"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                                >Show</button
+                            ></div
+                        >
+                    </div>
+                    <div class="login-options"
+                        ><label class="consent"
+                            ><input type="checkbox" id="rememberMe" name="rememberMe" /><span
+                                >Preview session only</span
+                            ></label
+                        ><button type="button" class="text-button" id="forgot-password"
+                            >Forgot password?</button
+                        ></div
+                    >
+                    <p id="message" role="status" aria-live="polite"></p
+                    ><button class="submit" type="submit"
+                        >Log in <span aria-hidden="true">↗</span></button
+                    >
+                    <p class="demo"
+                        >Demo accounts: tenant@campus.test, owner@campus.test, admin@campus.test ·
+                        Password: Campus123. You can also sign in with an account created in this
+                        session.</p
+                    >
+                </form>
+                <p class="login"
+                    >New to Campus Mate? <a href="../auth/register.html">Create an account ↗</a></p
+                ><a class="guest-link" href="../public/index.html"
+                    >Continue exploring as a guest →</a
+                >
+            </section>
+        </main>
+        <footer
+            >© <span id="year"></span> Campus Mate
+            <span>Good spaces. Better company.</span></footer
+        >
+        <dialog id="info-dialog"
+            ><button type="button" id="close-dialog" aria-label="Close">×</button>
+            <p class="eyebrow">LET’S GET YOU BACK IN</p>
+            <h2>Forgot your password?</h2>
+            <p
+                >This is a frontend demonstration. Use a sample account and the password Campus123,
+                or create a new account. No reset email is sent.</p
+            ><button type="button" class="submit" id="dismiss-dialog"
+                >Got it <span>↗</span></button
+            >
+        </dialog>
+
+        <script src="../../js/api.js"></script
+        ><script src="../../js/remote.js"></script>
+        <script src="../../js/auth/login.js"></script>
+    </body>
+</html>

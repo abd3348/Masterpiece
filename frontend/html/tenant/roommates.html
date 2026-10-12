@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"
+    ><head
+        ><script src="../../js/navigation.js"></script
+        ><meta charset="UTF-8" /><meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        /><title>Tenant · roommates — Campus Mate</title
+        ><link rel="stylesheet" href="../../css/tenant/roommates.css" /><link
+            rel="stylesheet"
+            href="../../css/shared/campus-theme.css"
+        />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    </head>
+    <body data-page="roommates" data-section="tenant" data-screen="roommates">
+        <header class="nav"
+            ><a class="brand" href="../tenant/home.html"
+                ><span class="brand-mark" aria-hidden="true">⌂</span
+                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
+            ><label class="search"
+                ><span aria-hidden="true">⌕</span
+                ><input
+                    id="global-search"
+                    type="search"
+                    placeholder="Search homes or areas"
+                    aria-label="Search homes" /></label
+            ><nav aria-label="Main navigation"
+                ><a href="../tenant/home.html">Home</a><a href="../public/properties.html">Homes</a
+                ><a href="../tenant/roommates.html">Roommates</a
+                ><a href="../tenant/favorites.html">Favorites</a
+                ><a href="../tenant/messages.html">Meetings</a
+                ><a href="../tenant/requests.html">Requests</a
+                ><a href="../tenant/bookings.html">Arrangements</a
+                ><a href="../tenant/rentals.html">Rentals</a></nav
+            ></header
+        >
+        <template id="roommates-page-template"
+            ><div class="section-intro"
+                ><div
+                    ><p class="eyebrow">CAMPUS MATE · YOUR NEXT CHAPTER</p
+                    ><h1>Find your kind of people</h1
+                    ><p
+                        >Compatible routines, shared budgets and a comfortable place to call
+                        home.</p
+                    ></div
+                ><a class="secondary" href="preferences.html">Edit preferences</a></div
+            ><p class="sample-note"
+                >Compatibility uses your preferences and browser rules. These are sample people;
+                acceptance is simulated.</p
+            ><div class="catalog-controls"
+                ><input
+                    id="roommate-search"
+                    type="search"
+                    placeholder="Name, area or occupation"
+                    aria-label="Search roommates"
+                /><select id="roommate-sort" aria-label="Sort roommates"
+                    ><option value="match">Best compatibility</option
+                    ><option value="budget">Lowest budget</option></select
+                ><select id="roommate-smoking" aria-label="Smoking preference"
+                    ><option value="">Any smoking preference</option
+                    ><option>Not allowed</option
+                    ><option>Outside only</option></select
+                ></div
+            ><div id="roommate-selection"></div><div id="contact-inbox"></div
+            ><p id="roommate-count" class="listing-status" aria-live="polite"></p
+            ><div id="roommate-grid" class="tile-grid"></div
+        ></template>
+        <main class="feature-main"
+            ><div id="feature-status" class="status-message" role="alert"></div
+            ><div id="feature-app"><p class="loading">Loading your next chapter…</p></div></main
+        >
+        <footer
+            ><span
+                ><strong>Campus Mate</strong> · © <span id="year"></span> · Good spaces. Better
+                company.</span
+            ><a href="../public/index.html">Explore Campus Mate ↗</a></footer
+        >
+        <dialog id="feature-dialog"
+            ><button id="feature-dialog-close" class="close" aria-label="Close dialog">×</button
+            ><div id="feature-dialog-content" class="dialog-content"></div
+        ></dialog>
+        <script src="../../js/api.js"></script
+        ><script src="../../js/remote.js"></script
+        ><script src="../../js/shared/features.js"></script
+        ><script src="../../js/tenant/roommates.js"></script></body
+></html>

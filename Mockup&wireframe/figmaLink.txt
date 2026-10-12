@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 https://www.figma.com/design/vRXeICzaoJTSDXJTxQ6F1b/masterpro?node-id=0-1&t=aXgKviwmSW6zoS5L-1
+=======
+https://www.figma.com/design/vRXeICzaoJTSDXJTxQ6F1b/masterpro?node-id=0-1&t=aXgKviwmSW6zoS5L-1
+>>>>>>> c5222bd (frontend1)

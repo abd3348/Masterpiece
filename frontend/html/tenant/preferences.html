@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+    <head
+        ><script src="../../js/navigation.js"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Tenant · preferences — Campus Mate</title>
+        <link rel="stylesheet" href="../../css/tenant/preferences.css" />
+        <link rel="stylesheet" href="../../css/shared/campus-theme.css" />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    </head>
+
+    <body data-section="tenant" data-screen="preferences">
+        <header class="nav"
+            ><a class="brand" href="../tenant/home.html"
+                ><span class="brand-mark" aria-hidden="true">⌂</span
+                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
+            ><label class="search"
+                ><span aria-hidden="true">⌕</span
+                ><input
+                    id="global-search"
+                    type="search"
+                    placeholder="Search homes or areas"
+                    aria-label="Search homes" /></label
+            ><nav aria-label="Main navigation"
+                ><a href="../tenant/home.html">Home</a><a href="../public/properties.html">Homes</a
+                ><a href="../tenant/roommates.html">Roommates</a
+                ><a href="../tenant/favorites.html">Favorites</a
+                ><a href="../tenant/messages.html">Meetings</a
+                ><a href="../tenant/requests.html">Requests</a
+                ><a href="../tenant/bookings.html">Arrangements</a
+                ><a href="../tenant/rentals.html">Rentals</a></nav
+            ></header
+        >
+        <main>
+            <div class="heading">
+                <div>
+                    <p class="eyebrow">STEP 02 / MAKE IT YOURS</p>
+                    <h1>Your space.<br /><em>Your preferences.</em></h1>
+                    <p>Tell us how you live. Build a profile for your next home and roommate.</p>
+                </div>
+                <div class="actions"
+                    ><button type="reset" form="preferences-form" class="outline">Reset ↺</button
+                    ><button type="submit" form="preferences-form" class="primary"
+                        >Save preferences ↗</button
+                    ></div
+                >
+            </div>
+            <div class="layout">
+                <form id="preferences-form">
+                    <section class="card">
+                        <div class="card-title"
+                            ><span>01</span>
+                            <div>
+                                <h2>Budget & location</h2>
+                                <p>Where you want to live, and what works for your budget.</p>
+                            </div>
+                        </div>
+                        <fieldset>
+                            <legend>Monthly budget <small>JOD / month</small></legend>
+                            <div class="budget-values"
+                                ><label
+                                    >Minimum<input
+                                        type="number"
+                                        name="minBudget"
+                                        data-regex="money"
+                                        id="minBudget"
+                                        min="0"
+                                        max="10000"
+                                        step="1"
+                                        value="150"
+                                        required /></label
+                                ><span>—</span
+                                ><label
+                                    >Maximum<input
+                                        type="number"
+                                        name="maxBudget"
+                                        data-regex="money"
+                                        id="maxBudget"
+                                        min="0"
+                                        max="10000"
+                                        step="1"
+                                        value="200"
+                                        required /></label
+                            ></div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Preferred areas <small>Choose up to 5</small></legend>
+                            <div class="chips"
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="areas"
+                                        value="Jubeiha"
+                                        checked
+                                    /><span>Jubeiha</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="areas"
+                                        value="Shafa Badran"
+                                        checked
+                                    /><span>Shafa Badran</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="areas"
+                                        value="Sweileh"
+                                        checked
+                                    /><span>Sweileh</span></label
+                                ><label
+                                    ><input type="checkbox" name="areas" value="Tabarbour" /><span
+                                        >Tabarbour</span
+                                    ></label
+                                ><label
+                                    ><input type="checkbox" name="areas" value="Khalda" /><span
+                                        >Khalda</span
+                                    ></label
+                                ><label
+                                    ><input type="checkbox" name="areas" value="Abdoun" /><span
+                                        >Abdoun</span
+                                    ></label
+                                ><label
+                                    ><input type="checkbox" name="areas" value="Marka" /><span
+                                        >Marka</span
+                                    ></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="areas"
+                                        value="Downtown Amman"
+                                    /><span>Downtown Amman</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="areas"
+                                        value="Irbid university district"
+                                    /><span>Irbid university district</span></label
+                                ></div
+                            >
+                        </fieldset>
+                        <div class="field"
+                            ><label for="destination">University / work destination</label
+                            ><input
+                                id="destination"
+                                name="destination"
+                                data-regex="title"
+                                value="University of Jordan"
+                                maxlength="100"
+                                required
+                            /><small
+                                >Used in your sample housing profile. Commute estimates are
+                                illustrative.</small
+                            >
+                        </div>
+                        <div class="field"
+                            ><label for="commute">Preferred maximum commute</label
+                            ><select id="commute" name="commute">
+                                <option value="15">15 minutes</option>
+                                <option value="30" selected>30 minutes</option>
+                                <option value="45">45 minutes</option>
+                                <option value="60">60 minutes</option>
+                            </select></div
+                        >
+                    </section>
+                    <section class="card">
+                        <div class="card-title"
+                            ><span>02</span>
+                            <div>
+                                <h2>The home</h2>
+                                <p>Your space, your setup, your everyday.</p>
+                            </div>
+                        </div>
+                        <div class="two">
+                            <fieldset>
+                                <legend>Housing type</legend>
+                                <div class="segments"
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="housing"
+                                            value="Apartment"
+                                            checked
+                                        /><span>Apartment</span></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="housing"
+                                            value="Private room"
+                                        /><span>Private room</span></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="housing"
+                                            value="Shared room"
+                                        /><span>Shared room</span></label
+                                    ></div
+                                >
+                            </fieldset>
+                            <fieldset>
+                                <legend>Furnishing</legend>
+                                <div class="segments"
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="furnishing"
+                                            value="Furnished"
+                                            checked
+                                        /><span>Furnished</span></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="furnishing"
+                                            value="Partly furnished"
+                                        /><span>Partly</span></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="furnishing"
+                                            value="Unfurnished"
+                                        /><span>Unfurnished</span></label
+                                    ></div
+                                >
+                            </fieldset>
+                            <fieldset>
+                                <legend>Billing frequency</legend>
+                                <div class="segments"
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="billing"
+                                            value="Monthly"
+                                            checked
+                                        /><span>Monthly</span></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="billing"
+                                            value="Daily / short stay"
+                                        /><span>Daily / short stay</span></label
+                                    ></div
+                                >
+                            </fieldset>
+                            <fieldset>
+                                <legend>Preferred roommates</legend>
+                                <div class="segments"
+                                    ><label
+                                        ><input type="radio" name="roommates" value="0" /><span
+                                            >None</span
+                                        ></label
+                                    ><label
+                                        ><input
+                                            type="radio"
+                                            name="roommates"
+                                            value="1"
+                                            checked
+                                        /><span>1</span></label
+                                    ><label
+                                        ><input type="radio" name="roommates" value="2" /><span
+                                            >2</span
+                                        ></label
+                                    ><label
+                                        ><input type="radio" name="roommates" value="3+" /><span
+                                            >3+</span
+                                        ></label
+                                    ></div
+                                >
+                            </fieldset>
+                        </div>
+                    </section>
+                    <section class="card">
+                        <div class="card-title"
+                            ><span>03</span>
+                            <div>
+                                <h2>Lifestyle & compatibility</h2>
+                                <p>The little things that make living together feel right.</p>
+                            </div>
+                        </div>
+                        <fieldset>
+                            <legend>Sleep schedule</legend>
+                            <div class="segments"
+                                ><label
+                                    ><input
+                                        type="radio"
+                                        name="sleep"
+                                        value="Early bird"
+                                        checked
+                                    /><span>☀ Early bird</span></label
+                                ><label
+                                    ><input type="radio" name="sleep" value="Flexible" /><span
+                                        >Flexible</span
+                                    ></label
+                                ><label
+                                    ><input type="radio" name="sleep" value="Night owl" /><span
+                                        >☾ Night owl</span
+                                    ></label
+                                ></div
+                            >
+                        </fieldset>
+                        <div class="field"
+                            ><label for="schedule">Work / study hours</label
+                            ><select id="schedule" name="schedule"
+                                ><option>Daytime</option
+                                ><option>Evenings</option
+                                ><option>Flexible</option></select
+                            ></div
+                        ><div class="field range-field"
+                            ><label for="noise"
+                                >Noise tolerance
+                                <output id="noise-label" for="noise">2 / 5</output></label
+                            ><input
+                                type="range"
+                                id="noise"
+                                name="noise"
+                                min="1"
+                                max="5"
+                                value="2"
+                            />
+                            <div class="range-labels"
+                                ><span>Very quiet</span><span>Lively & social</span></div
+                            >
+                        </div>
+                        <div class="field range-field"
+                            ><label for="cleanliness"
+                                >Cleanliness & chores
+                                <output id="cleanliness-label" for="cleanliness"
+                                    >4 / 5</output
+                                ></label
+                            ><input
+                                type="range"
+                                id="cleanliness"
+                                name="cleanliness"
+                                min="1"
+                                max="5"
+                                value="4"
+                            />
+                            <div class="range-labels"
+                                ><span>Relaxed</span><span>Very tidy</span></div
+                            >
+                        </div>
+                        <fieldset>
+                            <legend>Smoking tolerance</legend>
+                            <div class="segments"
+                                ><label
+                                    ><input
+                                        type="radio"
+                                        name="smoking"
+                                        value="Not allowed"
+                                        checked
+                                    /><span>Not allowed</span></label
+                                ><label
+                                    ><input type="radio" name="smoking" value="Outside only" /><span
+                                        >Outside only</span
+                                    ></label
+                                ><label
+                                    ><input type="radio" name="smoking" value="Fine with it" /><span
+                                        >Fine with it</span
+                                    ></label
+                                ></div
+                            >
+                        </fieldset>
+                        <fieldset>
+                            <legend>Personal habits & routines</legend>
+                            <div class="chips"
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Studies at home"
+                                        checked
+                                    /><span>Studies at home</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Works from home"
+                                    /><span>Works from home</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Cooks often"
+                                    /><span>Cooks often</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Hosts guests"
+                                    /><span>Hosts guests</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Early riser"
+                                        checked
+                                    /><span>Early riser</span></label
+                                ><label
+                                    ><input
+                                        type="checkbox"
+                                        name="habits"
+                                        value="Gym regular"
+                                    /><span>Gym regular</span></label
+                                ></div
+                            >
+                        </fieldset>
+                    </section>
+                    <p id="status" role="status" aria-live="polite"></p>
+                    <div class="bottom-actions"
+                        ><a href="../auth/register.html">← Back to registration</a
+                        ><button class="primary" type="submit">Save my preferences ↗</button></div
+                    >
+                </form>
+                <aside>
+                    <section class="summary">
+                        <p class="eyebrow">YOUR HOUSING PROFILE</p>
+                        <h2>A little more <em>you.</em></h2>
+                        <div class="summary-icon">✳</div>
+                        <p id="summary-text" aria-live="polite"></p>
+                        <div id="summary-tags" class="summary-tags"></div>
+                        <div class="summary-row"
+                            ><span>Monthly budget</span><strong id="summary-budget"></strong
+                        ></div>
+                        <div class="summary-row"
+                            ><span>Roommates</span><strong id="summary-roommates"></strong
+                        ></div>
+                        <div class="summary-row"
+                            ><span>Commute preference</span><strong id="summary-commute"></strong
+                        ></div>
+                        <small
+                            >Sample matching scores update from these preferences. Commute estimates
+                            are illustrative.</small
+                        >
+                    </section>
+                    <section class="inspiration"
+                        ><img
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=85"
+                            alt="Illustrative bright living room"
+                        />
+                        <div>
+                            <p class="eyebrow">PICTURE YOUR NEXT CHAPTER</p>
+                            <h3>A space that feels like home.</h3>
+                            <p>Photo inspiration · Not a matched listing</p>
+                        </div>
+                    </section>
+                    <p class="local-note"
+                        >Your preferences update home and roommate recommendations in this
+                        session.</p
+                    >
+                </aside>
+            </div>
+        </main>
+        <footer
+            >© <span id="year"></span> Campus Mate
+            <span>Good spaces. Better company.</span></footer
+        >
+
+        <script src="../../js/api.js"></script
+        ><script src="../../js/remote.js"></script>
+        <script src="../../js/tenant/preferences.js"></script>
+    </body>
+</html>

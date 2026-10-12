@@ -1,0 +1,32 @@
+{
+  "styleMoves": {
+    "css/index.css": "css/public/index.css",
+    "css/login.css": "css/auth/login.css",
+    "css/register.css": "css/auth/register.css",
+    "css/preferences.css": "css/tenant/preferences.css",
+    "css/home.css": "css/shared/interior.css",
+    "css/flow.css": "css/shared/flow.css",
+    "css/campus-theme.css": "css/shared/campus-theme.css",
+    "css/features.css": "css/shared/features.css",
+    "css/layout.css": "css/shared/layout.css",
+    "css/app.css": "css/index.css"
+  },
+  "deleted": [
+    "css/index.css",
+    "css/login.css",
+    "css/register.css",
+    "css/preferences.css",
+    "css/home.css",
+    "css/flow.css",
+    "css/campus-theme.css",
+    "css/features.css",
+    "css/layout.css",
+    "css/app.css",
+    "js/app.js",
+    "js/tenant/community.js",
+    "js/public/housing.js",
+    "js/tenant/rental-flow.js",
+    "js/landlord/dashboard.js"
+  ],
+  "formattedFiles": 113
+}

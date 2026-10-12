@@ -1,0 +1,547 @@
+{
+  "register": {
+    "role": "tenant",
+    "firstName": "Sara",
+    "lastName": "Ahmad",
+    "email": "sara@example.com",
+    "phone": "0791234567",
+    "password": "ExamplePass1",
+    "city": "Amman",
+    "occupation": "Employee",
+    "destination": "University of Jordan"
+  },
+  "login": {
+    "email": "tenant@example.com",
+    "password": "ExamplePass1"
+  },
+  "currentUser": {
+    "id": "tenant-1",
+    "role": "tenant",
+    "firstName": "Abdallah",
+    "lastName": "Saleh",
+    "email": "tenant@campus.test",
+    "phone": "0791234567",
+    "city": "Amman",
+    "occupation": "Employee",
+    "destination": "University of Jordan",
+    "active": true
+  },
+  "preferences": {
+    "minBudget": 150,
+    "maxBudget": 220,
+    "areas": [
+      "Jubeiha"
+    ],
+    "destination": "University of Jordan",
+    "commute": 30,
+    "housing": "Apartment",
+    "furnishing": "Furnished",
+    "billing": "Monthly",
+    "roommates": "1",
+    "sleep": "Early bird",
+    "schedule": "Daytime",
+    "noise": 2,
+    "cleanliness": 4,
+    "smoking": "Not allowed",
+    "habits": [
+      "Reading"
+    ]
+  },
+  "createRequest": {
+    "propertyId": 124,
+    "startDate": "2026-11-01",
+    "duration": 6,
+    "roommate": false,
+    "roommateId": null,
+    "message": "I would like to rent this apartment."
+  },
+  "createRequestWithRoommate": {
+    "propertyId": 124,
+    "startDate": "2026-11-01",
+    "duration": 6,
+    "roommate": true,
+    "roommateId": "roommate-1",
+    "message": "I will share the home with my chosen roommate."
+  },
+  "requestResponse": {
+    "id": "request-example",
+    "propertyId": 124,
+    "startDate": "2026-11-01",
+    "duration": 6,
+    "roommate": false,
+    "roommateId": null,
+    "message": "I would like to rent this apartment.",
+    "tenantId": "tenant-1",
+    "tenantName": "Abdallah Saleh",
+    "roommateName": null,
+    "property": {
+      "id": 124,
+      "title": "Apartment #124",
+      "area": "Jubeiha",
+      "city": "Amman",
+      "price": 190,
+      "photo": "photo-1600210492486-724fe5c67fb0",
+      "period": "Monthly",
+      "beds": 2,
+      "baths": 1,
+      "size": 85,
+      "type": "Apartment",
+      "furnished": "Furnished",
+      "landlord": "Tariq Al-Huseini",
+      "ownerId": "owner-1",
+      "status": "published",
+      "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+      "amenities": [
+        "Wi-Fi",
+        "Air conditioning",
+        "Kitchen",
+        "Parking"
+      ],
+      "availableFrom": "2026-10-09",
+      "availableTo": "2030-12-31",
+      "commute": 20,
+      "noise": 2,
+      "cleanliness": 4,
+      "smoking": "Not allowed",
+      "photos": [],
+      "video": null,
+      "reviews": [
+        {
+          "name": "Lina",
+          "rating": 4,
+          "text": "Comfortable space and a convenient location."
+        }
+      ],
+      "risk": 8,
+      "riskReasons": [
+        "Complete sample listing"
+      ],
+      "listingFee": {
+        "amount": 20,
+        "currency": "JOD",
+        "status": "paid",
+        "simulated": true
+      }
+    },
+    "status": "submitted",
+    "createdAt": "2026-10-09T09:00:00Z",
+    "deposit": 190,
+    "total": 380,
+    "endDate": "2027-05-01",
+    "landlordAccepted": false,
+    "tenantAccepted": false,
+    "inspection": null
+  },
+  "bootstrap": {
+    "schemaVersion": 1,
+    "currentUser": {
+      "id": "tenant-1",
+      "role": "tenant",
+      "firstName": "Abdallah",
+      "lastName": "Saleh",
+      "email": "tenant@campus.test",
+      "phone": "0791234567",
+      "city": "Amman",
+      "occupation": "Employee",
+      "destination": "University of Jordan",
+      "active": true
+    },
+    "preferences": null,
+    "csrfToken": "example-csrf-token",
+    "users": [],
+    "properties": [
+      {
+        "id": 124,
+        "title": "Apartment #124",
+        "area": "Jubeiha",
+        "city": "Amman",
+        "price": 190,
+        "photo": "photo-1600210492486-724fe5c67fb0",
+        "period": "Monthly",
+        "beds": 2,
+        "baths": 1,
+        "size": 85,
+        "type": "Apartment",
+        "furnished": "Furnished",
+        "landlord": "Tariq Al-Huseini",
+        "ownerId": "owner-1",
+        "status": "published",
+        "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+        "amenities": [
+          "Wi-Fi",
+          "Air conditioning",
+          "Kitchen",
+          "Parking"
+        ],
+        "availableFrom": "2026-10-09",
+        "availableTo": "2030-12-31",
+        "commute": 20,
+        "noise": 2,
+        "cleanliness": 4,
+        "smoking": "Not allowed",
+        "photos": [],
+        "video": null,
+        "reviews": [
+          {
+            "name": "Lina",
+            "rating": 4,
+            "text": "Comfortable space and a convenient location."
+          }
+        ],
+        "risk": 8,
+        "riskReasons": [
+          "Complete sample listing"
+        ],
+        "listingFee": {
+          "amount": 20,
+          "currency": "JOD",
+          "status": "paid",
+          "simulated": true
+        }
+      },
+      {
+        "id": 231,
+        "title": "Apartment #231",
+        "area": "Shafa Badran",
+        "city": "Amman",
+        "price": 175,
+        "photo": "photo-1600607687920-4e2a09cf159d",
+        "period": "Monthly",
+        "beds": 2,
+        "baths": 1,
+        "size": 78,
+        "type": "Apartment",
+        "furnished": "Partly furnished",
+        "landlord": "Tariq Al-Huseini",
+        "ownerId": "owner-1",
+        "status": "published",
+        "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+        "amenities": [
+          "Wi-Fi",
+          "Air conditioning",
+          "Kitchen",
+          "Parking"
+        ],
+        "availableFrom": "2026-10-09",
+        "availableTo": "2030-12-31",
+        "commute": 30,
+        "noise": 2,
+        "cleanliness": 4,
+        "smoking": "Not allowed",
+        "photos": [],
+        "video": null,
+        "reviews": [
+          {
+            "name": "Lina",
+            "rating": 4,
+            "text": "Comfortable space and a convenient location."
+          }
+        ],
+        "risk": 8,
+        "riskReasons": [
+          "Complete sample listing"
+        ],
+        "listingFee": {
+          "amount": 20,
+          "currency": "JOD",
+          "status": "paid",
+          "simulated": true
+        }
+      },
+      {
+        "id": 87,
+        "title": "Room #087 in shared apartment",
+        "area": "Sweileh",
+        "city": "Amman",
+        "price": 160,
+        "photo": "photo-1600566753086-00f18fb6b3ea",
+        "period": "Monthly",
+        "beds": 1,
+        "baths": 1,
+        "size": 24,
+        "type": "Private room",
+        "furnished": "Furnished",
+        "landlord": "Tariq Al-Huseini",
+        "ownerId": "owner-1",
+        "status": "published",
+        "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+        "amenities": [
+          "Wi-Fi",
+          "Air conditioning",
+          "Kitchen",
+          "Parking"
+        ],
+        "availableFrom": "2026-10-09",
+        "availableTo": "2030-12-31",
+        "commute": 15,
+        "noise": 2,
+        "cleanliness": 4,
+        "smoking": "Not allowed",
+        "photos": [],
+        "video": null,
+        "reviews": [
+          {
+            "name": "Lina",
+            "rating": 4,
+            "text": "Comfortable space and a convenient location."
+          }
+        ],
+        "risk": 8,
+        "riskReasons": [
+          "Complete sample listing"
+        ],
+        "listingFee": {
+          "amount": 20,
+          "currency": "JOD",
+          "status": "paid",
+          "simulated": true
+        }
+      },
+      {
+        "id": 92,
+        "title": "Private room · short stays",
+        "area": "Amman Center",
+        "city": "Amman",
+        "price": 15,
+        "photo": "photo-1611892440504-42a792e24d32",
+        "period": "Daily",
+        "beds": 1,
+        "baths": 1,
+        "size": 20,
+        "type": "Private room",
+        "furnished": "Furnished",
+        "landlord": "Tariq Al-Huseini",
+        "ownerId": "owner-1",
+        "status": "published",
+        "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+        "amenities": [
+          "Wi-Fi",
+          "Air conditioning",
+          "Kitchen",
+          "Parking"
+        ],
+        "availableFrom": "2026-10-09",
+        "availableTo": "2030-12-31",
+        "commute": 20,
+        "noise": 2,
+        "cleanliness": 4,
+        "smoking": "Not allowed",
+        "photos": [],
+        "video": null,
+        "reviews": [
+          {
+            "name": "Lina",
+            "rating": 4,
+            "text": "Comfortable space and a convenient location."
+          }
+        ],
+        "risk": 8,
+        "riskReasons": [
+          "Complete sample listing"
+        ],
+        "listingFee": {
+          "amount": 20,
+          "currency": "JOD",
+          "status": "paid",
+          "simulated": true
+        }
+      }
+    ],
+    "roommates": [
+      {
+        "id": "roommate-1",
+        "name": "Ahmad",
+        "occupation": "Student",
+        "destination": "University of Jordan",
+        "area": "Jubeiha",
+        "minBudget": 150,
+        "maxBudget": 210,
+        "sleep": "Early bird",
+        "schedule": "Daytime",
+        "noise": 2,
+        "cleanliness": 4,
+        "smoking": "Not allowed",
+        "habits": [
+          "Reading",
+          "Sports"
+        ]
+      },
+      {
+        "id": "roommate-2",
+        "name": "Yazan",
+        "occupation": "Intern",
+        "destination": "Amman business district",
+        "area": "Shafa Badran",
+        "minBudget": 130,
+        "maxBudget": 200,
+        "sleep": "Flexible",
+        "schedule": "Flexible",
+        "noise": 3,
+        "cleanliness": 3,
+        "smoking": "Outside only",
+        "habits": [
+          "Sports",
+          "Cooking"
+        ]
+      },
+      {
+        "id": "roommate-3",
+        "name": "Mahmoud",
+        "occupation": "Employee",
+        "destination": "Tech district",
+        "area": "Sweileh",
+        "minBudget": 160,
+        "maxBudget": 250,
+        "sleep": "Night owl",
+        "schedule": "Evenings",
+        "noise": 2,
+        "cleanliness": 5,
+        "smoking": "Not allowed",
+        "habits": [
+          "Gaming",
+          "Reading"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "id": "request-example",
+        "propertyId": 124,
+        "startDate": "2026-11-01",
+        "duration": 6,
+        "roommate": false,
+        "roommateId": null,
+        "message": "I would like to rent this apartment.",
+        "tenantId": "tenant-1",
+        "tenantName": "Abdallah Saleh",
+        "roommateName": null,
+        "property": {
+          "id": 124,
+          "title": "Apartment #124",
+          "area": "Jubeiha",
+          "city": "Amman",
+          "price": 190,
+          "photo": "photo-1600210492486-724fe5c67fb0",
+          "period": "Monthly",
+          "beds": 2,
+          "baths": 1,
+          "size": 85,
+          "type": "Apartment",
+          "furnished": "Furnished",
+          "landlord": "Tariq Al-Huseini",
+          "ownerId": "owner-1",
+          "status": "published",
+          "description": "A bright, comfortable home with space to study, work and relax. Close to shops and public transport.",
+          "amenities": [
+            "Wi-Fi",
+            "Air conditioning",
+            "Kitchen",
+            "Parking"
+          ],
+          "availableFrom": "2026-10-09",
+          "availableTo": "2030-12-31",
+          "commute": 20,
+          "noise": 2,
+          "cleanliness": 4,
+          "smoking": "Not allowed",
+          "photos": [],
+          "video": null,
+          "reviews": [
+            {
+              "name": "Lina",
+              "rating": 4,
+              "text": "Comfortable space and a convenient location."
+            }
+          ],
+          "risk": 8,
+          "riskReasons": [
+            "Complete sample listing"
+          ],
+          "listingFee": {
+            "amount": 20,
+            "currency": "JOD",
+            "status": "paid",
+            "simulated": true
+          }
+        },
+        "status": "submitted",
+        "createdAt": "2026-10-09T09:00:00Z",
+        "deposit": 190,
+        "total": 380,
+        "endDate": "2027-05-01",
+        "landlordAccepted": false,
+        "tenantAccepted": false,
+        "inspection": null
+      }
+    ],
+    "rentals": [],
+    "contacts": [],
+    "conversations": [],
+    "meetings": [],
+    "reports": [],
+    "activity": [],
+    "saved": [
+      124
+    ],
+    "notifications": []
+  },
+  "mediaResponse": {
+    "id": "media-example",
+    "name": "walkthrough.mp4",
+    "url": "https://localhost:7001/uploads/walkthrough.mp4"
+  },
+  "conditionInput": {
+    "video": {
+      "id": "media-example",
+      "name": "walkthrough.mp4",
+      "url": "https://localhost:7001/uploads/walkthrough.mp4"
+    },
+    "items": [
+      {
+        "name": "Walls",
+        "condition": "Good"
+      },
+      {
+        "name": "Floors",
+        "condition": "Good"
+      },
+      {
+        "name": "Doors and windows",
+        "condition": "Good"
+      },
+      {
+        "name": "Furniture",
+        "condition": "Minor wear"
+      },
+      {
+        "name": "Water fittings",
+        "condition": "Good"
+      },
+      {
+        "name": "Appliances",
+        "condition": "Good"
+      }
+    ],
+    "notes": "A small scratch on the table was already present."
+  },
+  "checkoutResponse": {
+    "checkoutUrl": "https://payments.example.com/listing-fee/example"
+  },
+  "arrangementResponse": {
+    "rentalId": "request-example"
+  },
+  "validationError": {
+    "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "errors": {
+      "email": [
+        "Enter a valid email address."
+      ],
+      "phone": [
+        "Enter a valid Jordanian mobile number."
+      ]
+    },
+    "traceId": "example-trace-id"
+  }
+}

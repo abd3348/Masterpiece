@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script src="../../js/navigation.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tenant · home — Campus Mate</title>
+        <link rel="stylesheet" href="../../css/tenant/home.css" />
+        <link rel="stylesheet" href="../../css/shared/campus-theme.css" />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    </head>
+
+    <body data-section="tenant" data-screen="home">
+        <header class="nav">
+            <a class="brand" href="../tenant/home.html"
+                ><span class="brand-mark" aria-hidden="true">⌂</span
+                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
+            >
+            <label class="search"
+                ><span aria-hidden="true">⌕</span
+                ><input
+                    id="search"
+                    type="search"
+                    placeholder="Search homes or areas"
+                    aria-label="Search homes"
+                /><kbd>/</kbd></label
+            >
+            <nav aria-label="Main navigation"
+                ><a href="../tenant/home.html">Home</a><a href="../public/properties.html">Homes</a
+                ><a href="../tenant/roommates.html">Roommates</a
+                ><a href="../tenant/favorites.html">Favorites</a
+                ><a href="../tenant/messages.html">Meetings</a
+                ><a href="../tenant/requests.html">Requests</a
+                ><a href="../tenant/bookings.html">Arrangements</a
+                ><a href="../tenant/rentals.html">Rentals</a></nav
+            >
+        </header>
+        <main>
+            <div class="welcome">
+                <h1>Welcome back<span id="user-name"></span></h1>
+                <p>Homes and people that fit your budget, location, work and everyday life.</p
+                ><span class="preview">Sample rental & recommendations</span>
+            </div>
+            <section class="rental" id="rental" aria-labelledby="rental-title" hidden>
+                <div class="rental-top">
+                    <div
+                        ><span class="eyebrow">ACTIVE APPLICATION · PREVIEW</span>
+                        <h2 id="rental-title">Rental request: Apartment #124, Jubeiha</h2>
+                        <p id="rental-description"
+                            >The landlord accepted your request. Review the agreement to move on to
+                            direct arrangement.</p
+                        >
+                    </div>
+                    <dl>
+                        <div>
+                            <dt>Start date</dt>
+                            <dd>Oct 1, 2026</dd>
+                        </div>
+                        <div>
+                            <dt>Duration</dt>
+                            <dd>6 months</dd>
+                        </div>
+                        <div>
+                            <dt>Monthly rent</dt>
+                            <dd>JD 190</dd>
+                        </div>
+                    </dl>
+                </div>
+                <ol class="timeline" aria-label="Rental progress">
+                    <li class="done"
+                        ><span class="step">✓</span><strong>Request sent</strong
+                        ><small>Completed</small></li
+                    >
+                    <li class="done"
+                        ><span class="step">✓</span><strong>Landlord approval</strong
+                        ><small>Completed</small>
+                    </li>
+                    <li class="current" aria-current="step"
+                        ><span class="step">3</span><strong>Agreement</strong
+                        ><small>Waiting for you</small></li
+                    >
+                    <li
+                        ><span class="step">4</span><strong>Payment</strong
+                        ><small>JD 380</small></li
+                    >
+                    <li
+                        ><span class="step">5</span><strong>Move-in check</strong
+                        ><small>Verify & get keys</small></li
+                    >
+                </ol>
+                <div class="rental-actions"
+                    ><button class="yellow" id="review">ⓘ Review agreement</button
+                    ><button class="muted-button" id="message-landlord"
+                        >✉ Book a meeting</button
+                    ></div
+                >
+            </section>
+            <div class="layout">
+                <div>
+                    <section id="properties">
+                        <div class="section-heading">
+                            <div>
+                                <h2>Recommended for you</h2>
+                                <p>Based on your budget, areas, and living preferences.</p>
+                            </div>
+                            <div class="filters" aria-label="Rental filters"
+                                ><button class="selected" data-period="All" aria-pressed="true"
+                                    >All</button
+                                ><button data-period="Monthly" aria-pressed="false">Monthly</button
+                                ><button data-period="Daily" aria-pressed="false">Daily</button
+                                ><button id="favorites" aria-pressed="false"
+                                    >Saved homes</button
+                                ></div
+                            >
+                        </div>
+                        <p id="listing-status" class="listing-status" aria-live="polite"></p>
+                        <div class="property-grid" id="property-grid"></div>
+                        <p id="empty" hidden>No homes found. Try another search or filter.</p>
+                    </section>
+                    <section id="roommates" class="roommates">
+                        <div class="section-heading">
+                            <div>
+                                <h2>Roommates for you</h2>
+                                <p>People with similar routines and housing preferences.</p>
+                            </div>
+                        </div>
+                        <article class="person"
+                            ><span class="avatar aqua">A</span>
+                            <div>
+                                <h3>Ahmad <small>· Student at University of Jordan</small></h3>
+                                <p>Similar lifestyle · Similar schedule · Close budget</p> </div
+                            ><button class="contact" data-person="Ahmad"
+                                >Book a meeting</button
+                            >
+                        </article>
+                        <article class="person"
+                            ><span class="avatar">Y</span>
+                            <div>
+                                <h3>Yazan <small>· Intern in Amman</small></h3>
+                                <p>Similar cleanliness habits · Close budget</p> </div
+                            ><button class="contact" data-person="Yazan"
+                                >Book a meeting</button
+                            >
+                        </article>
+                        <article class="person"
+                            ><span class="avatar">M</span>
+                            <div>
+                                <h3>Mahmoud <small>· Works at a tech company</small></h3>
+                                <p>Similar schedule · Non-smoker</p> </div
+                            ><button class="contact" data-person="Mahmoud"
+                                >Book a meeting</button
+                            >
+                        </article>
+                    </section>
+                </div>
+                <aside>
+                    <section class="card profile">
+                        <h2>Your housing profile <span aria-hidden="true">☷</span></h2>
+                        <dl id="profile"></dl
+                        ><a class="edit" href="../tenant/preferences.html">✎ Edit preferences</a>
+                    </section>
+                    <section class="card averages">
+                        <h2>Average rent in your areas</h2>
+                        <p>Illustrative monthly rent in JD.</p>
+                        <div class="bar"
+                            ><span>Jubeiha <b>180 JD</b></span
+                            ><i class="market-width-full"></i
+                        ></div>
+                        <div class="bar"
+                            ><span>Shafa Badran <b>175 JD</b></span
+                            ><i class="market-width-near-full"></i
+                        ></div>
+                        <div class="bar"
+                            ><span>Sweileh <b>160 JD</b></span
+                            ><i class="market-width-medium"></i
+                        ></div>
+                        <p class="note"
+                            >ⓘ Compare the space, location, and included bills when choosing a
+                            home.</p
+                        >
+                    </section>
+                    <section id="messages" class="card messages">
+                        <h2>Messages · preview <span class="count">2</span></h2>
+                        <article
+                            ><span class="avatar light">L</span>
+                            <div>
+                                <h3>Landlord, Apt #124 <small>Sample</small></h3>
+                                <p
+                                    >Your request is approved. The draft agreement is ready for your
+                                    review.</p
+                                >
+                            </div>
+                        </article>
+                        <article
+                            ><span class="avatar aqua">A</span>
+                            <div>
+                                <h3>Ahmad <small>Sample</small></h3>
+                                <p
+                                    >Our routines look similar. Want to discuss sharing a place in
+                                    Jubeiha?</p
+                                >
+                            </div>
+                        </article>
+                    </section>
+                </aside>
+            </div>
+        </main>
+        <footer
+            ><span
+                ><strong>Campus Mate</strong> · © <span id="year"></span> · Your next
+                chapter.</span
+            ><a href="../public/index.html">Back to the campus tour ↗</a></footer
+        >
+        <dialog id="dialog"
+            ><button id="close-dialog" class="close" aria-label="Close dialog">×</button
+            ><span class="eyebrow">CAMPUS MATE · PREVIEW</span>
+            <h2 id="dialog-title"></h2>
+            <div id="dialog-body"></div>
+        </dialog>
+
+        <script src="../../js/api.js"></script>
+        <script src="../../js/remote.js"></script>
+        <script src="../../js/tenant/home.js"></script>
+    </body>
+</html>

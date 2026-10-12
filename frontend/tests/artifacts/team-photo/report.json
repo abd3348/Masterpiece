@@ -1,0 +1,4996 @@
+{
+  "externalAssetsBlocked": true,
+  "pages": [
+    {
+      "route": "public/about.html",
+      "width": 390,
+      "layout": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "preview-toolbar",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 48,
+            "bottom": 48
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgb(23, 61, 54)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "4px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 8.609375,
+            "width": 95.21875,
+            "height": 30.78125,
+            "bottom": 39.390625
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 115.21875,
+            "y": 4,
+            "width": 53.640625,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 172.859375,
+            "y": 4,
+            "width": 94.609375,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 271.46875,
+            "y": 4,
+            "width": 58.53125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "assistant-widget",
+          "rect": {
+            "x": 334,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "assistant-toggle",
+          "className": "assistant-toggle",
+          "rect": {
+            "x": 334,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 335,
+            "y": 10,
+            "width": 38,
+            "height": 28,
+            "bottom": 38
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "nav",
+          "rect": {
+            "x": 16,
+            "y": 60,
+            "width": 358,
+            "height": 128,
+            "bottom": 188
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(251, 248, 240, 0.93)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px",
+          "margin": "12px 16px 0px",
+          "display": "grid"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "brand",
+          "rect": {
+            "x": 29,
+            "y": 74,
+            "width": 276,
+            "height": 42,
+            "bottom": 116
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "brand-mark",
+          "rect": {
+            "x": 29,
+            "y": 74,
+            "width": 42,
+            "height": 42,
+            "bottom": 116
+          },
+          "color": "rgb(247, 243, 234)",
+          "background": "rgb(23, 61, 54)",
+          "font": "28px / 30.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 82,
+            "y": 76.046875,
+            "width": 120.984375,
+            "height": 37.890625,
+            "bottom": 113.9375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 149.53125,
+            "y": 76.046875,
+            "width": 45.03125,
+            "height": 23,
+            "bottom": 99.046875
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SMALL",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 82,
+            "y": 105.140625,
+            "width": 120.984375,
+            "height": 8.796875,
+            "bottom": 113.9375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "8px / 8.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "6px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "LABEL",
+          "id": "",
+          "className": "search",
+          "rect": {
+            "x": 29,
+            "y": 129,
+            "width": 332,
+            "height": 46,
+            "bottom": 175
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgb(238, 239, 229)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 42,
+            "y": 143.5,
+            "width": 8.078125,
+            "height": 17,
+            "bottom": 160.5
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "INPUT",
+          "id": "global-search",
+          "className": "",
+          "rect": {
+            "x": 58.078125,
+            "y": 130,
+            "width": 289.921875,
+            "height": 44,
+            "bottom": 174
+          },
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "menu-toggle",
+          "className": "menu-toggle",
+          "rect": {
+            "x": 317,
+            "y": 73,
+            "width": 44,
+            "height": 44,
+            "bottom": 117
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "id": "",
+          "className": "feature-main information-main",
+          "rect": {
+            "x": 16,
+            "y": 212,
+            "width": 358,
+            "height": 1935.484375,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "24px 16px 32px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "information-hero",
+          "rect": {
+            "x": 16,
+            "y": 212,
+            "width": 358,
+            "height": 190.15625,
+            "bottom": 402.15625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px 0px 32px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 16,
+            "y": 234,
+            "width": 234.6875,
+            "height": 16.1875,
+            "bottom": 250.1875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 262.1875,
+            "width": 358,
+            "height": 39.59375,
+            "bottom": 301.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 36px / 39.6px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 18px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 319.78125,
+            "width": 358,
+            "height": 50.375,
+            "bottom": 370.15625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px / 25.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section panel",
+          "rect": {
+            "x": 16,
+            "y": 434.15625,
+            "width": 358,
+            "height": 333.84375,
+            "bottom": 768
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "32px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 37,
+            "y": 455.15625,
+            "width": 159.53125,
+            "height": 23.390625,
+            "bottom": 478.546875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 8px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 486.546875,
+            "width": 316,
+            "height": 67.5,
+            "bottom": 554.046875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "27px / 33.75px \"Playfair Display\", Georgia, serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 574.046875,
+            "width": 316,
+            "height": 116.953125,
+            "bottom": 691
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "row-actions",
+          "rect": {
+            "x": 37,
+            "y": 703,
+            "width": 316,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "primary",
+          "rect": {
+            "x": 37,
+            "y": 703,
+            "width": 126.15625,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(23, 61, 54)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 173.15625,
+            "y": 703,
+            "width": 96.703125,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section",
+          "rect": {
+            "x": 16,
+            "y": 800,
+            "width": 358,
+            "height": 701.34375,
+            "bottom": 1501.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H2",
+          "id": "values-heading",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 800,
+            "width": 358,
+            "height": 21,
+            "bottom": 821
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "information-grid",
+          "rect": {
+            "x": 16,
+            "y": 841,
+            "width": 358,
+            "height": 660.34375,
+            "bottom": 1501.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 841,
+            "width": 358,
+            "height": 182.78125,
+            "bottom": 1023.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 862,
+            "width": 48,
+            "height": 48,
+            "bottom": 910
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 928,
+            "width": 316,
+            "height": 16,
+            "bottom": 944
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 956,
+            "width": 316,
+            "height": 46.78125,
+            "bottom": 1002.78125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 1067.78125,
+            "width": 358,
+            "height": 182.78125,
+            "bottom": 1250.5625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 1088.78125,
+            "width": 48,
+            "height": 48,
+            "bottom": 1136.78125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1154.78125,
+            "width": 316,
+            "height": 16,
+            "bottom": 1170.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1182.78125,
+            "width": 316,
+            "height": 46.78125,
+            "bottom": 1229.5625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 1294.5625,
+            "width": 358,
+            "height": 182.78125,
+            "bottom": 1477.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 1315.5625,
+            "width": 48,
+            "height": 48,
+            "bottom": 1363.5625
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1381.5625,
+            "width": 316,
+            "height": 16,
+            "bottom": 1397.5625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1409.5625,
+            "width": 316,
+            "height": 46.78125,
+            "bottom": 1456.34375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "team",
+          "className": "information-section",
+          "rect": {
+            "x": 16,
+            "y": 1533.34375,
+            "width": 358,
+            "height": 614.140625,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 16,
+            "y": 1535.34375,
+            "width": 219.03125,
+            "height": 16.1875,
+            "bottom": 1551.53125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "team-heading",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 1551.53125,
+            "width": 358,
+            "height": 21,
+            "bottom": 1572.53125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel team-card",
+          "rect": {
+            "x": 16,
+            "y": 1592.53125,
+            "width": 358,
+            "height": 554.953125,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "team-photo",
+          "className": "team-photo",
+          "rect": {
+            "x": 37,
+            "y": 1613.53125,
+            "width": 316,
+            "height": 280,
+            "bottom": 1893.53125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "IMG",
+          "id": "",
+          "className": "team-portrait",
+          "rect": {
+            "x": 37,
+            "y": 1613.53125,
+            "width": 300,
+            "height": 280,
+            "bottom": 1893.53125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "60px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1917.53125,
+            "width": 316,
+            "height": 208.953125,
+            "bottom": 2126.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "team-role",
+          "rect": {
+            "x": 37,
+            "y": 1925.53125,
+            "width": 316,
+            "height": 23.390625,
+            "bottom": 1948.921875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1956.921875,
+            "width": 316,
+            "height": 16,
+            "bottom": 1972.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1980.921875,
+            "width": 316,
+            "height": 93.5625,
+            "bottom": 2074.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 37,
+            "y": 2082.484375,
+            "width": 174.875,
+            "height": 44,
+            "bottom": 2126.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "inline-flex"
+        },
+        {
+          "tag": "FOOTER",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 0,
+            "y": 2197.484375,
+            "width": 390,
+            "height": 134,
+            "bottom": 2331.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "28px 19.5px",
+          "margin": "50px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 19.5,
+            "y": 2226.484375,
+            "width": 251.765625,
+            "height": 17,
+            "bottom": 2243.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 19.5,
+            "y": 2229.484375,
+            "width": 65.015625,
+            "height": 11,
+            "bottom": 2240.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SPAN",
+          "id": "year",
+          "className": "",
+          "rect": {
+            "x": 103.5625,
+            "y": 2229.484375,
+            "width": 22.25,
+            "height": 11,
+            "bottom": 2240.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "NAV",
+          "id": "",
+          "className": "information-footer-links",
+          "rect": {
+            "x": 19.5,
+            "y": 2259.484375,
+            "width": 257.4375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 19.5,
+            "y": 2259.484375,
+            "width": 47.375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 84.875,
+            "y": 2259.484375,
+            "width": 42.03125,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 144.90625,
+            "y": 2259.484375,
+            "width": 24.015625,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 186.921875,
+            "y": 2259.484375,
+            "width": 39.34375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 244.265625,
+            "y": 2259.484375,
+            "width": 32.671875,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        }
+      ],
+      "overflow": false,
+      "main": {
+        "x": 16,
+        "y": 212,
+        "width": 358,
+        "height": 1935.484375,
+        "bottom": 2147.484375
+      },
+      "nav": {
+        "x": 16,
+        "y": 60,
+        "width": 358,
+        "height": 128,
+        "bottom": 188
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 48,
+        "bottom": 48
+      },
+      "smallControls": [],
+      "alerts": [],
+      "brokenImages": [],
+      "heading": "About us",
+      "bottomCaptured": true
+    },
+    {
+      "route": "public/about.html",
+      "width": 1440,
+      "layout": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "preview-toolbar",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 1425,
+            "height": 48,
+            "bottom": 48
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgb(23, 61, 54)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "4px 92.5px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 92.5,
+            "y": 15.59375,
+            "width": 123.078125,
+            "height": 16.796875,
+            "bottom": 32.390625
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 780.797px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1012.375,
+            "y": 4,
+            "width": 60.703125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1089.078125,
+            "y": 4,
+            "width": 105.390625,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1210.46875,
+            "y": 4,
+            "width": 66.03125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "assistant-widget",
+          "rect": {
+            "x": 1292.5,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "assistant-toggle",
+          "className": "assistant-toggle",
+          "rect": {
+            "x": 1292.5,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1303.109375,
+            "y": 10,
+            "width": 18.765625,
+            "height": 28,
+            "bottom": 38
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "nav",
+          "rect": {
+            "x": 92.5,
+            "y": 64,
+            "width": 1240,
+            "height": 82,
+            "bottom": 146
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(251, 248, 240, 0.93)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "14px 18px",
+          "margin": "16px 92.5px 0px",
+          "display": "grid"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "brand",
+          "rect": {
+            "x": 111.5,
+            "y": 81,
+            "width": 189.078125,
+            "height": 48,
+            "bottom": 129
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "brand-mark",
+          "rect": {
+            "x": 111.5,
+            "y": 81,
+            "width": 48,
+            "height": 48,
+            "bottom": 129
+          },
+          "color": "rgb(247, 243, 234)",
+          "background": "rgb(23, 61, 54)",
+          "font": "32px / 35.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 170.5,
+            "y": 84.40625,
+            "width": 130.078125,
+            "height": 41.1875,
+            "bottom": 125.59375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 248.546875,
+            "y": 83.40625,
+            "width": 52.03125,
+            "height": 27,
+            "bottom": 110.40625
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SMALL",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 170.5,
+            "y": 116.796875,
+            "width": 130.078125,
+            "height": 8.796875,
+            "bottom": 125.59375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "8px / 8.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "6px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "LABEL",
+          "id": "",
+          "className": "search",
+          "rect": {
+            "x": 316.578125,
+            "y": 82,
+            "width": 210,
+            "height": 46,
+            "bottom": 128
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgb(238, 239, 229)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 329.578125,
+            "y": 96.5,
+            "width": 8.078125,
+            "height": 17,
+            "bottom": 113.5
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "INPUT",
+          "id": "global-search",
+          "className": "",
+          "rect": {
+            "x": 345.65625,
+            "y": 83,
+            "width": 167.921875,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "NAV",
+          "id": "primary-navigation",
+          "className": "",
+          "rect": {
+            "x": 950.09375,
+            "y": 79,
+            "width": 363.40625,
+            "height": 52,
+            "bottom": 131
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(233, 233, 221)",
+          "font": "12px \"DM Sans\", Arial, sans-serif",
+          "padding": "4px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 954.09375,
+            "y": 83,
+            "width": 51.34375,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1007.4375,
+            "y": 83,
+            "width": 56.84375,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1066.28125,
+            "y": 83,
+            "width": 55.625,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "active",
+          "rect": {
+            "x": 1123.90625,
+            "y": 83,
+            "width": 65.421875,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(23, 61, 54)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1191.328125,
+            "y": 83,
+            "width": 60.53125,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1253.859375,
+            "y": 83,
+            "width": 55.640625,
+            "height": 44,
+            "bottom": 127
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 14.3px \"DM Sans\", Arial, sans-serif",
+          "padding": "10px 11px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "id": "",
+          "className": "feature-main information-main",
+          "rect": {
+            "x": 92.5,
+            "y": 178,
+            "width": 1240,
+            "height": 1184.453125,
+            "bottom": 1362.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 92.5px 48px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "information-hero",
+          "rect": {
+            "x": 92.5,
+            "y": 178,
+            "width": 780,
+            "height": 193.5625,
+            "bottom": 371.5625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px 0px 32px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 92.5,
+            "y": 200,
+            "width": 234.6875,
+            "height": 16.1875,
+            "bottom": 216.1875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 92.5,
+            "y": 228.1875,
+            "width": 780,
+            "height": 68.1875,
+            "bottom": 296.375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 62px / 68.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 18px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 92.5,
+            "y": 314.375,
+            "width": 780,
+            "height": 25.1875,
+            "bottom": 339.5625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px / 25.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section panel",
+          "rect": {
+            "x": 92.5,
+            "y": 403.5625,
+            "width": 1240,
+            "height": 241.921875,
+            "bottom": 645.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "32px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 119.5,
+            "y": 430.5625,
+            "width": 159.53125,
+            "height": 23.390625,
+            "bottom": 453.953125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 8px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 119.5,
+            "y": 461.953125,
+            "width": 1186,
+            "height": 33.75,
+            "bottom": 495.703125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "27px / 33.75px \"Playfair Display\", Georgia, serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 119.5,
+            "y": 515.703125,
+            "width": 1186,
+            "height": 46.78125,
+            "bottom": 562.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "row-actions",
+          "rect": {
+            "x": 119.5,
+            "y": 574.484375,
+            "width": 1186,
+            "height": 44,
+            "bottom": 618.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "primary",
+          "rect": {
+            "x": 119.5,
+            "y": 574.484375,
+            "width": 126.15625,
+            "height": 44,
+            "bottom": 618.484375
+          },
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(23, 61, 54)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 255.65625,
+            "y": 574.484375,
+            "width": 96.703125,
+            "height": 44,
+            "bottom": 618.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section",
+          "rect": {
+            "x": 92.5,
+            "y": 677.484375,
+            "width": 1240,
+            "height": 259.78125,
+            "bottom": 937.265625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H2",
+          "id": "values-heading",
+          "className": "",
+          "rect": {
+            "x": 92.5,
+            "y": 677.484375,
+            "width": 1240,
+            "height": 21,
+            "bottom": 698.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "information-grid",
+          "rect": {
+            "x": 92.5,
+            "y": 718.484375,
+            "width": 1240,
+            "height": 218.78125,
+            "bottom": 937.265625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 92.5,
+            "y": 718.484375,
+            "width": 400,
+            "height": 194.78125,
+            "bottom": 913.265625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 119.5,
+            "y": 745.484375,
+            "width": 48,
+            "height": 48,
+            "bottom": 793.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 119.5,
+            "y": 811.484375,
+            "width": 346,
+            "height": 16,
+            "bottom": 827.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 119.5,
+            "y": 839.484375,
+            "width": 346,
+            "height": 46.78125,
+            "bottom": 886.265625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 512.5,
+            "y": 718.484375,
+            "width": 400,
+            "height": 194.78125,
+            "bottom": 913.265625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 539.5,
+            "y": 745.484375,
+            "width": 48,
+            "height": 48,
+            "bottom": 793.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 539.5,
+            "y": 811.484375,
+            "width": 346,
+            "height": 16,
+            "bottom": 827.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 539.5,
+            "y": 839.484375,
+            "width": 346,
+            "height": 46.78125,
+            "bottom": 886.265625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 932.5,
+            "y": 718.484375,
+            "width": 400,
+            "height": 194.78125,
+            "bottom": 913.265625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 959.5,
+            "y": 745.484375,
+            "width": 48,
+            "height": 48,
+            "bottom": 793.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 959.5,
+            "y": 811.484375,
+            "width": 346,
+            "height": 16,
+            "bottom": 827.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 959.5,
+            "y": 839.484375,
+            "width": 346,
+            "height": 46.78125,
+            "bottom": 886.265625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "team",
+          "className": "information-section",
+          "rect": {
+            "x": 92.5,
+            "y": 969.265625,
+            "width": 1240,
+            "height": 393.1875,
+            "bottom": 1362.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 92.5,
+            "y": 971.265625,
+            "width": 219.03125,
+            "height": 16.1875,
+            "bottom": 987.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "team-heading",
+          "className": "",
+          "rect": {
+            "x": 92.5,
+            "y": 987.453125,
+            "width": 1240,
+            "height": 21,
+            "bottom": 1008.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel team-card",
+          "rect": {
+            "x": 92.5,
+            "y": 1028.453125,
+            "width": 850,
+            "height": 334,
+            "bottom": 1362.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "team-photo",
+          "className": "team-photo",
+          "rect": {
+            "x": 119.5,
+            "y": 1055.453125,
+            "width": 260,
+            "height": 280,
+            "bottom": 1335.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "IMG",
+          "id": "",
+          "className": "team-portrait",
+          "rect": {
+            "x": 119.5,
+            "y": 1055.453125,
+            "width": 260,
+            "height": 280,
+            "bottom": 1335.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "60px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 411.5,
+            "y": 1102.671875,
+            "width": 504,
+            "height": 185.5625,
+            "bottom": 1288.234375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "team-role",
+          "rect": {
+            "x": 411.5,
+            "y": 1110.671875,
+            "width": 504,
+            "height": 23.390625,
+            "bottom": 1134.0625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 411.5,
+            "y": 1142.0625,
+            "width": 504,
+            "height": 16,
+            "bottom": 1158.0625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 411.5,
+            "y": 1166.0625,
+            "width": 504,
+            "height": 70.171875,
+            "bottom": 1236.234375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 411.5,
+            "y": 1244.234375,
+            "width": 174.875,
+            "height": 44,
+            "bottom": 1288.234375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "inline-flex"
+        },
+        {
+          "tag": "FOOTER",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 52.5,
+            "y": 1412.453125,
+            "width": 1320,
+            "height": 101,
+            "bottom": 1513.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "28px 71.25px",
+          "margin": "50px 52.5px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 123.75,
+            "y": 1441.453125,
+            "width": 276.9375,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 123.75,
+            "y": 1444.453125,
+            "width": 71.53125,
+            "height": 12,
+            "bottom": 1456.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SPAN",
+          "id": "year",
+          "className": "",
+          "rect": {
+            "x": 216.21875,
+            "y": 1444.453125,
+            "width": 24.484375,
+            "height": 12,
+            "bottom": 1456.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "NAV",
+          "id": "",
+          "className": "information-footer-links",
+          "rect": {
+            "x": 1043.8125,
+            "y": 1441.453125,
+            "width": 257.4375,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1043.8125,
+            "y": 1441.453125,
+            "width": 47.375,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1109.1875,
+            "y": 1441.453125,
+            "width": 42.03125,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1169.21875,
+            "y": 1441.453125,
+            "width": 24.015625,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1211.234375,
+            "y": 1441.453125,
+            "width": 39.34375,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 1268.578125,
+            "y": 1441.453125,
+            "width": 32.671875,
+            "height": 44,
+            "bottom": 1485.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        }
+      ],
+      "overflow": false,
+      "main": {
+        "x": 92.5,
+        "y": 178,
+        "width": 1240,
+        "height": 1184.453125,
+        "bottom": 1362.453125
+      },
+      "nav": {
+        "x": 92.5,
+        "y": 64,
+        "width": 1240,
+        "height": 82,
+        "bottom": 146
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 48,
+        "bottom": 48
+      },
+      "smallControls": [],
+      "alerts": [],
+      "brokenImages": [],
+      "heading": "About us",
+      "bottomCaptured": true
+    },
+    {
+      "route": "public/about.html",
+      "width": 768,
+      "layout": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "preview-toolbar",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 753,
+            "height": 48,
+            "bottom": 48
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgb(23, 61, 54)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "4px 24px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 24,
+            "y": 15.59375,
+            "width": 123.078125,
+            "height": 16.796875,
+            "bottom": 32.390625
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 245.797px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 408.875,
+            "y": 4,
+            "width": 60.703125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 485.578125,
+            "y": 4,
+            "width": 105.390625,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 606.96875,
+            "y": 4,
+            "width": 66.03125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "8px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "assistant-widget",
+          "rect": {
+            "x": 689,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 16.8px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "assistant-toggle",
+          "className": "assistant-toggle",
+          "rect": {
+            "x": 689,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 699.609375,
+            "y": 10,
+            "width": 18.765625,
+            "height": 28,
+            "bottom": 38
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "nav",
+          "rect": {
+            "x": 32,
+            "y": 64,
+            "width": 689,
+            "height": 136,
+            "bottom": 200
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(251, 248, 240, 0.93)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "14px 18px",
+          "margin": "16px 32px 0px",
+          "display": "grid"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "brand",
+          "rect": {
+            "x": 51,
+            "y": 79,
+            "width": 595,
+            "height": 48,
+            "bottom": 127
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "brand-mark",
+          "rect": {
+            "x": 51,
+            "y": 79,
+            "width": 48,
+            "height": 48,
+            "bottom": 127
+          },
+          "color": "rgb(247, 243, 234)",
+          "background": "rgb(23, 61, 54)",
+          "font": "32px / 35.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 110,
+            "y": 82.40625,
+            "width": 130.078125,
+            "height": 41.1875,
+            "bottom": 123.59375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 188.046875,
+            "y": 81.40625,
+            "width": 52.03125,
+            "height": 27,
+            "bottom": 108.40625
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 24px / 26.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SMALL",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 110,
+            "y": 114.796875,
+            "width": 130.078125,
+            "height": 8.796875,
+            "bottom": 123.59375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "8px / 8.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "6px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "LABEL",
+          "id": "",
+          "className": "search",
+          "rect": {
+            "x": 51,
+            "y": 139,
+            "width": 651,
+            "height": 46,
+            "bottom": 185
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgb(238, 239, 229)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 64,
+            "y": 153.5,
+            "width": 8.078125,
+            "height": 17,
+            "bottom": 170.5
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "INPUT",
+          "id": "global-search",
+          "className": "",
+          "rect": {
+            "x": 80.078125,
+            "y": 140,
+            "width": 608.921875,
+            "height": 44,
+            "bottom": 184
+          },
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "menu-toggle",
+          "className": "menu-toggle",
+          "rect": {
+            "x": 658,
+            "y": 81,
+            "width": 44,
+            "height": 44,
+            "bottom": 125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "id": "",
+          "className": "feature-main information-main",
+          "rect": {
+            "x": 32,
+            "y": 232,
+            "width": 689,
+            "height": 1775.453125,
+            "bottom": 2007.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 32px 48px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "information-hero",
+          "rect": {
+            "x": 32,
+            "y": 232,
+            "width": 689,
+            "height": 167.609375,
+            "bottom": 399.609375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px 0px 32px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 32,
+            "y": 254,
+            "width": 234.6875,
+            "height": 16.1875,
+            "bottom": 270.1875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 32,
+            "y": 282.1875,
+            "width": 689,
+            "height": 42.234375,
+            "bottom": 324.421875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 38.4px / 42.24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 18px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 32,
+            "y": 342.421875,
+            "width": 689,
+            "height": 25.1875,
+            "bottom": 367.609375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px / 25.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section panel",
+          "rect": {
+            "x": 32,
+            "y": 431.609375,
+            "width": 689,
+            "height": 265.3125,
+            "bottom": 696.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "32px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 59,
+            "y": 458.609375,
+            "width": 159.53125,
+            "height": 23.390625,
+            "bottom": 482
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 8px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 490,
+            "width": 635,
+            "height": 33.75,
+            "bottom": 523.75
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "27px / 33.75px \"Playfair Display\", Georgia, serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 543.75,
+            "width": 635,
+            "height": 70.171875,
+            "bottom": 613.921875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "row-actions",
+          "rect": {
+            "x": 59,
+            "y": 625.921875,
+            "width": 635,
+            "height": 44,
+            "bottom": 669.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "primary",
+          "rect": {
+            "x": 59,
+            "y": 625.921875,
+            "width": 126.15625,
+            "height": 44,
+            "bottom": 669.921875
+          },
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(23, 61, 54)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 195.15625,
+            "y": 625.921875,
+            "width": 96.703125,
+            "height": 44,
+            "bottom": 669.921875
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section",
+          "rect": {
+            "x": 32,
+            "y": 728.921875,
+            "width": 689,
+            "height": 667.171875,
+            "bottom": 1396.09375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H2",
+          "id": "values-heading",
+          "className": "",
+          "rect": {
+            "x": 32,
+            "y": 728.921875,
+            "width": 689,
+            "height": 21,
+            "bottom": 749.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "information-grid",
+          "rect": {
+            "x": 32,
+            "y": 769.921875,
+            "width": 689,
+            "height": 626.171875,
+            "bottom": 1396.09375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 32,
+            "y": 769.921875,
+            "width": 689,
+            "height": 171.390625,
+            "bottom": 941.3125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 59,
+            "y": 796.921875,
+            "width": 48,
+            "height": 48,
+            "bottom": 844.921875
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 862.921875,
+            "width": 635,
+            "height": 16,
+            "bottom": 878.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 890.921875,
+            "width": 635,
+            "height": 23.390625,
+            "bottom": 914.3125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 32,
+            "y": 985.3125,
+            "width": 689,
+            "height": 171.390625,
+            "bottom": 1156.703125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 59,
+            "y": 1012.3125,
+            "width": 48,
+            "height": 48,
+            "bottom": 1060.3125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1078.3125,
+            "width": 635,
+            "height": 16,
+            "bottom": 1094.3125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1106.3125,
+            "width": 635,
+            "height": 23.390625,
+            "bottom": 1129.703125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 32,
+            "y": 1200.703125,
+            "width": 689,
+            "height": 171.390625,
+            "bottom": 1372.09375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 59,
+            "y": 1227.703125,
+            "width": 48,
+            "height": 48,
+            "bottom": 1275.703125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1293.703125,
+            "width": 635,
+            "height": 16,
+            "bottom": 1309.703125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1321.703125,
+            "width": 635,
+            "height": 23.390625,
+            "bottom": 1345.09375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "team",
+          "className": "information-section",
+          "rect": {
+            "x": 32,
+            "y": 1428.09375,
+            "width": 689,
+            "height": 579.359375,
+            "bottom": 2007.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 32,
+            "y": 1430.09375,
+            "width": 219.03125,
+            "height": 16.1875,
+            "bottom": 1446.28125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "team-heading",
+          "className": "",
+          "rect": {
+            "x": 32,
+            "y": 1446.28125,
+            "width": 689,
+            "height": 21,
+            "bottom": 1467.28125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel team-card",
+          "rect": {
+            "x": 32,
+            "y": 1487.28125,
+            "width": 689,
+            "height": 520.171875,
+            "bottom": 2007.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "26px",
+          "margin": "0px 0px 24px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "team-photo",
+          "className": "team-photo",
+          "rect": {
+            "x": 59,
+            "y": 1514.28125,
+            "width": 635,
+            "height": 280,
+            "bottom": 1794.28125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "IMG",
+          "id": "",
+          "className": "team-portrait",
+          "rect": {
+            "x": 59,
+            "y": 1514.28125,
+            "width": 300,
+            "height": 280,
+            "bottom": 1794.28125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "60px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1818.28125,
+            "width": 635,
+            "height": 162.171875,
+            "bottom": 1980.453125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "team-role",
+          "rect": {
+            "x": 59,
+            "y": 1826.28125,
+            "width": 635,
+            "height": 23.390625,
+            "bottom": 1849.671875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1857.671875,
+            "width": 635,
+            "height": 16,
+            "bottom": 1873.671875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 59,
+            "y": 1881.671875,
+            "width": 635,
+            "height": 46.78125,
+            "bottom": 1928.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 59,
+            "y": 1936.453125,
+            "width": 174.875,
+            "height": 44,
+            "bottom": 1980.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "inline-flex"
+        },
+        {
+          "tag": "FOOTER",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 0,
+            "y": 2057.453125,
+            "width": 753,
+            "height": 101,
+            "bottom": 2158.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "28px 37.6406px",
+          "margin": "50px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37.640625,
+            "y": 2086.453125,
+            "width": 276.9375,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37.640625,
+            "y": 2089.453125,
+            "width": 71.53125,
+            "height": 12,
+            "bottom": 2101.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SPAN",
+          "id": "year",
+          "className": "",
+          "rect": {
+            "x": 130.109375,
+            "y": 2089.453125,
+            "width": 24.484375,
+            "height": 12,
+            "bottom": 2101.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 18.7px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "NAV",
+          "id": "",
+          "className": "information-footer-links",
+          "rect": {
+            "x": 457.921875,
+            "y": 2086.453125,
+            "width": 257.4375,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 457.921875,
+            "y": 2086.453125,
+            "width": 47.375,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 523.296875,
+            "y": 2086.453125,
+            "width": 42.03125,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 583.328125,
+            "y": 2086.453125,
+            "width": 24.015625,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 625.34375,
+            "y": 2086.453125,
+            "width": 39.34375,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 682.6875,
+            "y": 2086.453125,
+            "width": 32.671875,
+            "height": 44,
+            "bottom": 2130.453125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        }
+      ],
+      "overflow": false,
+      "main": {
+        "x": 32,
+        "y": 232,
+        "width": 689,
+        "height": 1775.453125,
+        "bottom": 2007.453125
+      },
+      "nav": {
+        "x": 32,
+        "y": 64,
+        "width": 689,
+        "height": 136,
+        "bottom": 200
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 48,
+        "bottom": 48
+      },
+      "smallControls": [],
+      "alerts": [],
+      "brokenImages": [],
+      "heading": "About us"
+    },
+    {
+      "route": "public/about.html",
+      "width": 360,
+      "layout": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "preview-toolbar",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 48,
+            "bottom": 48
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgb(23, 61, 54)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "4px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 8.609375,
+            "width": 65.21875,
+            "height": 30.78125,
+            "bottom": 39.390625
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 85.21875,
+            "y": 4,
+            "width": 53.640625,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 142.859375,
+            "y": 4,
+            "width": 94.609375,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 241.46875,
+            "y": 4,
+            "width": 58.53125,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "8px 10px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "assistant-widget",
+          "rect": {
+            "x": 304,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "11px / 15.4px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "assistant-toggle",
+          "className": "assistant-toggle",
+          "rect": {
+            "x": 304,
+            "y": 4,
+            "width": 40,
+            "height": 40,
+            "bottom": 44
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 305,
+            "y": 10,
+            "width": 38,
+            "height": 28,
+            "bottom": 38
+          },
+          "color": "rgb(255, 248, 233)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "20px / 28px Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "nav",
+          "rect": {
+            "x": 16,
+            "y": 60,
+            "width": 328,
+            "height": 128,
+            "bottom": 188
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(251, 248, 240, 0.93)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px",
+          "margin": "12px 16px 0px",
+          "display": "grid"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "brand",
+          "rect": {
+            "x": 29,
+            "y": 74,
+            "width": 246,
+            "height": 42,
+            "bottom": 116
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "brand-mark",
+          "rect": {
+            "x": 29,
+            "y": 74,
+            "width": 42,
+            "height": 42,
+            "bottom": 116
+          },
+          "color": "rgb(247, 243, 234)",
+          "background": "rgb(23, 61, 54)",
+          "font": "28px / 30.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 82,
+            "y": 76.046875,
+            "width": 120.984375,
+            "height": 37.890625,
+            "bottom": 113.9375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 149.53125,
+            "y": 76.046875,
+            "width": 45.03125,
+            "height": 23,
+            "bottom": 99.046875
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 21px / 23.1px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SMALL",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 82,
+            "y": 105.140625,
+            "width": 120.984375,
+            "height": 8.796875,
+            "bottom": 113.9375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "8px / 8.8px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "6px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "LABEL",
+          "id": "",
+          "className": "search",
+          "rect": {
+            "x": 29,
+            "y": 129,
+            "width": 302,
+            "height": 46,
+            "bottom": 175
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgb(238, 239, 229)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px 12px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 42,
+            "y": 143.5,
+            "width": 8.078125,
+            "height": 17,
+            "bottom": 160.5
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "INPUT",
+          "id": "global-search",
+          "className": "",
+          "rect": {
+            "x": 58.078125,
+            "y": 130,
+            "width": 259.921875,
+            "height": 44,
+            "bottom": 174
+          },
+          "color": "rgb(0, 0, 0)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "menu-toggle",
+          "className": "menu-toggle",
+          "rect": {
+            "x": 287,
+            "y": 73,
+            "width": 44,
+            "height": 44,
+            "bottom": 117
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "MAIN",
+          "id": "",
+          "className": "feature-main information-main",
+          "rect": {
+            "x": 16,
+            "y": 212,
+            "width": 328,
+            "height": 1935.484375,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "24px 16px 32px",
+          "display": "block"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "className": "information-hero",
+          "rect": {
+            "x": 16,
+            "y": 212,
+            "width": 328,
+            "height": 190.15625,
+            "bottom": 402.15625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px 0px 32px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 16,
+            "y": 234,
+            "width": 234.6875,
+            "height": 16.1875,
+            "bottom": 250.1875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 262.1875,
+            "width": 328,
+            "height": 39.59375,
+            "bottom": 301.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 36px / 39.6px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 18px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 319.78125,
+            "width": 328,
+            "height": 50.375,
+            "bottom": 370.15625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px / 25.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section panel",
+          "rect": {
+            "x": 16,
+            "y": 434.15625,
+            "width": 328,
+            "height": 333.84375,
+            "bottom": 768
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "32px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 37,
+            "y": 455.15625,
+            "width": 159.53125,
+            "height": 23.390625,
+            "bottom": 478.546875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 8px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 486.546875,
+            "width": 286,
+            "height": 67.5,
+            "bottom": 554.046875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "27px / 33.75px \"Playfair Display\", Georgia, serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 574.046875,
+            "width": 286,
+            "height": 116.953125,
+            "bottom": 691
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "row-actions",
+          "rect": {
+            "x": 37,
+            "y": 703,
+            "width": 286,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "12px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "primary",
+          "rect": {
+            "x": 37,
+            "y": 703,
+            "width": 126.15625,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(23, 61, 54)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 173.15625,
+            "y": 703,
+            "width": 96.703125,
+            "height": 44,
+            "bottom": 747
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SECTION",
+          "id": "",
+          "className": "information-section",
+          "rect": {
+            "x": 16,
+            "y": 800,
+            "width": 328,
+            "height": 701.34375,
+            "bottom": 1501.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H2",
+          "id": "values-heading",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 800,
+            "width": 328,
+            "height": 21,
+            "bottom": 821
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "information-grid",
+          "rect": {
+            "x": 16,
+            "y": 841,
+            "width": 328,
+            "height": 660.34375,
+            "bottom": 1501.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 841,
+            "width": 328,
+            "height": 182.78125,
+            "bottom": 1023.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 862,
+            "width": 48,
+            "height": 48,
+            "bottom": 910
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 928,
+            "width": 286,
+            "height": 16,
+            "bottom": 944
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 956,
+            "width": 286,
+            "height": 46.78125,
+            "bottom": 1002.78125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 1067.78125,
+            "width": 328,
+            "height": 182.78125,
+            "bottom": 1250.5625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 1088.78125,
+            "width": 48,
+            "height": 48,
+            "bottom": 1136.78125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1154.78125,
+            "width": 286,
+            "height": 16,
+            "bottom": 1170.78125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1182.78125,
+            "width": 286,
+            "height": 46.78125,
+            "bottom": 1229.5625
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel information-card",
+          "rect": {
+            "x": 16,
+            "y": 1294.5625,
+            "width": 328,
+            "height": 182.78125,
+            "bottom": 1477.34375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "block"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "information-icon",
+          "rect": {
+            "x": 37,
+            "y": 1315.5625,
+            "width": 48,
+            "height": 48,
+            "bottom": 1363.5625
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "24px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 18px",
+          "display": "grid"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1381.5625,
+            "width": 286,
+            "height": 16,
+            "bottom": 1397.5625
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 12px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1409.5625,
+            "width": 286,
+            "height": 46.78125,
+            "bottom": 1456.34375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "SECTION",
+          "id": "team",
+          "className": "information-section",
+          "rect": {
+            "x": 16,
+            "y": 1533.34375,
+            "width": 328,
+            "height": 614.140625,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "32px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "eyebrow",
+          "rect": {
+            "x": 16,
+            "y": 1535.34375,
+            "width": 219.03125,
+            "height": 16.1875,
+            "bottom": 1551.53125
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 9px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline-block"
+        },
+        {
+          "tag": "H2",
+          "id": "team-heading",
+          "className": "",
+          "rect": {
+            "x": 16,
+            "y": 1551.53125,
+            "width": 328,
+            "height": 21,
+            "bottom": 1572.53125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 18px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px 0px 20px",
+          "display": "block"
+        },
+        {
+          "tag": "ARTICLE",
+          "id": "",
+          "className": "panel team-card",
+          "rect": {
+            "x": 16,
+            "y": 1592.53125,
+            "width": 328,
+            "height": 554.953125,
+            "bottom": 2147.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgb(255, 252, 247)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "20px",
+          "margin": "0px 0px 24px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "team-photo",
+          "className": "team-photo",
+          "rect": {
+            "x": 37,
+            "y": 1613.53125,
+            "width": 286,
+            "height": 280,
+            "bottom": 1893.53125
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "IMG",
+          "id": "",
+          "className": "team-portrait",
+          "rect": {
+            "x": 37,
+            "y": 1613.53125,
+            "width": 286,
+            "height": 280,
+            "bottom": 1893.53125
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "60px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "grid"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1917.53125,
+            "width": 286,
+            "height": 208.953125,
+            "bottom": 2126.484375
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "team-role",
+          "rect": {
+            "x": 37,
+            "y": 1925.53125,
+            "width": 286,
+            "height": 23.390625,
+            "bottom": 1948.921875
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "600 13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "H3",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1956.921875,
+            "width": 286,
+            "height": 16,
+            "bottom": 1972.921875
+          },
+          "color": "rgb(29, 48, 43)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "500 14px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 37,
+            "y": 1980.921875,
+            "width": 286,
+            "height": 93.5625,
+            "bottom": 2074.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "13px / 23.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "8px 0px",
+          "display": "block"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "secondary",
+          "rect": {
+            "x": 37,
+            "y": 2082.484375,
+            "width": 174.875,
+            "height": 44,
+            "bottom": 2126.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgb(232, 238, 227)",
+          "font": "500 12px / 16.2px \"DM Sans\", Arial, sans-serif",
+          "padding": "12px 16px",
+          "margin": "0px",
+          "display": "inline-flex"
+        },
+        {
+          "tag": "FOOTER",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 0,
+            "y": 2197.484375,
+            "width": 360,
+            "height": 134,
+            "bottom": 2331.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "28px 18px",
+          "margin": "50px 0px 0px",
+          "display": "flex"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 18,
+            "y": 2226.484375,
+            "width": 251.765625,
+            "height": 17,
+            "bottom": 2243.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "block"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 18,
+            "y": 2229.484375,
+            "width": 65.015625,
+            "height": 11,
+            "bottom": 2240.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "700 10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "SPAN",
+          "id": "year",
+          "className": "",
+          "rect": {
+            "x": 102.0625,
+            "y": 2229.484375,
+            "width": 22.25,
+            "height": 11,
+            "bottom": 2240.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "10px / 17px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "inline"
+        },
+        {
+          "tag": "NAV",
+          "id": "",
+          "className": "information-footer-links",
+          "rect": {
+            "x": 18,
+            "y": 2259.484375,
+            "width": 257.4375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(109, 121, 114)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 18,
+            "y": 2259.484375,
+            "width": 47.375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 83.375,
+            "y": 2259.484375,
+            "width": 42.03125,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 143.40625,
+            "y": 2259.484375,
+            "width": 24.015625,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 185.421875,
+            "y": 2259.484375,
+            "width": 39.34375,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "className": "",
+          "rect": {
+            "x": 242.765625,
+            "y": 2259.484375,
+            "width": 32.671875,
+            "height": 44,
+            "bottom": 2303.484375
+          },
+          "color": "rgb(23, 61, 54)",
+          "background": "rgba(0, 0, 0, 0)",
+          "font": "12px / 20.4px \"DM Sans\", Arial, sans-serif",
+          "padding": "0px",
+          "margin": "0px",
+          "display": "flex"
+        }
+      ],
+      "overflow": false,
+      "main": {
+        "x": 16,
+        "y": 212,
+        "width": 328,
+        "height": 1935.484375,
+        "bottom": 2147.484375
+      },
+      "nav": {
+        "x": 16,
+        "y": 60,
+        "width": 328,
+        "height": 128,
+        "bottom": 188
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 48,
+        "bottom": 48
+      },
+      "smallControls": [],
+      "alerts": [],
+      "brokenImages": [],
+      "heading": "About us"
+    }
+  ],
+  "errors": []
+}
