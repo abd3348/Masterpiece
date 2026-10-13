@@ -15,6 +15,18 @@ window.CampusSeed = {
       "active": true
     },
     {
+      "id": "tenant-2",
+      "role": "tenant",
+      "firstName": "Sara",
+      "lastName": "Khalil",
+      "email": "tenant2@campus.test",
+      "phone": "0797654321",
+      "city": "Amman",
+      "occupation": "Student",
+      "destination": "University of Jordan",
+      "active": true
+    },
+    {
       "id": "owner-1",
       "role": "landlord",
       "firstName": "Tariq",

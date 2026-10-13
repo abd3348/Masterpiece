@@ -316,10 +316,11 @@ test('file checks reject renamed files, unsupported types and excessive sizes', 
 });
 test('three seeded roles require sign-in; role changes and owner/admin actions cannot be invoked by the tenant', async () => {
     const { api, state, access, today } = setup(undefined, false);
-    assert.equal(state.users.length, 3);
+    assert.equal(state.users.length, 4);
     assert.deepEqual(Array.from(state.users, (u) => u.role).sort(), [
         'admin',
         'landlord',
+        'tenant',
         'tenant'
     ]);
     assert.equal(api.user().role, 'guest');

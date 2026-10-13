@@ -27,6 +27,8 @@
             contacts: [],
             conversations: [],
             meetings: [],
+            subletListings: [],
+            subletRequests: [],
             reports: [],
             activity: [],
             botMessages: [],

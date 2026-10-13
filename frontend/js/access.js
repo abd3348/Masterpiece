@@ -32,6 +32,7 @@
     );
     permit('addProperty payListingFee editProperty setListingStatus reviewRequest', ['landlord']);
     permit('getMeetings createMeeting reviewMeeting cancelMeeting getMeetingRoom simulateMeetingResponse', ['tenant', 'landlord']);
+    permit('getSubletListings createSubletListing paySubletListingFee editSubletListing deleteSubletListing getSubletRequests createSubletRequest reviewSubletRequest', ['tenant']);
     permit('moderateProperty toggleUser resolveReport', ['admin']);
     permit('updateProfile', ['tenant', 'landlord', 'admin']);
     function install(api) {

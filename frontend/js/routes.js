@@ -25,6 +25,7 @@
             'inspection',
             'payment',
             'rentals',
+            'sublets',
             'bookings',
             'messages',
             'profile',
@@ -116,6 +117,7 @@
             ['tenant/requests.html', 'Requests'],
             ['tenant/bookings.html', 'Arrangements'],
             ['tenant/rentals.html', 'Rentals']
+            ,['tenant/sublets.html', 'Partial rentals']
         ],
         landlord: [
             ['landlord/dashboard.html', 'My properties'],

@@ -34,6 +34,30 @@
     const request = (key) =>
         state.requests.find((r) => r.id === key) || fail('Rental request not found.');
     const rental = (key) => state.rentals.find((r) => r.id === key) || fail('Rental not found.');
+    function publicProperty(source) {
+        const activeRental = state.rentals.find(
+            (item) => item.status === 'active' && item.request.propertyId === source.id
+        );
+        if (!activeRental) return source;
+        if (activeRental.request.tenantId === user().id) return null;
+        const partial = state.subletListings.find(
+            (item) => item.propertyId === source.id && item.status === 'published'
+        );
+        if (!partial) return null;
+        return {
+            ...source,
+            status: 'partial',
+            title: `${source.title} · Partial rental`,
+            price: partial.price,
+            period: 'Daily',
+            type: partial.occupancy === 'private' ? 'Private room' : 'Shared room',
+            beds: 1,
+            availableFrom: partial.startDate,
+            availableTo: partial.endDate,
+            partialOffer: partial,
+            description: partial.notes || 'A room offered short-term by a current tenant.'
+        };
+    }
     const requireText = (rule, value) => {
         if (!rules.valid(rule, value)) fail(rules.errors[rule]);
     };
@@ -402,10 +426,22 @@
             return data;
         },
         async getProperties() {
-            return state.properties.filter((p) => p.status === 'published');
+            return state.properties
+                .filter((p) => p.status === 'published')
+                .map(publicProperty)
+                .filter(Boolean);
         },
         async getProperty(key) {
-            return property(key);
+            const p = property(key);
+            const activeRental = state.rentals.find(
+                (item) => item.status === 'active' && item.request.propertyId === p.id
+            );
+            if (
+                activeRental &&
+                (activeRental.request.tenantId === user().id || p.ownerId === user().id)
+            )
+                return p;
+            return publicProperty(p) || fail('This property is no longer available.');
         },
         async getRequests() {
             return state.requests.filter((r) => r.tenantId === user().id);
@@ -502,6 +538,138 @@
         },
         async getRentals() {
             return state.rentals.filter((r) => r.request.tenantId === user().id);
+        },
+        async getSubletListings() {
+            return state.subletListings.filter((item) => item.tenantId === user().id && item.status !== 'deleted');
+        },
+        async getSubletRequests() {
+            return state.subletRequests.filter(
+                (item) => item.ownerTenantId === user().id || item.tenantId === user().id
+            );
+        },
+        createSubletRequest(listingId, data = {}) {
+            const listing = state.subletListings.find(
+                (item) => item.id === listingId && item.status === 'published'
+            );
+            if (!listing) fail('This partial rental is no longer available.');
+            if (listing.tenantId === user().id) fail('You cannot request your own room offer.');
+            const existing = state.subletRequests.find(
+                (item) => item.listingId === listingId && item.tenantId === user().id && item.status === 'pending'
+            );
+            if (existing) return existing;
+            const requestItem = {
+                id: id(), listingId, ownerTenantId: listing.tenantId,
+                ownerTenantName: state.users.find((u) => u.id === listing.tenantId)?.firstName || 'Tenant',
+                tenantId: user().id,
+                tenantName: user().firstName + ' ' + user().lastName, tenantEmail: user().email,
+                startDate: String(data.startDate || '').trim(),
+                endDate: String(data.endDate || '').trim(),
+                duration: listing.duration, status: 'pending',
+                createdAt: new Date().toISOString()
+            };
+            if (!requestItem.startDate || !requestItem.endDate || !rules.valid('date', requestItem.startDate) || !rules.valid('date', requestItem.endDate) || requestItem.startDate >= requestItem.endDate)
+                fail('Choose a valid request date range.');
+            if (requestItem.startDate < listing.startDate || requestItem.endDate > listing.endDate)
+                fail('Choose dates inside the partial rental offer.');
+            requestItem.duration = Math.round((new Date(requestItem.endDate) - new Date(requestItem.startDate)) / 86400000);
+            state.subletRequests.unshift(requestItem);
+            log('Partial rental request sent for ' + listing.propertyTitle);
+            return requestItem;
+        },
+        reviewSubletRequest(key, approved) {
+            const requestItem = state.subletRequests.find((item) => item.id === key);
+            if (!requestItem || requestItem.ownerTenantId !== user().id)
+                fail('Only the tenant who rented this apartment can review the request.');
+            if (requestItem.status !== 'pending') fail('This partial rental request is already reviewed.');
+            if (approved && state.subletRequests.some((item) => item.id !== key && item.listingId === requestItem.listingId && item.status === 'approved' && requestItem.startDate < item.endDate && requestItem.endDate > item.startDate))
+                fail('These dates overlap another accepted partial rental request.');
+            requestItem.status = approved ? 'approved' : 'rejected';
+            log((approved ? 'Approved' : 'Rejected') + ' partial rental request for ' + requestItem.listingId);
+            return requestItem;
+        },
+        createSubletListing(data) {
+            const activeRental = state.rentals.find(
+                (item) =>
+                    item.id === data.rentalId &&
+                    item.request.tenantId === user().id &&
+                    item.status === 'active'
+            );
+            if (!activeRental) fail('Choose one of your active rentals.');
+            const source = activeRental.request.property;
+            const roomCount = Math.max(1, Number(source.beds) || 1);
+            const roomNumber = Number(data.roomNumber);
+            const startDate = data.startDate || activeRental.request.startDate;
+            const endDateValue = data.endDate || endDate(startDate, Number(data.duration) || 1, 'Daily');
+            const duration = Math.round((new Date(endDateValue) - new Date(startDate)) / 86400000);
+            if (!Number.isInteger(roomNumber) || roomNumber < 1 || roomNumber > roomCount)
+                fail('Choose a room included in your rented home.');
+            if (!['private', 'shared'].includes(data.occupancy))
+                fail('Choose private or shared occupancy.');
+            if (!startDate || !endDateValue || !rules.valid('date', startDate) || !rules.valid('date', endDateValue) || startDate >= endDateValue)
+                fail('Choose a valid date range.');
+            if (startDate < activeRental.request.startDate || endDateValue > activeRental.endDate)
+                fail('The offer dates must stay inside your active rental dates.');
+            if (!Number.isInteger(duration) || duration < 1 || duration > 30)
+                fail('Short-term stays must be between 1 and 30 days.');
+            if (state.subletListings.some((item) => item.propertyId === source.id && item.roomNumber === roomNumber && item.status === 'published' && startDate < item.endDate && endDateValue > item.startDate))
+                fail('This room already has a published offer during part of those dates.');
+            if (!Number.isFinite(Number(data.price)) || Number(data.price) <= 0)
+                fail('Enter a valid daily price.');
+            const listing = {
+                id: id(), tenantId: user().id, rentalId: activeRental.id, propertyId: source.id,
+                propertyTitle: source.title, area: source.area,
+                homeSpecs: { type: source.type, furnished: source.furnished, beds: source.beds, baths: source.baths, size: source.size, amenities: source.amenities || [] },
+                roomNumber,
+                roomLabel: `Room ${roomNumber}`, occupancy: data.occupancy, duration, startDate, endDate: endDateValue,
+                price: Number(data.price), notes: String(data.notes || '').trim().slice(0, 500),
+                fee: { amount: 5, currency: 'JOD', status: 'unpaid' },
+                status: 'awaiting-fee', createdAt: new Date().toISOString()
+            };
+            state.subletListings.unshift(listing);
+            log('Short-term room offer created for ' + source.title + ' (awaiting JD 5 fee)');
+            return listing;
+        },
+        paySubletListingFee(key) {
+            const listing = state.subletListings.find((item) => item.id === key);
+            if (!listing || listing.tenantId !== user().id) fail('Choose one of your own room offers.');
+            if (listing.fee.status === 'paid') fail('This room offer fee is already paid.');
+            listing.fee = { amount: 5, currency: 'JOD', status: 'paid', simulated: true, date: new Date().toISOString() };
+            listing.status = 'published';
+            log('Simulated room offer fee: JD 5 for ' + listing.propertyTitle);
+            return listing;
+        },
+        editSubletListing(key, data) {
+            const listing = state.subletListings.find((item) => item.id === key);
+            if (!listing || listing.tenantId !== user().id)
+                fail('Only the tenant who rented the apartment can edit this offer.');
+            const duration = Number(data.duration), price = Number(data.price);
+            const startDate = data.startDate || listing.startDate;
+            const endDateValue = data.endDate || listing.endDate;
+            if (!Number.isInteger(duration) || duration < 1 || duration > 30)
+                fail('Short-term stays must be between 1 and 30 days.');
+            if (!Number.isFinite(price) || price <= 0) fail('Enter a valid daily price.');
+            if (!rules.valid('date', startDate) || !rules.valid('date', endDateValue) || startDate >= endDateValue)
+                fail('Choose a valid date range.');
+            const activeRental = state.rentals.find((item) => item.id === listing.rentalId && item.status === 'active');
+            if (!activeRental || startDate < activeRental.request.startDate || endDateValue > activeRental.endDate)
+                fail('The offer dates must stay inside your active rental dates.');
+            listing.duration = duration;
+            listing.price = price;
+            listing.startDate = startDate;
+            listing.endDate = endDateValue;
+            listing.notes = String(data.notes || '').trim().slice(0, 500);
+            log('Updated short-term room offer for ' + listing.propertyTitle);
+            return listing;
+        },
+        deleteSubletListing(key) {
+            const listing = state.subletListings.find((item) => item.id === key);
+            if (!listing || listing.tenantId !== user().id)
+                fail('Only the tenant who rented the apartment can delete this offer.');
+            if (state.subletRequests.some((item) => item.listingId === key && item.status === 'approved'))
+                fail('This offer has an accepted request and cannot be deleted.');
+            listing.status = 'deleted';
+            log('Deleted short-term room offer for ' + listing.propertyTitle);
+            return listing;
         },
         async completeMoveIn(key) {
             const item = rental(key);
@@ -669,6 +837,13 @@
                 peerId = person.userId || person.id;
                 peerName = person.name;
                 subject = 'Roommate introduction';
+            } else if (data.kind === 'sublet') {
+                const requestItem = state.subletRequests.find((item) => item.id === data.targetId && item.status === 'approved') || fail('The partial rental request must be accepted first.');
+                const listing = state.subletListings.find((item) => item.id === requestItem.listingId && item.status === 'published') || fail('This partial rental is no longer available.');
+                if (user().id !== requestItem.ownerTenantId && user().id !== requestItem.tenantId) fail('Only the two tenants in this accepted request can meet.');
+                peerId = user().id === requestItem.ownerTenantId ? requestItem.tenantId : requestItem.ownerTenantId;
+                peerName = user().id === requestItem.ownerTenantId ? requestItem.tenantName : requestItem.ownerTenantName;
+                subject = listing.propertyTitle + ' · ' + listing.roomLabel;
             } else if (data.kind === 'property') {
                 const p = property(data.targetId);
                 if (user().role === 'landlord') {

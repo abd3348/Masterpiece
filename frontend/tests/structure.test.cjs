@@ -32,7 +32,7 @@ test('bootstrap gives formatted pages a base URL for disk navigation', async () 
 });
 
 test('all registered role pages and local resource links exist after organization', () => {
-    assert.equal(routes.paths.size, 34);
+    assert.equal(routes.paths.size, 35);
     assert.equal(Object.keys(pages).length, routes.paths.size);
     for (const route of routes.paths) {
         const source = path.resolve('html', route),

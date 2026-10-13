@@ -1,0 +1,7 @@
+@import url('../shared/flow.css');
+.sublets-page .form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.sublets-page .panel { margin-bottom:1.25rem; }
+.sublets-page .request-row { align-items:flex-start; }
+.sublet-meeting-form { display:flex; flex-wrap:wrap; gap:.5rem; align-items:end; margin-top:.75rem; }
+.sublet-meeting-form input { min-height:2.6rem; }
+@media (max-width:700px) { .sublets-page .form-grid { grid-template-columns:1fr; } }

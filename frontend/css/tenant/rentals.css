@@ -1,2 +1,9 @@
 /* This page uses the common interior components. Add page-only styles here. */
 @import url('../shared/flow.css');
+
+.sublet-panel { margin-top: 1.5rem; }
+.sublet-panel .page-heading { margin-bottom: 1rem; }
+.sublet-panel form { margin: 1.25rem 0 1.75rem; }
+.sublet-panel .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.sublet-panel textarea { min-height: 6rem; }
+@media (max-width: 700px) { .sublet-panel .form-grid { grid-template-columns: 1fr; } }
