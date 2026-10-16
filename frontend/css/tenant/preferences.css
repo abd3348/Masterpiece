@@ -541,3 +541,179 @@ footer {
         transform: none;
     }
 }
+/* The preference form displays one card at a time. */
+.preferences-progress { margin-bottom: 24px; scroll-margin-top: 120px; }
+#preference-step-label { margin: 0 0 16px; color: var(--green); font-size: 12px; font-weight: 600; }
+.preference-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 0 0 14px; counter-reset: preference-step; }
+.preference-steps li { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 11px; counter-increment: preference-step; }
+.preference-steps li::before { content: counter(preference-step, decimal-leading-zero); display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 10px; font-size: 10px; flex-shrink: 0; }
+.preference-steps li[aria-current='step'] { color: var(--green); font-weight: 700; }
+.preference-steps li[aria-current='step']::before { background: var(--green); color: var(--paper); border-color: var(--green); }
+.preference-steps li.is-complete::before { background: #e3ecde; color: var(--green); }
+.preference-track { height: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.preference-track span { display: block; height: 100%; width: 33.333%; background: var(--green); transition: width .3s ease; }
+.preference-card:not([hidden]) { animation: preference-card-enter .3s ease both; }
+.preference-controls { margin-top: 20px; }
+.preference-forward { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.preference-skip-note { font-size: 10px; color: var(--muted); line-height: 1.7; margin-top: 14px; text-align: right; }
+.preference-controls button:disabled, .heading button:disabled { opacity: .45; cursor: default; transform: none; }
+@keyframes preference-card-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 700px) {
+    .preference-steps { gap: 6px; }
+    .preference-steps li { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 10px; }
+    .preference-controls { gap: 8px; flex-wrap: nowrap; }
+    .preference-controls button { min-height: 44px; padding: 12px 15px; font-size: 11px; }
+    .preference-forward { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .preference-card:not([hidden]) { animation: none; } }
+/* Keep the complete current step and navigation within one viewport. */
+body[data-screen='preferences'] { height: 100svh; min-height: 0; padding: 0; display: flex; flex-direction: column; }
+body[data-screen='preferences'] .preview-toolbar { min-height: 42px; flex-shrink: 0; padding-top: 0; padding-bottom: 0; }
+body[data-screen='preferences'] .nav { flex-shrink: 0; min-height: 66px; margin: 8px auto 0; padding: 8px 14px; top: 0; border-radius: 18px; }
+body[data-screen='preferences'] .nav .brand-mark { width: 40px; height: 40px; font-size: 27px; }
+body[data-screen='preferences'] main { flex: 1; min-height: 0; display: flex; flex-direction: column; margin: 0 auto; padding: 16px 0; }
+body[data-screen='preferences'] .heading { flex-shrink: 0; display: flex; align-items: center; margin: 0 0 14px; gap: 16px; }
+body[data-screen='preferences'] .heading .eyebrow { font-size: 8px; margin: 0 0 6px; }
+body[data-screen='preferences'] .heading h1 { font-size: clamp(26px, 2.7vw, 40px); line-height: 1.15; letter-spacing: -1px; margin: 0; }
+body[data-screen='preferences'] .heading p:not(.eyebrow) { font-size: 11px; margin: 7px 0 0; line-height: 1.5; }
+body[data-screen='preferences'] .heading .actions { margin: 0; padding: 0; }
+body[data-screen='preferences'] .layout { flex: 1; min-height: 0; grid-template-columns: minmax(0, 1fr) 280px; gap: 22px; align-items: stretch; }
+body[data-screen='preferences'] #preferences-form { min-height: 0; display: flex; flex-direction: column; }
+body[data-screen='preferences'] .preferences-progress { flex-shrink: 0; margin: 0 0 12px; }
+body[data-screen='preferences'] #preference-step-label { margin: 0 0 9px; font-size: 10px; }
+body[data-screen='preferences'] .preference-steps { margin: 0 0 10px; }
+body[data-screen='preferences'] .preference-steps li { font-size: 10px; }
+body[data-screen='preferences'] .preference-steps li::before { height: 26px; width: 26px; border-radius: 8px; }
+body[data-screen='preferences'] .preference-card { flex: 1; min-height: 0; margin: 0; padding: 20px; border-radius: 20px; }
+body[data-screen='preferences'] .preference-card:not([hidden]) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; row-gap: 12px; align-content: start; }
+body[data-screen='preferences'] .card-title { grid-column: 1 / -1; margin: 0 0 4px; gap: 12px; }
+body[data-screen='preferences'] .card-title > span { padding: 10px; }
+body[data-screen='preferences'] .card h2 { font-size: 18px; margin: 2px 0 5px; }
+body[data-screen='preferences'] .card-title p { font-size: 10px; }
+body[data-screen='preferences'] .card :is(fieldset, .field) { margin: 0; }
+body[data-screen='preferences'] .card :is(legend, .field > label) { font-size: 11px; margin-bottom: 8px; }
+body[data-screen='preferences'] #preference-card-1 > fieldset { grid-column: 1 / -1; }
+body[data-screen='preferences'] #preference-card-2 > .two { grid-column: 1 / -1; gap: 20px; }
+body[data-screen='preferences'] #preference-card-3 > fieldset:last-child { grid-column: 1 / -1; }
+body[data-screen='preferences'] .budget-values { gap: 12px; }
+body[data-screen='preferences'] .budget-values input { min-height: 44px; font-size: 16px; padding: 9px 12px; margin-top: 4px; }
+body[data-screen='preferences'] .card :is(select, .field > input:not([type='range'])) { padding: 10px 12px; min-height: 44px; font-size: 12px; }
+body[data-screen='preferences'] .field small { margin-top: 5px; font-size: 9px; line-height: 1.5; }
+body[data-screen='preferences'] .chips { gap: 6px; }
+body[data-screen='preferences'] .chips span { padding: 8px 11px; font-size: 10px; }
+body[data-screen='preferences'] .segments span { min-height: 36px; font-size: 10px; padding: 8px 5px; }
+body[data-screen='preferences'] .range-field { padding: 10px 12px; }
+body[data-screen='preferences'] .range-labels { margin-top: 0; font-size: 9px; }
+body[data-screen='preferences'] .preference-controls { flex-shrink: 0; margin-top: 12px; }
+body[data-screen='preferences'] .preference-controls button { min-height: 44px; padding: 11px 21px; }
+body[data-screen='preferences'] .preference-skip-note { flex-shrink: 0; margin: 6px 0 0; font-size: 9px; line-height: 1.5; }
+body[data-screen='preferences'] #status { flex-shrink: 0; margin: 0; font-size: 11px; }
+body[data-screen='preferences'] #status:not(:empty) { margin-top: 8px; padding: 8px 12px; }
+body[data-screen='preferences'] aside { display: block; position: static; min-height: 0; align-self: stretch; }
+body[data-screen='preferences'] .summary { height: 100%; padding: 24px; display: flex; flex-direction: column; border-radius: 20px; }
+body[data-screen='preferences'] .summary .eyebrow { margin: 0; font-size: 9px; }
+body[data-screen='preferences'] .summary h2 { font-size: 30px; margin: 14px 0; }
+body[data-screen='preferences'] .summary-icon { display: none; }
+body[data-screen='preferences'] .summary > p:not(.eyebrow) { font-size: 11px; line-height: 1.8; margin: 0; }
+body[data-screen='preferences'] .summary-tags { gap: 5px; margin: 18px 0; }
+body[data-screen='preferences'] .summary-tags span { padding: 6px 9px; font-size: 8px; }
+body[data-screen='preferences'] .summary-row { padding: 13px 0; }
+body[data-screen='preferences'] .summary > small { margin-top: auto; padding-top: 12px; font-size: 9px; }
+body[data-screen='preferences'] :is(.inspiration, .local-note, footer) { display: none; }
+@media (max-width: 1000px) {
+    body[data-screen='preferences'] .layout { grid-template-columns: minmax(0, 1fr); }
+    body[data-screen='preferences'] aside { display: none; }
+    body[data-screen='preferences'] .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-height: 740px) {
+    body[data-screen='preferences'] main { padding-top: 10px; padding-bottom: 10px; }
+    body[data-screen='preferences'] .heading { margin-bottom: 10px; }
+    body[data-screen='preferences'] .heading h1 { font-size: 30px; }
+    body[data-screen='preferences'] .heading p:not(.eyebrow) { display: none; }
+    body[data-screen='preferences'] .preference-card { padding: 16px; }
+    body[data-screen='preferences'] .preference-card:not([hidden]) { row-gap: 10px; }
+    body[data-screen='preferences'] .card-title p { display: none; }
+    body[data-screen='preferences'] .summary { padding: 18px; }
+    body[data-screen='preferences'] .summary h2 { font-size: 26px; margin: 10px 0; }
+    body[data-screen='preferences'] .summary-row { padding: 10px 0; }
+}
+@media (max-width: 700px) {
+    body[data-screen='preferences'] .preview-toolbar { min-height: 40px; gap: 6px; }
+    body[data-screen='preferences'] .nav { min-height: 58px; margin-top: 6px; padding: 6px 10px; }
+    body[data-screen='preferences'] .nav .brand { font-size: 20px; }
+    body[data-screen='preferences'] .nav .brand-mark { width: 34px; height: 34px; font-size: 24px; }
+    body[data-screen='preferences'] main { padding: 10px 0; }
+    body[data-screen='preferences'] .heading { margin-bottom: 10px; gap: 8px; }
+    body[data-screen='preferences'] .heading h1 { font-size: 24px; }
+    body[data-screen='preferences'] .heading p:not(.eyebrow), body[data-screen='preferences'] .heading .eyebrow { display: none; }
+    body[data-screen='preferences'] .heading .outline { padding: 8px 12px; min-height: 40px; font-size: 10px; }
+    body[data-screen='preferences'] .preference-steps li { flex-direction: row; gap: 5px; font-size: 8px; }
+    body[data-screen='preferences'] .preference-steps li::before { width: 23px; height: 23px; font-size: 8px; }
+    body[data-screen='preferences'] .preferences-progress { margin-bottom: 10px; }
+    body[data-screen='preferences'] #preference-step-label { margin-bottom: 7px; }
+    body[data-screen='preferences'] .preference-steps { margin-bottom: 8px; gap: 4px; }
+    body[data-screen='preferences'] .preference-card { padding: 14px; border-radius: 16px; }
+    body[data-screen='preferences'] .preference-card:not([hidden]) { column-gap: 10px; row-gap: 10px; }
+    body[data-screen='preferences'] .card-title { gap: 9px; margin: 0; }
+    body[data-screen='preferences'] .card-title > span { padding: 8px; font-size: 11px; }
+    body[data-screen='preferences'] .card h2 { font-size: 15px; }
+    body[data-screen='preferences'] .card-title p { display: none; }
+    body[data-screen='preferences'] .card :is(legend, .field > label) { font-size: 10px; margin-bottom: 6px; }
+    body[data-screen='preferences'] legend small { font-size: 8px; }
+    body[data-screen='preferences'] .card :is(select, .field > input:not([type='range'])) { padding: 9px 8px; font-size: 11px; }
+    body[data-screen='preferences'] .field small { display: none; }
+    body[data-screen='preferences'] .chips { gap: 5px; }
+    body[data-screen='preferences'] .chips span { padding: 7px 9px; font-size: 9px; }
+    body[data-screen='preferences'] .segments { padding: 3px; gap: 2px; }
+    body[data-screen='preferences'] .segments span { min-height: 36px; padding: 6px 3px; font-size: 8px; }
+    body[data-screen='preferences'] #preference-card-2 > .two { gap: 16px; grid-template-columns: 1fr; }
+    body[data-screen='preferences'] #preference-card-3 > fieldset:nth-last-child(2) { grid-column: 1 / -1; }
+    body[data-screen='preferences'] .range-field { padding: 9px; }
+    body[data-screen='preferences'] .range-labels { font-size: 8px; }
+    body[data-screen='preferences'] .preference-controls { margin-top: 10px; }
+    body[data-screen='preferences'] .preference-controls button { padding: 10px 15px; font-size: 11px; }
+    body[data-screen='preferences'] .preference-skip-note { font-size: 8px; text-align: left; margin-top: 5px; }
+}
+body[data-section='tenant'][data-screen='preferences'] main { width: calc(100% - 64px); max-width: 1240px; margin: 0 auto; padding: 14px 0; }
+body[data-screen='preferences'] .range-field input[type='range'] { height: 22px; min-height: 22px; padding: 0; margin: 0; border: 0; background: transparent; box-shadow: none; }
+@media (max-height: 740px) { body[data-section='tenant'][data-screen='preferences'] main { padding: 10px 0; } }
+@media (max-width: 700px) { body[data-section='tenant'][data-screen='preferences'] main { width: calc(100% - 28px); padding: 10px 0; } }
+@media (min-width: 1001px) {
+    body[data-screen='preferences'] #preference-card-3:not([hidden]) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    body[data-screen='preferences'] #preference-card-3 > :nth-child(2) { grid-column: 1; grid-row: 2; }
+    body[data-screen='preferences'] #preference-card-3 > :nth-child(3) { grid-column: 2; grid-row: 2; }
+    body[data-screen='preferences'] #preference-card-3 > :nth-child(6) { grid-column: 3; grid-row: 2; }
+    body[data-screen='preferences'] #preference-card-3 > :nth-child(4) { grid-column: 1; grid-row: 3; }
+    body[data-screen='preferences'] #preference-card-3 > :nth-child(5) { grid-column: 2; grid-row: 3; }
+    body[data-screen='preferences'] #preference-card-3 > :last-child { grid-column: 3; grid-row: 3; }
+}
+@media (max-height: 740px) {
+    body[data-screen='preferences'] .heading .eyebrow { display: none; }
+    body[data-screen='preferences'] #preference-step-label { display: none; }
+    body[data-screen='preferences'] .field small { display: none; }
+    body[data-screen='preferences'] .range-field { padding: 8px 10px; }
+}
+@media (max-height: 680px) {
+    body[data-screen='preferences'] .nav { min-height: 58px; padding-top: 5px; padding-bottom: 5px; }
+    body[data-screen='preferences'] .nav .search, body[data-screen='preferences'] .nav .search input { min-height: 40px; }
+    body[data-screen='preferences'] .heading .outline { min-height: 40px; padding: 8px 15px; }
+    body[data-screen='preferences'] .preferences-progress { margin-bottom: 8px; }
+    body[data-screen='preferences'] .preference-card { padding: 12px; }
+    body[data-screen='preferences'] .preference-card:not([hidden]) { row-gap: 8px; }
+}
+@media (max-width: 700px) {
+    body[data-screen='preferences'] .nav .search { display: none; }
+    body[data-screen='preferences'] .preference-heading-intro { display: none; }
+}
+@media (max-width: 700px) and (max-height: 680px) {
+    body[data-screen='preferences'] .range-labels { display: none; }
+    body[data-screen='preferences'] .range-field { padding: 8px; }
+    body[data-screen='preferences'] .card :is(legend, .field > label) { margin-bottom: 4px; }
+}
+body[data-screen='preferences'] .range-field input[type='range'] { height: 40px; min-height: 40px; display: block; }
+@media (max-width: 700px) and (max-height: 680px) {
+    body[data-screen='preferences'] #preference-card-3:not([hidden]) { row-gap: 6px; }
+}
+@media (min-width: 1001px) {
+    body[data-screen='preferences'] #preference-card-3 > fieldset:last-child { grid-column: 3; grid-row: 3; }
+}

@@ -115,128 +115,107 @@ window.CampusPages = {
         ><script src="../../js/admin/profile.js"></script></body
 ></html>
 `,
-    'auth/login.html': `<!doctype html>
+    'auth/login.html': `﻿<!doctype html>
 <html lang="en">
-    <head
-        ><script src="../../js/navigation.js"></script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Auth · login — Campus Mate</title>
-        <link rel="stylesheet" href="../../css/auth/login.css" />
-        <link rel="stylesheet" href="../../css/shared/features.css" />
-        <link rel="stylesheet" href="../../css/shared/layout.css" />
-    </head>
-
-    <body data-section="auth" data-screen="login">
-        <header
-            ><a class="brand" href="../public/index.html"
-                ><span class="mark">⌂</span
-                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
-            ><a class="back" href="../public/index.html">↖ Back to home</a></header
-        >
-        <main>
-            <aside>
-                <p class="eyebrow">YOUR PLACE. YOUR PEOPLE.</p>
-                <h1>Welcome back.<br />Make yourself<br /><em>at home.</em></h1>
-                <p class="lead"
-                    >Your next home and your kind of people are waiting. Pick up where you left
-                    off.</p
-                >
-                <div class="photo"
-                    ><img
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85"
-                        alt="University students studying together"
-                    /><span class="photo-tag">Good spaces. Better company. ↗</span></div
-                >
-                <div class="benefits"
-                    ><span>⌖ Near your campus</span><span>✳ Your kind of people</span></div
-                >
-            </aside>
-            <section class="form-card">
-                <div class="welcome-icon" aria-hidden="true">↗</div>
-                <p class="eyebrow">WELCOME BACK TO CAMPUS MATE</p>
-                <h2>Welcome <em>back.</em></h2>
-                <p class="sub">Log in to continue your journey.</p>
-                <form id="login-form">
-                    <div class="field"
-                        ><label for="email">Email address</label
-                        ><input
-                            id="email"
-                            name="email"
-                            data-regex="email"
-                            type="email"
-                            autocomplete="username"
-                            placeholder="you@example.com"
-                            required
-                            maxlength="254"
-                    /></div>
-                    <div class="field"
-                        ><label for="password">Password</label>
-                        <div class="password-wrap"
-                            ><input
-                                id="password"
-                                name="password"
-                                data-regex="password"
-                                type="password"
-                                autocomplete="current-password"
-                                placeholder="Enter your password"
-                                required
-                            /><button
-                                type="button"
-                                class="toggle"
-                                id="toggle-password"
-                                aria-label="Show password"
-                                aria-pressed="false"
-                                >Show</button
-                            ></div
-                        >
-                    </div>
-                    <div class="login-options"
-                        ><label class="consent"
-                            ><input type="checkbox" id="rememberMe" name="rememberMe" /><span
-                                >Preview session only</span
-                            ></label
-                        ><button type="button" class="text-button" id="forgot-password"
-                            >Forgot password?</button
-                        ></div
-                    >
-                    <p id="message" role="status" aria-live="polite"></p
-                    ><button class="submit" type="submit"
-                        >Log in <span aria-hidden="true">↗</span></button
-                    >
-                    <p class="demo"
-                        >Demo accounts: tenant@campus.test, owner@campus.test, admin@campus.test ·
-                        Password: Campus123. You can also sign in with an account created in this
-                        session.</p
-                    >
-                </form>
-                <p class="login"
-                    >New to Campus Mate? <a href="../auth/register.html">Create an account ↗</a></p
-                ><a class="guest-link" href="../public/index.html"
-                    >Continue exploring as a guest →</a
-                >
-            </section>
-        </main>
-        <footer
-            >© <span id="year"></span> Campus Mate
-            <span>Good spaces. Better company.</span></footer
-        >
-        <dialog id="info-dialog"
-            ><button type="button" id="close-dialog" aria-label="Close">×</button>
-            <p class="eyebrow">LET’S GET YOU BACK IN</p>
-            <h2>Forgot your password?</h2>
-            <p
-                >This is a frontend demonstration. Use a sample account and the password Campus123,
-                or create a new account. No reset email is sent.</p
-            ><button type="button" class="submit" id="dismiss-dialog"
-                >Got it <span>↗</span></button
-            >
-        </dialog>
-
-        <script src="../../js/api.js"></script
-        ><script src="../../js/remote.js"></script>
-        <script src="../../js/auth/login.js"></script>
-    </body>
+<head>
+<script src="../../js/navigation.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Find your place and your people. Sign in to Campus Mate to discover homes and roommates near campus." />
+<title>Sign in · Campus Mate</title>
+<link rel="stylesheet" href="../../css/shared/features.css" />
+<link rel="stylesheet" href="../../css/shared/layout.css" />
+<link rel="stylesheet" href="../../css/auth/login.css" />
+</head>
+<body data-section="auth" data-screen="login" class="home-login">
+<main class="login-layout">
+<aside class="story-panel" aria-labelledby="story-title">
+<a class="brand" href="../public/index.html" aria-label="Campus Mate home"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M5 9v11h14V9M10 20v-7h4v7" /></svg></span><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a>
+<div class="story-copy"><p class="community-badge"><span></span> YOUR PLACE. YOUR PEOPLE.</p><h1 id="story-title">Your next chapter.<br /><em>Unlocked.</em></h1><p class="lead">Find a home near campus and roommates who feel like your kind of people. Your next chapter starts here.</p></div>
+<div class="home-scene" aria-label="Your key to finding a home and your people">
+<svg class="neighborhood key-universe" viewBox="0 0 640 380" fill="none" role="img" aria-labelledby="key-art-title">
+<title id="key-art-title">A sculpted brass key with a Campus Mate tag, surrounded by floating roommate cards.</title>
+<defs>
+    <radialGradient id="key-halo"><stop stop-color="#d6b583" stop-opacity=".2"/><stop offset="1" stop-color="#d6b583" stop-opacity="0"/></radialGradient>
+    <linearGradient id="brass-face" x1="281" y1="90" x2="356" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0d1"/><stop offset=".22" stop-color="#d7a578"/><stop offset=".42" stop-color="#fae1b5"/><stop offset=".58" stop-color="#c18e5f"/><stop offset=".79" stop-color="#edc89a"/><stop offset="1" stop-color="#b78356"/></linearGradient>
+    <linearGradient id="brass-edge"><stop stop-color="#a36e47"/><stop offset=".5" stop-color="#edc39a"/><stop offset="1" stop-color="#785138"/></linearGradient>
+    <linearGradient id="ring-metal"><stop stop-color="#739182"/><stop offset=".32" stop-color="#e4e4cb"/><stop offset=".55" stop-color="#7d9684"/><stop offset="1" stop-color="#c2cbb0"/></linearGradient>
+    <linearGradient id="glass-card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#385c4f"/><stop offset="1" stop-color="#1d4238"/></linearGradient>
+    <linearGradient id="key-sheen"><stop stop-color="#fff7dc" stop-opacity="0"/><stop offset=".48" stop-color="#fff7dc" stop-opacity="0"/><stop offset=".5" stop-color="#fff7dc" stop-opacity=".75"/><stop offset=".56" stop-color="#fff7dc" stop-opacity="0"/><stop offset="1" stop-color="#fff7dc" stop-opacity="0"/></linearGradient>
+    <path id="key-outline" fill-rule="evenodd" d="M302 91h38a22 22 0 0 1 22 22v43a22 22 0 0 1-22 22h-6v99l-13 13-13-13v-99h-6a22 22 0 0 1-22-22v-43a22 22 0 0 1 22-22Zm2 18a7 7 0 0 0-7 7v27a7 7 0 0 0 7 7h34a7 7 0 0 0 7-7v-27a7 7 0 0 0-7-7Z"/>
+    <clipPath id="key-clip"><use href="#key-outline"/></clipPath>
+    <filter id="key-shadow" x="-70%" y="-40%" width="240%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="13" flood-color="#071e19" flood-opacity=".5"/></filter>
+</defs>
+<ellipse cx="320" cy="190" rx="235" ry="175" fill="url(#key-halo)"/>
+<g class="orbital-plane">
+    <ellipse cx="320" cy="215" rx="224" ry="100" stroke="#d6c6a7" stroke-opacity=".16"/>
+    <ellipse cx="320" cy="215" rx="174" ry="76" stroke="#bfd2bc" stroke-opacity=".09"/>
+    <ellipse class="matching-orbit" cx="320" cy="215" rx="224" ry="100" stroke="#e3c198" stroke-width="1.5" stroke-dasharray="40 1060" pathLength="1100"/>
+    <ellipse class="matching-orbit orbit-inner" cx="320" cy="215" rx="174" ry="76" stroke="#b3cbb4" stroke-width="1.5" stroke-dasharray="22 878" pathLength="900"/>
+</g>
+<g class="ambient-points" fill="#e8c9a3"><circle cx="205" cy="92" r="2"/><circle cx="451" cy="133" r="2"/><circle cx="385" cy="321" r="1.5"/><circle cx="134" cy="266" r="2"/><path d="M420 65v10m-5-5h10" stroke="#c5cbb0" stroke-width="1.2"/></g>
+<g class="key-parallax">
+<g class="key-rejection" aria-hidden="true"><circle cx="321" cy="190" r="119" fill="#b85e4b" fill-opacity=".08" stroke="#e49a87" stroke-opacity=".65"/><circle cx="401" cy="102" r="14" fill="#b85e4b" stroke="#f2c0ac"/><path d="M401 95v8m0 5v1" stroke="#fff3df" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="hero-key">
+    <g filter="url(#key-shadow)">
+        <ellipse cx="347" cy="91" rx="38" ry="29" transform="rotate(-25 347 91)" stroke="#112f27" stroke-width="6"/>
+        <ellipse cx="347" cy="88" rx="38" ry="29" transform="rotate(-25 347 88)" stroke="url(#ring-metal)" stroke-width="4"/>
+        <g class="key-tag" transform="rotate(21 378 139)">
+            <rect x="362" y="94" width="43" height="78" rx="13" fill="#102e27" stroke="#71907a" stroke-width="1.2"/>
+            <rect x="367" y="99" width="33" height="68" rx="9" stroke="#7c9876" stroke-opacity=".25" stroke-dasharray="2 3"/>
+            <circle cx="383" cy="105" r="3" stroke="#d2c4a2"/>
+            <text x="383" y="138" text-anchor="middle" fill="#d8c5a2" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5">CM</text>
+            <path d="M378 148h10" stroke="#b39c77" stroke-width="1"/>
+        </g>
+        <use href="#key-outline" transform="translate(4 5)" fill="url(#brass-edge)"/>
+        <path d="M334 218h15v15h-15m0 18h12v15h-12" fill="url(#brass-edge)" transform="translate(4 5)"/>
+        <use href="#key-outline" fill="url(#brass-face)" stroke="#f1d4ac" stroke-width="1"/>
+        <path d="M334 218h15v15h-15m0 18h12v15h-12" fill="url(#brass-face)" stroke="#edc89a" stroke-width="1"/>
+        <path d="M314 188v83m5-83v86" stroke="#8e6245" stroke-opacity=".65" stroke-width="1.3"/>
+        <path d="M286 140v-25q0-18 19-18h29" stroke="#fff5df" stroke-opacity=".65" stroke-width="1.5"/>
+        <path d="M301 155h39" stroke="#875d41" stroke-opacity=".55" stroke-width="1.5"/>
+        <g clip-path="url(#key-clip)"><rect class="metal-shimmer" x="230" y="60" width="200" height="260" fill="url(#key-sheen)"/></g>
+    </g>
+</g>
+</g>
+<g transform="translate(80 146)"><g class="roommate-card card-one">
+    <rect width="148" height="62" rx="18" fill="url(#glass-card)" stroke="#a8b79b" stroke-opacity=".35"/>
+    <circle cx="31" cy="31" r="20" fill="#b7c6a3"/><path d="M16 45c2-19 28-19 30 0" fill="#52715a"/><circle cx="31" cy="26" r="8" fill="#f1c79f"/><path d="M24 25c-4-15 19-16 15 0-6-2-8-7-15 0" fill="#4e4739"/>
+    <text x="60" y="27" fill="#f0e7d5" font-family="Arial, sans-serif" font-size="11">Your people</text><text x="60" y="43" fill="#b4c8b4" font-family="Arial, sans-serif" font-size="8">A little more like you.</text>
+</g></g>
+<g transform="translate(416 227)"><g class="roommate-card card-two">
+    <rect width="147" height="62" rx="18" fill="url(#glass-card)" stroke="#d6b58c" stroke-opacity=".35"/>
+    <circle cx="31" cy="31" r="20" fill="#dfbd96"/><path d="M16 46c2-20 28-20 30 0" fill="#8c9b79"/><circle cx="31" cy="26" r="8" fill="#c28b62"/><path d="M23 24c-2-14 19-13 16 1l-5-5-11 4" fill="#453d30"/>
+    <text x="60" y="27" fill="#f0e7d5" font-family="Arial, sans-serif" font-size="11">Your space</text><text x="60" y="43" fill="#b4c8b4" font-family="Arial, sans-serif" font-size="8">Room for a new story.</text>
+</g></g>
+<g class="match-badge" transform="translate(254 319)"><rect width="132" height="25" rx="12.5" fill="#244b3e" stroke="#a7bc9d" stroke-opacity=".3"/><circle cx="15" cy="12.5" r="3" fill="#c3d3ad"/><text x="28" y="16" fill="#d7dfc8" font-family="Arial, sans-serif" font-size="8" letter-spacing="1">BETTER TOGETHER</text></g>
+</svg>
+<span class="scene-caption">The right place. The right people. Your key.</span>
+<button type="button" class="motion-toggle" aria-label="Pause illustration animation" aria-pressed="false">Pause motion</button>
+</div>
+<p class="story-footer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></svg> A little closer to campus. A lot closer to home.</p>
+</aside>
+<section class="form-panel" aria-labelledby="login-title">
+<a class="back" href="../public/index.html"><span aria-hidden="true">↖</span> Back to home</a>
+<div class="form-card">
+<p class="eyebrow"><span></span> WELCOME HOME</p><h2 id="login-title">Good to have you back.</h2><p class="sub">Your space. Your people. Pick up where you left off.</p>
+<form id="login-form">
+<div class="field"><label for="email">Email address</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><input id="email" name="email" data-regex="email" type="email" autocomplete="username" aria-describedby="message" placeholder="you@example.com" required maxlength="254" /></div></div>
+<div class="field"><div class="field-heading"><label for="password">Password</label><button type="button" class="text-button" id="forgot-password">Forgot password?</button></div><div class="input-wrap password-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input id="password" name="password" data-regex="password" type="password" autocomplete="current-password" aria-describedby="message" placeholder="Enter your password" required /><button type="button" class="toggle" id="toggle-password" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="eye-slash" d="m3 3 18 18"/></svg></button></div></div>
+<div class="login-status"><p class="session-note">Your sign-in lasts for this preview session.</p><p id="message" role="status" aria-live="polite"></p></div>
+<button class="submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+<div class="journey-divider"><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
+<p class="login">New to Campus Mate? <a href="../auth/register.html">Find your place <span aria-hidden="true">↗</span></a></p>
+<a class="guest-link" href="../public/index.html">Take a look around first <span aria-hidden="true">→</span></a>
+<details class="demo"><summary>Try a demo account</summary><p>tenant@campus.test · owner@campus.test · admin@campus.test<br />Password: <strong>Campus123</strong></p><p>Accounts created in this session work here too.</p></details>
+</form>
+<footer class="form-footer"><span>© <span id="year"></span> Campus Mate</span><span><i></i> Good spaces. Better company.</span></footer>
+</div>
+</section>
+</main>
+<dialog id="info-dialog"><button type="button" id="close-dialog" aria-label="Close">×</button><p class="eyebrow">LET’S GET YOU BACK IN</p><h2>Forgot your password?</h2><p>This is a frontend demonstration. Use a sample account and the password Campus123, or create a new account. No reset email is sent.</p><button type="button" class="submit" id="dismiss-dialog">Got it <span aria-hidden="true">→</span></button></dialog>
+<script src="../../js/api.js"></script><script src="../../js/remote.js"></script><script src="../../js/auth/login.js"></script>
+</body>
 </html>
 `,
     'auth/register.html': `<!doctype html>
@@ -895,66 +874,61 @@ window.CampusPages = {
                 aria-label="Search homes" /></label>
         <nav aria-label="Main navigation"></nav>
     </header>
-    <main class="feature-main information-main">
-        <header class="information-hero">
-            <p class="eyebrow">CAMPUS MATE · YOUR NEXT CHAPTER</p>
-            <h1>About us</h1>
-            <p>A better way to find your space, your people, and your next chapter in
-                Jordan.</p>
-        </header>
-        <section class="information-section panel">
-            <p class="eyebrow">WHY CAMPUS MATE</p>
-            <h2>A home is more than an address.</h2>
-            <p>Moving to a new city brings questions about rent, location, and who to share a
-                home with. Campus Mate brings those choices together, helping students,
-                employees, interns, and newcomers explore homes and compatible roommates.</p>
-            <div class="row-actions"><a class="primary" href="properties.html">Explore homes ↗</a><a class="secondary"
-                    href="support.html">Get support</a></div>
-        </section>
-        <section class="information-section" aria-labelledby="values-heading">
-            <h2 id="values-heading">What matters to us</h2>
-            <div class="information-grid">
-                <article class="panel information-card"><span class="information-icon" aria-hidden="true">⌂</span>
-                    <h3>Homes that fit</h3>
-                    <p>Explore location, budget, amenities, and the rental period before
-                        making a choice.</p>
-                </article>
-                <article class="panel information-card"><span class="information-icon" aria-hidden="true">✳</span>
-                    <h3>People you choose</h3>
-                    <p>Compare routines and preferences. You decide who to share your home
-                        with.</p>
-                </article>
-                <article class="panel information-card"><span class="information-icon" aria-hidden="true">✓</span>
-                    <h3>Clearer steps</h3>
-                    <p>Follow your request, agreement, inspection, and move-in from one
-                        place.</p>
-                </article>
+    <main class="feature-main information-main about-main">
+        <section class="about-intro" aria-labelledby="about-heading">
+            <div class="about-intro-copy">
+                <p class="eyebrow">A PLACE TO LIVE. A PLACE TO BELONG.</p>
+                <h1 id="about-heading">Good spaces.<br /><em>Better company.</em></h1>
+                <p class="about-lead">A new chapter feels better when you find the right place &mdash; and the right people.</p>
+                <p>Campus Mate brings homes and roommate preferences together in one place. Built for students, employees, and anyone starting fresh in Jordan, it helps you explore your options with a little more clarity.</p>
+                <div class="about-actions"><a class="primary" href="properties.html">Find your space <span aria-hidden="true">&nearr;</span></a><a class="about-text-link" href="#our-story">Get to know us <span aria-hidden="true">&darr;</span></a></div>
+                <div class="about-location"><span aria-hidden="true"></span> Made with care, for life in Jordan.</div>
             </div>
-        </section>
-        <section class="information-section" aria-labelledby="model-heading">
-            <p class="eyebrow">A SIMPLE LISTING MODEL</p>
-            <h2 id="model-heading">Find your home. Agree directly.</h2>
-            <p>Landlords pay JD 20 per property advertisement. Tenants browse and connect for free.
-                Rent and deposits are agreed and paid directly between landlord and tenant.
-                Campus Mate displays asking prices and does not handle rental payments.</p>
-        </section>
-        <section class="information-section" id="team" aria-labelledby="team-heading">
-            <p class="eyebrow">THE PERSON BEHIND THE PROJECT</p>
-            <h2 id="team-heading">Meet the team</h2>
-            <article class="panel team-card">
-                <div id="team-photo" class="team-photo"><img class="team-portrait"
-                        src="../../assets/images/team-owner.jpg" alt="Campus Mate owner and developer" width="828"
-                        height="671" loading="lazy" /></div>
-                <div>
-                    <p class="team-role" lang="ar" dir="rtl">Owner and Developer</p>
-                    <h3>Campus Mate creator</h3>
-                    <p>Building a simpler housing experience, from the first search to moving
-                        into a home. This frontend project brings together design, account
-                        journeys, and a foundation for future ASP.NET integration.</p><a class="secondary"
-                        href="support.html">Contact through support ↗</a>
+            <article class="team-card creator-card" id="team" aria-labelledby="creator-name">
+                <p class="creator-eyebrow">THE PERSON BEHIND CAMPUS MATE</p>
+                <div class="founder-visual" id="team-photo">
+                    <svg class="portrait-orbit" viewBox="0 0 400 400" aria-hidden="true">
+                        <defs><path id="creator-circle" d="M200 22a178 178 0 1 1-.01 0"/></defs>
+                        <circle cx="200" cy="200" r="166" fill="none" stroke="currentColor" stroke-opacity=".15"/>
+                        <text><textPath href="#creator-circle" textLength="1118" lengthAdjust="spacing">OWNER &amp; DEVELOPER &#8226; CAMPUS MATE &#8226; OWNER &amp; DEVELOPER &#8226; CAMPUS MATE &#8226; </textPath></text>
+                    </svg>
+                    <div class="portrait-window"><img class="team-portrait" src="../../assets/images/team-owner.jpg" alt="Abdallah Mdalal, creator and developer of Campus Mate" width="828" height="671" /></div>
+                    <a class="creator-social social-linkedin" href="https://www.linkedin.com/in/abdallah-mdalal/" target="_blank" rel="noopener noreferrer" aria-label="Abdallah Mdalal on LinkedIn (opens in a new tab)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.8H2V22h3.4V7.8ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.7c0-4-2.1-5.9-4.9-5.9a4.2 4.2 0 0 0-3.8 2.1V8.1H10V22h3.4v-7.7c0-2 .4-3.9 2.9-3.9 2.5 0 2.5 2.3 2.5 4V22H22v-8.3Z"/></svg>
+                        <span>LinkedIn</span><span aria-hidden="true">&nearr;</span>
+                    </a>
+                    <a class="creator-social social-github" href="https://github.com/abd3348" target="_blank" rel="noopener noreferrer" aria-label="Abdallah Mdalal on GitHub (opens in a new tab)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.62 1.22 3.26.93.1-.73.39-1.22.71-1.5-2.5-.29-5.13-1.25-5.13-5.55 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.43.11-2.97 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.22 2.69.11 2.97.71.78 1.15 1.78 1.15 3 0 4.31-2.64 5.26-5.15 5.54.4.35.76 1.03.76 2.08v3.11c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+                        <span>GitHub</span><span aria-hidden="true">&nearr;</span>
+                    </a>
+                    <a class="creator-social social-email" href="mailto:abdallahmdalal@gmail.com" aria-label="Email Abdallah at abdallahmdalal@gmail.com">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+                        <span>Say hello</span><span aria-hidden="true">&nearr;</span>
+                    </a>
                 </div>
+                <h2 id="creator-name">Abdallah Mdalal</h2>
+                <p class="team-role">OWNER &amp; DEVELOPER</p>
+                <p class="creator-note">Bringing the idea to life, one thoughtful detail at a time.</p>
+                <a class="creator-email" href="mailto:abdallahmdalal@gmail.com">abdallahmdalal@gmail.com</a>
             </article>
         </section>
+        <section class="about-story" id="our-story" aria-labelledby="story-heading">
+            <div><p class="eyebrow">WHY WE STARTED</p><h2 id="story-heading">More than<br /><em>an address.</em></h2></div>
+            <div class="story-body"><p>Finding a home means balancing your budget, your commute, and the way you like to live. Sharing it means finding someone whose everyday habits work with yours.</p><p>Campus Mate connects these decisions. Compare spaces, explore roommate preferences, and keep track of the steps from your first rental request to moving in. The choice stays yours.</p></div>
+        </section>
+        <section class="about-values" aria-labelledby="values-heading">
+            <div class="about-section-heading"><p class="eyebrow">WHAT MATTERS TO US</p><h2 id="values-heading">Designed around <em>real life.</em></h2></div>
+            <div class="information-grid">
+                <article class="about-value"><span class="value-number">01</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m5 15 11-10 11 10M8 13v14h16V13M13 27v-9h6v9"/></svg><h3>A space that fits</h3><p>Your budget. Your neighborhood. Your everyday needs. Find a home that makes room for the way you live.</p></article>
+                <article class="about-value"><span class="value-number">02</span><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="12" cy="11" r="5"/><path d="M3 27v-3a9 9 0 0 1 18 0v3M22 7a5 5 0 0 1 0 10m3 4a7 7 0 0 1 4 6"/></svg><h3>People you choose</h3><p>Quiet evenings or lively weekends? Explore shared routines and preferences, then decide who feels right for you.</p></article>
+                <article class="about-value"><span class="value-number">03</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 11 4v9c0 8-11 13-11 13S5 24 5 16V7ZM10 16l4 4 8-9"/></svg><h3>A clearer next step</h3><p>Rental requests, agreements, and condition records in one place, so you can keep track of your move.</p></article>
+            </div>
+        </section>
+        <section class="about-model" aria-labelledby="model-heading">
+            <div><p class="eyebrow">SIMPLE &amp; UPFRONT</p><h2 id="model-heading">Find your home.<br /><em>Agree directly.</em></h2><p>Tenants browse and connect for free. Landlords pay JD 20 for each new property advertisement.</p></div>
+            <div class="model-detail"><span aria-hidden="true">&nearr;</span><p>Rent and deposits are agreed and paid directly between the landlord and tenant. Campus Mate helps you explore and connect; it does not collect rental payments.</p><a href="faq.html">A few things you might be wondering <span aria-hidden="true">&rarr;</span></a></div>
+        </section>
+        <section class="about-cta"><div><p class="eyebrow">YOUR NEXT CHAPTER</p><h2>A little closer to <em>home.</em></h2></div><a class="primary" href="properties.html">Explore homes <span aria-hidden="true">&nearr;</span></a></section>
     </main>
     <footer><span><strong>Campus Mate</strong> · © <span id="year"></span> · Good spaces. Better
             company.</span>
@@ -1161,18 +1135,15 @@ window.CampusPages = {
                 <div class="stage">
                     <div id="scene" aria-hidden="true">
                         <div class="student-visual"
-                            ><img
-                                class="student-image current"
-                                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85"
-                                alt=""
-                            />
+                            ><div class="student-frame current" data-photo="0">
+                                <img class="student-image" src="../../assets/images/tour-outdoor-key-handover-wide.png" alt="A smiling young man receiving a house key from another man outside the home" fetchpriority="high" />
+                                <img class="student-image photo-mid" src="../../assets/images/tour-outdoor-key-handover-wide.png" alt="" />
+                                <img class="student-image photo-focus" src="../../assets/images/tour-outdoor-key-handover-wide.png" alt="" />
+                            </div>
                             <div class="student-caption"
                                 ><span class="visual-number">01</span
-                                ><span class="visual-title">Your university chapter.</span></div
+                                ><span class="visual-title">The keys to your next chapter.</span></div
                             >
-                            <div class="student-badge badge-campus">⌖ Near your campus</div>
-                            <div class="student-badge badge-study">✳ A space to focus</div>
-                            <div class="student-badge badge-people">↗ Find your people</div>
                         </div>
                     </div>
                     <div class="shade"></div
@@ -2515,10 +2486,10 @@ window.CampusPages = {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Tenant · preferences — Campus Mate</title>
-        <link rel="stylesheet" href="../../css/tenant/preferences.css" />
         <link rel="stylesheet" href="../../css/shared/campus-theme.css" />
         <link rel="stylesheet" href="../../css/shared/features.css" />
         <link rel="stylesheet" href="../../css/shared/layout.css" />
+        <link rel="stylesheet" href="../../css/tenant/preferences.css" />
     </head>
 
     <body data-section="tenant" data-screen="preferences">
@@ -2547,23 +2518,23 @@ window.CampusPages = {
             <div class="heading">
                 <div>
                     <p class="eyebrow">STEP 02 / MAKE IT YOURS</p>
-                    <h1>Your space.<br /><em>Your preferences.</em></h1>
+                    <h1><span class="preference-heading-intro">Your space.</span> <em>Your preferences.</em></h1>
                     <p>Tell us how you live. Build a profile for your next home and roommate.</p>
                 </div>
-                <div class="actions"
-                    ><button type="reset" form="preferences-form" class="outline">Reset ↺</button
-                    ><button type="submit" form="preferences-form" class="primary"
-                        >Save preferences ↗</button
-                    ></div
-                >
+                <div class="actions"><button type="reset" form="preferences-form" class="outline">Reset &#8634;</button></div>
             </div>
             <div class="layout">
                 <form id="preferences-form">
-                    <section class="card">
+                    <div class="preferences-progress" aria-label="Preference steps">
+                        <p id="preference-step-label" aria-live="polite">Step 1 of 3 &middot; Budget &amp; location</p>
+                        <ol class="preference-steps"><li aria-current="step">Budget &amp; location</li><li>The home</li><li>Lifestyle</li></ol>
+                        <div class="preference-track" role="progressbar" aria-label="Preference progress" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span></span></div>
+                    </div>
+                    <section class="card preference-card" id="preference-card-1" aria-labelledby="preference-title-1">
                         <div class="card-title"
                             ><span>01</span>
                             <div>
-                                <h2>Budget & location</h2>
+                                <h2 id="preference-title-1" tabindex="-1">Budget & location</h2>
                                 <p>Where you want to live, and what works for your budget.</p>
                             </div>
                         </div>
@@ -2674,11 +2645,11 @@ window.CampusPages = {
                             </select></div
                         >
                     </section>
-                    <section class="card">
+                    <section class="card preference-card" id="preference-card-2" hidden aria-labelledby="preference-title-2">
                         <div class="card-title"
                             ><span>02</span>
                             <div>
-                                <h2>The home</h2>
+                                <h2 id="preference-title-2" tabindex="-1">The home</h2>
                                 <p>Your space, your setup, your everyday.</p>
                             </div>
                         </div>
@@ -2779,11 +2750,11 @@ window.CampusPages = {
                             </fieldset>
                         </div>
                     </section>
-                    <section class="card">
+                    <section class="card preference-card" id="preference-card-3" hidden aria-labelledby="preference-title-3">
                         <div class="card-title"
                             ><span>03</span>
                             <div>
-                                <h2>Lifestyle & compatibility</h2>
+                                <h2 id="preference-title-3" tabindex="-1">Lifestyle & compatibility</h2>
                                 <p>The little things that make living together feel right.</p>
                             </div>
                         </div>
@@ -2916,10 +2887,14 @@ window.CampusPages = {
                         </fieldset>
                     </section>
                     <p id="status" role="status" aria-live="polite"></p>
-                    <div class="bottom-actions"
-                        ><a href="../auth/register.html">← Back to registration</a
-                        ><button class="primary" type="submit">Save my preferences ↗</button></div
-                    >
+                    <div class="bottom-actions preference-controls">
+                        <button type="button" class="outline" id="preference-back" disabled>&larr; Back</button>
+                        <div class="preference-forward">
+                            <button type="button" class="outline" id="preference-skip" disabled>Skip</button>
+                            <button type="button" class="primary" id="preference-next" disabled>Next &rarr;</button>
+                        </div>
+                    </div>
+                    <p class="preference-skip-note">Skip keeps your saved choices, or the default choices for a new profile.</p>
                 </form>
                 <aside>
                     <section class="summary">

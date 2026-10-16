@@ -1,2 +1,2 @@
-/* The portrait is static HTML; shared information-page behavior handles navigation. */
-'use strict';
+﻿'use strict';
+// Portrait interactions are shared by pointer hover and keyboard focus in about.css.

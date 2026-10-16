@@ -39,7 +39,7 @@ test('all registered role pages and local resource links exist after organizatio
             html = fs.readFileSync(source, 'utf8');
         assert.equal(pages[route], html.replace(/\r\n?/g, '\n'));
         for (const [, link] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
-            if (/^(?:https?:|data:|#)/.test(link)) continue;
+            if (/^(?:https?:|mailto:|tel:|data:|#)/.test(link)) continue;
             const target = path.resolve(path.dirname(source), link.split(/[?#]/)[0]);
             assert.ok(fs.existsSync(target), route + ' has a broken link: ' + link);
         }

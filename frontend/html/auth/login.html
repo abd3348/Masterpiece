@@ -1,123 +1,102 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-    <head
-        ><script src="../../js/navigation.js"></script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>Auth · login — Campus Mate</title>
-        <link rel="stylesheet" href="../../css/auth/login.css" />
-        <link rel="stylesheet" href="../../css/shared/features.css" />
-        <link rel="stylesheet" href="../../css/shared/layout.css" />
-    </head>
-
-    <body data-section="auth" data-screen="login">
-        <header
-            ><a class="brand" href="../public/index.html"
-                ><span class="mark">⌂</span
-                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
-            ><a class="back" href="../public/index.html">↖ Back to home</a></header
-        >
-        <main>
-            <aside>
-                <p class="eyebrow">YOUR PLACE. YOUR PEOPLE.</p>
-                <h1>Welcome back.<br />Make yourself<br /><em>at home.</em></h1>
-                <p class="lead"
-                    >Your next home and your kind of people are waiting. Pick up where you left
-                    off.</p
-                >
-                <div class="photo"
-                    ><img
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85"
-                        alt="University students studying together"
-                    /><span class="photo-tag">Good spaces. Better company. ↗</span></div
-                >
-                <div class="benefits"
-                    ><span>⌖ Near your campus</span><span>✳ Your kind of people</span></div
-                >
-            </aside>
-            <section class="form-card">
-                <div class="welcome-icon" aria-hidden="true">↗</div>
-                <p class="eyebrow">WELCOME BACK TO CAMPUS MATE</p>
-                <h2>Welcome <em>back.</em></h2>
-                <p class="sub">Log in to continue your journey.</p>
-                <form id="login-form">
-                    <div class="field"
-                        ><label for="email">Email address</label
-                        ><input
-                            id="email"
-                            name="email"
-                            data-regex="email"
-                            type="email"
-                            autocomplete="username"
-                            placeholder="you@example.com"
-                            required
-                            maxlength="254"
-                    /></div>
-                    <div class="field"
-                        ><label for="password">Password</label>
-                        <div class="password-wrap"
-                            ><input
-                                id="password"
-                                name="password"
-                                data-regex="password"
-                                type="password"
-                                autocomplete="current-password"
-                                placeholder="Enter your password"
-                                required
-                            /><button
-                                type="button"
-                                class="toggle"
-                                id="toggle-password"
-                                aria-label="Show password"
-                                aria-pressed="false"
-                                >Show</button
-                            ></div
-                        >
-                    </div>
-                    <div class="login-options"
-                        ><label class="consent"
-                            ><input type="checkbox" id="rememberMe" name="rememberMe" /><span
-                                >Preview session only</span
-                            ></label
-                        ><button type="button" class="text-button" id="forgot-password"
-                            >Forgot password?</button
-                        ></div
-                    >
-                    <p id="message" role="status" aria-live="polite"></p
-                    ><button class="submit" type="submit"
-                        >Log in <span aria-hidden="true">↗</span></button
-                    >
-                    <p class="demo"
-                        >Demo accounts: tenant@campus.test, owner@campus.test, admin@campus.test ·
-                        Password: Campus123. You can also sign in with an account created in this
-                        session.</p
-                    >
-                </form>
-                <p class="login"
-                    >New to Campus Mate? <a href="../auth/register.html">Create an account ↗</a></p
-                ><a class="guest-link" href="../public/index.html"
-                    >Continue exploring as a guest →</a
-                >
-            </section>
-        </main>
-        <footer
-            >© <span id="year"></span> Campus Mate
-            <span>Good spaces. Better company.</span></footer
-        >
-        <dialog id="info-dialog"
-            ><button type="button" id="close-dialog" aria-label="Close">×</button>
-            <p class="eyebrow">LET’S GET YOU BACK IN</p>
-            <h2>Forgot your password?</h2>
-            <p
-                >This is a frontend demonstration. Use a sample account and the password Campus123,
-                or create a new account. No reset email is sent.</p
-            ><button type="button" class="submit" id="dismiss-dialog"
-                >Got it <span>↗</span></button
-            >
-        </dialog>
-
-        <script src="../../js/api.js"></script
-        ><script src="../../js/remote.js"></script>
-        <script src="../../js/auth/login.js"></script>
-    </body>
+<head>
+<script src="../../js/navigation.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Find your place and your people. Sign in to Campus Mate to discover homes and roommates near campus." />
+<title>Sign in · Campus Mate</title>
+<link rel="stylesheet" href="../../css/shared/features.css" />
+<link rel="stylesheet" href="../../css/shared/layout.css" />
+<link rel="stylesheet" href="../../css/auth/login.css" />
+</head>
+<body data-section="auth" data-screen="login" class="home-login">
+<main class="login-layout">
+<aside class="story-panel" aria-labelledby="story-title">
+<a class="brand" href="../public/index.html" aria-label="Campus Mate home"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M5 9v11h14V9M10 20v-7h4v7" /></svg></span><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a>
+<div class="story-copy"><p class="community-badge"><span></span> YOUR PLACE. YOUR PEOPLE.</p><h1 id="story-title">Your next chapter.<br /><em>Unlocked.</em></h1><p class="lead">Find a home near campus and roommates who feel like your kind of people. Your next chapter starts here.</p></div>
+<div class="home-scene" aria-label="Your key to finding a home and your people">
+<svg class="neighborhood key-universe" viewBox="0 0 640 380" fill="none" role="img" aria-labelledby="key-art-title">
+<title id="key-art-title">A sculpted brass key with a Campus Mate tag, surrounded by floating roommate cards.</title>
+<defs>
+    <radialGradient id="key-halo"><stop stop-color="#d6b583" stop-opacity=".2"/><stop offset="1" stop-color="#d6b583" stop-opacity="0"/></radialGradient>
+    <linearGradient id="brass-face" x1="281" y1="90" x2="356" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0d1"/><stop offset=".22" stop-color="#d7a578"/><stop offset=".42" stop-color="#fae1b5"/><stop offset=".58" stop-color="#c18e5f"/><stop offset=".79" stop-color="#edc89a"/><stop offset="1" stop-color="#b78356"/></linearGradient>
+    <linearGradient id="brass-edge"><stop stop-color="#a36e47"/><stop offset=".5" stop-color="#edc39a"/><stop offset="1" stop-color="#785138"/></linearGradient>
+    <linearGradient id="ring-metal"><stop stop-color="#739182"/><stop offset=".32" stop-color="#e4e4cb"/><stop offset=".55" stop-color="#7d9684"/><stop offset="1" stop-color="#c2cbb0"/></linearGradient>
+    <linearGradient id="glass-card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#385c4f"/><stop offset="1" stop-color="#1d4238"/></linearGradient>
+    <linearGradient id="key-sheen"><stop stop-color="#fff7dc" stop-opacity="0"/><stop offset=".48" stop-color="#fff7dc" stop-opacity="0"/><stop offset=".5" stop-color="#fff7dc" stop-opacity=".75"/><stop offset=".56" stop-color="#fff7dc" stop-opacity="0"/><stop offset="1" stop-color="#fff7dc" stop-opacity="0"/></linearGradient>
+    <path id="key-outline" fill-rule="evenodd" d="M302 91h38a22 22 0 0 1 22 22v43a22 22 0 0 1-22 22h-6v99l-13 13-13-13v-99h-6a22 22 0 0 1-22-22v-43a22 22 0 0 1 22-22Zm2 18a7 7 0 0 0-7 7v27a7 7 0 0 0 7 7h34a7 7 0 0 0 7-7v-27a7 7 0 0 0-7-7Z"/>
+    <clipPath id="key-clip"><use href="#key-outline"/></clipPath>
+    <filter id="key-shadow" x="-70%" y="-40%" width="240%" height="200%"><feDropShadow dx="0" dy="18" stdDeviation="13" flood-color="#071e19" flood-opacity=".5"/></filter>
+</defs>
+<ellipse cx="320" cy="190" rx="235" ry="175" fill="url(#key-halo)"/>
+<g class="orbital-plane">
+    <ellipse cx="320" cy="215" rx="224" ry="100" stroke="#d6c6a7" stroke-opacity=".16"/>
+    <ellipse cx="320" cy="215" rx="174" ry="76" stroke="#bfd2bc" stroke-opacity=".09"/>
+    <ellipse class="matching-orbit" cx="320" cy="215" rx="224" ry="100" stroke="#e3c198" stroke-width="1.5" stroke-dasharray="40 1060" pathLength="1100"/>
+    <ellipse class="matching-orbit orbit-inner" cx="320" cy="215" rx="174" ry="76" stroke="#b3cbb4" stroke-width="1.5" stroke-dasharray="22 878" pathLength="900"/>
+</g>
+<g class="ambient-points" fill="#e8c9a3"><circle cx="205" cy="92" r="2"/><circle cx="451" cy="133" r="2"/><circle cx="385" cy="321" r="1.5"/><circle cx="134" cy="266" r="2"/><path d="M420 65v10m-5-5h10" stroke="#c5cbb0" stroke-width="1.2"/></g>
+<g class="key-parallax">
+<g class="key-rejection" aria-hidden="true"><circle cx="321" cy="190" r="119" fill="#b85e4b" fill-opacity=".08" stroke="#e49a87" stroke-opacity=".65"/><circle cx="401" cy="102" r="14" fill="#b85e4b" stroke="#f2c0ac"/><path d="M401 95v8m0 5v1" stroke="#fff3df" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="hero-key">
+    <g filter="url(#key-shadow)">
+        <ellipse cx="347" cy="91" rx="38" ry="29" transform="rotate(-25 347 91)" stroke="#112f27" stroke-width="6"/>
+        <ellipse cx="347" cy="88" rx="38" ry="29" transform="rotate(-25 347 88)" stroke="url(#ring-metal)" stroke-width="4"/>
+        <g class="key-tag" transform="rotate(21 378 139)">
+            <rect x="362" y="94" width="43" height="78" rx="13" fill="#102e27" stroke="#71907a" stroke-width="1.2"/>
+            <rect x="367" y="99" width="33" height="68" rx="9" stroke="#7c9876" stroke-opacity=".25" stroke-dasharray="2 3"/>
+            <circle cx="383" cy="105" r="3" stroke="#d2c4a2"/>
+            <text x="383" y="138" text-anchor="middle" fill="#d8c5a2" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5">CM</text>
+            <path d="M378 148h10" stroke="#b39c77" stroke-width="1"/>
+        </g>
+        <use href="#key-outline" transform="translate(4 5)" fill="url(#brass-edge)"/>
+        <path d="M334 218h15v15h-15m0 18h12v15h-12" fill="url(#brass-edge)" transform="translate(4 5)"/>
+        <use href="#key-outline" fill="url(#brass-face)" stroke="#f1d4ac" stroke-width="1"/>
+        <path d="M334 218h15v15h-15m0 18h12v15h-12" fill="url(#brass-face)" stroke="#edc89a" stroke-width="1"/>
+        <path d="M314 188v83m5-83v86" stroke="#8e6245" stroke-opacity=".65" stroke-width="1.3"/>
+        <path d="M286 140v-25q0-18 19-18h29" stroke="#fff5df" stroke-opacity=".65" stroke-width="1.5"/>
+        <path d="M301 155h39" stroke="#875d41" stroke-opacity=".55" stroke-width="1.5"/>
+        <g clip-path="url(#key-clip)"><rect class="metal-shimmer" x="230" y="60" width="200" height="260" fill="url(#key-sheen)"/></g>
+    </g>
+</g>
+</g>
+<g transform="translate(80 146)"><g class="roommate-card card-one">
+    <rect width="148" height="62" rx="18" fill="url(#glass-card)" stroke="#a8b79b" stroke-opacity=".35"/>
+    <circle cx="31" cy="31" r="20" fill="#b7c6a3"/><path d="M16 45c2-19 28-19 30 0" fill="#52715a"/><circle cx="31" cy="26" r="8" fill="#f1c79f"/><path d="M24 25c-4-15 19-16 15 0-6-2-8-7-15 0" fill="#4e4739"/>
+    <text x="60" y="27" fill="#f0e7d5" font-family="Arial, sans-serif" font-size="11">Your people</text><text x="60" y="43" fill="#b4c8b4" font-family="Arial, sans-serif" font-size="8">A little more like you.</text>
+</g></g>
+<g transform="translate(416 227)"><g class="roommate-card card-two">
+    <rect width="147" height="62" rx="18" fill="url(#glass-card)" stroke="#d6b58c" stroke-opacity=".35"/>
+    <circle cx="31" cy="31" r="20" fill="#dfbd96"/><path d="M16 46c2-20 28-20 30 0" fill="#8c9b79"/><circle cx="31" cy="26" r="8" fill="#c28b62"/><path d="M23 24c-2-14 19-13 16 1l-5-5-11 4" fill="#453d30"/>
+    <text x="60" y="27" fill="#f0e7d5" font-family="Arial, sans-serif" font-size="11">Your space</text><text x="60" y="43" fill="#b4c8b4" font-family="Arial, sans-serif" font-size="8">Room for a new story.</text>
+</g></g>
+<g class="match-badge" transform="translate(254 319)"><rect width="132" height="25" rx="12.5" fill="#244b3e" stroke="#a7bc9d" stroke-opacity=".3"/><circle cx="15" cy="12.5" r="3" fill="#c3d3ad"/><text x="28" y="16" fill="#d7dfc8" font-family="Arial, sans-serif" font-size="8" letter-spacing="1">BETTER TOGETHER</text></g>
+</svg>
+<span class="scene-caption">The right place. The right people. Your key.</span>
+<button type="button" class="motion-toggle" aria-label="Pause illustration animation" aria-pressed="false">Pause motion</button>
+</div>
+<p class="story-footer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></svg> A little closer to campus. A lot closer to home.</p>
+</aside>
+<section class="form-panel" aria-labelledby="login-title">
+<a class="back" href="../public/index.html"><span aria-hidden="true">↖</span> Back to home</a>
+<div class="form-card">
+<p class="eyebrow"><span></span> WELCOME HOME</p><h2 id="login-title">Good to have you back.</h2><p class="sub">Your space. Your people. Pick up where you left off.</p>
+<form id="login-form">
+<div class="field"><label for="email">Email address</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><input id="email" name="email" data-regex="email" type="email" autocomplete="username" aria-describedby="message" placeholder="you@example.com" required maxlength="254" /></div></div>
+<div class="field"><div class="field-heading"><label for="password">Password</label><button type="button" class="text-button" id="forgot-password">Forgot password?</button></div><div class="input-wrap password-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input id="password" name="password" data-regex="password" type="password" autocomplete="current-password" aria-describedby="message" placeholder="Enter your password" required /><button type="button" class="toggle" id="toggle-password" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="eye-slash" d="m3 3 18 18"/></svg></button></div></div>
+<div class="login-status"><p class="session-note">Your sign-in lasts for this preview session.</p><p id="message" role="status" aria-live="polite"></p></div>
+<button class="submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+<div class="journey-divider"><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
+<p class="login">New to Campus Mate? <a href="../auth/register.html">Find your place <span aria-hidden="true">↗</span></a></p>
+<a class="guest-link" href="../public/index.html">Take a look around first <span aria-hidden="true">→</span></a>
+<details class="demo"><summary>Try a demo account</summary><p>tenant@campus.test · owner@campus.test · admin@campus.test<br />Password: <strong>Campus123</strong></p><p>Accounts created in this session work here too.</p></details>
+</form>
+<footer class="form-footer"><span>© <span id="year"></span> Campus Mate</span><span><i></i> Good spaces. Better company.</span></footer>
+</div>
+</section>
+</main>
+<dialog id="info-dialog"><button type="button" id="close-dialog" aria-label="Close">×</button><p class="eyebrow">LET’S GET YOU BACK IN</p><h2>Forgot your password?</h2><p>This is a frontend demonstration. Use a sample account and the password Campus123, or create a new account. No reset email is sent.</p><button type="button" class="submit" id="dismiss-dialog">Got it <span aria-hidden="true">→</span></button></dialog>
+<script src="../../js/api.js"></script><script src="../../js/remote.js"></script><script src="../../js/auth/login.js"></script>
+</body>
 </html>

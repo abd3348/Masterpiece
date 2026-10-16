@@ -2138,3 +2138,143 @@ body[data-section='public'][data-screen='index'] > .assistant-panel {
         width: 100%;
     }
 }
+/* Chapter copy keeps a stable hidden state between chapters. */
+.tour-copy > :is(p, h1, h2, .actions, .text-link, .checks, .match-preview, .button) {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .25s ease, transform .25s ease;
+}
+.tour-copy.active > :is(p, h1, h2, .actions, .text-link, .checks, .match-preview, .button) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .65s;
+    transition-timing-function: cubic-bezier(.2,.7,.2,1);
+}
+.tour-copy.active > :nth-child(2) { transition-delay: .08s; }
+.tour-copy.active > :nth-child(3) { transition-delay: .16s; }
+.tour-copy.active > :nth-child(4) { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+    .tour-copy > :is(p, h1, h2, .actions, .text-link, .checks, .match-preview, .button) {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* Offscreen copy is prepared before entry, so it never flashes before revealing. */
+.text-reveal-ready {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: none;
+}
+.text-reveal-ready.text-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .65s cubic-bezier(.2,.7,.2,1), transform .65s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--text-delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+    .text-reveal-ready, .text-reveal-ready.text-reveal-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* Full-section photography, with a circular area of clarity and feathered blur. */
+.stage { min-height: 0; height: 100svh; isolation: isolate; background: #173d36; }
+.student-visual { inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0; box-shadow: none; transform: none; transition: none; background: #173d36; --focus-x: 73%; --focus-y: 50%; --focus-radius: clamp(180px, 25vw, 440px); }
+.student-frame { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; overflow: hidden; }
+.student-frame.current { opacity: 1; }
+.student-visual .student-image { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); max-width: none; border-radius: 0; object-fit: cover; object-position: center; opacity: 1; transition: none; filter: blur(18px); }
+.student-visual .photo-mid { filter: blur(6px); mask-image: radial-gradient(circle at var(--focus-x) var(--focus-y), #000 0%, #000 12%, #0009 30%, transparent 58%); }
+.student-visual .photo-focus { filter: none; mask-image: radial-gradient(circle at var(--focus-x) var(--focus-y), #000 0, #000 calc(var(--focus-radius) * .58), #000c calc(var(--focus-radius) * .82), transparent calc(var(--focus-radius) * 1.3)); }
+.shade { z-index: 1; background: linear-gradient(90deg, #0b2925f2 0%, #102f29e6 25%, #173d369c 46%, #173d3620 68%, #173d3625 100%), linear-gradient(0deg, #0b2925d9, transparent 30%, transparent 78%, #102f296b); }
+.student-caption { left: auto; right: 7%; bottom: 20%; width: auto; max-width: 36%; padding: 11px 0; border-radius: 0; background: transparent; color: #fff7e9; backdrop-filter: none; text-shadow: 0 2px 14px #081f1a; }
+.visual-number { font-size: 17px; color: #e7b58d; }
+.visual-title { font-size: 12px; letter-spacing: .3px; }
+.tour-copy, .panel, .panel.right, .finale { width: 40%; text-shadow: 0 2px 18px #09201b40; }
+.tour-copy p:not(.eyebrow) { color: #f0f0e3; }
+.tour-bottom { background: #11342c99; backdrop-filter: blur(12px); }
+@media (max-width: 800px) {
+    .student-visual { inset: 0; width: 100%; height: 100%; --focus-x: 75%; --focus-radius: 240px; }
+    .student-caption { right: 5%; max-width: 40%; bottom: 20%; }
+}
+@media (max-width: 680px) {
+    .stage { min-height: 0; height: 100svh; }
+    .student-visual { inset: 0; width: 100%; height: 100%; border-radius: 0; --focus-x: 60%; --focus-y: 65%; --focus-radius: clamp(150px, 45vw, 210px); }
+    .student-visual .student-image { object-position: 60% center; }
+    .shade { background: linear-gradient(180deg, #0d3029e6 0%, #12372fe6 18%, #173d36a6 40%, #173d3610 62%, #0d3029bd 100%), linear-gradient(90deg, #12372f66, transparent 70%); }
+    .tour-copy, .panel, .panel.right, .finale { width: 88%; top: 19%; }
+    .student-caption { right: 6%; left: 6%; bottom: 21%; max-width: none; justify-content: flex-end; padding: 0; }
+    .visual-title { font-size: 10px; }
+}
+@media (max-height: 700px) and (min-width: 681px) {
+    .tour-copy, .panel, .panel.right, .finale { top: 27%; }
+    .tour-copy h1, .panel h2, .finale h2 { font-size: clamp(34px, 3.6vw, 50px); }
+    .tour-copy p:not(.eyebrow) { font-size: 13px; line-height: 1.6; }
+}
+@media (prefers-reduced-motion: reduce) { .student-frame { transition: none; } }
+@media (max-width: 680px) { .student-visual { --focus-y: 54%; } }
+
+/* Center the happy recipient and key exchange within the clear area. */
+.student-frame[data-photo='0'] { --focus-x: 65%; }
+@media (max-width: 680px) {
+    .student-frame[data-photo='0'] .student-image { object-position: 65% center; }
+}
+/* Zoom all blur layers together, keeping the focal subject aligned. */
+.student-frame { transform-origin: var(--focus-x, 73%) var(--focus-y, 50%); }
+/* A wider opening scene with a little more forest-green diffusion on the left. */
+body[data-chapter='0'] .shade {
+    background: linear-gradient(90deg, #0b2925f7 0%, #12372ff0 30%, #173d36b3 49%, #173d3633 68%, #173d3620 100%), linear-gradient(0deg, #0b2925d9, transparent 30%, transparent 78%, #102f296b);
+}
+body[data-chapter='0'] .shade::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(5px);
+    mask-image: linear-gradient(90deg, #000 0%, #000 20%, transparent 60%);
+}
+@media (max-width: 680px) {
+    body[data-chapter='0'] .shade {
+        background: linear-gradient(180deg, #0d3029e6 0%, #12372fe6 18%, #173d36a6 40%, #173d3610 62%, #0d3029bd 100%), linear-gradient(90deg, #12372f80, transparent 75%);
+    }
+}
+/* Give the opening people noticeably more breathing room within the section. */
+.student-frame[data-photo='0']::before {
+    content: '';
+    position: absolute;
+    inset: -45px;
+    background: linear-gradient(#173d36b8, #173d36b8), url('../../assets/images/tour-outdoor-key-handover-wide.png') center / cover;
+    filter: blur(36px);
+}
+.student-frame[data-photo='0'] .student-image {
+    inset: 11% 0 auto auto;
+    width: 82%;
+    height: 78%;
+    object-fit: contain;
+    object-position: right center;
+}
+.student-frame[data-photo='0'] .student-image:not(.photo-mid):not(.photo-focus) {
+    mask-image: radial-gradient(ellipse at 65% 50%, #000 20%, #000b 50%, transparent 82%);
+}
+@media (max-width: 680px) {
+    .student-frame[data-photo='0'] .student-image {
+        inset: 25% -12% auto auto;
+        width: 150%;
+        height: 62%;
+        object-fit: contain;
+        object-position: right center;
+    }
+}
+/* Feather the pulled-back photo into its blurred full-section background. */
+.student-frame[data-photo='0'] .student-image:not(.photo-mid):not(.photo-focus) {
+    mask-image: radial-gradient(ellipse at 65% 50%, #000 20%, #000b 50%, transparent 82%), linear-gradient(180deg, transparent, #000 12%, #000 85%, transparent);
+    mask-composite: intersect;
+}
+.student-frame[data-photo='0'] .photo-mid {
+    mask-image: radial-gradient(circle at var(--focus-x) var(--focus-y), #000 0%, #000 12%, #0009 30%, transparent 58%), linear-gradient(180deg, transparent, #000 12%, #000 85%, transparent);
+    mask-composite: intersect;
+}
+.student-frame[data-photo='0'] .photo-focus {
+    mask-image: radial-gradient(circle at var(--focus-x) var(--focus-y), #000 0, #000 calc(var(--focus-radius) * .58), #000c calc(var(--focus-radius) * .82), transparent calc(var(--focus-radius) * 1.3)), linear-gradient(180deg, transparent, #000 12%, #000 85%, transparent);
+    mask-composite: intersect;
+}

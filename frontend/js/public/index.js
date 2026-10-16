@@ -383,22 +383,18 @@
 
     if (journey && visual && copies.length) {
         const photos = [
-            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85',
-
-            'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85',
-
-            'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=85',
-
-            'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85',
-
-            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85'
+            '../../assets/images/tour-outdoor-key-handover-wide.png',
+            '../../assets/images/tour-bedroom.jpg',
+            '../../assets/images/tour-living-room.jpg',
+            '../../assets/images/tour-house.jpg',
+            '../../assets/images/tour-reading-corner.jpg'
         ];
 
         const titles = [
-            'Your university chapter.',
-            'A space that feels like you.',
-            'Good company. Better days.',
-            'Study, settle, feel at home.',
+            'The keys to your next chapter.',
+            'A room for your everyday.',
+            'Space for living together.',
+            'A new place to call home.',
             'Your next chapter starts here.'
         ];
 
@@ -410,28 +406,33 @@
             'Your next chapter'
         ];
 
-        const firstImage = visual.querySelector('.student-image');
-
+        const descriptions = [
+            'A smiling young man receiving a house key from another man outside the home',
+            'A comfortable bedroom with natural light and plants',
+            'A comfortable furnished living room with armchairs and a sofa',
+            'A welcoming house exterior with a landscaped garden',
+            'A cozy reading corner with an armchair beside a bedroom window'
+        ];
+        const firstFrame = visual.querySelector('.student-frame');
         const layers = photos.map((source, index) => {
-            const image = index === 0 && firstImage ? firstImage : document.createElement('img');
-
-            image.className = 'student-image' + (index === 0 ? ' current' : '');
-
-            image.alt = [
-                'Students studying together',
-                'Home interior',
-                'Community gathering',
-                'Shared study space',
-                'Students studying together'
-            ][index];
-            image.src = source;
-            image.decoding = 'async';
-
-            if (image !== firstImage) {
-                visual.insertBefore(image, visual.firstChild);
+            const frame = index === 0 && firstFrame ? firstFrame : document.createElement('div');
+            frame.className = 'student-frame' + (index === 0 ? ' current' : '');
+            frame.dataset.photo = String(index);
+            if (!frame.children.length) {
+                ['student-image', 'student-image photo-mid', 'student-image photo-focus'].forEach((name) => {
+                    const image = document.createElement('img');
+                    image.className = name;
+                    frame.appendChild(image);
+                });
             }
-
-            return image;
+            [...frame.children].forEach((image, layer) => {
+                image.alt = layer === 0 ? descriptions[index] : '';
+                image.src = source;
+                image.decoding = 'async';
+                image.fetchPriority = index === 0 ? 'high' : 'low';
+            });
+            if (frame !== firstFrame) visual.insertBefore(frame, visual.firstChild);
+            return frame;
         });
 
         const visualNumber = $('.visual-number');
@@ -439,6 +440,25 @@
         const chapterName = $('#chapter-name');
         const progress = $('#progress');
         const percent = $('#percent');
+        const photoZooms = new Map();
+
+        function startPhotoZoom(frame) {
+            photoZooms.get(frame)?.cancel();
+            photoZooms.delete(frame);
+            if (reducedMotion.matches) return;
+            const zoom = frame.animate(
+                [{ transform: 'scale(1)' }, { transform: frame.dataset.photo === '0' ? 'scale(1.04)' : 'scale(1.09)' }],
+                { duration: 14000, easing: 'cubic-bezier(.2,.4,.4,1)', fill: 'both' }
+            );
+            photoZooms.set(frame, zoom);
+        }
+
+        reducedMotion.addEventListener('change', () => {
+            photoZooms.forEach((zoom) => zoom.cancel());
+            photoZooms.clear();
+            const current = visual.querySelector('.student-frame.current');
+            if (current) startPhotoZoom(current);
+        });
 
         let lastStep = -1;
         let pending = false;
@@ -464,6 +484,7 @@
 
                 layers.forEach((image, index) => {
                     image.classList.toggle('current', index === step);
+                    if (index === step) startPhotoZoom(image);
                 });
 
                 if (visualNumber) {
@@ -492,13 +513,6 @@
                     .padStart(2, '0')}%`;
             }
 
-            const shift = reducedMotion.matches ? 0 : Math.sin(amount * Math.PI * 2) * 16;
-
-            const turn = reducedMotion.matches ? 0 : Math.cos(amount * Math.PI * 2) * 2;
-
-            visual.style.setProperty('--journey-shift', `${shift}px`);
-
-            visual.style.setProperty('--journey-turn', `${turn}deg`);
         }
 
         function requestJourneyUpdate() {
@@ -526,6 +540,37 @@
         });
 
         updateJourney();
+    }
+
+    // =========================
+    // TEXT ENTRANCES ON SECTION ARRIVAL
+    // =========================
+
+    const sectionText = document.querySelectorAll(
+        '.section-heading p, .section-heading h2, #roommates > div:first-child > p, ' +
+        '#roommates > div:first-child > h2, #how-it-works > p, #how-it-works > h2, ' +
+        '.steps h3, .steps p, .cta > p, .cta > h2, .chapter-account-panel > h2, ' +
+        '.chapter-account-panel > p'
+    );
+
+    if ('IntersectionObserver' in window) {
+        // Prepare offscreen copy synchronously, before the browser can paint it.
+        sectionText.forEach((element) => {
+            const bounds = element.getBoundingClientRect();
+            element.classList.add('text-reveal-ready');
+            element.style.setProperty('--text-delay',
+                element.matches('h2, h3') ? '70ms' : element.matches('.eyebrow') ? '0ms' : '140ms');
+            if (bounds.top < innerHeight && bounds.bottom > 0) {
+                element.classList.add('text-reveal-visible');
+            }
+        });
+        const textObserver = new IntersectionObserver((entries) => {
+            entries.forEach(({ target, isIntersecting }) => {
+                // Reset only after leaving the actual viewport, never while still visible.
+                target.classList.toggle('text-reveal-visible', isIntersecting);
+            });
+        }, { threshold: 0 });
+        sectionText.forEach((element) => textObserver.observe(element));
     }
 
     // =========================

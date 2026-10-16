@@ -1,0 +1,6 @@
+Asset: assets/images/tour-outdoor-key-handover-wide.png
+Mode: built-in image_gen edit
+Input: assets/images/tour-outdoor-key-handover.png
+
+Final prompt:
+Edit the provided housing website hero photograph by pulling the camera back about 20 percent: use a visibly WIDER medium-wide outdoor framing, making both men approximately 20 percent smaller in the same 16:9 image, with more of the house entrance, doorstep, surrounding garden, and their lower bodies visible. Preserve the same two men's identities, natural smiles, clothing, poses and exact house-key handover, front door and warm daylight. Keep the recipient and key exchange in the right two-thirds. Extend the existing realistic surroundings naturally; keep the left third mostly foliage and cream stone wall as copy space. Show the full heads of BOTH men within the frame with comfortable headroom, do not cut the man on the right at the edge. No additional people, text, signage or logos. This is a camera pullback of the same scene, not a new scene. Do not add a green color overlay or artificial blur to the photo; the website will apply that separately.

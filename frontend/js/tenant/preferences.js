@@ -3,6 +3,99 @@ const form = document.getElementById('preferences-form');
 const status = document.getElementById('status');
 const minBudget = document.getElementById('minBudget');
 const maxBudget = document.getElementById('maxBudget');
+const cards = [...form.querySelectorAll('.preference-card')];
+const nextButton = document.getElementById('preference-next');
+const skipButton = document.getElementById('preference-skip');
+const backButton = document.getElementById('preference-back');
+const resetButton = document.querySelector('[type="reset"][form="preferences-form"]');
+let currentStep = 0;
+let busy = true;
+let savedChoices = [];
+
+function rememberChoices() {
+    savedChoices = cards.map((card) => [...card.querySelectorAll('input, select')].map((input) => ({
+        input, value: input.value, checked: input.checked
+    })));
+}
+
+function updateControls() {
+    const last = currentStep === cards.length - 1;
+    nextButton.textContent = last ? 'Save preferences \u2197' : 'Next \u2192';
+    skipButton.textContent = last ? 'Skip & finish' : 'Skip';
+    nextButton.disabled = skipButton.disabled = resetButton.disabled = busy;
+    backButton.disabled = busy || currentStep === 0;
+}
+
+function showStep(index, focus = true) {
+    currentStep = index;
+    cards.forEach((card, i) => { card.hidden = i !== index; });
+    const title = cards[index].querySelector('h2');
+    document.getElementById('preference-step-label').textContent =
+        `Step ${index + 1} of ${cards.length} \u00b7 ${title.textContent}`;
+    document.querySelectorAll('.preference-steps li').forEach((item, i) => {
+        if (i === index) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+        item.classList.toggle('is-complete', i < index);
+    });
+    const progress = document.querySelector('.preference-track');
+    progress.setAttribute('aria-valuenow', String(index + 1));
+    progress.firstElementChild.style.width = `${((index + 1) / cards.length) * 100}%`;
+    updateControls();
+    if (focus) {
+        title.focus({ preventScroll: true });
+    }
+}
+
+function validateStep() {
+    const inputs = [...cards[currentStep].querySelectorAll('input, select')];
+    inputs.forEach((input) => input.setCustomValidity(''));
+    updateSummary();
+    inputs.forEach((input) => {
+        if (input.dataset.regex) {
+            const rule = input.dataset.regex;
+            if (!window.CampusValidation.valid(rule, input.value))
+                input.setCustomValidity(window.CampusValidation.errors[rule]);
+        }
+    });
+    for (const input of inputs) {
+        if (!input.reportValidity()) return false;
+    }
+    if (currentStep === 0 && !form.querySelector('[name="areas"]:checked')) {
+        status.textContent = 'Choose at least one preferred area, or use Skip to keep your saved choices.';
+        form.querySelector('[name="areas"]').focus();
+        return false;
+    }
+    return true;
+}
+
+nextButton.addEventListener('click', () => {
+    if (busy || !validateStep()) return;
+    status.textContent = '';
+    if (currentStep < cards.length - 1) showStep(currentStep + 1);
+    else form.requestSubmit();
+});
+backButton.addEventListener('click', () => {
+    if (busy || currentStep === 0) return;
+    status.textContent = '';
+    showStep(currentStep - 1);
+});
+skipButton.addEventListener('click', () => {
+    if (busy) return;
+    savedChoices[currentStep].forEach(({ input, value, checked }) => {
+        input.value = value;
+        if (input.type === 'radio' || input.type === 'checkbox') input.checked = checked;
+        input.setCustomValidity('');
+        input.removeAttribute('aria-invalid');
+    });
+    status.textContent = '';
+    updateSummary();
+    if (currentStep < cards.length - 1) showStep(currentStep + 1);
+    else form.requestSubmit();
+});
+form.addEventListener('invalid', (event) => {
+    const index = cards.findIndex((card) => card.contains(event.target));
+    if (index >= 0 && index !== currentStep) showStep(index);
+}, true);
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('global-search').addEventListener('keydown', (event) => {
     if (event.key === 'Enter')
@@ -76,6 +169,9 @@ async function loadPreferences() {
         status.textContent = error.message;
     }
     updateSummary();
+    rememberChoices();
+    busy = false;
+    updateControls();
 }
 form.addEventListener('input', () => {
     status.textContent = '';
@@ -93,6 +189,11 @@ form.addEventListener('change', (event) => {
 });
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (busy) return;
+    if (currentStep < cards.length - 1) {
+        if (validateStep()) showStep(currentStep + 1);
+        return;
+    }
     updateSummary();
     if (!form.reportValidity()) return;
     const p = getPreferences();
@@ -105,24 +206,29 @@ form.addEventListener('submit', async (event) => {
         status.textContent = 'Choose no more than five areas.';
         return;
     }
-    const button = document.querySelector('[type="submit"][form="preferences-form"]');
-    button.disabled = true;
+    busy = true;
+    updateControls();
     try {
         await window.CampusAPI.savePreferences(p);
         window.CampusNavigate('home.html');
     } catch (error) {
         status.textContent = error.message;
     } finally {
-        button.disabled = false;
+        busy = false;
+        updateControls();
     }
 });
 form.addEventListener('reset', async () => {
+    busy = true;
+    updateControls();
     try {
         await window.CampusAPI.resetPreferences();
         status.textContent = 'Preferences reset to the default choices.';
     } catch (error) {
         status.textContent = error.message;
     }
-    requestAnimationFrame(updateSummary);
+    await loadPreferences();
+    showStep(0);
 });
+showStep(0, false);
 loadPreferences();
