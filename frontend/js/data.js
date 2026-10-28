@@ -32,7 +32,7 @@
             reports: [],
             activity: [],
             botMessages: [],
-            notifications: []
+            notifications: data.notifications || []
         };
     }
     async function loadSeed() {

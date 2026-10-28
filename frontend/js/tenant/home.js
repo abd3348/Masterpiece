@@ -177,7 +177,7 @@
         };
         const destinations = {
             submitted: 'requests',
-            approved: 'agreement',
+            approved: 'rentals',
             inspection: 'inspection',
             payment: 'payment',
             active: 'rentals',

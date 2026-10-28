@@ -19,7 +19,44 @@
             try { const item = await api.createSubletListing(Object.fromEntries(new FormData(event.target))); await api.paySubletListingFee(item.id); message.textContent = 'JD 5 paid in preview. Offer published.'; await render(); } catch (error) { message.textContent = error.message; }
         });
         document.querySelectorAll('[data-review]').forEach((button) => button.addEventListener('click', async () => { try { await api.reviewSubletRequest(button.dataset.review, button.dataset.approved === 'true'); await render(); } catch (error) { status.textContent = error.message; } }));
-        document.querySelectorAll('[data-edit]').forEach((button) => button.addEventListener('click', async () => { const item = (await api.getSubletListings()).find((entry) => entry.id === button.dataset.edit); const price = prompt('Daily price (JD)', item.price); if (price === null) return; const startDate = prompt('Available from (YYYY-MM-DD)', item.startDate); if (startDate === null) return; const endDate = prompt('Available until (YYYY-MM-DD)', item.endDate); if (endDate === null) return; const notes = prompt('Notes', item.notes || ''); if (notes === null) return; try { await api.editSubletListing(item.id, { price, startDate, endDate, duration: Math.max(1, Math.round((new Date(endDate) - new Date(startDate)) / 86400000)), notes }); await render(); } catch (error) { status.textContent = error.message; } }));
+        document.querySelectorAll('[data-edit]').forEach((button) => button.addEventListener('click', async () => {
+            try {
+                const item = (await api.getSubletListings()).find((entry) => entry.id === button.dataset.edit);
+                const rental = rentals.find((r) => r.id === item.rentalId);
+                const locked = (await api.getSubletRequests()).some((request) => request.listingId === item.id && request.status === 'approved');
+                document.getElementById('edit-offer-dialog')?.remove();
+                app.insertAdjacentHTML('beforeend', '<dialog id="edit-offer-dialog" class="offer-editor"><form id="edit-offer-form"><div class="page-heading"><div><span class="eyebrow">PARTIAL RENTAL</span><h2>Edit your offer</h2></div><button type="button" class="secondary" id="close-offer" aria-label="Close offer editor">×</button></div><p>' + esc(item.propertyTitle) + ' · ' + esc(item.roomLabel) + ' · ' + (item.occupancy === 'private' ? 'Private room' : 'Shared room') + '</p><p class="form-help">' + (locked ? 'An accepted request locks the price and dates. You can still update notes.' : 'Dates must stay inside your rental. Offers can last 1–30 days.') + '</p><div class="form-grid"><label class="field">Daily price (JD)<input name="price" type="number" min="0.01" max="99999" step="0.01" required value="' + esc(item.price) + '" ' + (locked ? 'readonly' : '') + '><small data-error="price" class="field-error"></small></label><label class="field">Duration<output id="edit-duration"></output></label><label class="field">Available from<input name="startDate" type="date" required min="' + esc(rental.request.startDate) + '" max="' + esc(rental.endDate) + '" value="' + esc(item.startDate) + '" ' + (locked ? 'readonly' : '') + '><small data-error="startDate" class="field-error"></small></label><label class="field">Available until<input name="endDate" type="date" required min="' + esc(rental.request.startDate) + '" max="' + esc(rental.endDate) + '" value="' + esc(item.endDate) + '" ' + (locked ? 'readonly' : '') + '><small data-error="endDate" class="field-error"></small></label></div><label class="field">Notes<textarea name="notes" maxlength="500">' + esc(item.notes || '') + '</textarea></label><p id="edit-offer-status" role="alert"></p><div class="row-actions"><button class="secondary" type="button" id="cancel-offer">Cancel</button><button class="primary" type="submit">Save changes</button></div></form></dialog>');
+                const dialog = document.getElementById('edit-offer-dialog');
+                const form = document.getElementById('edit-offer-form');
+                const close = () => dialog.close();
+                document.getElementById('close-offer').onclick = close;
+                document.getElementById('cancel-offer').onclick = close;
+                const validate = () => {
+                    const duration = Math.round((new Date(form.elements.endDate.value) - new Date(form.elements.startDate.value)) / 86400000);
+                    form.elements.endDate.setCustomValidity(Number.isInteger(duration) && duration >= 1 && duration <= 30 ? '' : 'Choose a date range of 1–30 days.');
+                    document.getElementById('edit-duration').textContent = Number.isFinite(duration) && duration > 0 ? duration + ' days' : 'Select valid dates';
+                    for (const name of ['price', 'startDate', 'endDate']) {
+                        const field = form.elements[name];
+                        const error = form.querySelector('[data-error="' + name + '"]');
+                        error.textContent = field.validationMessage;
+                        field.setAttribute('aria-invalid', String(!field.validity.valid));
+                    }
+                    return duration;
+                };
+                form.addEventListener('input', validate);
+                form.addEventListener('invalid', validate, true);
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const duration = validate();
+                    if (!form.reportValidity()) return;
+                    const save = form.querySelector('[type="submit"]'); save.disabled = true;
+                    try { await api.editSubletListing(item.id, { ...Object.fromEntries(new FormData(form)), duration }); dialog.close(); await render(); status.textContent = 'Offer updated.'; }
+                    catch (error) { document.getElementById('edit-offer-status').textContent = error.message; }
+                    finally { save.disabled = false; }
+                });
+                validate(); dialog.showModal();
+            } catch (error) { status.textContent = error.message; }
+        }));
         document.querySelectorAll('[data-delete]').forEach((button) => button.addEventListener('click', async () => { if (!confirm('Delete this partial rental offer?')) return; try { await api.deleteSubletListing(button.dataset.delete); await render(); } catch (error) { status.textContent = error.message; } }));
         document.querySelectorAll('[data-meeting]').forEach((form) => form.addEventListener('submit', async (event) => { event.preventDefault(); const data = new FormData(form); try { await api.createMeeting({ kind:'sublet', targetId:form.dataset.meeting, title:'Partial rental meeting', startsAt:new Date(`${data.get('date')}T${data.get('time')}:00+03:00`).toISOString(), duration:30 }); form.querySelector('[role="status"]').textContent = 'Meeting invitation sent.'; } catch (error) { form.querySelector('[role="status"]').textContent = error.message; } }));
     }

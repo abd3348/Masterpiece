@@ -62,6 +62,27 @@ function setup(handler, config = {}) {
         state: win.CampusState
     };
 }
+
+test('video analysis and rent negotiation use server endpoints with typed price and acceptance payloads', async () => {
+    const { api, calls, state } = setup((url, options) => {
+        if (url.endsWith('/video-analysis')) return new Response(JSON.stringify({ demo: false, summary: 'Server report', condition: 'Review required', furniture: 'Observed furniture', maintenance: 'Review required', limitations: 'Limited camera coverage' }));
+        if (url.endsWith('/me/rent-negotiations')) return new Response(JSON.stringify([examples.bootstrap.requests[0]]));
+        return new Response(JSON.stringify(examples.bootstrap.requests[0]));
+    });
+    const analysis = await api.analyzePropertyVideo(124);
+    assert.equal(analysis.demo, false);
+    assert.equal(calls[0].options.method, 'POST');
+    assert.ok(calls[0].url.endsWith('/properties/124/video-analysis'));
+    await api.getNegotiations();
+    assert.ok(calls.some((call) => call.url.endsWith('/me/rent-negotiations')));
+    await api.proposeRent('request-example', '175.50');
+    const proposal = calls.find((call) => call.url.endsWith('/rent-proposal'));
+    assert.deepEqual(JSON.parse(proposal.options.body), { price: 175.5 });
+    state.currentUser.role = 'landlord';
+    await api.reviewRent('request-example', true);
+    const review = calls.find((call) => call.url.endsWith('/rent-proposal/review'));
+    assert.deepEqual(JSON.parse(review.options.body), { accepted: true });
+});
 test('API JSON writes use credentials, CSRF, typed fields and a refreshed server snapshot', async () => {
     const { api, calls, state } = setup((url, options, server) => {
         assert.equal(url, 'https://api.example.test/api/rental-requests');

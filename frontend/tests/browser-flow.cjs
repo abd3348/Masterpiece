@@ -459,7 +459,7 @@ async function main() {
         await waitFor('window.CampusRoute==="auth/login.html"');
         await signIn('tenant@campus.test');
         await navigate('requests.html');
-        await waitFor('!!document.querySelector("a[href^=\\"../tenant/agreement.html\\"]")');
+        await waitFor('!!document.querySelector("a[href^=\\"../tenant/rentals.html\\"]")');
         await send('Page.reload');
         await delay(300);
         await waitFor('window.CampusState.currentUser?.id==="tenant-1"');
@@ -569,11 +569,11 @@ async function main() {
     await waitFor('window.CampusState.requests[0].status==="approved"');
     await role('tenant');
     await navigate('requests.html');
-    await waitFor(`!!document.querySelector('a[href^="../tenant/agreement.html?id="]')`);
-    await evaluate(`document.querySelector('a[href^="../tenant/agreement.html?id="]').click()`);
-    await waitFor(`!!document.getElementById('agreement-form')`);
+    await waitFor(`!!document.querySelector('a[href^="../tenant/rentals.html?id="]')`);
+    await evaluate(`document.querySelector('a[href^="../tenant/rentals.html?id="]').click()`);
+    await waitFor(`!!document.querySelector('form[id^=agreement-]')`);
     await evaluate(
-        `document.querySelector('#agreement-form input[type=checkbox]').checked=true;document.getElementById('agreement-form').requestSubmit();`
+        `document.querySelector('form[id^=agreement-] input[type=checkbox]').checked=true;document.querySelector('form[id^=agreement-]').requestSubmit();`
     );
     await waitFor(`!!document.getElementById('inspection-form')`);
     await evaluate(
@@ -734,8 +734,10 @@ async function main() {
         `window.CampusState.properties.find(p=>p.title==='New property demo').id`
     );
     await evaluate(
-        `document.querySelector('[data-moderate="${newPropertyId}"][data-keep=true]').click()`
+        `document.querySelector('[data-moderate="${newPropertyId}"]').click()`
     );
+    await waitFor('!!document.getElementById("approve-reviewed")');
+    await evaluate('document.getElementById("approve-reviewed").click()');
     await waitFor(
         `window.CampusState.properties.find(p=>p.id===${newPropertyId}).status==='published'`
     );
@@ -800,8 +802,8 @@ async function main() {
     await evaluate('document.querySelector("[data-approve-request]").click()');
     await waitFor('window.CampusState.requests.find(r=>r.propertyId===231).status==="approved"');
     await role('tenant');
-    await navigate('../tenant/agreement.html?id=' + approvalId);
-    await waitFor('!!document.getElementById("agreement-form")');
+    await navigate('../tenant/rentals.html?id=' + approvalId);
+    await waitFor('!!document.querySelector("form[id^=agreement-]")');
     assert.ok(
         await evaluate(
             'document.querySelector(".agreement-copy").textContent.includes("Landlord terms accepted")'

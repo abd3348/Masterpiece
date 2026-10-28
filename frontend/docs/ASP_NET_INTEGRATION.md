@@ -194,3 +194,21 @@ node tests/browser-flow.cjs --api
 ```
 
 `--api` يستخدم سيرفر HTTP تجريبيًا داخل الاختبار لقياس إرسال JSON والأخطاء والجلسة وتحديث الواجهات. هذا الاختبار ليس مشروع ASP.NET ولا دليلًا على أن الباك إند المستقبلي قد نُفّذ.
+# Video analysis and negotiated rent
+
+## Partial offers and listing moderation
+
+`GET /partial-offers` returns only published, non-expired rooms belonging to active rentals and published homes. Each offer has its own id; `/partial-offers/{id}` resolves that exact room and `/partial-offers/{id}/requests` accepts the date range from a signed-in tenant. Recheck active rental, publication status, valid future dates and accepted-request conflicts on the server. Public home details omit owner contact information.
+
+Admin Reports exposes Delete listing and Mark solved directly. Inspection links carry the report id; listing details rendered for an admin replace rental summaries and tenant forms with management controls. Resolving a report keeps its listing. Removing a listing must also atomically resolve all its open reports with `resolution: listing-removed`; leave reports on other properties unchanged.
+
+Admins screen a listing with `POST /admin/properties/{id}/analysis`, then review it with `POST /admin/properties/{id}/review` using `{ keep, reason, notes }`. Require a completed current report for decisions, an allowed reason and 10–1000 characters of explanation for removal. Changes to the listing invalidate the report. Atomically hide the removed listing, record the decision, and create one notification for its owner. `GET /me/notifications` and `POST /me/notifications/{id}/read` must verify the authenticated recipient. Demo screening uses rules and does not inspect media or establish fraud; a real service must supply its own analysis with accurate provenance. No emails or SMS are sent by this frontend.
+
+An opt-in presentation is available at `index.html?demo=review#admin%2Fdashboard.html%3Ftab%3Dproperties`. It seeds two room offers, one pending suspicious listing and an earlier removal notification. The visible presentation controls switch among the seeded demo accounts within the same session. They are disabled in API mode and absent from normal sessions. Refresh restores the example.
+
+The property report starts hidden and is requested with `POST /properties/{id}/video-analysis`. Return `VideoAnalysis` with observations and limitations for the property's current saved video. Reject missing or inaccessible videos. Replacing the video must invalidate any previous analysis. The frontend demo returns a clearly marked listing-based preview; it never analyzes video content. A real video service must be implemented on the server; keep provider credentials there.
+
+`GET /me/rent-negotiations` returns request records scoped to the current tenant or property owner. Tenants submit `PUT /rental-requests/{id}/rent-proposal` with `{ price }`; owners confirm or decline with `POST /rental-requests/{id}/rent-proposal/review` and `{ accepted }`. Validate account ownership, positive decimal prices (maximum JD 99,999), and request state on the server. Only submitted/approved requests can be negotiated, pending proposals block agreement acceptance, and accepted agreements lock the rent. Confirming updates `agreedPrice` and `total`, preserving the advertised property price and security deposit. Monthly quotes include the first month plus deposit; daily quotes include all nights plus deposit. Apply confirmation and agreement acceptance atomically to prevent conflicting updates.
+
+The tenant's Rentals page now includes approved requests awaiting agreement, inspection/arrangement steps, active rentals, and closed rentals. Old agreement and tenant Arrangements/bookings bookmarks redirect to it, preserving query parameters. The tenant navigation has one Rentals & arrangements entry; landlord Arrangements stays separate. Partial rental offer edits preserve price and dates when an accepted request exists; the server must enforce the same rule and verify that duration equals the selected date range (1–30 days) within the tenant's active lease.
+

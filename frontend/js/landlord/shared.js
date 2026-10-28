@@ -30,12 +30,13 @@
             rentals = state.rentals.filter((r) => r.request.property.ownerId === me.id),
             tab = document.body.dataset.tab || params.get('tab') || 'overview';
         const title =
-            { requests: 'Your rental requests', bookings: 'Rental arrangements' }[tab] ||
+            { requests: 'Your rental requests', bookings: 'Rental arrangements', notifications: 'Notifications' }[tab] ||
             'Manage your properties';
         const copy =
             {
                 requests: 'Review tenant requests and their chosen roommates.',
-                bookings: 'Follow tenant arrangements and rental dates. Rent is paid directly to you.'
+                bookings: 'Follow tenant arrangements and rental dates. Rent is paid directly to you.',
+                notifications: 'Updates about your listings, rental requests and negotiated offers.'
             }[tab] || 'Publish each property for JD 20. Tenants pay rent and deposits directly to you.';
         const heroAction =
             tab === 'overview'
@@ -44,8 +45,9 @@
                   ? '<a class="secondary" href="../landlord/bookings.html">View bookings</a>'
                   : '<a class="secondary" href="../landlord/requests.html">Review requests</a>';
         const intro = heading(title, copy, heroAction);
+        const notifications = ['overview', 'notifications'].includes(tab) ? await api.getNotifications() : [];
         app.innerHTML =
-            (tab === 'overview' ? `<section class="role-hero">${intro}</section>` : intro) +
+            (['overview', 'notifications'].includes(tab) ? `<section class="${tab === 'overview' ? 'panel owner-notifications' : 'panel owner-notifications notifications-page'}"><div class="section-heading"><h2>Notifications</h2><span class="badge">${notifications.filter((n) => !n.read).length} unread</span></div>${notifications.length ? notifications.map((n) => `<article class="notification-card ${n.read ? '' : 'unread'}"><span class="badge warning-badge">${n.read ? 'Read' : 'New'} · Listing update</span><h3>${esc(n.propertyTitle || 'Property notification')}</h3><p>${esc(n.text)}</p><small>${date(n.date)}</small>${!n.read ? `<button class="secondary" data-read-notification="${esc(n.id)}">Mark as read</button>` : ''}</article>`).join('') : '<p>No listing notifications yet.</p>'}</section>` : '') +
             (tab === 'overview'
                 ? stats([
                       ['Your properties', owned.length],
@@ -63,7 +65,13 @@
                 ? ownerRequests(requests)
                 : tab === 'bookings'
                   ? ownerBookings(rentals)
-                  : `<div class="split-grid"><section><div class="section-heading"><h2>Your spaces</h2><a href="market.html">Compare market rents ↗</a></div>${owned.length ? owned.map((p) => `<section class="panel"><div class="summary-photo"><img src="${api.photo(p, 400)}" alt="${esc(p.title)}"><div><h3>${esc(p.title)}</h3><p>${esc(p.area)} · ${money(p.price)} / ${p.period === 'Daily' ? 'night' : 'month'}</p></div></div><span class="badge ${p.status === 'pending' ? 'warning-badge' : ''}">${labels[p.status]}</span><p>${p.listingFee ? `Listing fee: ${money(p.listingFee.amount)} &middot; ${p.listingFee.status}${p.listingFee.simulated ? ' (demo)' : ''}` : 'Existing sample listing'}</p><p>Rule-based risk: ${p.risk}/100 · ${p.riskReasons.map(esc).join(' · ')}</p><div class="row-actions"><a class="secondary" href="${link('property', p.id)}">Preview listing</a><a class="secondary" href="${link('add-property', p.id)}">Edit listing</a>${p.listingFee?.status === 'unpaid' ? `<button class="primary" data-listing-fee="${p.id}">Pay listing fee &middot; JD 20</button>` : ''}<button class="secondary" data-listing="${p.id}" ${['pending', 'awaiting-fee'].includes(p.status) ? 'disabled' : ''}>${p.status === 'archived' ? 'Publish' : 'Pause listing'}</button><button class="secondary" data-owner-analysis="${p.id}">Sample analysis</button></div></section>`).join('') : empty('Your first property starts here', '<a href="add-property.html" class="primary">Add a property</a>')}</section><div><section class="panel"><h2>Latest requests</h2>${ownerRequests(requests.slice(0, 3))}</section><section class="panel"><h2>Session activity</h2>${activity()}</section></div></div>`);
+                  : tab === 'notifications'
+                    ? ''
+                    : `<div class="split-grid"><section><div class="section-heading"><h2>Your spaces</h2><a href="market.html">Compare market rents ↗</a></div>${owned.length ? owned.map((p) => `<section class="panel"><div class="summary-photo"><img src="${api.photo(p, 400)}" alt="${esc(p.title)}"><div><h3>${esc(p.title)}</h3><p>${esc(p.area)} · ${money(p.price)} / ${p.period === 'Daily' ? 'night' : 'month'}</p></div></div><span class="badge ${p.status === 'pending' ? 'warning-badge' : ''}">${labels[p.status]}</span><p>${p.listingFee ? `Listing fee: ${money(p.listingFee.amount)} &middot; ${p.listingFee.status}${p.listingFee.simulated ? ' (demo)' : ''}` : 'Existing sample listing'}</p><p>Rule-based risk: ${p.risk}/100 · ${p.riskReasons.map(esc).join(' · ')}</p><div class="row-actions"><a class="secondary" href="${link('property', p.id)}">Preview listing</a><a class="secondary" href="${link('add-property', p.id)}">Edit listing</a>${p.listingFee?.status === 'unpaid' ? `<button class="primary" data-listing-fee="${p.id}">Pay listing fee &middot; JD 20</button>` : ''}<button class="secondary" data-listing="${p.id}" ${['pending', 'awaiting-fee'].includes(p.status) ? 'disabled' : ''}>${p.status === 'archived' ? 'Publish' : 'Pause listing'}</button><button class="secondary" data-owner-analysis="${p.id}">Sample analysis</button></div></section>`).join('') : empty('Your first property starts here', '<a href="add-property.html" class="primary">Add a property</a>')}</section><div><section class="panel"><h2>Latest requests</h2>${ownerRequests(requests.slice(0, 3))}</section><section class="panel"><h2>Session activity</h2>${activity()}</section></div></div>`);
+        action('[data-read-notification]', async (b) => {
+            await api.markNotificationRead(b.dataset.readNotification);
+            await landlord();
+        });
         action('[data-approve-request]', async (b) => {
             await api.reviewRequest(b.dataset.approveRequest, true);
             await landlord();
@@ -94,7 +102,7 @@
             ? items
                   .map(
                       (r) =>
-                          `<section class="panel"><span class="badge">${labels[r.status]}</span><h3>${esc(r.tenantName)} · ${esc(r.property.title)}</h3><p>${r.roommate ? 'With roommate: ' + esc(r.roommateName || state.roommates.find((p) => p.id === r.roommateId)?.name || 'Selected roommate') : 'Renting alone'}</p><p>${date(r.startDate)} · ${r.duration} ${r.property.period === 'Daily' ? 'nights' : 'months'}</p><p>${esc(r.message)}</p><div class="row-actions">${r.status === 'submitted' ? `<button class="primary" data-approve-request="${r.id}">Accept & approve sample terms</button><button class="secondary danger" data-reject-request="${r.id}">Decline</button>` : ''}<button class="secondary" data-tenant-chat="${r.id}">Book a meeting</button>${r.landlordAccepted ? '<span class="badge">Landlord terms accepted</span>' : ''}</div></section>`
+                          `<section class="panel"><span class="badge">${labels[r.status]}</span><h3>${esc(r.tenantName)} · ${esc(r.property.title)}</h3><p>${r.roommate ? 'With roommate: ' + esc(r.roommateName || state.roommates.find((p) => p.id === r.roommateId)?.name || 'Selected roommate') : 'Renting alone'}</p><p>${date(r.startDate)} · ${r.duration} ${r.property.period === 'Daily' ? 'nights' : 'months'}</p><p>${esc(r.message)}</p><p>Effective rent: ${money(r.agreedPrice ?? r.property.price)}${r.negotiation ? " · Proposed rent: " + money(r.negotiation.price) + " (" + esc(r.negotiation.status) + ")" : ""}</p>${r.negotiation?.status === "pending" ? '<a class="secondary" href="profile.html#negotiated-rent">Review proposed rent in profile</a>' : ""}<div class="row-actions">${r.status === 'submitted' ? `<button class="primary" data-approve-request="${r.id}">Accept & approve sample terms</button><button class="secondary danger" data-reject-request="${r.id}">Decline</button>` : ''}<button class="secondary" data-tenant-chat="${r.id}">Book a meeting</button>${r.landlordAccepted ? '<span class="badge">Landlord terms accepted</span>' : ''}</div></section>`
                   )
                   .join('')
             : empty('No rental requests yet');

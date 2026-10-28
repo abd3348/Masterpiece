@@ -1,5 +1,7 @@
 /* This page uses the common interior components. Add page-only styles here. */
 @import url('../shared/flow.css');
+.rental-overview { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px; }
+.rental-overview span { padding:12px 18px; border-radius:16px; background:#e8ede1; color:#183e36; }
 
 .sublet-panel { margin-top: 1.5rem; }
 .sublet-panel .page-heading { margin-bottom: 1rem; }

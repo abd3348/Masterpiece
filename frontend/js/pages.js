@@ -54,7 +54,7 @@ window.CampusPages = {
         <script src="../../js/api.js"></script
         ><script src="../../js/remote.js"></script
         ><script src="../../js/shared/features.js"></script
-        ><script src="../../js/admin/dashboard.js"></script></body
+        ><script src="../../js/shared/moderation.js"></script><script src="../../js/admin/dashboard.js"></script></body
 ></html>
 `,
     'admin/profile.html': `<!doctype html>
@@ -1460,6 +1460,59 @@ window.CampusPages = {
         ><script src="../../js/public/market.js"></script></body
 ></html>
 `,
+    'public/partial-offers.html': `<!doctype html>
+<html lang="en"
+    ><head
+        ><script src="../../js/navigation.js"></script
+        ><meta charset="UTF-8" /><meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        /><title>Public · partial offers — Campus Mate</title
+        ><link rel="stylesheet" href="../../css/public/partial-offers.css" /><link
+            rel="stylesheet"
+            href="../../css/shared/campus-theme.css"
+        />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    </head>
+    <body data-page="partial-offers" data-section="public" data-screen="partial-offers">
+        <header class="nav"
+            ><a class="brand" href="../tenant/home.html"
+                ><span class="brand-mark" aria-hidden="true">⌂</span
+                ><span>campus<strong>mate</strong><small>YOUR NEXT CHAPTER</small></span></a
+            ><label class="search"
+                ><span aria-hidden="true">⌕</span
+                ><input
+                    id="global-search"
+                    type="search"
+                    placeholder="Search homes or areas"
+                    aria-label="Search homes" /></label
+            ><nav aria-label="Main navigation"
+                ><a href="../public/index.html">Home</a><a href="../public/properties.html">Homes</a
+                ><a href="../public/market.html">Market</a
+                ><a href="../auth/login.html">Sign in</a></nav
+            ></header
+        >
+        <main class="feature-main"
+            ><div id="feature-status" class="status-message" role="alert"></div
+            ><div id="feature-app"><p class="loading">Loading your next chapter…</p></div></main
+        >
+        <footer
+            ><span
+                ><strong>Campus Mate</strong> · © <span id="year"></span> · Good spaces. Better
+                company.</span
+            ><a href="../public/index.html">Explore Campus Mate ↗</a></footer
+        >
+        <dialog id="feature-dialog"
+            ><button id="feature-dialog-close" class="close" aria-label="Close dialog">×</button
+            ><div id="feature-dialog-content" class="dialog-content"></div
+        ></dialog>
+        <script src="../../js/api.js"></script
+        ><script src="../../js/remote.js"></script
+        ><script src="../../js/shared/features.js"></script
+        ><script src="../../js/public/partial-offers.js"></script></body
+></html>
+`,
     'public/privacy.html': `<!doctype html>
 <html lang="en"
     ><head
@@ -1639,7 +1692,7 @@ window.CampusPages = {
         <script src="../../js/api.js"></script
         ><script src="../../js/remote.js"></script
         ><script src="../../js/shared/flow.js"></script
-        ><script src="../../js/public/property.js"></script> </body
+        ><script src="../../js/shared/moderation.js"></script><script src="../../js/public/property.js"></script> </body
 ></html>
 `,
     'public/support.html': `<!doctype html>
@@ -1913,8 +1966,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -1966,8 +2018,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="feature-main"
@@ -2023,8 +2074,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="feature-main"
@@ -2081,8 +2131,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="feature-main"
@@ -2139,8 +2188,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             >
         </header>
         <main>
@@ -2363,8 +2411,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -2406,8 +2453,8 @@ window.CampusPages = {
         <nav aria-label="Main navigation"><a href="../tenant/home.html">Home</a><a
                 href="../public/properties.html">Homes</a><a href="../tenant/roommates.html">Roommates</a><a
                 href="../tenant/favorites.html">Favorites</a><a href="../tenant/messages.html">Meetings</a><a
-                href="../tenant/requests.html">Requests</a><a href="../tenant/bookings.html">Arrangements</a><a
-                href="../tenant/rentals.html">Rentals</a></nav>
+                href="../tenant/requests.html">Requests</a><a
+                href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav>
     </header>
     <main class="feature-main">
         <div id="feature-status" class="status-message" role="alert"></div>
@@ -2459,8 +2506,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -2510,8 +2556,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main>
@@ -2979,8 +3024,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="feature-main"
@@ -3035,8 +3079,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -3086,8 +3129,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -3137,8 +3179,7 @@ window.CampusPages = {
                 ><a href="../tenant/favorites.html">Favorites</a
                 ><a href="../tenant/messages.html">Meetings</a
                 ><a href="../tenant/requests.html">Requests</a
-                ><a href="../tenant/bookings.html">Arrangements</a
-                ><a href="../tenant/rentals.html">Rentals</a></nav
+                ><a href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav
             ></header
         >
         <main class="flow-main"
@@ -3180,8 +3221,8 @@ window.CampusPages = {
         <nav aria-label="Main navigation"><a href="../tenant/home.html">Home</a><a
                 href="../public/properties.html">Homes</a><a href="../tenant/roommates.html">Roommates</a><a
                 href="../tenant/favorites.html">Favorites</a><a href="../tenant/messages.html">Meetings</a><a
-                href="../tenant/requests.html">Requests</a><a href="../tenant/bookings.html">Arrangements</a><a
-                href="../tenant/rentals.html">Rentals</a></nav>
+                href="../tenant/requests.html">Requests</a><a
+                href="../tenant/rentals.html">Rentals &amp; arrangements</a></nav>
     </header>
     <template id="roommates-page-template">
         <div class="section-intro">

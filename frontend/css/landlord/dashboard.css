@@ -1,2 +1,7 @@
 /* This page uses the common interior components. Add page-only styles here. */
 @import url('../shared/flow.css');
+.owner-notifications { margin:24px 0; }
+.notifications-page { margin-top:24px; }
+.notification-card { display:grid; gap:12px; padding:20px; margin:16px 0; border:1px solid #e3ded2; border-radius:16px; }
+.notification-card.unread { background:#f5eee4; border-left:4px solid #b66c41; }
+.notification-card .secondary { justify-self:start; }

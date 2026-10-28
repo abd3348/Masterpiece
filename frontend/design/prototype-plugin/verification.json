@@ -1,0 +1,13 @@
+{
+  "screens": 40,
+  "controls": 786,
+  "interactions": 1545,
+  "overlays": 198,
+  "unresolved": [],
+  "errors": [],
+  "totalNodes": 5216,
+  "allScreensReachable": true,
+  "rerunPreservesOutput": true,
+  "originalContentPreserved": true,
+  "validation": "Local Figma API simulation. Not rendered or executed in real Figma."
+}

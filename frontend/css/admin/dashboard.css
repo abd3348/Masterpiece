@@ -1,2 +1,4 @@
 /* This page uses the common interior components. Add page-only styles here. */
 @import url('../shared/flow.css');
+.moderation-screening { padding:20px; background:#e8eee3; border-radius:16px; margin:16px 0; }
+.moderation-record { padding:20px 0; border-top:1px solid #e3ded2; }

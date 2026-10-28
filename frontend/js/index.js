@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
     'use strict';
     window.CampusState = window.CampusCreateState(
         window.CampusConfig.mode === 'api'
@@ -7,6 +7,7 @@
     );
     window.CampusReady = window.CampusLoadSeed().then(async (loaded) => {
         Object.assign(window.CampusState, loaded);
+        window.CampusSetupShowcase?.(window.CampusState);
         if (window.CampusConfig.mode === 'api')
             await window.CampusTransport.hydrate(window.CampusState);
     });
@@ -39,7 +40,7 @@
         }
         let route;
         try {
-            route = decodeURIComponent(location.hash.slice(1)) || 'public/index.html';
+            route = new URLSearchParams(location.search).get('route') || decodeURIComponent(location.hash.slice(1)) || 'public/index.html';
         } catch (_) {
             route = 'public/index.html';
         }

@@ -45,6 +45,167 @@ async function activate(api, today, propertyId = 124, duration = 6) {
     await api.confirmArrangement(r.id);
     return r;
 }
+
+test('negotiated rent needs owner confirmation, preserves asking rent and locks at agreement acceptance', async () => {
+    const { api, today } = setup();
+    const r = await api.createRequest({ propertyId: 124, startDate: today, duration: 6, message: 'Interested in this apartment.', roommate: false });
+    const asking = r.property.price;
+    await approve(api, r.id);
+    await assert.rejects(api.proposeRent(r.id, -1), /valid rent/);
+    await api.proposeRent(r.id, 175.5);
+    await assert.rejects(api.signAgreement(r.id), /review the proposed rent/);
+    await assert.rejects(api.proposeRent(r.id, 160), /still reviewing/);
+    await assert.rejects(api.reviewRent(r.id, true), /account role/);
+    await api.logout();
+    await api.login({ email: 'owner@campus.test', password: 'Campus123' });
+    assert.equal((await api.getNegotiations()).some((item) => item.id === r.id), true);
+    await api.reviewRent(r.id, true);
+    assert.equal(r.agreedPrice, 175.5);
+    assert.equal(r.property.price, asking);
+    assert.equal(r.total, 175.5 + r.deposit);
+    await api.logout();
+    await api.login({ email: 'tenant@campus.test', password: 'Campus123' });
+    await api.signAgreement(r.id);
+    await assert.rejects(api.proposeRent(r.id, 160), /before agreement/);
+});
+
+test('declining a proposed rent retains the original quote and tenant ownership is enforced', async () => {
+    const { api, state, today } = setup();
+    const r = await api.createRequest({ propertyId: 124, startDate: today, duration: 2, message: 'Interested in this apartment.', roommate: false });
+    const total = r.total;
+    await api.proposeRent(r.id, 150);
+    const tenantId = r.tenantId;
+    r.tenantId = 'another-tenant';
+    await assert.rejects(api.proposeRent(r.id, 160), /another tenant/);
+    assert.equal((await api.getNegotiations()).length, 0);
+    r.tenantId = tenantId;
+    await approve(api, r.id);
+    await api.logout();
+    await api.login({ email: 'owner@campus.test', password: 'Campus123' });
+    const ownerId = r.property.ownerId;
+    r.property.ownerId = 'another-owner';
+    await assert.rejects(api.reviewRent(r.id, true), /Only this property owner/);
+    r.property.ownerId = ownerId;
+    await api.reviewRent(r.id, false);
+    assert.equal(r.total, total);
+    assert.equal(r.agreedPrice, undefined);
+    assert.equal(state.requests[0].negotiation.status, 'declined');
+});
+
+test('video report rejects missing video and honestly identifies demo results', async () => {
+    const { api, state } = setup();
+    await assert.rejects(api.analyzePropertyVideo(124), /walkthrough video/);
+    state.properties.find((p) => p.id === 124).video = { name: 'walkthrough.mp4', url: 'blob:demo' };
+    const report = await api.analyzePropertyVideo(124);
+    assert.equal(report.demo, true);
+    assert.match(report.summary, /has not been analyzed/);
+});
+
+test('partial offer updates validate actual date duration and preserve accepted request prices and dates', async () => {
+    const { api, state, today } = setup();
+    const r = await activate(api, today);
+    const end = new Date(today + 'T12:00:00Z'); end.setUTCDate(end.getUTCDate() + 7);
+    const listing = await api.createSubletListing({ rentalId: r.id, roomNumber: 1, occupancy: 'private', startDate: today, endDate: end.toISOString().slice(0, 10), price: 10, notes: 'Room details' });
+    assert.throws(() => api.editSubletListing(listing.id, { price: 11, startDate: listing.startDate, endDate: listing.endDate, duration: 6 }), /Duration must match/);
+    state.subletRequests.push({ listingId: listing.id, status: 'approved' });
+    assert.throws(() => api.editSubletListing(listing.id, { price: 11, duration: 7 }), /locked/);
+    api.editSubletListing(listing.id, { price: 10, duration: 7, notes: 'Updated notes' });
+    assert.equal(listing.notes, 'Updated notes');
+});
+test('moderation requires screening and a reason, removes the listing and notifies only its owner', async () => {
+    const { api, state } = setup();
+    await assert.rejects(api.reviewListingAnalysis(124), /account role/);
+    await api.logout(); await api.login({ email: 'admin@campus.test', password: 'Campus123' });
+    assert.throws(() => api.moderateProperty(124, false, 'Suspected fraud', 'Requests payment before viewing.'), /Analyze and review/);
+    const report = await api.reviewListingAnalysis(124);
+    assert.equal(report.demo, true);
+    assert.throws(() => api.moderateProperty(124, false), /removal reason/);
+    assert.throws(() => api.moderateProperty(124, false, 'Suspected fraud', 'short'), /10–1000/);
+    api.moderateProperty(124, false, 'Suspected fraud', 'Requests payment before viewing; details need correction.');
+    assert.equal((await api.getProperties()).some((p) => p.id === 124), false);
+    assert.equal(state.properties.find((p) => p.id === 124).moderation.decision, 'removed');
+    const notification = state.notifications[0];
+    assert.equal((await api.getNotifications()).length, 0);
+    await assert.rejects(api.markNotificationRead(notification.id), /not found/);
+    await api.logout(); await api.login({ email: 'owner@campus.test', password: 'Campus123' });
+    assert.equal((await api.getNotifications()).filter((n) => n.propertyId === 124).length, 1);
+    assert.match(notification.text, /Suspected fraud/);
+    await api.markNotificationRead(notification.id);
+    assert.equal(notification.read, true);
+});
+
+test('solving a report keeps its listing, while deleting the listing solves its remaining open reports', async () => {
+    const { api, state } = setup();
+    const first = api.reportProperty(124, { reason: 'Incorrect details', notes: 'A detail needs checking.' });
+    const second = api.reportProperty(124, { reason: 'Misleading photos', notes: 'Photos do not match the description.' });
+    const unrelated = api.reportProperty(231, { reason: 'Other concern', notes: 'An unrelated issue to inspect.' });
+    await api.logout(); await api.login({ email: 'admin@campus.test', password: 'Campus123' });
+    await api.resolveReport(first.id);
+    assert.equal(first.status, 'resolved');
+    assert.equal(state.properties.find((p) => p.id === 124).status, 'published');
+    await api.reviewListingAnalysis(124);
+    api.moderateProperty(124, false, 'Misleading information', 'The property photos do not match the advertised details.');
+    assert.equal(second.status, 'resolved');
+    assert.equal(second.resolution, 'listing-removed');
+    assert.equal(first.resolution, 'solved');
+    assert.equal(unrelated.status, 'open');
+});
+
+test('public partial offers expose each published room and specific details, excluding expired or removed homes', async () => {
+    const { api, state, today } = setup();
+    const r = await activate(api, today);
+    for (const room of [1, 2]) {
+        const offer = api.createSubletListing({ rentalId: r.id, roomNumber: room, occupancy: room === 1 ? 'private' : 'shared', duration: 7, price: room === 1 ? 12 : 7 });
+        api.paySubletListingFee(offer.id);
+    }
+    const publicOffers = await api.getPublicSubletListings();
+    assert.equal(publicOffers.length, 2);
+    assert.equal(publicOffers[0].property.ownerId, undefined);
+    const shared = publicOffers.find((s) => s.occupancy === 'shared');
+    const detail = await api.getSubletOffer(shared.id);
+    assert.equal(detail.partialOffer.id, shared.id);
+    assert.equal(detail.price, 7);
+    state.subletListings[0].endDate = '2000-01-01';
+    assert.equal((await api.getPublicSubletListings()).length, 1);
+    state.properties.find((p) => p.id === 124).status = 'deleted';
+    assert.equal((await api.getPublicSubletListings()).length, 0);
+    await assert.rejects(api.getSubletOffer(shared.id), /no longer available/);
+});
+
+test('the review example and owner notification are always seeded without an AI service', async () => {
+    const { api, state } = setup();
+    const p = state.properties.find((p) => p.id === 9901);
+    assert.equal(p.status, 'pending');
+    assert.equal(p.moderationAnalysis.source, 'prepared-example');
+    assert.equal(state.notifications.some((n) => n.propertyId === 9902), true);
+    await api.logout(); await api.login({ email: 'admin@campus.test', password: 'Campus123' });
+    const report = await api.reviewListingAnalysis(9901);
+    assert.equal(report.risk, 90);
+    assert.equal(report.completedAt, p.moderationAnalysis.completedAt);
+    assert.match(report.summary, /No AI service was called/);
+    api.moderateProperty(9901, false, 'Suspected fraud', 'Prepared example: urgent payment request before viewing.');
+    const fresh = setup();
+    assert.equal(fresh.state.properties.find((p) => p.id === 9901).status, 'pending');
+});
+
+test('presentation fixtures are opt-in and disabled in API mode', () => {
+    const { state, today } = setup();
+    const win = { CampusConfig: { mode: 'demo' }, CampusToday: () => today };
+    const context = { window: win, location: { search: '' }, URLSearchParams, Date };
+    vm.runInNewContext(fs.readFileSync('js/demo-showcase.js', 'utf8'), context);
+    win.CampusSetupShowcase(state);
+    assert.equal(state.showcaseEnabled, undefined);
+    context.location.search = '?demo=review'; win.CampusConfig.mode = 'api';
+    win.CampusSetupShowcase(state);
+    assert.equal(state.showcaseEnabled, undefined);
+    win.CampusConfig.mode = 'demo'; win.CampusSetupShowcase(state);
+    assert.equal(state.showcaseEnabled, true);
+    assert.equal(state.currentUser.role, 'admin');
+    assert.equal(state.subletListings.filter((s) => s.status === 'published').length, 2);
+    assert.equal(state.notifications.length, 1);
+    assert.equal(state.properties.find((p) => p.id === 9901).status, 'pending');
+});
+
 test('Regex handles Arabic and English names, Jordan phones, email and calendar dates', () => {
     const { rules } = setup();
     for (const name of ['عبدالله أحمد', 'Sara', 'Jean-Luc', "O'Connor"])
@@ -230,10 +391,12 @@ test('landlord listing risk, admin review and reports share the same state', asy
     });
     api.logout();
     await api.login({ email: 'admin@campus.test', password: 'Campus123' });
+    assert.throws(() => api.moderateProperty(p.id, true), /Analyze and review/);
+    await api.reviewListingAnalysis(p.id);
     api.moderateProperty(p.id, true);
     assert.equal(p.status, 'published');
     assert.equal(state.reports.length, 1);
-    api.moderateProperty(p.id, false);
+    api.moderateProperty(p.id, false, 'Suspected fraud', 'The listing requests payment before viewing and uses misleading pricing.');
     assert.equal(p.status, 'deleted');
 });
 test('meeting invitations enforce recipient consent, schedules, membership and cancellation', async () => {

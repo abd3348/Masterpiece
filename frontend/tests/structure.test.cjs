@@ -32,7 +32,7 @@ test('bootstrap gives formatted pages a base URL for disk navigation', async () 
 });
 
 test('all registered role pages and local resource links exist after organization', () => {
-    assert.equal(routes.paths.size, 35);
+    assert.equal(routes.paths.size, 36);
     assert.equal(Object.keys(pages).length, routes.paths.size);
     for (const route of routes.paths) {
         const source = path.resolve('html', route),
@@ -116,6 +116,12 @@ test('owner and tenant each have their own private pages; legacy routes preserve
         'public/property.html?id=124#reviews'
     );
     assert.equal(routes.resolve('profile.html', 'admin'), 'admin/profile.html');
+    assert.equal(routes.resolve('bookings.html?id=request-1', 'tenant'), 'tenant/rentals.html?id=request-1');
+    assert.equal(routes.resolve('../tenant/bookings.html?id=request-1#details', 'tenant'), 'tenant/rentals.html?id=request-1#details');
+    assert.equal(routes.menu('tenant').some(([path]) => path === 'tenant/bookings.html'), false);
+    assert.equal(routes.menu('tenant').filter(([path]) => path === 'tenant/rentals.html').length, 1);
+    assert.equal(routes.menu('tenant').some(([path]) => path === 'public/partial-offers.html'), true);
+    assert.equal(routes.menu('guest').some(([path]) => path === 'public/partial-offers.html'), true);
     for (const [route] of routes.menu('landlord')) assert.ok(!route.startsWith('tenant/'));
     for (const [route] of routes.menu('tenant')) assert.ok(!route.startsWith('landlord/'));
 });

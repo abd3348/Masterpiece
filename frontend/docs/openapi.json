@@ -93,6 +93,1024 @@
         ]
       }
     },
+    "/partial-offers": {
+      "get": {
+        "summary": "Published non-expired partial offers inside active rentals; return safe public home details only",
+        "operationId": "getpartialoffers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PartialOffer"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-roles": [
+          "public"
+        ]
+      }
+    },
+    "/partial-offers/{id}": {
+      "get": {
+        "summary": "Details for one specific available partial offer, not another room in the same property",
+        "operationId": "getpartialoffersid",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartialProperty"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-roles": [
+          "public"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/partial-offers/{id}/requests": {
+      "post": {
+        "summary": "Request a published room inside an active rental; validate future dates, offer bounds, ownership and overlap with accepted requests",
+        "operationId": "postpartialoffersidrequests",
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PartialRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "tenant"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartialRequestInput"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/properties/{id}/analysis": {
+      "post": {
+        "summary": "Screen the current listing for admin review; return honest demo or real analysis provenance and invalidate this report on listing changes",
+        "operationId": "postadminpropertiesidanalysis",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModerationAnalysis"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ]
+      }
+    },
+    "/me/notifications": {
+      "get": {
+        "summary": "Only notifications addressed to the signed-in account",
+        "operationId": "getmenotifications",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notification"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "tenant",
+          "landlord",
+          "admin"
+        ]
+      }
+    },
+    "/me/notifications/{id}/read": {
+      "post": {
+        "summary": "Mark a notification belonging to the current account as read",
+        "operationId": "postmenotificationsidread",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notification"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "tenant",
+          "landlord",
+          "admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ]
+      }
+    },
+    "/properties/{id}/video-analysis": {
+      "post": {
+        "summary": "Analyze the saved walkthrough through the configured video service; check listing visibility, reject missing video, return findings and limitations, never fabricate results",
+        "operationId": "postpropertiesidvideoanalysis",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoAnalysis"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-roles": [
+          "public"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ]
+      }
+    },
+    "/me/rent-negotiations": {
+      "get": {
+        "summary": "Requests belonging to the tenant or to properties owned by the landlord",
+        "operationId": "getmerentnegotiations",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RentalRequest"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "tenant",
+          "landlord"
+        ]
+      }
+    },
+    "/rental-requests/{id}/rent-proposal": {
+      "put": {
+        "summary": "Tenant proposes rent before agreement acceptance; verify ownership and reject an existing pending proposal",
+        "operationId": "putrentalrequestsidrentproposal",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "tenant"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RentProposal"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rental-requests/{id}/rent-proposal/review": {
+      "post": {
+        "summary": "Property owner confirms or declines pending rent before acceptance; on confirmation update agreedPrice and total, preserve advertised price and deposit",
+        "operationId": "postrentalrequestsidrentproposalreview",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RentalRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation failed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sign in required",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not allowed",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "State or booking conflict",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "x-roles": [
+          "landlord"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Token obtained from bootstrap. Required for cookie-authenticated mutations."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Acceptance"
+              }
+            }
+          }
+        }
+      }
+    },
     "/auth/register": {
       "post": {
         "summary": "Create account and establish the session",
@@ -5345,6 +6363,14 @@
             "items": {
               "type": "string"
             }
+          },
+          "moderationAnalysis": {
+            "$ref": "#/components/schemas/ModerationAnalysis",
+            "nullable": true
+          },
+          "moderation": {
+            "$ref": "#/components/schemas/ModerationDecision",
+            "nullable": true
           }
         },
         "required": [
@@ -5679,6 +6705,15 @@
             ],
             "additionalProperties": false,
             "nullable": true
+          },
+          "agreedPrice": {
+            "type": "number",
+            "minimum": 0.01,
+            "nullable": true
+          },
+          "negotiation": {
+            "$ref": "#/components/schemas/RentNegotiation",
+            "nullable": true
           }
         },
         "required": [
@@ -5701,6 +6736,80 @@
           "landlordAccepted",
           "tenantAccepted",
           "inspection"
+        ],
+        "additionalProperties": false
+      },
+      "RentNegotiation": {
+        "type": "object",
+        "properties": {
+          "price": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 99999
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "declined"
+            ]
+          },
+          "proposedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "price",
+          "status",
+          "proposedAt"
+        ],
+        "additionalProperties": false
+      },
+      "RentProposal": {
+        "type": "object",
+        "properties": {
+          "price": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 99999
+          }
+        },
+        "required": [
+          "price"
+        ],
+        "additionalProperties": false
+      },
+      "VideoAnalysis": {
+        "type": "object",
+        "properties": {
+          "demo": {
+            "type": "boolean"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "furniture": {
+            "type": "string"
+          },
+          "maintenance": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "demo",
+          "summary",
+          "condition",
+          "furniture",
+          "maintenance",
+          "limitations"
         ],
         "additionalProperties": false
       },
@@ -6010,6 +7119,17 @@
           "date": {
             "type": "string",
             "format": "date-time"
+          },
+          "resolution": {
+            "type": "string",
+            "enum": [
+              "solved",
+              "listing-removed"
+            ]
+          },
+          "resolvedAt": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "required": [
@@ -6060,6 +7180,18 @@
           },
           "read": {
             "type": "boolean"
+          },
+          "recipientId": {
+            "type": "string"
+          },
+          "propertyId": {
+            "type": "integer"
+          },
+          "propertyTitle": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "required": [
@@ -6661,10 +7793,536 @@
         "properties": {
           "keep": {
             "type": "boolean"
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 1000
           }
         },
         "required": [
           "keep"
+        ],
+        "additionalProperties": false
+      },
+      "ModerationAnalysis": {
+        "type": "object",
+        "properties": {
+          "demo": {
+            "type": "boolean"
+          },
+          "risk": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "completedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "description": "prepared-example identifies a saved presentation fixture, not a live AI result."
+          }
+        },
+        "required": [
+          "demo",
+          "risk",
+          "reasons",
+          "completedAt",
+          "summary"
+        ],
+        "additionalProperties": false
+      },
+      "ModerationDecision": {
+        "type": "object",
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "removed"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "reviewedBy": {
+            "type": "string"
+          },
+          "reviewedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "decision",
+          "reason",
+          "notes",
+          "reviewedBy",
+          "reviewedAt"
+        ],
+        "additionalProperties": false
+      },
+      "PartialOffer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "string"
+          },
+          "rentalId": {
+            "type": "string"
+          },
+          "propertyId": {
+            "type": "integer"
+          },
+          "propertyTitle": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "roomNumber": {
+            "type": "integer"
+          },
+          "roomLabel": {
+            "type": "string"
+          },
+          "occupancy": {
+            "type": "string",
+            "enum": [
+              "private",
+              "shared"
+            ]
+          },
+          "duration": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0.01
+          },
+          "notes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "published"
+            ]
+          },
+          "property": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "area": {
+                "type": "string"
+              },
+              "photos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Media"
+                }
+              },
+              "photo": {
+                "type": "string",
+                "nullable": true
+              },
+              "furnished": {
+                "type": "string"
+              },
+              "amenities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "city",
+              "area",
+              "photos",
+              "furnished",
+              "amenities"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "tenantId",
+          "rentalId",
+          "propertyId",
+          "propertyTitle",
+          "area",
+          "roomLabel",
+          "occupancy",
+          "duration",
+          "startDate",
+          "endDate",
+          "price",
+          "notes",
+          "status",
+          "property"
+        ],
+        "additionalProperties": false
+      },
+      "PartialProperty": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+          },
+          "city": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Apartment",
+              "Studio",
+              "Private room",
+              "Shared room"
+            ]
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "Monthly",
+              "Daily"
+            ]
+          },
+          "furnished": {
+            "type": "string",
+            "enum": [
+              "Furnished",
+              "Partly furnished",
+              "Unfurnished"
+            ]
+          },
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": true,
+            "minimum": 0
+          },
+          "beds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "baths": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 9999
+          },
+          "description": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 3000
+          },
+          "availableFrom": {
+            "type": "string",
+            "format": "date"
+          },
+          "availableTo": {
+            "type": "string",
+            "format": "date"
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Media"
+            }
+          },
+          "video": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "url"
+            ],
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "landlord": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "partial"
+            ]
+          },
+          "listingFee": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "number",
+                "enum": [
+                  20
+                ]
+              },
+              "currency": {
+                "type": "string",
+                "enum": [
+                  "JOD"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "unpaid",
+                  "paid"
+                ]
+              },
+              "simulated": {
+                "type": "boolean"
+              },
+              "date": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "amount",
+              "currency",
+              "status"
+            ],
+            "additionalProperties": false,
+            "nullable": true
+          },
+          "photo": {
+            "type": "string",
+            "nullable": true
+          },
+          "commute": {
+            "type": "integer"
+          },
+          "noise": {
+            "type": "integer"
+          },
+          "cleanliness": {
+            "type": "integer"
+          },
+          "smoking": {
+            "type": "string"
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Review"
+            }
+          },
+          "risk": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "riskReasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "moderationAnalysis": {
+            "$ref": "#/components/schemas/ModerationAnalysis",
+            "nullable": true
+          },
+          "moderation": {
+            "$ref": "#/components/schemas/ModerationDecision",
+            "nullable": true
+          },
+          "partialOffer": {
+            "$ref": "#/components/schemas/PartialOffer"
+          }
+        },
+        "required": [
+          "title",
+          "city",
+          "area",
+          "type",
+          "period",
+          "furnished",
+          "price",
+          "beds",
+          "baths",
+          "size",
+          "description",
+          "availableFrom",
+          "availableTo",
+          "amenities",
+          "photos",
+          "video",
+          "id",
+          "ownerId",
+          "landlord",
+          "status",
+          "listingFee",
+          "photo",
+          "commute",
+          "noise",
+          "cleanliness",
+          "smoking",
+          "reviews",
+          "risk",
+          "riskReasons"
+        ],
+        "additionalProperties": false
+      },
+      "PartialRequestInput": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "startDate",
+          "endDate"
+        ],
+        "additionalProperties": false
+      },
+      "PartialRequest": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "id": {
+            "type": "string"
+          },
+          "listingId": {
+            "type": "string"
+          },
+          "ownerTenantId": {
+            "type": "string"
+          },
+          "ownerTenantName": {
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "string"
+          },
+          "tenantName": {
+            "type": "string"
+          },
+          "tenantEmail": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved",
+              "rejected"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "startDate",
+          "endDate",
+          "id",
+          "listingId",
+          "ownerTenantId",
+          "ownerTenantName",
+          "tenantId",
+          "tenantName",
+          "tenantEmail",
+          "duration",
+          "status",
+          "createdAt"
         ],
         "additionalProperties": false
       },

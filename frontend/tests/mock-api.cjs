@@ -93,6 +93,9 @@ async function handle(req, res) {
         );
     if (!db.currentUser || !req.headers.cookie?.includes('campus-test=active'))
         return problem(res, 401, 'Sign in required');
+    if (path === '/api/me/rent-negotiations')
+        return send(res, snapshot().requests);
+    if (path === '/api/me/notifications') return send(res, (db.notifications || []).filter((n) => n.recipientId === db.currentUser.id));
     if (path === '/api/me/preferences') {
         if (req.method === 'PUT') {
             db.preferences = body;

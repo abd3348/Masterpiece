@@ -779,3 +779,14 @@
     min-width: 0;
     overflow-wrap: anywhere;
 }
+.rent-proposal-card { padding:20px 0; border-top:1px solid #d6dfd8; }
+.rent-proposal-card form { max-width:420px; }
+.demo-showcase { padding:20px 24px; margin-bottom:24px; border:1px solid #b9c9b0; background:#edf2e5; color:#173d36; border-radius:20px; direction:rtl; }
+.demo-showcase strong,.demo-showcase small { display:block; }
+.demo-showcase .row-actions { margin-bottom:0; }
+.demo-showcase p:empty { display:none; }
+.moderation-dialog { width:min(680px,calc(100vw - 32px)); box-sizing:border-box; border:1px solid #e3ded2; border-radius:24px; color:#1d302b; background:#fffcf7; }
+.moderation-dialog::backdrop { background:rgb(23 61 54 / 45%); }
+.moderation-screening { padding:20px; background:#e8eee3; border-radius:16px; margin:16px 0; }
+.admin-listing-review article { margin:18px 0; padding:16px 0; border-top:1px solid #e3ded2; }
+.admin-listing-review > .full { margin-top:12px; }

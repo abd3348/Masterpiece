@@ -1,57 +1,43 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Campus Mate</title>
-        <link rel="stylesheet" href="css/index.css" />
-    </head>
-    <body>
-        <template id="housing-assistant-template"
-            ><button
-                id="assistant-toggle"
-                class="assistant-toggle"
-                aria-label="Housing assistant"
-                aria-expanded="false"
-                aria-controls="assistant-panel"
-                ><span aria-hidden="true">✳</span
-                ><span class="assistant-label">Housing assistant</span></button
-            ><section
-                id="assistant-panel"
-                class="assistant-panel"
-                hidden
-                aria-label="Housing assistant"
-                ><div class="assistant-heading"
-                    ><div
-                        ><strong>Campus companion</strong
-                        ><small>Rule-based demo · no AI service</small></div
-                    ><button id="assistant-close" aria-label="Close assistant">×</button></div
-                ><div id="assistant-feed" class="assistant-feed" role="log" aria-live="polite"></div
-                ><div class="assistant-prompts"
-                    ><button data-prompt="Find a home">Homes</button
-                    ><button data-prompt="Roommate matching">Roommates</button
-                    ><button data-prompt="How to book?">Booking</button></div
-                ><form id="assistant-form"
-                    ><label class="sr-only" for="assistant-input">Your question</label
-                    ><input
-                        id="assistant-input"
-                        required
-                        maxlength="500"
-                        data-regex="text"
-                        placeholder="Ask about rent, areas or booking…"
-                    /><button type="submit" aria-label="Send question">↗</button></form
-                ></section
-            ></template
-        >
-        <iframe id="campus-page" title="Campus Mate" allow="camera; microphone; fullscreen; display-capture"></iframe>
-        <script src="js/pages.js"></script>
-        <script src="js/validation.js"></script>
-        <script src="js/config.js"></script>
-        <script src="js/seed.js"></script>
-        <script src="js/data.js"></script>
-        <script src="js/http.js"></script>
-        <script src="js/routes.js"></script>
-        <script src="js/access.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Mate</title>
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <template id="housing-assistant-template"><button id="assistant-toggle" class="assistant-toggle"
+            aria-label="Housing assistant" aria-expanded="false" aria-controls="assistant-panel"><span
+                aria-hidden="true">✳</span><span class="assistant-label">Housing assistant</span></button>
+        <section id="assistant-panel" class="assistant-panel" hidden aria-label="Housing assistant">
+            <div class="assistant-heading">
+                <div><strong>Campus companion</strong><small>Rule-based demo · no AI service</small></div><button
+                    id="assistant-close" aria-label="Close assistant">×</button>
+            </div>
+            <div id="assistant-feed" class="assistant-feed" role="log" aria-live="polite"></div>
+            <div class="assistant-prompts"><button data-prompt="Find a home">Homes</button><button
+                    data-prompt="Roommate matching">Roommates</button><button
+                    data-prompt="How to book?">Booking</button></div>
+            <form id="assistant-form"><label class="sr-only" for="assistant-input">Your question</label><input
+                    id="assistant-input" required maxlength="500" data-regex="text"
+                    placeholder="Ask about rent, areas or booking…" /><button type="submit"
+                    aria-label="Send question">↗</button></form>
+        </section>
+    </template>
+    <iframe id="campus-page" title="Campus Mate" allow="camera; microphone; fullscreen; display-capture"></iframe>
+    <script src="js/pages.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/seed.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/http.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/access.js"></script>
+    <script src="js/demo-showcase.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>

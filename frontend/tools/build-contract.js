@@ -175,6 +175,11 @@ schemas.RentalRequest = object({
     tenantAccepted: bool,
     inspection: nullable('Inspection')
 });
+schemas.RentNegotiation = object({ price: num({ minimum: 0.01, maximum: 99999 }), status: str({ enum: ['pending', 'confirmed', 'declined'] }), proposedAt: str({ format: 'date-time' }) });
+schemas.RentalRequest.properties.agreedPrice = num({ minimum: 0.01, nullable: true });
+schemas.RentalRequest.properties.negotiation = { ...ref('RentNegotiation'), nullable: true };
+schemas.RentProposal = object({ price: num({ minimum: 0.01, maximum: 99999 }) });
+schemas.VideoAnalysis = object({ demo: bool, summary: str(), condition: str(), furniture: str(), maintenance: str(), limitations: str() });
 schemas.Payment = object({
     id: str(),
     amount: num(),
@@ -228,6 +233,8 @@ schemas.Report = object({
     name: str(),
     date: str({ format: 'date-time' })
 });
+schemas.Report.properties.resolution = str({ enum: ['solved', 'listing-removed'] });
+schemas.Report.properties.resolvedAt = str({ format: 'date-time' });
 schemas.Activity = object({ id: str(), text: str(), date: str({ format: 'date-time' }) });
 schemas.Notification = object({
     id: str(),
@@ -297,7 +304,17 @@ schemas.Acceptance = object({ accepted: bool });
 schemas.Confirmation = object({ confirmed: bool });
 schemas.UserStatus = object({ active: bool });
 schemas.ListingStatus = object({ status: str({ enum: ['published', 'archived'] }) });
-schemas.Moderation = object({ keep: bool });
+schemas.Moderation = object({ keep: bool, reason: str({ maxLength: 100 }), notes: str({ maxLength: 1000 }) }, ['keep']);
+schemas.ModerationAnalysis = object({ demo: bool, risk: int({ minimum: 0, maximum: 100 }), reasons: array(str()), completedAt: str({ format: 'date-time' }), summary: str() });
+schemas.ModerationAnalysis.properties.source = str({ description: 'prepared-example identifies a saved presentation fixture, not a live AI result.' });
+schemas.ModerationDecision = object({ decision: str({ enum: ['approved', 'removed'] }), reason: str(), notes: str(), reviewedBy: str(), reviewedAt: str({ format: 'date-time' }) });
+schemas.Property.properties.moderationAnalysis = { ...ref('ModerationAnalysis'), nullable: true };
+schemas.Property.properties.moderation = { ...ref('ModerationDecision'), nullable: true };
+Object.assign(schemas.Notification.properties, { recipientId: str(), propertyId: int(), propertyTitle: str(), type: str() });
+schemas.PartialOffer = object({ id: str(), tenantId: str(), rentalId: str(), propertyId: int(), propertyTitle: str(), area: str(), roomNumber: int(), roomLabel: str(), occupancy: str({ enum: ['private', 'shared'] }), duration: int({ minimum: 1, maximum: 30 }), startDate: str({ format: 'date' }), endDate: str({ format: 'date' }), price: num({ minimum: 0.01 }), notes: str(), status: str({ enum: ['published'] }), property: object({ id: int(), title: str(), city: str(), area: str(), photos: array(ref('Media')), photo: str({ nullable: true }), furnished: str(), amenities: array(str()) }, ['id', 'title', 'city', 'area', 'photos', 'furnished', 'amenities']) }, ['id','tenantId','rentalId','propertyId','propertyTitle','area','roomLabel','occupancy','duration','startDate','endDate','price','notes','status','property']);
+schemas.PartialProperty = { ...schemas.Property, properties: { ...schemas.Property.properties, status: str({ enum: ['partial'] }), partialOffer: ref('PartialOffer') } };
+schemas.PartialRequestInput = object({ startDate: str({ format: 'date' }), endDate: str({ format: 'date' }) });
+schemas.PartialRequest = object({ ...schemas.PartialRequestInput.properties, id: str(), listingId: str(), ownerTenantId: str(), ownerTenantName: str(), tenantId: str(), tenantName: str(), tenantEmail: str(), duration: int({ minimum: 1, maximum: 30 }), status: str({ enum: ['pending', 'approved', 'rejected'] }), createdAt: str({ format: 'date-time' }) });
 schemas.ContactInput = object({ personId: str() });
 schemas.ConversationInput = object({
     peerId: str(),
@@ -373,6 +390,16 @@ function route(path, method, summary, input, output, roles, success = 200) {
     (paths[path] ||= {})[method] = operation;
 }
 route('/bootstrap', 'get', 'Role-scoped page data and CSRF token', null, 'Bootstrap', null);
+route('/partial-offers', 'get', 'Published non-expired partial offers inside active rentals; return safe public home details only', null, array(ref('PartialOffer')), null);
+route('/partial-offers/{id}', 'get', 'Details for one specific available partial offer, not another room in the same property', null, 'PartialProperty', null);
+route('/partial-offers/{id}/requests', 'post', 'Request a published room inside an active rental; validate future dates, offer bounds, ownership and overlap with accepted requests', 'PartialRequestInput', 'PartialRequest', ['tenant'], 201);
+route('/admin/properties/{id}/analysis', 'post', 'Screen the current listing for admin review; return honest demo or real analysis provenance and invalidate this report on listing changes', null, 'ModerationAnalysis', ['admin']);
+route('/me/notifications', 'get', 'Only notifications addressed to the signed-in account', null, array(ref('Notification')), ['tenant', 'landlord', 'admin']);
+route('/me/notifications/{id}/read', 'post', 'Mark a notification belonging to the current account as read', null, 'Notification', ['tenant', 'landlord', 'admin']);
+route('/properties/{id}/video-analysis', 'post', 'Analyze the saved walkthrough through the configured video service; check listing visibility, reject missing video, return findings and limitations, never fabricate results', null, 'VideoAnalysis', null);
+route('/me/rent-negotiations', 'get', 'Requests belonging to the tenant or to properties owned by the landlord', null, array(ref('RentalRequest')), ['tenant', 'landlord']);
+route('/rental-requests/{id}/rent-proposal', 'put', 'Tenant proposes rent before agreement acceptance; verify ownership and reject an existing pending proposal', 'RentProposal', 'RentalRequest', ['tenant']);
+route('/rental-requests/{id}/rent-proposal/review', 'post', 'Property owner confirms or declines pending rent before acceptance; on confirmation update agreedPrice and total, preserve advertised price and deposit', 'Acceptance', 'RentalRequest', ['landlord']);
 route(
     '/auth/register',
     'post',

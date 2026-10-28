@@ -407,7 +407,10 @@
         },
         async resolveReport(key) {
             const report = state.reports.find((r) => r.id === key) || fail('Report not found.');
+            if (report.status === 'resolved') return report;
             report.status = 'resolved';
+            report.resolution = 'solved';
+            report.resolvedAt = new Date().toISOString();
             log('Report resolved: ' + report.title);
             return report;
         },
@@ -433,6 +436,7 @@
         },
         async getProperty(key) {
             const p = property(key);
+            if (user().role === 'admin') return p;
             const activeRental = state.rentals.find(
                 (item) => item.status === 'active' && item.request.propertyId === p.id
             );
@@ -502,6 +506,7 @@
         },
         async signAgreement(key) {
             const r = request(key);
+            if (r.negotiation?.status === 'pending') fail('Wait for the landlord to review the proposed rent before accepting the agreement.');
             if (r.status !== 'approved' || !r.landlordAccepted)
                 fail('Wait for landlord approval before signing.');
             r.tenantAccepted = true;
@@ -552,6 +557,9 @@
                 (item) => item.id === listingId && item.status === 'published'
             );
             if (!listing) fail('This partial rental is no longer available.');
+            if (!state.rentals.some((r) => r.id === listing.rentalId && r.status === 'active') ||
+                !state.properties.some((p) => p.id === listing.propertyId && p.status === 'published'))
+                fail('This partial rental is no longer available.');
             if (listing.tenantId === user().id) fail('You cannot request your own room offer.');
             const existing = state.subletRequests.find(
                 (item) => item.listingId === listingId && item.tenantId === user().id && item.status === 'pending'
@@ -571,6 +579,9 @@
                 fail('Choose a valid request date range.');
             if (requestItem.startDate < listing.startDate || requestItem.endDate > listing.endDate)
                 fail('Choose dates inside the partial rental offer.');
+            if (requestItem.startDate < window.CampusToday()) fail('Choose a current or future start date.');
+            if (state.subletRequests.some((r) => r.listingId === listingId && r.status === 'approved' && requestItem.startDate < r.endDate && requestItem.endDate > r.startDate))
+                fail('These dates overlap an accepted request.');
             requestItem.duration = Math.round((new Date(requestItem.endDate) - new Date(requestItem.startDate)) / 86400000);
             state.subletRequests.unshift(requestItem);
             log('Partial rental request sent for ' + listing.propertyTitle);
@@ -653,6 +664,11 @@
             const activeRental = state.rentals.find((item) => item.id === listing.rentalId && item.status === 'active');
             if (!activeRental || startDate < activeRental.request.startDate || endDateValue > activeRental.endDate)
                 fail('The offer dates must stay inside your active rental dates.');
+            const actualDuration = Math.round((new Date(endDateValue) - new Date(startDate)) / 86400000);
+            if (duration !== actualDuration) fail('Duration must match the selected dates.');
+            if (state.subletRequests.some((item) => item.listingId === key && item.status === 'approved') &&
+                (price !== listing.price || startDate !== listing.startDate || endDateValue !== listing.endDate))
+                fail('Price and dates are locked because this offer has an accepted request.');
             listing.duration = duration;
             listing.price = price;
             listing.startDate = startDate;
@@ -775,6 +791,8 @@
                 size: Number(data.size)
             };
             Object.assign(updated, risk(updated));
+            updated.moderationAnalysis = null;
+            updated.moderation = null;
             updated.status =
                 p.listingFee?.status === 'unpaid' ? 'awaiting-fee' : updated.risk >= 60 ? 'pending' : p.status === 'archived' ? 'archived' : 'published';
             Object.assign(p, updated);
@@ -792,11 +810,21 @@
                 ) / report.items.length
             );
         },
-        moderateProperty(key, keep) {
+        moderateProperty(key, keep, reason = '', notes = '') {
             const p = property(key);
             if (keep && p.listingFee?.status === 'unpaid') fail('The owner must pay the listing fee before publication.');
+            if (!p.moderationAnalysis?.completedAt) fail('Analyze and review this listing before making a moderation decision.');
+            const reasons = ['Suspected fraud', 'Misleading information', 'Suspicious pricing', 'Other policy concern'];
+            if (!keep && !reasons.includes(reason)) fail('Choose a removal reason.');
+            if (!keep && (String(notes).trim().length < 10 || String(notes).trim().length > 1000)) fail('Explain the removal in 10–1000 characters.');
             p.status = keep ? 'published' : 'deleted';
+            p.moderation = { decision: keep ? 'approved' : 'removed', reason: keep ? '' : reason, notes: keep ? '' : String(notes).trim(), reviewedBy: user().id, reviewedAt: new Date().toISOString() };
+            if (!keep) state.notifications.unshift({ id: id(), recipientId: p.ownerId, propertyId: p.id, propertyTitle: p.title, type: 'listing-removed', text: 'Your listing “' + p.title + '” was removed after admin review. Reason: ' + reason + '. ' + p.moderation.notes, date: new Date().toISOString(), read: false });
+            if (!keep) for (const report of state.reports.filter((r) => r.propertyId === p.id && r.status === 'open')) {
+                report.status = 'resolved'; report.resolution = 'listing-removed'; report.resolvedAt = p.moderation.reviewedAt;
+            }
             log((keep ? 'Published: ' : 'Removed: ') + p.title);
+            return p;
         },
         reportProperty(key, data) {
             requireText('text', data.notes);
@@ -999,6 +1027,70 @@
             return user();
         }
     };
+    Object.assign(api, {
+        async getPublicSubletListings() {
+            const today = window.CampusToday();
+            return state.subletListings.filter((s) => s.status === 'published' && s.endDate > today &&
+                state.rentals.some((r) => r.id === s.rentalId && r.status === 'active') &&
+                state.properties.some((p) => p.id === s.propertyId && p.status === 'published'))
+                .map((s) => {
+                    const p = state.properties.find((p) => p.id === s.propertyId);
+                    return { id: s.id, tenantId: s.tenantId, rentalId: s.rentalId, propertyId: s.propertyId, propertyTitle: s.propertyTitle, area: s.area, roomNumber: s.roomNumber, roomLabel: s.roomLabel, occupancy: s.occupancy, duration: s.duration, startDate: s.startDate, endDate: s.endDate, price: s.price, notes: s.notes, status: s.status, property: { id: p.id, title: p.title, city: p.city, area: p.area, photos: p.photos, photo: p.photo, furnished: p.furnished, amenities: p.amenities } };
+                });
+        },
+        async getSubletOffer(key) {
+            const offer = (await api.getPublicSubletListings()).find((s) => s.id === key) || fail('This partial rental offer is no longer available.');
+            const p = property(offer.propertyId);
+            return { ...p, status: 'partial', title: p.title + ' · ' + offer.roomLabel, price: offer.price, period: 'Daily', beds: 1, type: offer.occupancy === 'private' ? 'Private room' : 'Shared room', availableFrom: offer.startDate, availableTo: offer.endDate, description: offer.notes || p.description, partialOffer: offer };
+        },
+        async reviewListingAnalysis(key) {
+            const p = property(key);
+            if (p.moderationAnalysis?.source === 'prepared-example') return p.moderationAnalysis;
+            const report = risk(p);
+            p.moderationAnalysis = { demo: true, risk: report.risk, reasons: report.riskReasons, completedAt: new Date().toISOString(), summary: 'Demo screening uses listing prices, completeness and description rules. It does not inspect video or prove fraud. The admin makes the final decision.' };
+            log('Screened listing for admin review: ' + p.title);
+            return p.moderationAnalysis;
+        },
+        async getNotifications() {
+            return state.notifications.filter((n) => n.recipientId === user().id);
+        },
+        async markNotificationRead(key) {
+            const n = state.notifications.find((n) => n.id === key && n.recipientId === user().id) || fail('Notification not found.');
+            n.read = true;
+            return n;
+        },
+        async analyzePropertyVideo(key) {
+            const p = await api.getProperty(key);
+            if (!p.video?.url) fail('Upload a property walkthrough video first.');
+            return { demo: true, summary: 'Preview report based on listing details. The video content has not been analyzed.', furniture: p.furnished, condition: 'Not assessed from video', maintenance: 'Inspect the apartment in person', limitations: 'A connected video analysis service is required for visual findings.' };
+        },
+        async getNegotiations() {
+            return state.requests.filter((r) => user().role === 'tenant' ? r.tenantId === user().id : r.property.ownerId === user().id);
+        },
+        async proposeRent(key, amount) {
+            const r = request(key);
+            if (r.tenantId !== user().id) fail('This rental request belongs to another tenant.');
+            if (!['submitted', 'approved'].includes(r.status) || r.tenantAccepted) fail('Rent can only be negotiated before agreement acceptance.');
+            const price = Number(amount);
+            if (!rules.valid('money', String(amount)) || !Number.isFinite(price) || price <= 0 || price > 99999) fail('Enter a valid rent between JD 0.01 and JD 99,999.');
+            if (r.negotiation?.status === 'pending') fail('The landlord is still reviewing your proposed rent.');
+            r.negotiation = { price, status: 'pending', proposedAt: new Date().toISOString() };
+            log('Proposed rent for ' + r.property.title);
+            return r;
+        },
+        async reviewRent(key, accepted) {
+            const r = request(key);
+            if (r.property.ownerId !== user().id) fail('Only this property owner can confirm the rent.');
+            if (r.negotiation?.status !== 'pending' || !['submitted', 'approved'].includes(r.status)) fail('No pending rent proposal is available.');
+            r.negotiation.status = accepted ? 'confirmed' : 'declined';
+            if (accepted) {
+                r.agreedPrice = r.negotiation.price;
+                r.total = Math.round((r.agreedPrice * (r.property.period === 'Daily' ? r.duration : 1) + r.deposit) * 100) / 100;
+            }
+            log((accepted ? 'Confirmed' : 'Declined') + ' proposed rent for ' + r.property.title);
+            return r;
+        }
+    });
     window.CampusAccess.install(api);
     window.CampusAPI = api;
 })();

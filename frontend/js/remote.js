@@ -72,6 +72,16 @@
         return body;
     }
     Object.assign(api, {
+        getPublicSubletListings: () => read('/partial-offers'),
+        getSubletOffer: (id) => read('/partial-offers/' + key(id)),
+        createSubletRequest: (id, data) => mutate('/partial-offers/' + key(id) + '/requests', 'POST', pick(data, ['startDate', 'endDate'])),
+        reviewListingAnalysis: (id) => mutate('/admin/properties/' + key(id) + '/analysis', 'POST'),
+        getNotifications: () => read('/me/notifications'),
+        markNotificationRead: (id) => mutate('/me/notifications/' + key(id) + '/read', 'POST'),
+        analyzePropertyVideo: (id) => transport.request('/properties/' + key(id) + '/video-analysis', { method: 'POST' }),
+        getNegotiations: () => read('/me/rent-negotiations'),
+        proposeRent: (id, price) => mutate('/rental-requests/' + key(id) + '/rent-proposal', 'PUT', { price: Number(price) }),
+        reviewRent: (id, accepted) => mutate('/rental-requests/' + key(id) + '/rent-proposal/review', 'POST', { accepted }),
         sampleReply() {
             throw new Error('Replies come from the other account in API mode.');
         },
@@ -136,8 +146,8 @@
         simulateMeetingResponse: () => { throw new Error('Simulation is unavailable in API mode.'); },
         editProperty: async (id, data) =>
             mutate('/properties/' + key(id), 'PUT', await listing(data)),
-        moderateProperty: (id, keep) =>
-            mutate('/admin/properties/' + key(id) + '/review', 'POST', { keep }),
+        moderateProperty: (id, keep, reason = '', notes = '') =>
+            mutate('/admin/properties/' + key(id) + '/review', 'POST', { keep, reason, notes }),
         reportProperty: (id, data) =>
             mutate('/properties/' + key(id) + '/reports', 'POST', pick(data, ['reason', 'notes'])),
         toggleUser: (id) => {

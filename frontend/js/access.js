@@ -35,6 +35,11 @@
     permit('getSubletListings createSubletListing paySubletListingFee editSubletListing deleteSubletListing getSubletRequests createSubletRequest reviewSubletRequest', ['tenant']);
     permit('moderateProperty toggleUser resolveReport', ['admin']);
     permit('updateProfile', ['tenant', 'landlord', 'admin']);
+    permit('reviewListingAnalysis', ['admin']);
+    permit('getNotifications markNotificationRead', ['tenant', 'landlord', 'admin']);
+    permit('getNegotiations', ['tenant', 'landlord']);
+    permit('proposeRent', ['tenant']);
+    permit('reviewRent', ['landlord']);
     function install(api) {
         for (const [name, roles] of Object.entries(methods)) {
             const original = api[name];

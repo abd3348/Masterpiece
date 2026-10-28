@@ -43,14 +43,15 @@
         return `<div class="progress-strip" aria-label="Rental progress">${['Request sent', 'Agreement', 'Inspection', 'Direct arrangement', 'Move in'].map((label, i) => `<span class="${i < active ? 'complete' : i === active ? 'now' : ''}" ${i === active ? 'aria-current="step"' : ''}>${i < active ? '✓' : i + 1} ${label}</span>`).join('')}</div>`;
     }
     function summary(p, r, action = '') {
+        if (p.status === 'partial') return `<section class="panel sticky"><div class="summary-photo"><img src="${photo(p, 400)}" alt="${esc(p.title)}"><div><h3>${esc(p.title)}</h3><p>${esc(p.area)} · ${esc(p.type)}</p></div></div><div class="cost">${money(p.price)}<small> / day</small></div>${action}<dl class="summary-list"><div><dt>Available from</dt><dd>${date(p.availableFrom)}</dd></div><div><dt>Available until</dt><dd>${date(p.availableTo)}</dd></div></dl><p>Choose your dates below. The current tenant reviews your request. Agree any deposit and payment directly with them.</p></section>`;
         const total = r ? r.total : p.price * 2;
-        return `<section class="panel sticky"><div class="summary-photo"><img src="${photo(p, 400)}" alt="${esc(p.title)} interior"><div><h3>${esc(p.title)}</h3><p>${esc(p.area)} · ${esc(p.furnished)}</p></div></div><div class="cost">${money(p.price)}<small> / ${p.period === 'Daily' ? 'night' : 'month'}</small></div>${action}<dl class="summary-list"><div><dt>Rental period</dt><dd>${r ? `${r.duration} ${p.period === 'Daily' ? 'nights' : 'months'}` : 'Choose duration'}</dd></div><div><dt>Start date</dt><dd>${r ? date(r.startDate) : 'Choose move-in date'}</dd></div>${r ? `<div><dt>End date</dt><dd>${date(r.endDate)}</dd></div>` : ''}<div><dt>Security deposit</dt><dd>${money(p.price)}</dd></div><div><dt>Tenant platform fee</dt><dd>None</dd></div><div class="total"><dt>Quoted rent + deposit</dt><dd id="summary-total">${money(total)}</dd></div></dl><p>${p.period === 'Daily' ? 'Stay rent' : 'First rental period'} + refundable deposit. Paid directly to the landlord. Campus Mate does not collect or verify rental payments.</p></section>`;
+        return `<section class="panel sticky"><div class="summary-photo"><img src="${photo(p, 400)}" alt="${esc(p.title)} interior"><div><h3>${esc(p.title)}</h3><p>${esc(p.area)} · ${esc(p.furnished)}</p></div></div><div class="cost">${money(r?.agreedPrice ?? p.price)}<small> / ${p.period === 'Daily' ? 'night' : 'month'}</small></div>${action}<dl class="summary-list"><div><dt>Rental period</dt><dd>${r ? `${r.duration} ${p.period === 'Daily' ? 'nights' : 'months'}` : 'Choose duration'}</dd></div><div><dt>Start date</dt><dd>${r ? date(r.startDate) : 'Choose move-in date'}</dd></div>${r ? `<div><dt>End date</dt><dd>${date(r.endDate)}</dd></div>` : ''}<div><dt>Security deposit</dt><dd>${money(r?.deposit ?? p.price)}</dd></div><div><dt>Tenant platform fee</dt><dd>None</dd></div><div class="total"><dt>Quoted rent + deposit</dt><dd id="summary-total">${money(total)}</dd></div></dl><p>${p.period === 'Daily' ? 'Stay rent' : 'First rental period'} + refundable deposit. Paid directly to the landlord. Campus Mate does not collect or verify rental payments.</p></section>`;
     }
     function next(r) {
         return url(
             {
                 submitted: 'requests',
-                approved: 'agreement',
+                approved: 'rentals',
                 inspection: 'inspection',
                 payment: 'payment',
                 active: 'rentals',

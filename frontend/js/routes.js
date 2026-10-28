@@ -5,6 +5,7 @@
         public: [
             'index',
             'properties',
+            'partial-offers',
             'property',
             'market',
             'about',
@@ -93,6 +94,7 @@
             else name = aliases[file];
         }
         if (!paths.has(name)) return null;
+        if (name === 'tenant/bookings.html') name = 'tenant/rentals.html';
         return name + (query.size ? '?' + query.toString() : '') + anchor;
     }
     const href = (input, role) => {
@@ -103,6 +105,7 @@
         guest: [
             ['public/index.html', 'Home'],
             ['public/properties.html', 'Homes'],
+            ['public/partial-offers.html', 'Partial offers'],
             ['public/market.html', 'Market'],
             ['public/about.html', 'About us'],
             ['public/support.html', 'Support'],
@@ -115,12 +118,13 @@
             ['tenant/favorites.html', 'Favorites'],
             ['tenant/messages.html', 'Meetings'],
             ['tenant/requests.html', 'Requests'],
-            ['tenant/bookings.html', 'Arrangements'],
-            ['tenant/rentals.html', 'Rentals']
+            ['public/partial-offers.html', 'Partial offers'],
+            ['tenant/rentals.html', 'Rentals & arrangements']
             ,['tenant/sublets.html', 'Partial rentals']
         ],
         landlord: [
             ['landlord/dashboard.html', 'My properties'],
+            ['landlord/dashboard.html?tab=notifications', 'Notifications'],
             ['landlord/requests.html', 'Requests'],
             ['landlord/bookings.html', 'Arrangements'],
             ['landlord/add-property.html', 'Add property'],

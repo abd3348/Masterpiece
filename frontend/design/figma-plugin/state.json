@@ -1,0 +1,567 @@
+{
+  "fileKey": "vRXeICzaoJTSDXJTxQ6F1b",
+  "sessionId": "a842c240-b87d-490f-8abf-1233407a0517",
+  "foundations": {
+    "createdNodeIds": [
+      "85:7",
+      "85:8",
+      "85:62",
+      "85:63",
+      "85:64",
+      "85:65",
+      "85:66",
+      "85:67",
+      "85:68",
+      "85:69",
+      "85:70",
+      "85:71",
+      "85:72",
+      "85:73",
+      "85:74",
+      "85:75",
+      "85:76"
+    ],
+    "pages": {
+      "foundation": "0:1",
+      "mock": "85:7",
+      "wire": "85:8"
+    },
+    "collection": "VariableCollectionId:85:9",
+    "modes": {
+      "mock": "85:1",
+      "wire": "85:1"
+    },
+    "tokens": {
+      "paper": "VariableID:85:11",
+      "surface": "VariableID:85:15",
+      "ink": "VariableID:85:19",
+      "muted": "VariableID:85:23",
+      "brand": "VariableID:85:27",
+      "sage": "VariableID:85:31",
+      "line": "VariableID:85:35",
+      "gold": "VariableID:85:39",
+      "white": "VariableID:85:43",
+      "s8": "VariableID:85:46",
+      "s12": "VariableID:85:47",
+      "s16": "VariableID:85:48",
+      "s24": "VariableID:85:49",
+      "s32": "VariableID:85:50",
+      "s48": "VariableID:85:51",
+      "s64": "VariableID:85:52",
+      "r8": "VariableID:85:53",
+      "r16": "VariableID:85:54",
+      "r24": "VariableID:85:55",
+      "r999": "VariableID:85:56"
+    },
+    "wireTokens": {
+      "paper": "VariableID:85:13",
+      "surface": "VariableID:85:17",
+      "ink": "VariableID:85:21",
+      "muted": "VariableID:85:25",
+      "brand": "VariableID:85:29",
+      "sage": "VariableID:85:33",
+      "line": "VariableID:85:37",
+      "gold": "VariableID:85:41",
+      "white": "VariableID:85:45"
+    },
+    "styles": {
+      "heading": "S:ab7b6c2f4a32a9a6c9228f2532656b73ba98d83f,",
+      "section": "S:197e08f7a069410533a87ae139c4ee111219b1d8,",
+      "body": "S:fdf090dd1cd062a4471d4dfe40b038a0aae8e59a,",
+      "label": "S:10f7b0c7cab6b4ff338092e6b84717ccfa402a27,",
+      "caption": "S:134e40e2ff9627e33613984c3ee1b1194b2e5425,"
+    },
+    "components": {
+      "Button primary": "85:62",
+      "Button secondary": "85:64",
+      "Badge": "85:66",
+      "Navigation item": "85:68",
+      "Field": "85:70",
+      "Stat": "85:74",
+      "AI button": "89:392"
+    },
+    "variableIds": [
+      "VariableID:85:10",
+      "VariableID:85:11",
+      "VariableID:85:12",
+      "VariableID:85:13",
+      "VariableID:85:14",
+      "VariableID:85:15",
+      "VariableID:85:16",
+      "VariableID:85:17",
+      "VariableID:85:18",
+      "VariableID:85:19",
+      "VariableID:85:20",
+      "VariableID:85:21",
+      "VariableID:85:22",
+      "VariableID:85:23",
+      "VariableID:85:24",
+      "VariableID:85:25",
+      "VariableID:85:26",
+      "VariableID:85:27",
+      "VariableID:85:28",
+      "VariableID:85:29",
+      "VariableID:85:30",
+      "VariableID:85:31",
+      "VariableID:85:32",
+      "VariableID:85:33",
+      "VariableID:85:34",
+      "VariableID:85:35",
+      "VariableID:85:36",
+      "VariableID:85:37",
+      "VariableID:85:38",
+      "VariableID:85:39",
+      "VariableID:85:40",
+      "VariableID:85:41",
+      "VariableID:85:42",
+      "VariableID:85:43",
+      "VariableID:85:44",
+      "VariableID:85:45",
+      "VariableID:85:46",
+      "VariableID:85:47",
+      "VariableID:85:48",
+      "VariableID:85:49",
+      "VariableID:85:50",
+      "VariableID:85:51",
+      "VariableID:85:52",
+      "VariableID:85:53",
+      "VariableID:85:54",
+      "VariableID:85:55",
+      "VariableID:85:56"
+    ]
+  },
+  "roots": {
+    "mock": {
+      "public-index": "86:2",
+      "public-properties": "86:3",
+      "public-property": "86:4",
+      "public-market": "86:5",
+      "public-about": "86:6",
+      "public-support": "86:7",
+      "public-faq": "86:8",
+      "public-privacy": "86:9",
+      "public-terms": "86:10",
+      "auth-login": "86:11",
+      "auth-register": "86:12",
+      "tenant-home": "86:13",
+      "tenant-preferences": "86:14",
+      "tenant-roommates": "86:15",
+      "tenant-favorites": "86:16",
+      "tenant-request": "86:17",
+      "tenant-requests": "86:18",
+      "tenant-rentals": "86:19",
+      "tenant-inspection": "86:20",
+      "tenant-payment": "86:21",
+      "tenant-sublets": "86:22",
+      "tenant-meetings": "86:23",
+      "tenant-profile": "86:24",
+      "tenant-condition": "86:25",
+      "landlord-dashboard": "86:26",
+      "landlord-requests": "86:27",
+      "landlord-bookings": "86:28",
+      "landlord-add": "86:29",
+      "landlord-meetings": "86:30",
+      "landlord-profile": "86:31",
+      "landlord-condition": "86:32",
+      "admin-overview": "86:33",
+      "admin-users": "86:34",
+      "admin-properties": "86:35",
+      "admin-reports": "86:36",
+      "admin-analysis": "86:37",
+      "admin-activity": "86:38",
+      "admin-profile": "86:39",
+      "state-video-analysis": "86:40",
+      "state-edit-offer": "86:41"
+    },
+    "wire": {
+      "public-index": "86:42",
+      "public-properties": "86:43",
+      "public-property": "86:44",
+      "public-market": "86:45",
+      "public-about": "86:46",
+      "public-support": "86:47",
+      "public-faq": "86:48",
+      "public-privacy": "86:49",
+      "public-terms": "86:50",
+      "auth-login": "86:51",
+      "auth-register": "86:52",
+      "tenant-home": "86:53",
+      "tenant-preferences": "86:54",
+      "tenant-roommates": "86:55",
+      "tenant-favorites": "86:56",
+      "tenant-request": "86:57",
+      "tenant-requests": "86:58",
+      "tenant-rentals": "86:59",
+      "tenant-inspection": "86:60",
+      "tenant-payment": "86:61",
+      "tenant-sublets": "86:62",
+      "tenant-meetings": "86:63",
+      "tenant-profile": "86:64",
+      "tenant-condition": "86:65",
+      "landlord-dashboard": "86:66",
+      "landlord-requests": "86:67",
+      "landlord-bookings": "86:68",
+      "landlord-add": "86:69",
+      "landlord-meetings": "86:70",
+      "landlord-profile": "86:71",
+      "landlord-condition": "86:72",
+      "admin-overview": "86:73",
+      "admin-users": "86:74",
+      "admin-properties": "86:75",
+      "admin-reports": "86:76",
+      "admin-analysis": "86:77",
+      "admin-activity": "86:78",
+      "admin-profile": "86:79",
+      "state-video-analysis": "86:80",
+      "state-edit-offer": "86:81"
+    }
+  },
+  "specs": [
+    {
+      "id": "public-index",
+      "role": "public",
+      "title": "A place to live.\nA place to belong.",
+      "sub": "Find a home and people who fit your next chapter.",
+      "kind": "landing",
+      "route": "public/index.html"
+    },
+    {
+      "id": "public-properties",
+      "role": "public",
+      "title": "Find a place that feels like you.",
+      "sub": "Explore homes around Amman and your daily destination.",
+      "kind": "catalog",
+      "route": "public/properties.html"
+    },
+    {
+      "id": "public-property",
+      "role": "public",
+      "title": "Apartment #124",
+      "sub": "Jubeiha, Amman · A space for your next chapter.",
+      "kind": "property",
+      "route": "public/property.html"
+    },
+    {
+      "id": "public-market",
+      "role": "public",
+      "title": "A little perspective on the market",
+      "sub": "Compare illustrative rents and activity across your areas.",
+      "kind": "market",
+      "route": "public/market.html"
+    },
+    {
+      "id": "public-about",
+      "role": "public",
+      "title": "Good spaces.\nBetter company.",
+      "sub": "A home is where your next chapter begins.",
+      "kind": "about",
+      "route": "public/about.html"
+    },
+    {
+      "id": "public-support",
+      "role": "public",
+      "title": "How can we help?",
+      "sub": "A little guidance for your next move.",
+      "kind": "support",
+      "route": "public/support.html"
+    },
+    {
+      "id": "public-faq",
+      "role": "public",
+      "title": "Frequently asked questions",
+      "sub": "Answers about homes, people and your rental journey.",
+      "kind": "faq",
+      "route": "public/faq.html"
+    },
+    {
+      "id": "public-privacy",
+      "role": "public",
+      "title": "Privacy in this preview",
+      "sub": "How your information and media are handled.",
+      "kind": "legal",
+      "route": "public/privacy.html",
+      "sections": [
+        "Temporary demo data",
+        "Photos and videos",
+        "External content",
+        "Future connected service",
+        "Questions"
+      ]
+    },
+    {
+      "id": "public-terms",
+      "role": "public",
+      "title": "Using the project preview",
+      "sub": "Clear expectations for the Campus Mate demonstration.",
+      "kind": "legal",
+      "route": "public/terms.html",
+      "sections": [
+        "A frontend demonstration",
+        "Your account journey",
+        "Use sample information",
+        "Listing fees and direct rent payments",
+        "Connected operation"
+      ]
+    },
+    {
+      "id": "auth-login",
+      "role": "auth",
+      "title": "Good to have you back.",
+      "sub": "Your next chapter. Unlocked.",
+      "kind": "login",
+      "route": "auth/login.html"
+    },
+    {
+      "id": "auth-register",
+      "role": "auth",
+      "title": "Create your account.",
+      "sub": "Your place. Your people. Your next chapter.",
+      "kind": "register",
+      "route": "auth/register.html"
+    },
+    {
+      "id": "tenant-home",
+      "role": "tenant",
+      "title": "Welcome back, Sara.",
+      "sub": "Your next chapter, all in one place.",
+      "kind": "home",
+      "route": "tenant/home.html"
+    },
+    {
+      "id": "tenant-preferences",
+      "role": "tenant",
+      "title": "Your space. Your preferences.",
+      "sub": "Tell us what makes a place feel like home.",
+      "kind": "preferences",
+      "route": "tenant/preferences.html"
+    },
+    {
+      "id": "tenant-roommates",
+      "role": "tenant",
+      "title": "Find your kind of people",
+      "sub": "Compare shared routines. Choose who feels right for you.",
+      "kind": "roommates",
+      "route": "tenant/roommates.html"
+    },
+    {
+      "id": "tenant-favorites",
+      "role": "tenant",
+      "title": "Your saved places",
+      "sub": "Keep the spaces you like together while exploring.",
+      "kind": "favorites",
+      "route": "tenant/favorites.html"
+    },
+    {
+      "id": "tenant-request",
+      "role": "tenant",
+      "title": "Make your next move",
+      "sub": "Send the landlord your dates and rental preferences.",
+      "kind": "request",
+      "route": "tenant/request.html"
+    },
+    {
+      "id": "tenant-requests",
+      "role": "tenant",
+      "title": "My requests",
+      "sub": "Follow the journey from landlord review to move-in.",
+      "kind": "requests",
+      "route": "tenant/requests.html"
+    },
+    {
+      "id": "tenant-rentals",
+      "role": "tenant",
+      "title": "My rentals & arrangements",
+      "sub": "Accepted requests, agreements and rental stays in one place.",
+      "kind": "rentals",
+      "route": "tenant/rentals.html",
+      "note": "Includes former Arrangements and Agreement pages"
+    },
+    {
+      "id": "tenant-inspection",
+      "role": "tenant",
+      "title": "A first look at your new home",
+      "sub": "Review the apartment condition before handover.",
+      "kind": "inspection",
+      "route": "tenant/inspection.html"
+    },
+    {
+      "id": "tenant-payment",
+      "role": "tenant",
+      "title": "Confirm your arrangement",
+      "sub": "Agree rent, deposit and payment directly with the landlord.",
+      "kind": "arrangement",
+      "route": "tenant/payment.html"
+    },
+    {
+      "id": "tenant-sublets",
+      "role": "tenant",
+      "title": "Partial rentals",
+      "sub": "Offer a room for a fixed date range and manage requests yourself.",
+      "kind": "sublets",
+      "route": "tenant/sublets.html"
+    },
+    {
+      "id": "tenant-meetings",
+      "role": "tenant",
+      "title": "Meetings",
+      "sub": "Meet your future roommate or landlord by video. Jordan time.",
+      "kind": "meetings",
+      "route": "tenant/messages.html"
+    },
+    {
+      "id": "tenant-profile",
+      "role": "tenant",
+      "title": "Your profile",
+      "sub": "Your contact details, housing life and agreed rental price.",
+      "kind": "profile",
+      "route": "tenant/profile.html"
+    },
+    {
+      "id": "tenant-condition",
+      "role": "tenant",
+      "title": "Every detail, documented",
+      "sub": "Move-in and move-out walkthroughs for Apartment #124.",
+      "kind": "condition",
+      "route": "tenant/condition.html"
+    },
+    {
+      "id": "landlord-dashboard",
+      "role": "landlord",
+      "title": "Manage your properties",
+      "sub": "Publish each property for JD 20. Rent is paid directly to you.",
+      "kind": "ownerhome",
+      "route": "landlord/dashboard.html"
+    },
+    {
+      "id": "landlord-requests",
+      "role": "landlord",
+      "title": "Your rental requests",
+      "sub": "Review tenant requests, their roommates and proposed rent.",
+      "kind": "ownerrequests",
+      "route": "landlord/requests.html"
+    },
+    {
+      "id": "landlord-bookings",
+      "role": "landlord",
+      "title": "Rental arrangements",
+      "sub": "Follow tenant arrangements and rental dates.",
+      "kind": "ownerbookings",
+      "route": "landlord/bookings.html"
+    },
+    {
+      "id": "landlord-add",
+      "role": "landlord",
+      "title": "A new space. A new beginning.",
+      "sub": "Tell future tenants what makes your property feel like home.",
+      "kind": "addproperty",
+      "route": "landlord/add-property.html"
+    },
+    {
+      "id": "landlord-meetings",
+      "role": "landlord",
+      "title": "Meetings",
+      "sub": "Invite tenants and arrange your property conversations.",
+      "kind": "meetings",
+      "route": "landlord/messages.html"
+    },
+    {
+      "id": "landlord-profile",
+      "role": "landlord",
+      "title": "Your profile",
+      "sub": "Your contact details and rent proposals awaiting confirmation.",
+      "kind": "profile",
+      "route": "landlord/profile.html"
+    },
+    {
+      "id": "landlord-condition",
+      "role": "landlord",
+      "title": "Every detail, documented",
+      "sub": "Review move-in and move-out reports for your rental.",
+      "kind": "condition",
+      "route": "landlord/condition.html"
+    },
+    {
+      "id": "admin-overview",
+      "role": "admin",
+      "title": "A thoughtful view of the community",
+      "sub": "Review people, spaces, reports and platform activity.",
+      "kind": "admin",
+      "tab": "overview",
+      "route": "admin/dashboard.html"
+    },
+    {
+      "id": "admin-users",
+      "role": "admin",
+      "title": "Community members",
+      "sub": "Manage account access and community participation.",
+      "kind": "admin",
+      "tab": "users",
+      "route": "admin/dashboard.html?tab=users"
+    },
+    {
+      "id": "admin-properties",
+      "role": "admin",
+      "title": "Property review",
+      "sub": "Review listings, fees and rule-based risk.",
+      "kind": "admin",
+      "tab": "properties",
+      "route": "admin/dashboard.html?tab=properties"
+    },
+    {
+      "id": "admin-reports",
+      "role": "admin",
+      "title": "Community reports",
+      "sub": "Review concerns and resolve submitted reports.",
+      "kind": "admin",
+      "tab": "reports",
+      "route": "admin/dashboard.html?tab=reports"
+    },
+    {
+      "id": "admin-analysis",
+      "role": "admin",
+      "title": "Listing analysis",
+      "sub": "Rule-based checks on prices and listing completeness.",
+      "kind": "admin",
+      "tab": "ai",
+      "route": "admin/dashboard.html?tab=ai"
+    },
+    {
+      "id": "admin-activity",
+      "role": "admin",
+      "title": "Platform activity",
+      "sub": "A record of community and property actions.",
+      "kind": "admin",
+      "tab": "activity",
+      "route": "admin/dashboard.html?tab=activity"
+    },
+    {
+      "id": "admin-profile",
+      "role": "admin",
+      "title": "Your profile",
+      "sub": "Your administrative account and contact details.",
+      "kind": "profile",
+      "route": "admin/profile.html"
+    },
+    {
+      "id": "state-video-analysis",
+      "role": "public",
+      "title": "Apartment #124",
+      "sub": "Video analysis · Expanded report state",
+      "kind": "property",
+      "expanded": true,
+      "route": "public/property.html · analysis result"
+    },
+    {
+      "id": "state-edit-offer",
+      "role": "tenant",
+      "title": "Edit your offer",
+      "sub": "Partial rental · Edit dialog state",
+      "kind": "editoffer",
+      "route": "tenant/sublets.html · edit dialog"
+    }
+  ],
+  "completedMockups": 11,
+  "completedWireframes": 0,
+  "blocker": "Figma MCP Starter tool-call limit",
+  "pluginValidated": "JavaScript syntax only; not run inside Figma"
+}

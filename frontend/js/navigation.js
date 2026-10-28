@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
     'use strict';
     if (window.parent === window || !window.parent.CampusState) {
         const route = location.pathname.split('/html/').pop() + location.search + location.hash;
@@ -78,6 +78,7 @@
             .replace('.html', '');
         const api = window.CampusAPI;
         if (!api) return;
+        window.parent.CampusMountShowcase?.(document, api);
         const mainNav = document.querySelector('.nav nav');
         function addSidebarIcon(control, name) {
             const paths = {
