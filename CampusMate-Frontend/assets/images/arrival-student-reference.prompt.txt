@@ -1,0 +1,6 @@
+Built-in tool: image_gen.imagegen
+Edit target: user-provided reference character.
+Transparent background: true
+
+Final prompt:
+Use case: background-extraction. Edit target: attached cartoon girl. Create a clean transparent PNG cutout of THIS EXACT illustrated character, without redesigning or restyling her. Remove only the white background and the long black ground shadow. Preserve the same face, burgundy bob haircut, round black glasses, yellow shirt with white sleeve cuffs, navy backpack and trousers, orange books under her left arm, black phone held in right hand, orange sneakers, walking pose, proportions and flat illustration colors. Keep the full figure from hair to both shoes. Closely crop the canvas around the figure with a small transparent margin. No new objects, no text, no background, no added shadow. Save the output asset and return its local file path for integration into the website.
