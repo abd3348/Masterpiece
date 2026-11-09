@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Explore the Campus Mate database: relationships, columns, constraints and a generated SQL Server schema.">
+    <title>Campus Mate · Database design</title>
+    <link rel="stylesheet" href="database.css">
+    <script src="database-data.js" defer></script>
+    <script src="database.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#documentation">Skip to documentation</a>
+    <div class="page-shell">
+        <header class="page-header">
+            <div class="brand"><span class="brand-symbol" aria-hidden="true">CM</span><span id="project-name">Campus Mate</span><span class="brand-divider" aria-hidden="true">/</span><span class="brand-caption">Technical library</span></div>
+            <span class="database-badge" id="database-badge">SQL Server · MasterDB</span>
+        </header>
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy"><p class="eyebrow">The structure behind the product</p><h1 id="page-title">Database design<span class="title-dot">.</span></h1><p id="project-description" class="lead"></p><div class="stores" id="stores" aria-label="Main data stored"></div></div>
+            <div class="metrics" id="metrics" aria-label="Schema totals"></div>
+        </section>
+        <aside id="schema-provenance" class="schema-provenance" role="note"></aside>
+        <main id="documentation">
+            <div class="tab-bar" role="tablist" aria-label="Database documentation views">
+                <button class="tab" id="tab-er" type="button" role="tab" aria-selected="true" aria-controls="panel-er" tabindex="0"><span class="tab-number">01</span>ER diagram</button>
+                <button class="tab" id="tab-schema" type="button" role="tab" aria-selected="false" aria-controls="panel-schema" tabindex="-1"><span class="tab-number">02</span>Schema diagram</button>
+                <button class="tab" id="tab-tables" type="button" role="tab" aria-selected="false" aria-controls="panel-tables" tabindex="-1"><span class="tab-number">03</span>Tables</button>
+                <button class="tab" id="tab-sql" type="button" role="tab" aria-selected="false" aria-controls="panel-sql" tabindex="-1"><span class="tab-number">04</span>SQL script</button>
+                <button class="tab" id="tab-rules" type="button" role="tab" aria-selected="false" aria-controls="panel-rules" tabindex="-1"><span class="tab-number">05</span>Rules</button>
+            </div>
+            <section class="view-panel" id="panel-er" role="tabpanel" aria-labelledby="tab-er"><div id="er-content"></div></section>
+            <section class="view-panel" id="panel-schema" role="tabpanel" aria-labelledby="tab-schema" hidden><div id="schema-content"></div></section>
+            <section class="view-panel" id="panel-tables" role="tabpanel" aria-labelledby="tab-tables" hidden><div class="view-heading"><div><p class="eyebrow">The data dictionary</p><h2>Every table, in context.</h2></div><p>Follow a reference to move between related tables.</p></div><div id="table-directory" class="table-directory" aria-label="Table directory"></div><div id="tables-content"></div></section>
+            <section class="view-panel" id="panel-sql" role="tabpanel" aria-labelledby="tab-sql" hidden><div class="view-heading"><div><p class="eyebrow">SQL Server DDL</p><h2>From design to definition.</h2></div><div class="button-row"><button class="button" id="copy-sql" type="button">Copy SQL</button><button class="button button-primary" id="download-sql" type="button">Download .sql <span aria-hidden="true">↓</span></button></div></div><div class="notice" id="sql-description"></div><p id="sql-status" class="action-status" role="status" aria-live="polite"></p><div class="code-frame"><div class="code-title"><span id="sql-filename"></span><span>References first · Non-destructive DDL</span></div><pre tabindex="0" aria-label="Generated CREATE TABLE script"><code id="sql-code"></code></pre></div></section>
+            <section class="view-panel" id="panel-rules" role="tabpanel" aria-labelledby="tab-rules" hidden><div class="view-heading"><div><p class="eyebrow">Integrity, explained</p><h2>What the schema guarantees.</h2></div><p>Database constraints and application responsibilities are listed separately.</p></div><div id="rules-content"></div></section>
+        </main>
+        <footer class="page-footer"><span id="footer-context"></span><span>All five views share one source: <code>database-data.js</code></span></footer>
+    </div>
+    <noscript><p class="notice">Enable JavaScript to view this database documentation. All data is included locally; no server is required.</p></noscript>
+</body>
+</html>
