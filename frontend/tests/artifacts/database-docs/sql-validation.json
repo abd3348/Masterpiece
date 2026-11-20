@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "parser": "Microsoft SQL Server ScriptDom TSql160Parser",
+  "errors": 0,
+  "databaseExecuted": false,
+  "databaseCreated": false
+}

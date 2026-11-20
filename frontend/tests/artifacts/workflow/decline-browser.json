@@ -1,0 +1,9 @@
+{
+  "passed": 3,
+  "checks": [
+    "Declined invitations disappear immediately from the invitee’s requests, bootstrap and home; direct access is revoked.",
+    "The applicant sees the named rejection and can open another roommate selection with the original property and dates.",
+    "The applicant can apply alone from the recovery home card; the landlord receives a solo application without the rejected roommate."
+  ],
+  "errors": []
+}

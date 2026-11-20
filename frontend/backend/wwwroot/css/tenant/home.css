@@ -1,0 +1,48 @@
+/* Shared interior styles are imported before the theme and layout layers. */
+@import url('../shared/interior.css');
+.market-width-full {
+    --width: 100%;
+}
+.market-width-near-full {
+    --width: 97%;
+}
+.market-width-medium {
+    --width: 89%;
+}
+
+.rental .partial-rental-help {
+    max-width: 700px;
+    margin: 16px 0 0;
+    color: #d0ddd0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+.rental-actions > a.muted-button {
+    text-decoration: none;
+}
+
+/* Simple line-drawn arrival, shown once move-in is complete. */
+.rental .move-in-arrival { display:flex; align-items:center; gap:24px; margin:24px 0; padding:12px 20px; border:1px solid #ffffff18; border-radius:18px; background:#ffffff04; }
+.arrival-illustration { flex:0 1 320px; min-width:0; }
+.arrival-illustration svg { display:block; width:100%; max-height:94px; overflow:visible; }
+.arrival-copy { display:grid; gap:8px; }
+.arrival-copy strong { color:#efc5a1; font:400 25px/1.2 'Playfair Display',Georgia,serif; }
+.arrival-copy > span { color:#d0ddd0; font-size:12px; line-height:1.6; }
+.arrival-walker { animation:arrive-home 6s linear infinite; }
+.arrival-body { animation:arrival-bob 500ms ease-in-out infinite alternate; }
+.arrival-arm,.arrival-leg { transform-origin:0 0; animation:arrival-stride 500ms ease-in-out infinite alternate; }
+.arrival-arm-front,.arrival-leg-back { animation-direction:alternate-reverse; }
+.arrival-arm-back { opacity:.6; }
+@keyframes arrive-home { 0% { transform:translateX(0); opacity:0; } 5% { transform:translateX(12px); opacity:1; } 75%,90% { transform:translateX(236px); opacity:1; } 100% { transform:translateX(236px); opacity:0; } }
+@keyframes arrival-stride { from { transform:rotate(-26deg); } to { transform:rotate(26deg); } }
+@keyframes arrival-bob { from { transform:translateY(0); } to { transform:translateY(-1.5px); } }
+@media(max-width:600px) {
+ .rental .move-in-arrival { flex-direction:column; gap:4px; padding:12px 16px 18px; text-align:center; }
+ .arrival-illustration { flex:none; width:min(280px,100%); }
+ .arrival-copy strong { font-size:23px; }
+ .arrival-copy > span { font-size:11px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .arrival-walker { animation:none !important; transform:translateX(236px); opacity:1; }
+ .arrival-body,.arrival-arm,.arrival-leg { animation:none !important; transform:none; }
+}

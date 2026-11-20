@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-06T12:47:29.842Z",
+  "evidence": [
+    {
+      "check": "All registered Razor routes return full HTML for the authorized role",
+      "passed": 36
+    },
+    {
+      "check": "Own profile appears among roommate candidates",
+      "observed": true,
+      "profileId": "00504a9a9f8e480587027faaf583dd15"
+    },
+    {
+      "check": "Suspended owner listing remains publicly accessible",
+      "detailStatus": "published",
+      "inCatalog": false
+    },
+    {
+      "check": "Request can be approved and activated after administrator removed listing",
+      "approval": "approved",
+      "rentalId": "bd199eeb1f1d4217b74bde46b7fdddad"
+    },
+    {
+      "check": "New condition video cannot be saved through real UI",
+      "error": "Existing media must include its server id."
+    },
+    {
+      "check": "Valid API report with fewer than six checklist entries crashes UI",
+      "error": "Cannot read properties of undefined (reading 'condition')"
+    },
+    {
+      "check": "Guest of partial rental cannot see accepted requests without own primary rental",
+      "rentals": 0,
+      "requests": 1,
+      "requestsSectionVisible": false,
+      "text": "CAMPUS MATE · YOUR NEXT CHAPTER\n\nPartial rentals\n\nThis feature unlocks after you have an active rental.\n\nRent a room short-term after moving in\n\nConfirm an active rental first, then return here to offer a private or shared room.\n\nOpen my rentals"
+    }
+  ]
+}

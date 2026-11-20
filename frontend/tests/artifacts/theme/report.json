@@ -1,0 +1,13 @@
+{
+  "passed": 7,
+  "checks": [
+    "The circular reveal animates from the toggle; mode and form input stay intact across the shell and iframe.",
+    "Preference survives reload and navigation; toggling back restores the light theme.",
+    "tenant: dark mode applies throughout role pages and the toggle remains accessible on phones.",
+    "landlord: dark mode applies throughout role pages and the toggle remains accessible on phones.",
+    "admin: dark mode applies throughout role pages and the toggle remains accessible on phones.",
+    "System preference is respected; reduced motion switches immediately without the bubble.",
+    "A circular overlay fallback works when View Transitions is unavailable and cleans itself up."
+  ],
+  "errors": []
+}

@@ -1,0 +1,8 @@
+{
+  "passed": 3,
+  "checks": [
+    "Existing terms stay unchanged while any approval is missing; a rejection retains the agreement.",
+    "Owner, lead, outgoing and incoming co-tenants must all consent before replacement takes effect.",
+    "Stale proposals and unrelated approvals are rejected; outgoing tenants retain agreement amendment history."
+  ]
+}

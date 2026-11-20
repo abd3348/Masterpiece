@@ -1,0 +1,14 @@
+{
+  "passed": 2,
+  "checks": [
+    {
+      "role": "tenant",
+      "action": "Roommates remains the green active tab after native iframe navigation and reload; browser Back restores the previous tab"
+    },
+    {
+      "role": "tenant",
+      "action": "session restored on full reload"
+    }
+  ],
+  "errors": []
+}

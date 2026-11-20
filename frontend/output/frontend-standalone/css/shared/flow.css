@@ -1,0 +1,513 @@
+@import url('interior.css');
+/* Page layout and headings */
+.flow-main {
+    min-height: 72vh;
+}
+.breadcrumb {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 0 0 22px;
+}
+.breadcrumb a {
+    color: var(--teal);
+}
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.page-heading p {
+    font-size: 12px;
+    margin-top: 7px;
+}
+.badge {
+    display: inline-block;
+    background: #e7f5f1;
+    color: var(--teal);
+    font-size: 10px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+.flow-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(270px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+/* Panels and action buttons */
+.panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+.panel h2 {
+    margin-bottom: 12px;
+}
+.panel p {
+    font-size: 12px;
+    margin: 8px 0;
+}
+.primary,
+.secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    gap: 8px;
+}
+.primary {
+    background: var(--teal);
+    color: white;
+    border: 1px solid var(--teal);
+}
+.secondary {
+    background: #eff5f3;
+    color: var(--teal);
+    border: 1px solid var(--line);
+}
+.full {
+    width: 100%;
+    margin-top: 12px;
+}
+.sticky {
+    position: sticky;
+    top: 155px;
+}
+/* Form fields and validation messages */
+.field {
+    display: block;
+    margin: 20px 0;
+    font-size: 12px;
+    font-weight: 500;
+}
+.field input,
+.field select,
+.field textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce6e3;
+    background: #f8fbfa;
+    border-radius: 6px;
+    margin-top: 9px;
+    color: var(--ink);
+    font: inherit;
+}
+.field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 18px 0;
+}
+.check input {
+    accent-color: var(--teal);
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+/* Rental cost and property summaries */
+.cost {
+    font-size: 30px;
+    color: var(--teal);
+    font-weight: 600;
+}
+.cost small {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+}
+.summary-list {
+    margin: 20px 0;
+}
+.summary-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 13px 0;
+}
+.summary-list dt {
+    color: var(--muted);
+    font-size: 12px;
+}
+.summary-list dd {
+    font-size: 12px;
+    text-align: right;
+}
+.summary-list .total {
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+}
+.summary-list .total dd {
+    font-size: 22px;
+    color: var(--teal);
+}
+.summary-photo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.summary-photo img {
+    width: 78px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.summary-photo h3 {
+    font-size: 13px;
+}
+.summary-photo p {
+    font-size: 10px;
+}
+.status-message {
+    padding: 13px 17px;
+    border-radius: 7px;
+    background: #fff2e9;
+    color: #9a452c;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+.status-message:empty {
+    display: none;
+}
+.notice {
+    padding: 17px;
+    background: #eaf4f1;
+    border-radius: 7px;
+    font-size: 12px;
+    color: var(--teal);
+    margin: 15px 0;
+}
+/* Property details and catalog */
+.gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 24px;
+    height: 320px;
+}
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    min-width: 0;
+}
+.amenities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    font-size: 12px;
+}
+.amenities span {
+    color: var(--teal);
+}
+.facts {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    margin-top: 18px;
+    font-size: 12px;
+}
+.facts small {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+}
+.catalog {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+    gap: 24px;
+}
+.catalog-card {
+    display: flex;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+.catalog-card img {
+    width: 165px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+.catalog-copy {
+    flex: 1;
+}
+.catalog-copy h2 {
+    font-size: 16px;
+}
+.catalog-copy p {
+    font-size: 11px;
+    margin: 7px 0;
+}
+.catalog-copy .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-top: 12px;
+}
+.catalog-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+.catalog-controls input,
+.catalog-controls select {
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: white;
+    font: inherit;
+    font-size: 12px;
+}
+.area-guide {
+    background: repeating-linear-gradient(
+        80deg,
+        #e3edeb 0 55px,
+        #fff 55px 65px,
+        #edf3f0 65px 125px
+    );
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+}
+.area-guide a {
+    align-self: center;
+    background: var(--teal);
+    color: white;
+    padding: 9px 15px;
+    border-radius: 25px;
+    font-size: 12px;
+    box-shadow: 0 4px 10px #003e4230;
+}
+.area-guide p {
+    background: #fffffff0;
+    padding: 12px;
+    font-size: 11px;
+    border-radius: 7px;
+}
+/* Rental stages and reports */
+.progress-strip {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+.progress-strip span {
+    padding: 7px 10px;
+    font-size: 10px;
+    border-radius: 6px;
+    background: #e7eeee;
+    color: var(--muted);
+}
+.progress-strip .complete {
+    background: #def0e8;
+    color: var(--teal);
+}
+.progress-strip .now {
+    background: var(--teal);
+    color: white;
+}
+.report-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding: 13px 0;
+    font-size: 12px;
+}
+.report-row select {
+    border: 1px solid var(--line);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--teal);
+    background: #f5faf8;
+}
+.walkthrough {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.agreement-copy {
+    line-height: 1.8;
+    font-size: 13px;
+}
+.agreement-copy h3 {
+    margin: 20px 0 8px;
+    font-weight: 600;
+}
+.request-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.request-row p {
+    font-size: 12px;
+}
+.rental-card {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 25px;
+}
+.rental-card > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.rental-card h2 {
+    font-size: 22px;
+}
+.rental-actions {
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.payment-row {
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding: 17px 0;
+    font-size: 12px;
+}
+.payment-row small {
+    display: block;
+    color: var(--muted);
+    margin-top: 6px;
+}
+.empty-panel {
+    text-align: center;
+    padding: 65px 20px;
+}
+.empty-panel p {
+    margin: 12px auto 22px;
+    max-width: 400px;
+}
+.loading {
+    padding: 70px;
+    text-align: center;
+    color: var(--muted);
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+.demo-label {
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+.inspection-stats {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 20px 0;
+}
+.inspection-stats strong {
+    font-size: 35px;
+    color: var(--teal);
+}
+/* Responsive overrides stay in cascade order. */
+@media (max-width: 800px) {
+    .flow-layout,
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+    .sticky {
+        position: static;
+    }
+    .area-guide {
+        min-height: 250px;
+    }
+    .gallery {
+        height: 240px;
+        grid-template-columns: 2fr 1fr;
+    }
+    .gallery img:last-child {
+        display: none;
+    }
+    .rental-card {
+        grid-template-columns: 170px 1fr;
+    }
+    .rental-card > img {
+        height: 200px;
+    }
+}
+/* Responsive overrides stay in cascade order. */
+@media (max-width: 500px) {
+    .panel {
+        padding: 19px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .catalog-card {
+        gap: 12px;
+    }
+    .catalog-card img {
+        width: 105px;
+        height: 140px;
+    }
+    .catalog-copy h2 {
+        font-size: 13px;
+    }
+    .catalog-copy .bottom {
+        flex-wrap: wrap;
+    }
+    .amenities {
+        grid-template-columns: 1fr 1fr;
+    }
+    .rental-card {
+        grid-template-columns: 1fr;
+    }
+    .rental-card > img {
+        height: 230px;
+    }
+    .request-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .gallery {
+        height: 200px;
+    }
+    .page-heading {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}

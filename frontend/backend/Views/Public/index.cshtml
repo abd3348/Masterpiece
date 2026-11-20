@@ -1,0 +1,259 @@
+@model CampusMate.ViewModels.ScreenViewModel
+@{ Layout = "_ScreenLayout"; }
+@section Head {
+<script src="../../js/navigation.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#183f35" />
+        
+        <link rel="stylesheet" href="../../css/public/index.css" />
+        <link rel="stylesheet" href="../../css/shared/features.css" />
+        <link rel="stylesheet" href="../../css/shared/layout.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+}
+<a class="skip" href="#homes">Skip the tour</a>
+        <header class="premium-nav">
+            <a class="logo" href="#home">
+                <span class="logo-mark" aria-hidden="true"><img src="../../assets/images/brand-home.svg" alt="" width="28" height="28" /></span>
+
+                <span class="brand-name">
+                    campus<strong>mate</strong>
+                    <small>YOUR NEXT CHAPTER</small>
+                </span>
+            </a>
+
+            <button
+                id="menu-button"
+                aria-expanded="false"
+                aria-controls="navigation"
+                aria-label="Toggle navigation"
+            >
+                ☰
+            </button>
+
+            <nav id="navigation" aria-label="Main navigation">
+                <div class="nav-links">
+                    <a class="nav-active" href="#home">Home</a>
+                    <a href="#homes">Find a home</a>
+                    <a href="#roommates">Roommates</a>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="../public/about.html">About us</a>
+                </div>
+
+                <div class="nav-auth">
+                    <a href="../auth/login.html" class="auth-login"> Log in </a>
+
+                    <a href="../auth/register.html" class="auth-register">
+                        <span>Register</span><svg class="action-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="home" class="key-hero" aria-label="Unlock your next home">
+                <div class="key-stage">
+                    <div class="key-copy">
+                        <div data-key-chapter>
+                            <p class="eyebrow">A NEW CITY. A NEW CHAPTER.</p>
+                            <h1>A place to live.<br>A place to <em>belong.</em></h1>
+                            <p>Find your space, meet your people, and feel at home.<br>Smarter housing for life in Jordan.</p>
+                            <div class="actions"><a class="button" href="#homes">Find a home</a><a class="button" href="#roommates">Find a roommate</a></div>
+                        </div>
+                        <div data-key-chapter inert>
+                            <p class="eyebrow">01 / YOUR SPACE</p>
+                            <h2>Walk into your<br><em>next chapter.</em></h2>
+                            <p>A quiet studio. A shared apartment. A place close to everything. Find the space that fits your everyday life.</p>
+                            <a class="button" href="#homes">Explore homes</a>
+                        </div>
+                        <div data-key-chapter inert>
+                            <p class="eyebrow">02 / YOUR PEOPLE</p>
+                            <h2>Good company.<br><em>Better living.</em></h2>
+                            <p>Find a roommate who shares your budget, routine, and idea of a comfortable home.</p>
+                            <p><strong>Ahmad, 24</strong> · Quiet evenings · Early riser · 94% sample match</p>
+                            <a class="button" href="#roommates">Meet your people</a>
+                        </div>
+                        <div data-key-chapter inert>
+                            <p class="eyebrow">03 / YOUR PEACE OF MIND</p>
+                            <h2>Less uncertainty.<br><em>More confidence.</em></h2>
+                            <p>Property checks, clearer information, and condition documentation help you make a more informed move.</p>
+                            <p>✓ Property condition reports · ✓ Listing review · ✓ Move-in documentation</p>
+                        </div>
+                        <div data-key-chapter inert>
+                            <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                            <h2>Make yourself<br /><em>at home.</em></h2>
+                            <a class="button" href="#homes">Discover your next home</a>
+                        </div>
+                    </div>
+<svg class="key-art" viewBox="60 60 640 560" role="img"
+           aria-label="رأس مفتاح ذهبي داخل قفل الباب من منظور الشخص الماسك للمفتاح">
+
+        <!-- Circular deadbolt rose and recessed cylinder -->
+        <circle cx="385" cy="340" r="173" fill="#D9CEBA"/>
+        <circle cx="380" cy="333" r="173" fill="#193C39" stroke="#122E2A" stroke-width="4"/>
+        <circle cx="380" cy="329" r="168" fill="#51756C"/>
+        <circle cx="380" cy="329" r="157" fill="#315D56" stroke="#79988B" stroke-width="2"/>
+        <path d="M247 245 A157 157 0 0 1 409 175" fill="none" stroke="#A9C5AF" stroke-width="3" stroke-linecap="round"/>
+        <g fill="#65857B" stroke="#274840" stroke-width="2">
+          <circle cx="380" cy="199" r="8"/><circle cx="380" cy="459" r="8"/>
+          <path d="m376 202 8-6 m-8 260 8 6" fill="none" stroke-linecap="round"/>
+        </g>
+        <circle cx="380" cy="330" r="91" fill="#645548" stroke="#122E2A" stroke-width="3"/>
+        <circle cx="380" cy="328" r="84" fill="#9AB1A0" stroke="#CED8BD" stroke-width="2"/>
+        <circle cx="380" cy="330" r="72" fill="#718F80" stroke="#41685E" stroke-width="2"/>
+
+        <!-- فتحة القفل: الساق داخلها ولا تُرى من هذا المنظور -->
+        <path d="M380 304 a26 26 0 0 1 13 48 L398 398 H362 L367 352 A26 26 0 0 1 380 304 Z"
+              fill="#162C27"/>
+
+        <defs>
+          <path id="key-bow" fill-rule="evenodd" d="M-120 0 Q-120-14-103-24 L-76-39 Q-64-46-44-46 H44 Q64-46 76-39 L103-24 Q120-14 120 0 Q120 14 103 24 L76 39 Q64 46 44 46 H-44 Q-64 46-76 39 L-103 24 Q-120 14-120 0 Z M-76 0 C-76-13-45-21 0-21 S76-13 76 0 S45 21 0 21 S-76 13-76 0 Z"/>
+        </defs>
+        <g id="keyShadow" transform="translate(380 346)" fill="#19362F" opacity=".30"><use href="#key-bow"/></g>
+        <g id="keyEdge" transform="translate(380 338)" fill="#A97450" stroke="#684732" stroke-width="3"><use href="#key-bow"/></g>
+        <g id="key" transform="translate(380 330)" fill="#ECC092" stroke="#795239" stroke-width="3" stroke-linejoin="round">
+          <use href="#key-bow"/>
+          <path d="M-97-24 L-74-36 Q-62-42-43-42 H43 Q61-42 74-36 L97-24" fill="none" stroke="#FFE2B9" stroke-width="3" stroke-linecap="round"/>
+          <path d="m-106 0 8-6 8 6-8 6z m196 0 8-6 8 6-8 6z" fill="#558275" stroke-width="1.5"/>
+        </g>
+      </svg>
+                    <button class="key-cue" type="button" aria-label="Start the key animation">↓</button>
+                </div>
+            </section>
+            <div class="trust-strip"
+                ><span>Made for life in Jordan</span><span>Housing that fits you</span><span>Roommate compatibility</span><span>Rent with confidence</span></div>
+            <section class="section" id="homes">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">FIND YOUR CORNER OF THE CITY</p>
+                        <h2>Homes to feel <em>good in.</em></h2>
+                    </div>
+                    <p>Explore sample listings.<br />Your next chapter could start here.</p>
+                </div>
+                <div class="homes-carousel">
+                    <div class="property-grid" id="property-grid" tabindex="0" aria-label="Available homes"></div>
+                </div>
+                <p id="empty" hidden
+                    >No homes match these filters. Try another location or a higher budget.</p>
+            </section>
+            <section id="roommates" class="roommates section">
+                <div>
+                    <p class="eyebrow">A HOME IS ALSO WHO YOU SHARE IT WITH</p>
+                    <h2>Your kind<br />of <em>people.</em></h2>
+                    <p
+                        >Early bird or night owl? Social weekends or quiet evenings? Start with what
+                        matters to you.</p>
+                    <a class="button" href="../tenant/roommates.html">Explore roommate matching</a>
+                </div>
+                <div class="roommate-card">
+                    <div class="profile-banner"
+                        ><span>MEET YOUR NEXT ROOMMATE</span><span>✳</span></div>
+                    <div class="person">
+                        <div class="avatar large">A</div>
+                        <div>
+                            <h3>Ahmad, 24</h3>
+                            <p>University student · Amman</p>
+                        </div>
+                    </div>
+                    <div class="compatibility"
+                        ><strong>94<span>%</span></strong>
+                        <p>Compatibility preview<br /><small>Illustrative example</small></p>
+                    </div>
+                    <div class="tags"
+                        ><span>Non-smoker</span><span>Quiet & tidy</span><span>200 JOD budget</span><span>Early riser</span></div>
+                </div>
+            </section>
+            <section class="section" id="how-it-works">
+                <p class="eyebrow">FROM SEARCH TO SETTLED</p>
+                <h2>A simpler way to <em>move.</em></h2>
+                <div class="steps">
+                    <article
+                        ><span>01</span>
+                        <h3>Tell us what fits</h3>
+                        <p>Choose your location, budget, and living preferences.</p>
+                    </article>
+                    <article
+                        ><span>02</span>
+                        <h3>Find your match</h3>
+                        <p>Explore homes and people that fit your lifestyle.</p>
+                    </article>
+                    <article
+                        ><span>03</span>
+                        <h3>Connect & explore</h3>
+                        <p>Ask questions and get to know the space and its owner.</p>
+                    </article>
+                    <article
+                        ><span>04</span>
+                        <h3>Make your move</h3>
+                        <p>Agree and pay directly with the landlord, then document your new home.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="cta section">
+                <p class="eyebrow">SOMEWHERE NEW. SOMETHING YOU.</p>
+                <h2>Your next home<br />is a <em>new beginning.</em></h2>
+                <div class="actions"
+                    ><a class="button light" href="#homes">Find a home</a><button class="button outline" data-dialog="landlord"
+                        >List your property</button></div>
+            </section>
+            <section class="chapter-account-panel"
+                ><h2>One home for every chapter.</h2><p
+                    >For students, employees, interns, expatriates and anyone moving to a new
+                    city.</p><div class="row-actions"
+                    ><a class="button" href="../auth/login.html">Sign in to your account ↗</a><a class="button" href="../public/market.html">Rental market ↗</a></div><p
+                    >Landlords pay JD 20 per property advertisement. Rent and deposits are paid
+                    directly between landlord and tenant.</p></section></main>
+        <footer class="landing-footer">
+            <div class="footer-brand">
+                <a class="logo" href="#home"><span class="logo-mark" aria-hidden="true"><img src="../../assets/images/brand-home.svg" alt="" width="28" height="28" /></span> campus<span>mate</span></a>
+                <p>Smart housing. Better roommates. A place to belong.</p>
+                <div class="footer-location">
+                    <iframe
+                        class="footer-map"
+                        title="University of Jordan location on Google Maps"
+                        src="https://www.google.com/maps?q=University%20of%20Jordan%2C%20Amman&amp;z=15&amp;output=embed"
+                        width="340"
+                        height="180"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen
+                    ></iframe>
+                    <a
+                        class="footer-map-link"
+                        href="https://www.google.com/maps/search/?api=1&amp;query=University%20of%20Jordan%2C%20Amman"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >View location on Google Maps ↗</a>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Explore Campus Mate">
+                <h2>Explore</h2>
+                <a href="../public/properties.html">Find a home</a>
+                <a href="../tenant/roommates.html">Find a roommate</a>
+                <a href="../public/market.html">Rental market</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="../public/about.html">About us</a>
+            </nav>
+            <nav class="footer-links" aria-label="Useful websites">
+                <h2>Help & resources</h2>
+                <a href="../public/support.html">Support</a>
+                <a href="../public/faq.html">FAQ</a>
+                <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer"
+                    >Google ↗</a>
+                <a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer"
+                    >Google Maps ↗</a>
+                <a href="https://www.ju.edu.jo/" target="_blank" rel="noopener noreferrer"
+                    >University of Jordan ↗</a>
+            </nav>
+            <div class="footer-copyright">
+                <span>© <span id="year"></span> Campus Mate · Home design preview</span>
+                <span class="footer-policy-links"
+                    ><a href="../public/privacy.html">Privacy</a><a href="../public/terms.html">Terms</a></span>
+            </div>
+        </footer>
+        <dialog id="dialog"
+            ><button id="close-dialog" aria-label="Close dialog">×</button>
+            <p class="eyebrow">CAMPUS MATE</p>
+            <h2 id="dialog-title"></h2>
+            <div id="dialog-body"></div>
+        </dialog>
+        <script src="../../js/api.js"></script><script src="../../js/remote.js"></script><script src="../../js/public/index.js"></script>

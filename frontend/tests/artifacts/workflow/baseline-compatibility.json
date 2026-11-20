@@ -1,0 +1,7 @@
+{
+  "verified": true,
+  "initialTables": 23,
+  "upgradedTables": 25,
+  "migrations": 4,
+  "note": "Adopted the original schema without application changes, then applied all later migrations in an isolated database."
+}

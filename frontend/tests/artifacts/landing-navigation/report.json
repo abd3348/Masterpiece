@@ -1,0 +1,16 @@
+{
+  "passed": 10,
+  "checks": [
+    "Desktop: Find a home scrolls to its section without leaving the landing document",
+    "Desktop: Roommates scrolls to its section without leaving the landing document",
+    "Desktop: How it works scrolls to its section without leaving the landing document",
+    "Desktop: Home scrolls to its section without leaving the landing document",
+    "Desktop: section history and refresh retain the section; About us opens its page",
+    "Phone: Find a home scrolls to its section without leaving the landing document",
+    "Phone: Roommates scrolls to its section without leaving the landing document",
+    "Phone: How it works scrolls to its section without leaving the landing document",
+    "Phone: Home scrolls to its section without leaving the landing document",
+    "Phone: section history and refresh retain the section; About us opens its page"
+  ],
+  "errors": []
+}

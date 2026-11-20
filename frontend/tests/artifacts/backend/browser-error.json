@@ -1,0 +1,62 @@
+{
+  "error": "locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#campus-page').contentFrame().locator('.nav nav a[aria-current=\"page\"]').filter({ hasText: 'My properties' }) to be visible\u001b[22m\n",
+  "checks": [
+    {
+      "role": "tenant",
+      "action": "Roommates remains the green active tab after native iframe navigation and reload; browser Back restores the previous tab"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/home.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/preferences.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/roommates.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/favorites.html"
+    },
+    {
+      "role": "tenant",
+      "route": "public/properties.html"
+    },
+    {
+      "role": "tenant",
+      "route": "public/property.html?id=124"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/request.html?id=124"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/requests.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/rentals.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/sublets.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/messages.html"
+    },
+    {
+      "role": "tenant",
+      "route": "tenant/profile.html"
+    },
+    {
+      "role": "tenant",
+      "action": "session restored on full reload"
+    }
+  ],
+  "errors": []
+}

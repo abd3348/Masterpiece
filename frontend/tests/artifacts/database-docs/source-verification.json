@@ -1,0 +1,14 @@
+{
+  "matched": true,
+  "database": "MasterDB",
+  "tables": 25,
+  "columns": 242,
+  "relationships": 45,
+  "excluded": [
+    "__EFMigrationsHistory",
+    "sysdiagrams"
+  ],
+  "metadataSha256": "8f6d3d8be6e7996df5a56de4fb22db2604e172ba6f2624fb03b25d9663999d4e",
+  "databaseCreated": false,
+  "ddlExecuted": false
+}

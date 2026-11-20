@@ -1,0 +1,83 @@
+{
+  "run": "mw5e8l29",
+  "passed": 13,
+  "checks": [
+    "Register independent actors; favorites persist and do not imply consent",
+    "A roommate meeting can be requested without a rental invitation",
+    "Create and publish an independent test home",
+    "Pending invitations show full terms to the invitee and stay private from the landlord",
+    "Only the invitee can answer the latest version; acceptance sends one group application",
+    "Landlord review precedes inspection; both tenants accept individually after inspection",
+    "A changed rent invalidates every approval and stale pages cannot consent",
+    "Confirmation creates an upcoming rental visible to both; only key handover activates it",
+    "Declines, cancellation and replacement preserve a recoverable rental plan",
+    "Corrections and suspension are distinct; reports remain open until an explained outcome",
+    "Owner corrections require fresh review; approval preserves owner pause and the paid fee",
+    "Account suspension needs reason and impact consent; existing rentals remain readable",
+    "Suspended advertisements cannot activate old unfinished requests; active rentals survive"
+  ],
+  "accounts": {
+    "owner": {
+      "id": "62b2f857092b4711b299fcfcf6dee895",
+      "role": "landlord",
+      "firstName": "Workflow",
+      "lastName": "Owner",
+      "email": "landlord.owner.mw5e8l29@campus.test",
+      "phone": "0791234567",
+      "city": "Amman",
+      "occupation": "Student",
+      "destination": "University of Jordan",
+      "active": true,
+      "suspensionReason": null,
+      "suspendedUntil": null
+    },
+    "lead": {
+      "id": "1b399cae25b148bba6b5e77b0fa5aac5",
+      "role": "tenant",
+      "firstName": "Workflow",
+      "lastName": "Lead",
+      "email": "tenant.lead.mw5e8l29@campus.test",
+      "phone": "0791234567",
+      "city": "Amman",
+      "occupation": "Student",
+      "destination": "University of Jordan",
+      "active": true,
+      "suspensionReason": null,
+      "suspendedUntil": null
+    },
+    "peer": {
+      "id": "76a380ec311c4041953fafc1cb9c3fd8",
+      "role": "tenant",
+      "firstName": "Workflow",
+      "lastName": "Peer",
+      "email": "tenant.peer.mw5e8l29@campus.test",
+      "phone": "0791234567",
+      "city": "Amman",
+      "occupation": "Student",
+      "destination": "University of Jordan",
+      "active": true,
+      "suspensionReason": null,
+      "suspendedUntil": null
+    },
+    "other": {
+      "id": "0c3a92144fa74eb2b87545a6b697aa7f",
+      "role": "tenant",
+      "firstName": "Workflow",
+      "lastName": "Other",
+      "email": "tenant.other.mw5e8l29@campus.test",
+      "phone": "0791234567",
+      "city": "Amman",
+      "occupation": "Student",
+      "destination": "University of Jordan",
+      "active": true,
+      "suspensionReason": null,
+      "suspendedUntil": null
+    }
+  },
+  "ids": {
+    "home": 10912,
+    "request": "1965ee94dad04459ae951138f9186dfe",
+    "rental": "fde804bc4c4c4267bba4d6e16357cbb7",
+    "roommate": "d0c70eb92e5a4b0498bea4e7eda38551"
+  }
+}

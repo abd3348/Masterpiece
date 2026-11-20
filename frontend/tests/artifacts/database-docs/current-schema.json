@@ -1,0 +1,4156 @@
+{
+  "database": "MasterDB",
+  "schema": "dbo",
+  "tables": [
+    {
+      "name": "Activity",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ActorId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Text",
+          "type": "nvarchar(2000)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Activity__Create__10216507",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Activity__3214EC07838C8452",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ConditionReports",
+      "columns": [
+        {
+          "name": "RentalId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Phase",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SubmittedBy",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "VideoId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ItemsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Notes",
+          "type": "nvarchar(4000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RecordedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Condition__Recor__3A4CA8FD",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Conditio__42D1B081FFEF8208",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "RentalId",
+              "descending": false
+            },
+            {
+              "name": "Phase",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Condition__Items__395884C4",
+          "expression": "(isjson([ItemsJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Condition__Phase__367C1819",
+          "expression": "([Phase]='final' OR [Phase]='initial')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Favorites",
+      "columns": [
+        {
+          "name": "UserId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Favorite__5084563FFB4C6FCD",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "UserId",
+              "descending": false
+            },
+            {
+              "name": "PropertyId",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inspections",
+      "columns": [
+        {
+          "name": "RequestId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ItemsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Notes",
+          "type": "nvarchar(4000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Inspectio__Creat__29221CFB",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Inspecti__33A8517AD79D29BB",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "RequestId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Inspectio__Items__282DF8C2",
+          "expression": "(isjson([ItemsJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "ListingFees",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "PartialOfferId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "Amount",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Currency",
+          "type": "char(3)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__ListingFe__Curre__51300E55",
+          "default": "('JOD')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__ListingFe__Statu__531856C7",
+          "default": "('unpaid')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Provider",
+          "type": "varchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": true
+        },
+        {
+          "name": "ProviderPaymentId",
+          "type": "nvarchar(200)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": true
+        },
+        {
+          "name": "PaidAt",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Simulated",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__ListingFe__Simul__55009F39",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__ListingF__3214EC074B1B3B79",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UX_ListingFees_Property",
+          "pk": false,
+          "uq": false,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "filter": "([PropertyId] IS NOT NULL)",
+          "columns": [
+            {
+              "name": "PropertyId",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UX_ListingFees_Partial",
+          "pk": false,
+          "uq": false,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "filter": "([PartialOfferId] IS NOT NULL)",
+          "columns": [
+            {
+              "name": "PartialOfferId",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UX_ListingFees_ProviderPayment",
+          "pk": false,
+          "uq": false,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "filter": "([ProviderPaymentId] IS NOT NULL)",
+          "columns": [
+            {
+              "name": "Provider",
+              "descending": false
+            },
+            {
+              "name": "ProviderPaymentId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__ListingFe__Curre__5224328E",
+          "expression": "([Currency]='JOD')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__ListingFe__Statu__540C7B00",
+          "expression": "([Status]='paid' OR [Status]='unpaid')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__ListingFees__55F4C372",
+          "expression": "([PropertyId] IS NOT NULL AND [PartialOfferId] IS NULL AND [Amount]=(20) OR [PropertyId] IS NULL AND [PartialOfferId] IS NOT NULL AND [Amount]=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__ListingFees__56E8E7AB",
+          "expression": "([Status]='paid' AND [PaidAt] IS NOT NULL OR [Status]='unpaid' AND [PaidAt] IS NULL)",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "UploadedBy",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar(255)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "StorageKey",
+          "type": "nvarchar(500)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ContentType",
+          "type": "varchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SizeBytes",
+          "type": "bigint",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Media__CreatedAt__6A30C649",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Media__3214EC07606AA2C1",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Media__SizeBytes__693CA210",
+          "expression": "([SizeBytes]>(0))",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Meetings",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Kind",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "RoommateId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "PartialRequestId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "CreatorId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "RecipientId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Title",
+          "type": "nvarchar(200)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "StartsAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Duration",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(12)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Meetings__Status__6442E2C9",
+          "default": "('pending')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RoomName",
+          "type": "nvarchar(200)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Meetings__Create__662B2B3B",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Meetings__3214EC073A5B8DDF",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Meetings_Creator",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "CreatorId",
+              "descending": false
+            },
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "StartsAt",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Meetings_Recipient",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "RecipientId",
+              "descending": false
+            },
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "StartsAt",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Meetings__671F4F74",
+          "expression": "([CreatorId]<>[RecipientId])",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Meetings__681373AD",
+          "expression": "([Kind]='property' AND [PropertyId] IS NOT NULL AND [RoommateId] IS NULL AND [PartialRequestId] IS NULL OR [Kind]='roommate' AND [PropertyId] IS NULL AND [RoommateId] IS NOT NULL AND [PartialRequestId] IS NULL OR [Kind]='sublet' AND [PropertyId] IS NULL AND [RoommateId] IS NULL AND [PartialRequestId] IS NOT NULL)",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Meetings__Durati__634EBE90",
+          "expression": "([Duration]=(60) OR [Duration]=(30) OR [Duration]=(15))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Meetings__Kind__5D95E53A",
+          "expression": "([Kind]='sublet' OR [Kind]='roommate' OR [Kind]='property')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Meetings__Status__65370702",
+          "expression": "([Status]='cancelled' OR [Status]='declined' OR [Status]='accepted' OR [Status]='pending')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "ModerationHistory",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ReviewedBy",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Decision",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Reason",
+          "type": "nvarchar(1000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Notes",
+          "type": "nvarchar(4000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ReviewedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Moderatio__Revie__0697FACD",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Moderati__3214EC0799CB4481",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RecipientId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "PropertyTitle",
+          "type": "nvarchar(200)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Type",
+          "type": "varchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Text",
+          "type": "nvarchar(2000)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "IsRead",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Notificat__IsRea__0B5CAFEA",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Notificat__Creat__0C50D423",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Route",
+          "type": "nvarchar(300)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Notifica__3214EC07406A9A08",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Notifications_Inbox",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "RecipientId",
+              "descending": false
+            },
+            {
+              "name": "IsRead",
+              "descending": false
+            },
+            {
+              "name": "CreatedAt",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PartialOffers",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RentalId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "RoomNumber",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Occupancy",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "StartDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "EndDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Price",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Notes",
+          "type": "nvarchar(500)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(20)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PartialOf__Statu__40F9A68C",
+          "default": "('awaiting-fee')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PartialOf__Creat__42E1EEFE",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__PartialO__3214EC0788C9D097",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_PartialOffers_Availability",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "RentalId",
+              "descending": false
+            },
+            {
+              "name": "RoomNumber",
+              "descending": false
+            },
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "StartDate",
+              "descending": false
+            },
+            {
+              "name": "EndDate",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__PartialOf__Occup__3F115E1A",
+          "expression": "([Occupancy]='shared' OR [Occupancy]='private')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialOf__Price__40058253",
+          "expression": "([Price]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialOf__RoomN__3E1D39E1",
+          "expression": "([RoomNumber]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialOf__Statu__41EDCAC5",
+          "expression": "([Status]='deleted' OR [Status]='archived' OR [Status]='published' OR [Status]='awaiting-fee')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialOffers__43D61337",
+          "expression": "(datediff(day,[StartDate],[EndDate])>=(1) AND datediff(day,[StartDate],[EndDate])<=(30))",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "PartialRequests",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ListingId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "TenantId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "StartDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "EndDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(12)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PartialRe__Statu__489AC854",
+          "default": "('pending')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "OfferSnapshotJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PartialRe__Creat__4B7734FF",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__PartialR__3214EC07D1A8E644",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_PartialRequests_Availability",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "ListingId",
+              "descending": false
+            },
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "StartDate",
+              "descending": false
+            },
+            {
+              "name": "EndDate",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__PartialRe__Offer__4A8310C6",
+          "expression": "(isjson([OfferSnapshotJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialRe__Statu__498EEC8D",
+          "expression": "([Status]='rejected' OR [Status]='approved' OR [Status]='pending')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PartialRequests__4C6B5938",
+          "expression": "([EndDate]>[StartDate])",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "PaymentEvents",
+      "columns": [
+        {
+          "name": "Provider",
+          "type": "varchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "EventId",
+          "type": "nvarchar(200)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "FeeId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ProcessedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PaymentEv__Proce__5AB9788F",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__PaymentE__8ED02D8BFB5D3DB4",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Provider",
+              "descending": false
+            },
+            {
+              "name": "EventId",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Preferences",
+      "columns": [
+        {
+          "name": "UserId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "MinBudget",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "MaxBudget",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AreasJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Preferenc__Areas__52593CB8",
+          "default": "(N'[]')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Destination",
+          "type": "nvarchar(200)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Commute",
+          "type": "int",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Housing",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Furnishing",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Billing",
+          "type": "varchar(10)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Roommates",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Preferenc__Roomm__5629CD9C",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Sleep",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Schedule",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Noise",
+          "type": "tinyint",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Cleanliness",
+          "type": "tinyint",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Smoking",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "HabitsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Preferenc__Habit__59063A47",
+          "default": "(N'[]')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RoommatesCount",
+          "type": "varchar(3)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF_Preferences_RoommatesCount",
+          "default": "('0')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Preferen__1788CC4C165A8C91",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "UserId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Preferenc__Areas__534D60F1",
+          "expression": "(isjson([AreasJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__Billi__5535A963",
+          "expression": "([Billing]='Daily' OR [Billing]='Monthly')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__Clean__5812160E",
+          "expression": "([Cleanliness]>=(1) AND [Cleanliness]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__Commu__5441852A",
+          "expression": "([Commute]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__Habit__59FA5E80",
+          "expression": "(isjson([HabitsJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__MinBu__5165187F",
+          "expression": "([MinBudget]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferenc__Noise__571DF1D5",
+          "expression": "([Noise]>=(1) AND [Noise]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Preferences__5AEE82B9",
+          "expression": "([MaxBudget]>=[MinBudget])",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK_Preferences_RoommatesCount",
+          "expression": "([RoommatesCount]='3+' OR [RoommatesCount]='2' OR [RoommatesCount]='1' OR [RoommatesCount]='0')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Properties",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "int",
+          "null": false,
+          "identity": true,
+          "identitySeed": 1,
+          "identityIncrement": 1,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "OwnerId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Title",
+          "type": "nvarchar(200)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "City",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Area",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Price",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Period",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Beds",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Baths",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Size",
+          "type": "decimal(10,2)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Type",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Furnished",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(20)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Propertie__Statu__72C60C4A",
+          "default": "('awaiting-fee')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Description",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AmenitiesJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Propertie__Ameni__74AE54BC",
+          "default": "(N'[]')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AvailableFrom",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AvailableTo",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Commute",
+          "type": "int",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Noise",
+          "type": "tinyint",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Cleanliness",
+          "type": "tinyint",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Smoking",
+          "type": "nvarchar(50)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Risk",
+          "type": "tinyint",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RiskReasonsJson",
+          "type": "nvarchar(max)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ModerationAnalysisJson",
+          "type": "nvarchar(max)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Propertie__Creat__7C4F7684",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "OwnerWantsPublished",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Propertie__Owner__22401542",
+          "default": "(CONVERT([bit],(1)))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ReviewStatus",
+          "type": "varchar(20)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Propertie__Revie__2334397B",
+          "default": "('approved')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Properti__3214EC07292E5D39",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Properties_Search",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "City",
+              "descending": false
+            },
+            {
+              "name": "Area",
+              "descending": false
+            },
+            {
+              "name": "Price",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Properties_Owner",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "OwnerId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Propertie__Ameni__75A278F5",
+          "expression": "(isjson([AmenitiesJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Baths__70DDC3D8",
+          "expression": "([Baths]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Clean__787EE5A0",
+          "expression": "([Cleanliness]>=(1) AND [Cleanliness]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Commu__76969D2E",
+          "expression": "([Commute]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Moder__7B5B524B",
+          "expression": "([ModerationAnalysisJson] IS NULL OR isjson([ModerationAnalysisJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Noise__778AC167",
+          "expression": "([Noise]>=(1) AND [Noise]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Perio__6EF57B66",
+          "expression": "([Period]='Daily' OR [Period]='Monthly')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Price__6E01572D",
+          "expression": "([Price]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__RiskR__7A672E12",
+          "expression": "([RiskReasonsJson] IS NULL OR isjson([RiskReasonsJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Propertie__Statu__73BA3083",
+          "expression": "([Status]='deleted' OR [Status]='archived' OR [Status]='published' OR [Status]='pending' OR [Status]='awaiting-fee')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Properties__7D439ABD",
+          "expression": "([AvailableTo]>[AvailableFrom])",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Properties__Beds__6FE99F9F",
+          "expression": "([Beds]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Properties__Risk__797309D9",
+          "expression": "([Risk]>=(0) AND [Risk]<=(100))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Properties__Size__71D1E811",
+          "expression": "([Size]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK_Properties_ReviewStatus",
+          "expression": "([ReviewStatus]='suspended' OR [ReviewStatus]='changes-requested' OR [ReviewStatus]='pending' OR [ReviewStatus]='approved')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "PropertyMedia",
+      "columns": [
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "MediaId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Kind",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SortOrder",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__PropertyM__SortO__02FC7413",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Property__9BE58C69C4AA6747",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "PropertyId",
+              "descending": false
+            },
+            {
+              "name": "MediaId",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UX_PropertyMedia_Video",
+          "pk": false,
+          "uq": false,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "filter": "([Kind]='video')",
+          "columns": [
+            {
+              "name": "PropertyId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__PropertyM__SortO__03F0984C",
+          "expression": "([SortOrder]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__PropertyMe__Kind__02084FDA",
+          "expression": "([Kind]='video' OR [Kind]='photo')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "RentalAmendments",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RentalId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ProposedBy",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "BaseTermsVersion",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "OriginalTermsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ProposedTermsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RequiredApproversJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ApprovedByJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(16)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK_RentalAmendments",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK_RentalAmendments_Status",
+          "expression": "([Status]='cancelled' OR [Status]='rejected' OR [Status]='approved' OR [Status]='pending')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "RentalRequests",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "TenantId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "RoommateId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Message",
+          "type": "nvarchar(2000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "StartDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "EndDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Duration",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Period",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(16)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Statu__151B244E",
+          "default": "('submitted')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertySnapshotJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AgreedPrice",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Deposit",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Total",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "LandlordAccepted",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Landl__1AD3FDA4",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "TenantAccepted",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Tenan__1BC821DD",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "AgreementSnapshotJson",
+          "type": "nvarchar(max)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Creat__1DB06A4F",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "InvitationExpiresAt",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "InvitationStatus",
+          "type": "varchar(16)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RoommateAccepted",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Roomm__1F63A897",
+          "default": "(CONVERT([bit],(0)))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RoommateUserId",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "TermsVersion",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Terms__2057CCD0",
+          "default": "((1))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "WorkflowVersion",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentalReq__Workf__214BF109",
+          "default": "((1))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__RentalRe__3214EC07D3D04F4D",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Requests_Availability",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "PropertyId",
+              "descending": false
+            },
+            {
+              "name": "Status",
+              "descending": false
+            },
+            {
+              "name": "StartDate",
+              "descending": false
+            },
+            {
+              "name": "EndDate",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Requests_Tenant",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "TenantId",
+              "descending": false
+            },
+            {
+              "name": "CreatedAt",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__RentalReq__Agree__17F790F9",
+          "expression": "([AgreedPrice]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Agree__1CBC4616",
+          "expression": "([AgreementSnapshotJson] IS NULL OR isjson([AgreementSnapshotJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Depos__18EBB532",
+          "expression": "([Deposit]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Durat__1332DBDC",
+          "expression": "([Duration]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Perio__14270015",
+          "expression": "([Period]='Daily' OR [Period]='Monthly')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Prope__17036CC0",
+          "expression": "(isjson([PropertySnapshotJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Statu__160F4887",
+          "expression": "([Status]='cancelled' OR [Status]='rejected' OR [Status]='closed' OR [Status]='active' OR [Status]='confirmed' OR [Status]='payment' OR [Status]='agreement' OR [Status]='inspection' OR [Status]='approved' OR [Status]='submitted' OR [Status]='waiting-roommate' OR [Status]='draft')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalReq__Total__19DFD96B",
+          "expression": "([Total]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentalRequests__1EA48E88",
+          "expression": "([EndDate]>[StartDate])",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK_RentalRequests_Invitation",
+          "expression": "([InvitationStatus] IS NULL OR ([InvitationStatus]='expired' OR [InvitationStatus]='cancelled' OR [InvitationStatus]='declined' OR [InvitationStatus]='accepted' OR [InvitationStatus]='pending'))",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Rentals",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RequestId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "Status",
+          "type": "varchar(10)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Rentals__Status__2DE6D218",
+          "default": "('active')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "EndDate",
+          "type": "date",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PaymentMethod",
+          "type": "varchar(24)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Rentals__Payment__2FCF1A8A",
+          "default": "('direct-to-landlord')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "MoveInComplete",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Rentals__MoveInC__31B762FC",
+          "default": "((0))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ArrangementConfirmedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Rentals__Arrange__32AB8735",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ClosedAt",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Rentals__3214EC07F5B08839",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UQ__Rentals__33A8517BDD3147A3",
+          "pk": false,
+          "uq": true,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "RequestId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Rentals__Payment__30C33EC3",
+          "expression": "([PaymentMethod]='direct-to-landlord')",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__Rentals__Status__2EDAF651",
+          "expression": "([Status]='closed' OR [Status]='active' OR [Status]='upcoming')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "RentNegotiations",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "RequestId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "Price",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(12)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ProposedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RentNegot__Propo__245D67DE",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ReviewedAt",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__RentNego__3214EC070EE2713B",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UX_RentNegotiations_Pending",
+          "pk": false,
+          "uq": false,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "filter": "([Status]='pending')",
+          "columns": [
+            {
+              "name": "RequestId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__RentNegot__Price__22751F6C",
+          "expression": "([Price]>(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RentNegot__Statu__236943A5",
+          "expression": "([Status]='declined' OR [Status]='confirmed' OR [Status]='pending')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ReporterId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Reason",
+          "type": "nvarchar(200)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Notes",
+          "type": "nvarchar(4000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Status",
+          "type": "varchar(12)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Reports__Status__7EF6D905",
+          "default": "('open')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Resolution",
+          "type": "nvarchar(4000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ResolvedBy",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "ResolvedAt",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Reports__Created__01D345B0",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ActionTakenAt",
+          "type": "datetimeoffset(7)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "ResolutionNotes",
+          "type": "nvarchar(1000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Reports__3214EC077C35DAB8",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Reports__Status__7FEAFD3E",
+          "expression": "([Status]='resolved' OR [Status]='open')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "PropertyId",
+          "type": "int",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "AuthorId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "Rating",
+          "type": "tinyint",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Text",
+          "type": "nvarchar(2000)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Reviews__Created__0D7A0286",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Reviews__3214EC0722BD8AEC",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "IX_Reviews_Property",
+          "pk": false,
+          "uq": false,
+          "unique": false,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "PropertyId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Reviews__Rating__0C85DE4D",
+          "expression": "([Rating]>=(1) AND [Rating]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "RoommateContacts",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "UserId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "PersonId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "Status",
+          "type": "varchar(12)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RoommateC__Statu__6DCC4D03",
+          "default": "('pending')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RoommateC__Creat__6FB49575",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Roommate__3214EC07BA937107",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UQ__Roommate__5D2A33F3603424A6",
+          "pk": false,
+          "uq": true,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "UserId",
+              "descending": false
+            },
+            {
+              "name": "PersonId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__RoommateC__Statu__6EC0713C",
+          "expression": "([Status]='rejected' OR [Status]='accepted' OR [Status]='pending')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "RoommateFavorites",
+      "columns": [
+        {
+          "name": "UserId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        },
+        {
+          "name": "RoommateId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": true,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK_RoommateFavorites",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "UserId",
+              "descending": false
+            },
+            {
+              "name": "RoommateId",
+              "descending": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RoommateProfiles",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "UserId",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": true,
+          "uq": true
+        },
+        {
+          "name": "Area",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "MinBudget",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "MaxBudget",
+          "type": "decimal(12,3)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Sleep",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Schedule",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Noise",
+          "type": "tinyint",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Cleanliness",
+          "type": "tinyint",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Smoking",
+          "type": "nvarchar(50)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "HabitsJson",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RoommateP__Habit__628FA481",
+          "default": "(N'[]')",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Available",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__RoommateP__Avail__6477ECF3",
+          "default": "((1))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Roommate__3214EC07D313DD77",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UQ__Roommate__1788CC4D41B84DF9",
+          "pk": false,
+          "uq": true,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "UserId",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__RoommateP__Clean__619B8048",
+          "expression": "([Cleanliness]>=(1) AND [Cleanliness]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RoommateP__Habit__6383C8BA",
+          "expression": "(isjson([HabitsJson])=(1))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RoommateP__MinBu__5FB337D6",
+          "expression": "([MinBudget]>=(0))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RoommateP__Noise__60A75C0F",
+          "expression": "([Noise]>=(1) AND [Noise]<=(5))",
+          "disabled": false,
+          "untrusted": false
+        },
+        {
+          "name": "CK__RoommateProfiles__656C112C",
+          "expression": "([MaxBudget]>=[MinBudget])",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "columns": [
+        {
+          "name": "Id",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": true,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Role",
+          "type": "varchar(16)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "FirstName",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "LastName",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Email",
+          "type": "nvarchar(254)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "NormalizedEmail",
+          "type": "nvarchar(254)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": true
+        },
+        {
+          "name": "PasswordHash",
+          "type": "nvarchar(max)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SecurityStamp",
+          "type": "nvarchar(64)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Phone",
+          "type": "nvarchar(32)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "City",
+          "type": "nvarchar(100)",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Occupation",
+          "type": "nvarchar(150)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Destination",
+          "type": "nvarchar(200)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Active",
+          "type": "bit",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Users__Active__4CA06362",
+          "default": "((1))",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "CreatedAt",
+          "type": "datetimeoffset(0)",
+          "null": false,
+          "identity": false,
+          "defaultName": "DF__Users__CreatedAt__4D94879B",
+          "default": "(sysdatetimeoffset())",
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "Version",
+          "type": "rowversion",
+          "null": false,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SuspendedBy",
+          "type": "nvarchar(64)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SuspendedUntil",
+          "type": "datetimeoffset(0)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        },
+        {
+          "name": "SuspensionReason",
+          "type": "nvarchar(1000)",
+          "null": true,
+          "identity": false,
+          "pk": false,
+          "fk": false,
+          "uq": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "PK__Users__3214EC070524A625",
+          "pk": true,
+          "uq": false,
+          "unique": true,
+          "kind": "CLUSTERED",
+          "columns": [
+            {
+              "name": "Id",
+              "descending": false
+            }
+          ]
+        },
+        {
+          "name": "UQ__Users__368B291AC7FE6295",
+          "pk": false,
+          "uq": true,
+          "unique": true,
+          "kind": "NONCLUSTERED",
+          "columns": [
+            {
+              "name": "NormalizedEmail",
+              "descending": false
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "CK__Users__Role__4BAC3F29",
+          "expression": "([Role]='admin' OR [Role]='landlord' OR [Role]='tenant')",
+          "disabled": false,
+          "untrusted": false
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "name": "FK__Activity__ActorI__0F2D40CE",
+      "from": "Activity",
+      "column": "ActorId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Condition__Renta__3587F3E0",
+      "from": "ConditionReports",
+      "column": "RentalId",
+      "to": "Rentals",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Condition__Submi__37703C52",
+      "from": "ConditionReports",
+      "column": "SubmittedBy",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Condition__Video__3864608B",
+      "from": "ConditionReports",
+      "column": "VideoId",
+      "to": "Media",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Favorites__Prope__07C12930",
+      "from": "Favorites",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Favorites__UserI__06CD04F7",
+      "from": "Favorites",
+      "column": "UserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Inspectio__Reque__2739D489",
+      "from": "Inspections",
+      "column": "RequestId",
+      "to": "RentalRequests",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__ListingFe__Parti__503BEA1C",
+      "from": "ListingFees",
+      "column": "PartialOfferId",
+      "to": "PartialOffers",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__ListingFe__Prope__4F47C5E3",
+      "from": "ListingFees",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Media__UploadedB__68487DD7",
+      "from": "Media",
+      "column": "UploadedBy",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Meetings__Creato__6166761E",
+      "from": "Meetings",
+      "column": "CreatorId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Meetings__Partia__607251E5",
+      "from": "Meetings",
+      "column": "PartialRequestId",
+      "to": "PartialRequests",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Meetings__Proper__5E8A0973",
+      "from": "Meetings",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Meetings__Recipi__625A9A57",
+      "from": "Meetings",
+      "column": "RecipientId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Meetings__Roomma__5F7E2DAC",
+      "from": "Meetings",
+      "column": "RoommateId",
+      "to": "RoommateProfiles",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Moderatio__Prope__04AFB25B",
+      "from": "ModerationHistory",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Moderatio__Revie__05A3D694",
+      "from": "ModerationHistory",
+      "column": "ReviewedBy",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Notificat__Prope__0A688BB1",
+      "from": "Notifications",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Notificat__Recip__09746778",
+      "from": "Notifications",
+      "column": "RecipientId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PartialOf__Renta__3D2915A8",
+      "from": "PartialOffers",
+      "column": "RentalId",
+      "to": "Rentals",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PartialRe__Listi__46B27FE2",
+      "from": "PartialRequests",
+      "column": "ListingId",
+      "to": "PartialOffers",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PartialRe__Tenan__47A6A41B",
+      "from": "PartialRequests",
+      "column": "TenantId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PaymentEv__FeeId__59C55456",
+      "from": "PaymentEvents",
+      "column": "FeeId",
+      "to": "ListingFees",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Preferenc__UserI__5070F446",
+      "from": "Preferences",
+      "column": "UserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Propertie__Owner__6D0D32F4",
+      "from": "Properties",
+      "column": "OwnerId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PropertyM__Media__01142BA1",
+      "from": "PropertyMedia",
+      "column": "MediaId",
+      "to": "Media",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__PropertyM__Prope__00200768",
+      "from": "PropertyMedia",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK_RentalAmendments_Rentals_RentalId",
+      "from": "RentalAmendments",
+      "column": "RentalId",
+      "to": "Rentals",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK_RentalAmendments_Users_ProposedBy",
+      "from": "RentalAmendments",
+      "column": "ProposedBy",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RentalReq__Prope__10566F31",
+      "from": "RentalRequests",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RentalReq__Roomm__123EB7A3",
+      "from": "RentalRequests",
+      "column": "RoommateId",
+      "to": "RoommateProfiles",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RentalReq__Tenan__114A936A",
+      "from": "RentalRequests",
+      "column": "TenantId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK_RentalRequests_Users_RoommateUserId",
+      "from": "RentalRequests",
+      "column": "RoommateUserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Rentals__Request__2CF2ADDF",
+      "from": "Rentals",
+      "column": "RequestId",
+      "to": "RentalRequests",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RentNegot__Reque__2180FB33",
+      "from": "RentNegotiations",
+      "column": "RequestId",
+      "to": "RentalRequests",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Reports__Propert__7D0E9093",
+      "from": "Reports",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Reports__Reporte__7E02B4CC",
+      "from": "Reports",
+      "column": "ReporterId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Reports__Resolve__00DF2177",
+      "from": "Reports",
+      "column": "ResolvedBy",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Reviews__AuthorI__0B91BA14",
+      "from": "Reviews",
+      "column": "AuthorId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__Reviews__Propert__0A9D95DB",
+      "from": "Reviews",
+      "column": "PropertyId",
+      "to": "Properties",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RoommateC__Perso__6CD828CA",
+      "from": "RoommateContacts",
+      "column": "PersonId",
+      "to": "RoommateProfiles",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RoommateC__UserI__6BE40491",
+      "from": "RoommateContacts",
+      "column": "UserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK_RoommateFavorites_RoommateProfiles_RoommateId",
+      "from": "RoommateFavorites",
+      "column": "RoommateId",
+      "to": "RoommateProfiles",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK_RoommateFavorites_Users_UserId",
+      "from": "RoommateFavorites",
+      "column": "UserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    },
+    {
+      "name": "FK__RoommateP__UserI__5EBF139D",
+      "from": "RoommateProfiles",
+      "column": "UserId",
+      "to": "Users",
+      "toColumn": "Id",
+      "onDelete": "NO_ACTION",
+      "onUpdate": "NO_ACTION",
+      "disabled": false,
+      "untrusted": false,
+      "ordinal": 1
+    }
+  ],
+  "excludedTables": [
+    {
+      "name": "__EFMigrationsHistory"
+    },
+    {
+      "name": "sysdiagrams"
+    }
+  ]
+}

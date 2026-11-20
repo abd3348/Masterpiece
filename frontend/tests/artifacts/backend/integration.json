@@ -1,0 +1,34 @@
+{
+  "run": "mw54jih8",
+  "passed": 19,
+  "checks": [
+    "MVC page and API configuration are served",
+    "CSRF, invalid registration, role escalation and invalid login are rejected",
+    "Independent accounts register with persistent cookie sessions",
+    "Preferences round-trip including roommate count and daily billing",
+    "File signatures and ownership are checked; property is unpublished before its fee",
+    "Development checkout is explicit, idempotent and publishes only once",
+    "Favorites and reviews persist, and tenant listing edits are forbidden",
+    "Rental creation, request privacy and rent negotiation use server prices",
+    "Approval, agreement, inspection and direct arrangement persist",
+    "Concurrent overlapping rental requests cannot reserve booked dates",
+    "Room offer publishing, applications, consent and locked terms work",
+    "Meetings enforce recipient consent, conflicts, privacy and join windows",
+    "Condition videos persist and are private to rental participants",
+    "Closing requires both reports and protects accepted room bookings",
+    "Support submissions are persisted for administrator review",
+    "Reports, moderation, notifications and suspension enforce admin permissions",
+    "Repeated edits and visibility changes cannot bypass required admin review",
+    "Passwords are hashed and changed passwords invalidate older sessions",
+    "New HTTP clients see persisted SQL data after signing in again"
+  ],
+  "ids": {
+    "owner": "d9f315d53b3f4eb3a5019ab58ddd167e",
+    "tenant": "49ea2557f314422dbb693578c8079d05",
+    "peer": "13bbe4ae746d4b74a7b04e5e781e5a94",
+    "property": 10902,
+    "request": "88663d8c1126482b9dea8bb28748b798",
+    "rental": "c3694933c2cf4dd5a54765cfc037755c",
+    "offer": "116636f8bf2d4a66a8e4924e1469e76f"
+  }
+}

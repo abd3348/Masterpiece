@@ -1,0 +1,9 @@
+backend/bin/
+backend/obj/
+backend/App_Data/keys/
+backend/App_Data/uploads/
+backend/appsettings.Local.json
+backend/.dotnet/
+backend/.nuget/
+tmp/
+output/app/

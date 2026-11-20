@@ -1,0 +1,12 @@
+@model ScreenViewModel
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="/html/@Model.Section/" />
+    <title>@Model.Title</title>
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body class="@Model.BodyClass" data-section="@Model.Section" data-screen="@Model.Screen" data-page="@Model.Page" data-tab="@Model.Tab">
+    @RenderBody()
+</body>
+</html>

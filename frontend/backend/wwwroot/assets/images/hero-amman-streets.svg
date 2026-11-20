@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <title>Four apartment buildings of different heights on an Amman hillside</title>
+  <defs>
+    <g id="floor">
+      <path d="M12 0h15v17H12zM39 0h16v17H39zM67 0h15v17H67z"/>
+      <path d="M34 13h52v10H34zM41 16v6m9-6v6m9-6v6m9-6v6m9-6v6"/>
+    </g>
+  </defs>
+  <path d="M0 445q154-62 326-29t315-22q134-42 279-30" stroke="#769786" stroke-width="1.6"/>
+  <g transform="translate(74 265.98) scale(1.13)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
+    <path d="M0 0h96v154H0zM96 0l19-10v154l-19 10zM0 0l19-10h96L96 0z"/>
+    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
+    <use href="#floor" y="13"/>
+    <use href="#floor" y="49"/>
+    <use href="#floor" y="85"/>
+    <path d="M16 154v-25h21v25m-27 2h34" fill="none"/>
+  </g>
+  <g transform="translate(280 155.76) scale(1.02)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
+    <path d="M0 0h96v262H0zM96 0l19-10v262l-19 10zM0 0l19-10h96L96 0z"/>
+    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
+    <use href="#floor" y="13"/>
+    <use href="#floor" y="49"/>
+    <use href="#floor" y="85"/>
+    <use href="#floor" y="121"/>
+    <use href="#floor" y="157"/>
+    <use href="#floor" y="193"/>
+    <path d="M16 262v-25h21v25m-27 2h34" fill="none"/>
+  </g>
+  <g transform="translate(492 236.9) scale(0.89)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
+    <path d="M0 0h96v190H0zM96 0l19-10v190l-19 10zM0 0l19-10h96L96 0z"/>
+    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
+    <use href="#floor" y="13"/>
+    <use href="#floor" y="49"/>
+    <use href="#floor" y="85"/>
+    <use href="#floor" y="121"/>
+    <path d="M16 190v-25h21v25m-27 2h34" fill="none"/>
+  </g>
+  <g transform="translate(710 19.30000000000001) scale(1.05)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
+    <path d="M0 0h96v334H0zM96 0l19-10v334l-19 10zM0 0l19-10h96L96 0z"/>
+    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
+    <use href="#floor" y="13"/>
+    <use href="#floor" y="49"/>
+    <use href="#floor" y="85"/>
+    <use href="#floor" y="121"/>
+    <use href="#floor" y="157"/>
+    <use href="#floor" y="193"/>
+    <use href="#floor" y="229"/>
+    <use href="#floor" y="265"/>
+    <path d="M16 334v-25h21v25m-27 2h34" fill="none"/>
+  </g>
+</svg>

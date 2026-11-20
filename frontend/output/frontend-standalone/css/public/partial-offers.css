@@ -1,0 +1,6 @@
+@import url('../shared/flow.css');
+.partial-offer-card { display:flex; flex-direction:column; align-items:flex-start; gap:12px; }
+.partial-offer-card .cover { width:100%; height:210px; object-fit:cover; border-radius:16px; }
+.partial-offer-card h2 { font-size:25px; margin:0; }
+.partial-offer-card p { margin:0; }
+.partial-offer-card > .primary { margin-top:auto; }

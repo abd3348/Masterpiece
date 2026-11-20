@@ -1,0 +1,238 @@
+{
+  "verified": true,
+  "tables": 23,
+  "excluded": "New columns and rowversion concurrency tokens",
+  "before": [
+    {
+      "table": "Activity",
+      "rows": 184,
+      "fingerprint": "A2ACAA4CEB1FF02F797F9F0FDE224EA17E7618C06FF98A330DFE5C6FFAF933CC"
+    },
+    {
+      "table": "ConditionReports",
+      "rows": 22,
+      "fingerprint": "A82D225FF593B928C9932E2B94AC1C1955902899B1024A84BA0A53BB497A4FDE"
+    },
+    {
+      "table": "Favorites",
+      "rows": 6,
+      "fingerprint": "525A9840548F901B44179E070137C3CFBE41E6D8EB41226B423072792AC2F3E5"
+    },
+    {
+      "table": "Inspections",
+      "rows": 13,
+      "fingerprint": "BC208103815A5DA27DB64464538B3D3890F95E4B441BA4C6D55B87DBA97BDF62"
+    },
+    {
+      "table": "ListingFees",
+      "rows": 20,
+      "fingerprint": "516C7C80FA311B8E86BC1372BD1F2B85B2EC31AD8A74D131695A3D78EC8E27E1"
+    },
+    {
+      "table": "Media",
+      "rows": 21,
+      "fingerprint": "13A2CF16259A7C7CC98F23012B3CD34FBC43664A20EF51853BC7AD0633FE7B51"
+    },
+    {
+      "table": "Meetings",
+      "rows": 12,
+      "fingerprint": "467DAAD2A9009E9B1B64FF73C67AED5AC59F16467623CD5EC2FC039264F69232"
+    },
+    {
+      "table": "ModerationHistory",
+      "rows": 13,
+      "fingerprint": "4D358341F59B512E3AE8DFD4A02FCB3BB1B20F7C5F765FE2878F4C9767EB0026"
+    },
+    {
+      "table": "Notifications",
+      "rows": 9,
+      "fingerprint": "6839AB6E592DBA0D4E3635072AAB5F66F823A3C589A3F24C5E50F1E920FC7451"
+    },
+    {
+      "table": "PartialOffers",
+      "rows": 6,
+      "fingerprint": "7D114EE4E37A18B229335F2E775BBD678FAD1DC1BEF46A64BB10F01780917E25"
+    },
+    {
+      "table": "PartialRequests",
+      "rows": 6,
+      "fingerprint": "836CAAF7AB94276B8F2566FDDB41BA755A5B3EA39DA93B8EAE0D4D9951229E78"
+    },
+    {
+      "table": "PaymentEvents",
+      "rows": 12,
+      "fingerprint": "AAC9A856B63C2FF140349A79936B72A6730BB652D57C3F31AD5CFCDA5423D9B3"
+    },
+    {
+      "table": "Preferences",
+      "rows": 7,
+      "fingerprint": "EE1C8D23B6DEBC7DF7896971221151EAA746DA28FD08FCD455AE515CF7998DDF"
+    },
+    {
+      "table": "Properties",
+      "rows": 14,
+      "fingerprint": "94A2E0E1A10B22FC3CA48DDF438FCD4C86DFE70A8D10BF96E0D28AAD6E165098"
+    },
+    {
+      "table": "PropertyMedia",
+      "rows": 15,
+      "fingerprint": "EE92FFD949F99F0A9F902C73CA6A0DA61DB4B17F7588671768E2D48B1D5A3A0B"
+    },
+    {
+      "table": "RentalRequests",
+      "rows": 13,
+      "fingerprint": "A349FDCC0E5CE60B591E5D6AE579AACF751259F598705172886CEB3C6F0A6E04"
+    },
+    {
+      "table": "Rentals",
+      "rows": 13,
+      "fingerprint": "A62BAA874480BA07596A1E5FCA8926904525D2074B6294560837C8F587A44D0E"
+    },
+    {
+      "table": "RentNegotiations",
+      "rows": 6,
+      "fingerprint": "164A378FD7D196A33FCEEE84DDA5EBF13BC48B2E82945920FAAA8DF0DD54CB96"
+    },
+    {
+      "table": "Reports",
+      "rows": 6,
+      "fingerprint": "6A475C9DF409EA40BB12A3C4998109014D1C18FFAF73E63F5A39DACE7D4BD514"
+    },
+    {
+      "table": "Reviews",
+      "rows": 13,
+      "fingerprint": "651E835B9D23B295E6C2037307A95C0FA4FAA560B2302E6912D7B305F8F6DA9C"
+    },
+    {
+      "table": "RoommateContacts",
+      "rows": 0
+    },
+    {
+      "table": "RoommateProfiles",
+      "rows": 10,
+      "fingerprint": "F25D1DD04746953392927E66BAEC7EC1C004B20148F6AB4013E1737B0502A648"
+    },
+    {
+      "table": "Users",
+      "rows": 27,
+      "fingerprint": "6C32CE167F56C415A3BA8B024C7788BC8B50A8EE6A962864FBFDDF69EA27268B"
+    }
+  ],
+  "after": [
+    {
+      "table": "Activity",
+      "rows": 184,
+      "fingerprint": "A2ACAA4CEB1FF02F797F9F0FDE224EA17E7618C06FF98A330DFE5C6FFAF933CC"
+    },
+    {
+      "table": "ConditionReports",
+      "rows": 22,
+      "fingerprint": "A82D225FF593B928C9932E2B94AC1C1955902899B1024A84BA0A53BB497A4FDE"
+    },
+    {
+      "table": "Favorites",
+      "rows": 6,
+      "fingerprint": "525A9840548F901B44179E070137C3CFBE41E6D8EB41226B423072792AC2F3E5"
+    },
+    {
+      "table": "Inspections",
+      "rows": 13,
+      "fingerprint": "BC208103815A5DA27DB64464538B3D3890F95E4B441BA4C6D55B87DBA97BDF62"
+    },
+    {
+      "table": "ListingFees",
+      "rows": 20,
+      "fingerprint": "516C7C80FA311B8E86BC1372BD1F2B85B2EC31AD8A74D131695A3D78EC8E27E1"
+    },
+    {
+      "table": "Media",
+      "rows": 21,
+      "fingerprint": "13A2CF16259A7C7CC98F23012B3CD34FBC43664A20EF51853BC7AD0633FE7B51"
+    },
+    {
+      "table": "Meetings",
+      "rows": 12,
+      "fingerprint": "467DAAD2A9009E9B1B64FF73C67AED5AC59F16467623CD5EC2FC039264F69232"
+    },
+    {
+      "table": "ModerationHistory",
+      "rows": 13,
+      "fingerprint": "4D358341F59B512E3AE8DFD4A02FCB3BB1B20F7C5F765FE2878F4C9767EB0026"
+    },
+    {
+      "table": "Notifications",
+      "rows": 9,
+      "fingerprint": "6839AB6E592DBA0D4E3635072AAB5F66F823A3C589A3F24C5E50F1E920FC7451"
+    },
+    {
+      "table": "PartialOffers",
+      "rows": 6,
+      "fingerprint": "7D114EE4E37A18B229335F2E775BBD678FAD1DC1BEF46A64BB10F01780917E25"
+    },
+    {
+      "table": "PartialRequests",
+      "rows": 6,
+      "fingerprint": "836CAAF7AB94276B8F2566FDDB41BA755A5B3EA39DA93B8EAE0D4D9951229E78"
+    },
+    {
+      "table": "PaymentEvents",
+      "rows": 12,
+      "fingerprint": "AAC9A856B63C2FF140349A79936B72A6730BB652D57C3F31AD5CFCDA5423D9B3"
+    },
+    {
+      "table": "Preferences",
+      "rows": 7,
+      "fingerprint": "EE1C8D23B6DEBC7DF7896971221151EAA746DA28FD08FCD455AE515CF7998DDF"
+    },
+    {
+      "table": "Properties",
+      "rows": 14,
+      "fingerprint": "94A2E0E1A10B22FC3CA48DDF438FCD4C86DFE70A8D10BF96E0D28AAD6E165098"
+    },
+    {
+      "table": "PropertyMedia",
+      "rows": 15,
+      "fingerprint": "EE92FFD949F99F0A9F902C73CA6A0DA61DB4B17F7588671768E2D48B1D5A3A0B"
+    },
+    {
+      "table": "RentalRequests",
+      "rows": 13,
+      "fingerprint": "A349FDCC0E5CE60B591E5D6AE579AACF751259F598705172886CEB3C6F0A6E04"
+    },
+    {
+      "table": "Rentals",
+      "rows": 13,
+      "fingerprint": "A62BAA874480BA07596A1E5FCA8926904525D2074B6294560837C8F587A44D0E"
+    },
+    {
+      "table": "RentNegotiations",
+      "rows": 6,
+      "fingerprint": "164A378FD7D196A33FCEEE84DDA5EBF13BC48B2E82945920FAAA8DF0DD54CB96"
+    },
+    {
+      "table": "Reports",
+      "rows": 6,
+      "fingerprint": "6A475C9DF409EA40BB12A3C4998109014D1C18FFAF73E63F5A39DACE7D4BD514"
+    },
+    {
+      "table": "Reviews",
+      "rows": 13,
+      "fingerprint": "651E835B9D23B295E6C2037307A95C0FA4FAA560B2302E6912D7B305F8F6DA9C"
+    },
+    {
+      "table": "RoommateContacts",
+      "rows": 0
+    },
+    {
+      "table": "RoommateProfiles",
+      "rows": 10,
+      "fingerprint": "F25D1DD04746953392927E66BAEC7EC1C004B20148F6AB4013E1737B0502A648"
+    },
+    {
+      "table": "Users",
+      "rows": 27,
+      "fingerprint": "6C32CE167F56C415A3BA8B024C7788BC8B50A8EE6A962864FBFDDF69EA27268B"
+    }
+  ],
+  "latestMigration": "20261106152011_ConfirmedRentalAmendments"
+}

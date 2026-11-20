@@ -1,0 +1,10 @@
+{
+  "pages": 29,
+  "visualCases": 136,
+  "layoutDifferences": 0,
+  "runtimeErrors": 0,
+  "unitTestsPassed": 25,
+  "browserFileFlow": "passed",
+  "browserApiFlow": "passed",
+  "comparison": "Visible element geometry and computed styles; added CSS class names excluded; external assets blocked and animations paused in test only"
+}

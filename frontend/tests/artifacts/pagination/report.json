@@ -1,0 +1,17 @@
+{
+  "passed": 11,
+  "checks": [
+    "users/users: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "properties/properties: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "properties/corrections: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "reports/reports: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "ai/analysis: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "ai/corrections: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "activity/activity: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "overview/updates: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "overview/activity: bounded pages, previous/next boundaries, numbered pages, empty search and reset",
+    "Users: search finds records from later pages; action dialog still opens; phone layout remains contained",
+    "Agreement disclosure: styled document button opens/closes by click and keyboard, with accessible phone layout"
+  ],
+  "errors": []
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" fill="none">
+  <!-- A limestone arcade drawn as a quiet architectural elevation. -->
+  <path fill="#E6DBC8" d="M160 760V342a260 260 0 0 1 520 0v418h-40V342a220 220 0 0 0-440 0v418z"/>
+  <g stroke="#B4A78D" stroke-width="2">
+    <path d="M160 760V342a260 260 0 0 1 520 0v418M200 760V342a220 220 0 0 1 440 0v418M174 760V342a246 246 0 0 1 492 0v418"/>
+    <path d="m196 212 34 20m61-115 20 35m109-70v40m130-5-20 35m115 60-35 20M160 342h40m440 0h40M160 490h40m440 0h40M160 638h40m440 0h40"/>
+    <path d="M700 760V402a170 170 0 0 1 340 0m-312 358V402a142 142 0 0 1 284 0M690 226h310M694 218h306"/>
+    <path d="M0 724h1000M0 738h1000"/>
+  </g>
+</svg>

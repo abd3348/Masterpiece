@@ -1,0 +1,24 @@
+{
+  "tables": 25,
+  "columns": 242,
+  "relationships": 45,
+  "checks": [
+    "Initial ER diagram, metrics and group legend render",
+    "er: hub and name toggles really change SVG computed display",
+    "er: select, second click, empty space and keyboard release",
+    "er: zoom, manual resize policy and Fit",
+    "schema: hub and name toggles really change SVG computed display",
+    "schema: select, second click, empty space and keyboard release",
+    "schema: zoom, manual resize policy and Fit",
+    "Schema boxes contain all columns without text collisions or title overflow",
+    "All five tabs work and the tablist supports arrow, Home and End keys",
+    "Grouped table cards, every column, reference footers and anchors render",
+    "SQL copy writes the real clipboard and Download returns the same script",
+    "Rules explain real constraints, stored statuses and application-only guarantees",
+    "Phone width has no page overflow; diagram stays in its scroll container",
+    "Dark mode and direct-file access work without a server"
+  ],
+  "indexes": 15,
+  "layoutColumns": 5,
+  "browserErrors": []
+}

@@ -1,0 +1,85 @@
+/* This page uses the common interior components. Add page-only styles here. */
+@import url('../shared/flow.css');
+.owner-notifications { margin:24px 0; }
+.notifications-page { margin-top:24px; }
+.notification-card { display:grid; gap:12px; padding:20px; margin:16px 0; border:1px solid #e3ded2; border-radius:16px; }
+.notification-card.unread { background:#f5eee4; border-left:4px solid #b66c41; }
+.notification-card .secondary { justify-self:start; }
+.notification-card .notification-actions {
+    margin: 4px 0 0;
+    gap: 12px;
+}
+.panel.owner-notification-summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 24px;
+    padding: 18px 22px;
+    border: 1px solid #e4d5c2;
+    background: #fffcf7;
+    transition: border-color 180ms ease, background 180ms ease;
+}
+.panel.owner-notification-summary:hover {
+    background: #faf4e9;
+    border-color: #b77749;
+}
+.notification-bell {
+    display: grid;
+    place-items: center;
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+    background: #f3e4d2;
+    color: #825133;
+}
+.notification-bell svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.notification-summary-copy {
+    display: grid;
+    gap: 5px;
+    min-width: 0;
+}
+.notification-summary-copy strong {
+    font-size: 15px;
+    color: #173d36;
+}
+.notification-summary-copy > span {
+    font-size: 12px;
+    color: #6d7972;
+    line-height: 1.5;
+}
+.notification-summary-link {
+    margin-left: auto;
+    color: #173d36;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.notification-summary-link > span {
+    margin-left: 8px;
+}
+.notifications-empty {
+    padding: 16px 0 4px;
+    color: #173d36;
+}
+@media (max-width: 600px) {
+    .panel.owner-notification-summary {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 18px;
+    }
+    .notification-summary-copy {
+        flex: 1;
+    }
+    .notification-summary-link {
+        margin-left: 58px;
+    }
+}

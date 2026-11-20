@@ -1,0 +1,11 @@
+backend/wwwroot/js/pages.js
+backend/wwwroot/js/seed.js
+data/
+backend/wwwroot/assets/
+backend/bin/
+backend/obj/
+backend/Migrations/
+tmp/
+output/
+tests/artifacts/
+docs/openapi.json

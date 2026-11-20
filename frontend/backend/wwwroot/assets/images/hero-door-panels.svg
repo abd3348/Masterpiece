@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="none">
+  <defs>
+    <g id="panel">
+      <rect width="256" height="278" rx="3" fill="#688c79"/>
+      <path d="M0 0h256l-13 13H13v252L0 278z" fill="#87a491"/>
+      <path d="M256 0v278H0l13-13h230V13z" fill="#597c6a"/>
+      <rect x="13" y="13" width="230" height="252" rx="2" fill="#749482" stroke="#698976" stroke-width="2"/>
+    </g>
+  </defs>
+  <rect width="800" height="800" fill="#809e8a"/>
+  <path d="M39 0v800m720-800v800" stroke="#617f6d" stroke-width="4"/>
+  <path d="M44 0v800m720-800v800" stroke="#a7bdac" stroke-width="2"/>
+  <use href="#panel" x="98" y="50"/><use href="#panel" x="446" y="50"/>
+  <use href="#panel" x="98" y="474"/><use href="#panel" x="446" y="474"/>
+</svg>

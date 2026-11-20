@@ -1,0 +1,233 @@
+[
+  {
+    "route": "public/about.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/faq.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/index.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/market.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/partial-offers.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/privacy.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/properties.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/property.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/support.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "public/terms.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "auth/login.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "auth/register.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "role": "public",
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/agreement.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/bookings.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/condition.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/favorites.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/home.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/inspection.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/messages.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/payment.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/preferences.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/profile.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/rentals.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/request.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/requests.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/roommates.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "tenant/sublets.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "role": "tenant",
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/add-property.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/bookings.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/condition.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/dashboard.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/messages.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/profile.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/requests.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "landlord/dashboard.html?tab=notifications",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "role": "landlord",
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/profile.html",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=users",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=properties",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=reports",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=ai",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=activity",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "route": "admin/dashboard.html?tab=market",
+    "light": [],
+    "phoneOverflow": false
+  },
+  {
+    "role": "admin",
+    "phoneOverflow": false
+  }
+]

@@ -1,0 +1,6 @@
+@using System.Text.Json
+@{ Layout = null; var fee=(JsonElement)ViewData["Fee"]!; }
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Development checkout - Campus Mate</title>
+<style>body{font:17px/1.65 system-ui;background:#eef4f7;color:#17324d;margin:0;padding:48px 20px}main{max-width:580px;margin:auto;background:white;padding:32px;border-radius:20px;box-shadow:0 12px 45px #17324d18}.badge{background:#fff0cc;padding:8px 14px;border-radius:8px}button{background:#087f83;color:white;border:0;border-radius:9px;padding:14px 22px;font:inherit;cursor:pointer}a{color:#087f83}h1{line-height:1.2}.price{font-size:36px;font-weight:700}</style></head>
+<body><main><span class="badge">DEVELOPMENT TEST ONLY</span><h1>Publishing fee checkout</h1><p class="price">JOD @fee.GetProperty("amount")</p><p>No real payment is collected. Confirming records a simulated publishing fee in your local development database.</p><p dir="rtl" lang="ar">هذه صفحة اختبار محلي فقط. لا يتم تحصيل أموال حقيقية. التأكيد يسجل رسوم نشر تجريبية في قاعدة البيانات.</p><form method="post">@Html.AntiForgeryToken()<button type="submit">Confirm test publishing fee</button></form><p><a href="/">Return to Campus Mate</a></p></main></body></html>

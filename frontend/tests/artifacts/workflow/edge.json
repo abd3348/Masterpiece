@@ -1,0 +1,9 @@
+{
+  "passed": 4,
+  "checks": [
+    "48-hour invitation expiry is enforced on the server; expired invitations remain recoverable and hidden from the landlord.",
+    "Replacing a roommate removes the previous invitee’s permissions; changing dates resets all approvals and rejects old consent.",
+    "A landlord cannot advance a new application while either applicant is restricted.",
+    "Timed restrictions expire for public visibility, login and new actions without waiting for a manual restore."
+  ]
+}

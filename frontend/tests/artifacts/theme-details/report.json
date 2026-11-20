@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "Register 1440: grouped header actions, transparent progress and role containers, no overflow",
+    "Register 390: grouped header actions, transparent progress and role containers, no overflow",
+    "Login: rounded back button and no square input wrapper backgrounds",
+    "Notifications: padded and rounded empty state",
+    "Search shortcut: readable dark background and light text"
+  ],
+  "errors": []
+}

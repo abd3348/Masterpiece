@@ -1,0 +1,13 @@
+{
+  "passed": 7,
+  "checks": [
+    "Choosing shared occupancy opens roommate profiles with saved people first and preserves home/dates/message.",
+    "Co-tenants see waiting status on home and requests; direct inspection, plan-edit and arrangement URLs show status without forbidden forms or ownership errors.",
+    "Invitation and final agreement are separate; each tenant accepts for themselves after owner review and inspection.",
+    "Confirmed rental waits for key handover; video reports upload successfully and co-tenants can view but not overwrite them.",
+    "Confirmed rental change dialog preserves the agreement until both tenants and the owner approve the same proposed full rent.",
+    "Administrator requests corrections separately from report resolution, and owner notifications lead to the existing paid advertisement editor.",
+    "Account suspension requires explanation, duration and impact acknowledgement; restricted users retain read-only rental access."
+  ],
+  "errors": []
+}

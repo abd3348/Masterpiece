@@ -1,0 +1,17 @@
+{
+  "unitTests": 48,
+  "generalApiChecks": 19,
+  "sharedWorkflowScenarios": 13,
+  "expiryAndRestrictionScenarios": 4,
+  "amendmentScenarios": 3,
+  "browserJourneys": 7,
+  "javascriptFilesSyntaxChecked": 58,
+  "build": "passed",
+  "releasePublish": "passed",
+  "pendingModelChanges": false,
+  "originalDatabaseTablesPreserved": 23,
+  "baselineCompatibility": "passed",
+  "database": "MasterDB",
+  "testDatabase": "CampusMate_WorkflowTests_20261106",
+  "coTenantWaitingScreens": "passed: home, requests and direct inspection, plan-edit and arrangement links"
+}

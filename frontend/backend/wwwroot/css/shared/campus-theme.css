@@ -1,0 +1,881 @@
+/* Shared interior-page identity, matching the campus tour and account pages. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --green: #173d36;
+    --paper: #f7f3ea;
+    --ink: #1d302b;
+    --muted: #6d7972;
+    --gold: #dfa375;
+    --line: #e3ded2;
+    --surface: #fffcf7;
+    --sage: #e8eee3;
+    --teal: var(--green);
+    --yellow: var(--gold);
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+::selection {
+    background: #dfa37555;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+.nav {
+    top: 18px;
+    margin: 18px 3% 0;
+    padding: 12px 18px;
+    gap: 20px;
+    min-height: 78px;
+    border: 1px solid #ffffffb3;
+    border-radius: 24px;
+    background: #fbf8f0ed;
+    box-shadow: 0 12px 45px #102d2810;
+    backdrop-filter: blur(20px);
+}
+
+.nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+
+.nav .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: var(--green);
+    color: var(--paper);
+    font-size: 32px;
+    font-style: normal;
+}
+
+.nav .brand strong {
+    font-weight: 700;
+}
+.nav .brand small {
+    display: block;
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
+
+.nav .search {
+    background: #eeefe5;
+    border: 1px solid #e6e4d8;
+    border-radius: 13px;
+    min-height: 44px;
+    min-width: 130px;
+    max-width: 255px;
+}
+.search kbd {
+    background: #e2e5d9;
+    border-radius: 5px;
+}
+.search:focus-within {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+.nav nav {
+    gap: 3px;
+    padding: 4px;
+    background: #e9e9dd;
+    border-radius: 30px;
+}
+.nav nav a,
+.nav nav button {
+    padding: 11px 12px;
+    font-size: 11px;
+}
+.nav nav a:hover,
+.nav nav button:hover {
+    background: #ffffffa0;
+    color: var(--green);
+}
+.nav nav .active,
+.nav nav .active:hover {
+    background: var(--green);
+    color: white;
+}
+
+main {
+    max-width: 1320px;
+    margin: 46px auto;
+    padding: 0 5%;
+}
+.flow-main {
+    min-height: 70vh;
+}
+.welcome,
+.page-heading {
+    margin-bottom: 35px;
+}
+.welcome h1,
+.page-heading h1,
+.heading h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(38px, 4.3vw, 58px);
+    letter-spacing: -2px;
+    line-height: 1.15;
+    color: var(--green);
+}
+.welcome h1 #user-name {
+    color: #b77749;
+}
+.welcome p,
+.page-heading p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 14px;
+    max-width: 660px;
+}
+.preview,
+.demo-label {
+    color: #a46c45;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+}
+.breadcrumb {
+    margin-bottom: 18px;
+    font-size: 11px;
+}
+.eyebrow {
+    color: #a46c45;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.section-heading h2,
+.panel > h2,
+.panel form > h2,
+.card h2,
+.empty-panel h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 27px;
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+}
+.section-heading p {
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+.card h2 {
+    font-size: 24px;
+}
+.card-title h2 {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.rental {
+    padding: 36px;
+    border: 1px solid #ffffff40;
+    border-radius: 28px;
+    background: radial-gradient(ellipse at 100% 0, #426452 0, transparent 65%), var(--green);
+    box-shadow: 0 18px 50px #173d3615;
+    margin-bottom: 38px;
+}
+.rental h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.7px;
+}
+.rental p {
+    color: #d8e2d5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.rental .eyebrow {
+    background: #ffffff12;
+    color: #edc8a7;
+    border-radius: 7px;
+    padding: 6px 10px;
+    font-size: 9px;
+}
+.rental dl {
+    background: #ffffff0d;
+    border: 1px solid #ffffff15;
+    border-radius: 16px;
+    padding: 18px;
+}
+.rental dt {
+    color: #b9cbbb;
+}
+.timeline {
+    margin: 35px 0 30px;
+}
+.timeline li {
+    color: #b9cbbb;
+}
+.step {
+    background: #567260;
+    color: #f7f3ea;
+}
+.done .step {
+    color: var(--green);
+}
+.current .step {
+    background: var(--paper);
+    box-shadow: 0 0 0 4px #dfa37538;
+}
+.current strong,
+.current small {
+    color: #edc8a7;
+}
+
+.primary,
+.secondary,
+.yellow,
+.muted-button,
+.contact,
+.edit {
+    border-radius: 14px;
+    min-height: 44px;
+    font-size: 12px;
+    padding: 13px 19px;
+    font-weight: 500;
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+.primary {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+}
+.primary:hover {
+    background: #285448;
+    transform: translateY(-2px);
+}
+.secondary,
+.contact,
+.edit {
+    background: #e8eee3;
+    color: var(--green);
+    border: 1px solid #dce5d5;
+}
+.secondary:hover,
+.contact:hover,
+.edit:hover {
+    background: #dce7d5;
+    transform: translateY(-2px);
+}
+.yellow {
+    background: var(--gold);
+    color: var(--ink);
+}
+.yellow:hover {
+    background: #e8b58d;
+    transform: translateY(-2px);
+}
+.muted-button {
+    background: #ffffff0d;
+    border: 1px solid #ffffff35;
+    color: var(--paper);
+}
+.muted-button:hover {
+    background: #ffffff20;
+}
+.contact {
+    font-size: 10px;
+    padding: 10px 12px;
+    min-height: 38px;
+}
+.filters {
+    background: #e9e9dd;
+    padding: 5px;
+}
+.filters button {
+    padding: 9px 13px;
+}
+.filters .selected {
+    background: var(--surface);
+    box-shadow: 0 3px 10px #173d3610;
+}
+
+.layout,
+.flow-layout,
+.catalog {
+    gap: 28px;
+}
+.property-grid {
+    gap: 24px;
+}
+.card,
+.panel,
+.person,
+.property,
+.catalog-card {
+    background: var(--surface);
+    border: 1px solid #fff;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px #173d3607;
+}
+.card,
+.panel {
+    padding: 28px;
+}
+.panel {
+    margin-bottom: 24px;
+}
+.panel p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+.panel p.demo-label {
+    font-size: 9px;
+}
+.property,
+.catalog-card {
+    transition:
+        box-shadow 0.25s,
+        transform 0.25s;
+}
+.property:hover,
+.catalog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px #173d3612;
+}
+.photo {
+    height: 225px;
+    background: #e5e9dd;
+}
+.photo img {
+    transition: transform 0.5s;
+}
+.property:hover .photo img {
+    transform: scale(1.035);
+}
+.period,
+.save {
+    background: #fffcf7f5;
+}
+.save {
+    width: 34px;
+    height: 34px;
+}
+.save[aria-pressed='true'] {
+    background: #f4e3d1;
+    color: #a46c45;
+}
+.property-info {
+    padding: 21px;
+}
+.property-info h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+.property-info p {
+    font-size: 12px;
+    margin: 9px 0 15px;
+}
+.price {
+    font-size: 18px;
+    color: var(--green);
+}
+.price small {
+    font-size: 11px;
+}
+.tags {
+    gap: 6px;
+    margin-top: 14px;
+}
+.tags span {
+    background: var(--sage);
+    color: #526849;
+    border-radius: 20px;
+    padding: 6px 9px;
+}
+.property-foot {
+    background: #f4f1e7;
+    border-top-color: var(--line);
+    padding: 13px 21px;
+    color: #a46c45;
+}
+.person {
+    padding: 19px;
+    border-radius: 18px;
+    margin-top: 13px;
+}
+.avatar.aqua {
+    background: #e7d3bc;
+    color: var(--green);
+}
+.avatar.light {
+    background: var(--sage);
+    color: #62745c;
+}
+.person p {
+    color: var(--muted);
+}
+.profile h2 span {
+    color: #a46c45;
+}
+.profile dl div {
+    margin: 15px 0;
+}
+.profile dt,
+.profile dd {
+    font-size: 12px;
+}
+.bar i {
+    background: linear-gradient(to right, #57765b var(--width), #e8eee3 var(--width));
+}
+.averages .note,
+.notice,
+.note {
+    background: var(--sage);
+    border-radius: 13px;
+    color: #526849;
+}
+.notice {
+    padding: 19px;
+    line-height: 1.8;
+}
+.messages h3 small {
+    color: #a46c45;
+}
+.messages p {
+    color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea,
+.catalog-controls input,
+.catalog-controls select {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    min-height: 46px;
+    padding: 13px 14px;
+    color: var(--ink);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #173d360a;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #959d95;
+}
+.field {
+    margin: 23px 0;
+}
+.check input {
+    accent-color: var(--green);
+}
+.badge {
+    background: var(--sage);
+    color: #526849;
+    padding: 7px 11px;
+}
+.cost {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+.cost small {
+    font-family: 'DM Sans', Arial, sans-serif;
+    letter-spacing: 0;
+}
+.summary-photo img {
+    border-radius: 14px;
+}
+.summary-photo {
+    gap: 14px;
+}
+.summary-photo h3 {
+    font-size: 14px;
+}
+.summary-list {
+    margin: 24px 0;
+}
+.summary-list div {
+    margin: 17px 0;
+}
+.summary-list .total dd {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+}
+.facts {
+    border-top-color: var(--line);
+}
+.amenities {
+    gap: 20px;
+    line-height: 1.7;
+}
+.gallery {
+    gap: 12px;
+    height: 370px;
+}
+.gallery img {
+    border-radius: 22px;
+}
+.gallery img:first-child {
+    border-top-left-radius: 65px;
+}
+.catalog-card {
+    gap: 20px;
+    padding: 15px;
+}
+.catalog-card img {
+    width: 175px;
+    height: 170px;
+    border-radius: 16px;
+}
+.catalog-copy h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 7px;
+}
+.catalog-copy .bottom {
+    flex-wrap: wrap;
+    margin-top: 17px;
+}
+.catalog-copy .bottom strong {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--green);
+}
+.area-guide {
+    border: 1px solid white;
+    border-radius: 28px;
+    background: repeating-linear-gradient(
+        80deg,
+        #e3e7da 0 55px,
+        #fffcf7 55px 65px,
+        #ebedde 65px 125px
+    );
+}
+.area-guide p {
+    background: #fffcf7f2;
+    border-radius: 15px;
+    padding: 18px;
+}
+.area-guide a {
+    background: var(--green);
+    padding: 12px 18px;
+}
+.progress-strip {
+    gap: 9px;
+    margin-bottom: 28px;
+}
+.progress-strip span {
+    border-radius: 20px;
+    padding: 10px 14px;
+    background: #edece1;
+}
+.progress-strip .complete {
+    background: var(--sage);
+    color: #526849;
+}
+.progress-strip .now {
+    background: var(--green);
+}
+.report-row {
+    border-bottom-color: var(--line);
+}
+.report-row select {
+    background: var(--sage);
+    border-color: #dce5d5;
+    border-radius: 8px;
+}
+.walkthrough {
+    height: 320px;
+    border-radius: 20px;
+}
+.rental-card > img {
+    border-radius: 20px;
+}
+.rental-card h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+.payment-row {
+    border-bottom-color: var(--line);
+}
+.agreement-copy h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+.status-message {
+    background: #f4e3d7;
+    color: #934c37;
+    border-radius: 14px;
+}
+dialog {
+    background: var(--paper);
+    border-radius: 24px;
+    box-shadow: 0 20px 80px #173d3630;
+    padding: 35px;
+}
+dialog::backdrop {
+    background: #102d28b0;
+    backdrop-filter: blur(5px);
+}
+dialog h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: -0.7px;
+}
+dialog textarea {
+    border-color: var(--line);
+    border-radius: 12px;
+    background: white;
+}
+footer {
+    border-top-color: var(--line);
+    padding: 28px 5%;
+    margin-top: 50px;
+    font-size: 11px;
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .nav {
+        flex-wrap: wrap;
+    }
+    .nav .search {
+        max-width: none;
+    }
+    .nav nav {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+    }
+    .rental-top {
+        flex-direction: column;
+    }
+    .rental dl {
+        align-self: stretch;
+        justify-content: space-between;
+    }
+    .catalog-card {
+        gap: 15px;
+    }
+    .catalog-card img {
+        width: 140px;
+    }
+    .sticky {
+        top: 170px;
+    }
+}
+@media (max-width: 800px) {
+    .nav {
+        position: static;
+    }
+    main {
+        margin: 35px auto;
+    }
+    .layout,
+    .flow-layout,
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+    .sticky {
+        position: static;
+    }
+    .gallery {
+        height: 260px;
+    }
+    .rental {
+        padding: 28px;
+    }
+    .rental h2 {
+        font-size: 28px;
+    }
+    .photo {
+        height: 230px;
+    }
+    .catalog-card img {
+        width: 175px;
+    }
+}
+@media (max-width: 600px) {
+    .nav {
+        margin: 12px 4% 0;
+        padding: 12px 13px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+    .nav .brand {
+        font-size: 21px;
+    }
+    .nav .brand-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+    }
+    .nav .search {
+        width: 100%;
+        flex-basis: 100%;
+        min-width: 0;
+    }
+    .nav nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    .nav nav a,
+    .nav nav button {
+        padding: 10px 12px;
+        flex-shrink: 0;
+    }
+    main {
+        padding: 0 5%;
+        margin: 28px auto;
+    }
+    .welcome h1,
+    .page-heading h1,
+    .heading h1 {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+    }
+    .welcome p,
+    .page-heading p {
+        font-size: 13px;
+    }
+    .welcome,
+    .page-heading {
+        margin-bottom: 26px;
+    }
+    .rental {
+        border-radius: 22px;
+        padding: 25px 18px;
+    }
+    .rental h2 {
+        font-size: 25px;
+    }
+    .rental dl {
+        padding: 13px;
+        border-radius: 12px;
+    }
+    .rental-actions {
+        flex-wrap: wrap;
+    }
+    .timeline li strong {
+        font-size: 9px;
+    }
+    .timeline li small {
+        font-size: 8px;
+    }
+    .property-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .photo {
+        height: 240px;
+    }
+    .property-info {
+        padding: 21px;
+    }
+    .property-info h3 {
+        font-size: 25px;
+    }
+    .card,
+    .panel {
+        padding: 22px;
+        border-radius: 22px;
+    }
+    .person {
+        padding: 17px;
+    }
+    .gallery {
+        height: 215px;
+        gap: 8px;
+    }
+    .gallery img {
+        border-radius: 16px;
+    }
+    .gallery img:first-child {
+        border-top-left-radius: 40px;
+    }
+    .catalog-card {
+        padding: 12px;
+        gap: 13px;
+        border-radius: 20px;
+    }
+    .catalog-card img {
+        width: 105px;
+        height: 175px;
+        border-radius: 13px;
+    }
+    .catalog-copy h2 {
+        font-size: 20px;
+    }
+    .catalog-copy .primary {
+        padding: 10px 12px;
+        min-height: 38px;
+        font-size: 11px;
+    }
+    .catalog-copy .tags span {
+        font-size: 8px;
+        padding: 5px 7px;
+    }
+    .progress-strip span {
+        padding: 8px 10px;
+        font-size: 9px;
+    }
+    .walkthrough {
+        height: 230px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .rental-card {
+        grid-template-columns: 1fr;
+    }
+    .rental-card h2 {
+        font-size: 28px;
+    }
+    aside {
+        display: flex;
+    }
+    footer {
+        flex-wrap: wrap;
+        font-size: 10px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}

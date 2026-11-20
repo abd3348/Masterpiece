@@ -1,0 +1,52 @@
+// Time-boundary checks update only isolated test records in an explicitly named test database.
+const fs=require('node:fs'),assert=require('node:assert/strict'),{execFileSync}=require('node:child_process');
+const {Client,checkout,preferences}=require('./helpers/backend-client.cjs');
+const fixture=JSON.parse(fs.readFileSync('tests/artifacts/workflow/integration.json'));
+const database=process.env.CAMPUS_TEST_DB;
+assert(database?.startsWith('CampusMate_WorkflowTests_'),'Set CAMPUS_TEST_DB to an isolated workflow-test database. MasterDB is never accepted.');
+function advance(id,sql){assert.match(id,/^[a-f0-9]{32}$/);execFileSync('sqlcmd',['-S','.','-d',database,'-E','-C','-b','-Q',sql.replaceAll('{id}',id)],{encoding:'utf8'});}
+const checks=[];
+async function main(){
+ const lead=new Client(),peer=new Client(),owner=new Client(),other=new Client(),admin=new Client(),guest=new Client();
+ for(const [client,user] of [[lead,fixture.accounts.lead],[peer,fixture.accounts.peer],[owner,fixture.accounts.owner],[other,fixture.accounts.other]])await client.login(user.email,'TestingPass123');
+ await admin.login('admin@campus.test');
+ await other.request('PUT','/api/me/preferences',preferences);
+ const people=(await lead.bootstrap()).roommates,alternate=people.find(p=>p.userId===fixture.accounts.other.id);
+ let original=await owner.request('GET','/api/properties/'+fixture.ids.home);
+ let home=await owner.request('POST','/api/properties',{...original,title:'Boundary workflow home '+Date.now(),description:'An independent home for expiry and revision boundary checks.'});await checkout(owner,`/api/properties/${home.id}/listing-fee/checkout`);
+ let request=await lead.request('POST','/api/rental-requests',{propertyId:home.id,startDate:'2028-10-01',duration:1,roommate:true,roommateId:alternate.id,message:'Invitation expiry test.'});
+ assert((await lead.bootstrap()).savedRoommates.includes(alternate.id));
+ advance(request.id,"UPDATE dbo.RentalRequests SET InvitationExpiresAt=DATEADD(hour,-1,SYSDATETIMEOFFSET()) WHERE Id='{id}' AND InvitationStatus='pending';");
+ await other.request('GET','/api/rental-requests/'+request.id,undefined,403);
+ assert(!(await other.bootstrap()).requests.some(r=>r.id===request.id));
+ request=await lead.request('GET','/api/rental-requests/'+request.id);assert.equal(request.status,'draft');assert.equal(request.invitationStatus,'expired');
+ await other.request('POST',`/api/rental-requests/${request.id}/roommate-response`,{accepted:true,version:request.termsVersion},409);
+ assert(!(await owner.request('GET','/api/rental-requests')).some(r=>r.id===request.id));
+ checks.push('48-hour invitation expiry is enforced on the server; expired invitations remain recoverable and hidden from the landlord.');
+ request=await lead.request('PUT',`/api/rental-requests/${request.id}`,{startDate:request.startDate,duration:1,roommate:true,roommateId:fixture.ids.roommate,message:'Choose another roommate after expiry.',version:request.termsVersion});
+ await other.request('POST',`/api/rental-requests/${request.id}/roommate-response`,{accepted:true,version:request.termsVersion},403);
+ await peer.request('POST',`/api/rental-requests/${request.id}/roommate-response`,{accepted:true,version:request.termsVersion});
+ await owner.request('POST',`/api/rental-requests/${request.id}/review`,{approved:true,acceptedTerms:true,version:request.termsVersion});
+ await lead.request('POST',`/api/rental-requests/${request.id}/inspection`,{items:[{name:'Walls',condition:'Good'}],notes:'Checked',version:request.termsVersion});
+ await lead.request('POST',`/api/rental-requests/${request.id}/agreement`,{accepted:true,version:request.termsVersion});
+ const previous=request.termsVersion;
+ request=await lead.request('PUT',`/api/rental-requests/${request.id}`,{startDate:'2028-11-01',duration:1,roommate:true,roommateId:fixture.ids.roommate,message:'New dates require new approvals.',version:previous});
+ assert.equal(request.termsVersion,previous+1);assert(!request.tenantAccepted&&!request.roommateAccepted&&!request.landlordAccepted);assert.equal(request.inspection,null);
+ await peer.request('POST',`/api/rental-requests/${request.id}/agreement`,{accepted:true,version:previous},409);
+ checks.push('Replacing a roommate removes the previous invitee’s permissions; changing dates resets all approvals and rejects old consent.');
+ await peer.request('POST',`/api/rental-requests/${request.id}/roommate-response`,{accepted:true,version:request.termsVersion});
+ await admin.request('PUT',`/api/admin/users/${fixture.accounts.peer.id}/status`,{active:false,reason:'Temporary participant restriction for this test.',days:7,acknowledged:true});
+ await owner.request('POST',`/api/rental-requests/${request.id}/review`,{approved:true,acceptedTerms:true,version:request.termsVersion},409);
+ await admin.request('PUT',`/api/admin/users/${fixture.accounts.peer.id}/status`,{active:true,reason:'Participant restriction test complete; restore access.'});
+ checks.push('A landlord cannot advance a new application while either applicant is restricted.');
+ await admin.request('PUT',`/api/admin/users/${fixture.accounts.owner.id}/status`,{active:false,reason:'Temporary restriction for the expiry boundary test.',days:1,acknowledged:true});
+ await guest.request('GET','/api/properties/'+home.id,undefined,404);
+ advance(fixture.accounts.owner.id,"UPDATE dbo.Users SET SuspendedUntil=DATEADD(hour,-1,SYSDATETIMEOFFSET()) WHERE Id='{id}' AND Active=0;");
+ await guest.request('GET','/api/properties/'+home.id);
+ const refreshed=new Client(),account=await refreshed.login(fixture.accounts.owner.email,'TestingPass123');assert.equal(account.active,true);
+ home=await refreshed.request('PUT',`/api/properties/${home.id}/status`,{status:'archived'});assert.equal(home.status,'archived');
+ await admin.request('PUT',`/api/admin/users/${fixture.accounts.owner.id}/status`,{active:true,reason:'Boundary test completed; restore the test account.'});
+ checks.push('Timed restrictions expire for public visibility, login and new actions without waiting for a manual restore.');
+ fs.writeFileSync('tests/artifacts/workflow/edge.json',JSON.stringify({passed:checks.length,checks},null,2));checks.forEach(c=>console.log('PASS '+c));
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

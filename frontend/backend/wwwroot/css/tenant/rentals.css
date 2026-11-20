@@ -1,0 +1,24 @@
+/* This page uses the common interior components. Add page-only styles here. */
+@import url('../shared/flow.css');
+.rental-overview { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px; }
+.rental-overview span { padding:12px 18px; border-radius:16px; background:#e8ede1; color:#183e36; }
+
+.sublet-panel { margin-top: 1.5rem; }
+.rental-agreement { margin: 18px 0; }
+.rental-agreement > summary { display: inline-flex; align-items: center; gap: 12px; min-height: 58px; padding: 10px 15px 10px 10px; border: 1px solid #d8e2d4; border-radius: 16px; background: #edf1e7; color: #173d36; font-weight: 600; cursor: pointer; list-style: none; transition: border-color 160ms; }
+.rental-agreement > summary::-webkit-details-marker { display: none; }
+.rental-agreement > summary:hover { background: #e0e8d9; border-color: #a8bca5; }
+.rental-agreement > summary:focus-visible { outline: 3px solid #dfa375; outline-offset: 4px; }
+.agreement-icon { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border-radius: 11px; background: #fffaf1; }
+.agreement-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.agreement-chevron { width: 18px; height: 18px; margin-left: 8px; fill: none; stroke: currentColor; stroke-width: 1.8; transition: transform 160ms; }
+.rental-agreement[open] > summary { background: #173d36; border-color: #173d36; color: #fffaf1; }
+.rental-agreement[open] .agreement-icon { color: #173d36; }
+.rental-agreement[open] .agreement-chevron { transform: rotate(180deg); }
+.agreement-content { margin-top: 14px; padding: 22px; border: 1px solid #e4dfd2; border-radius: 18px; background: #f8f6ee; }
+@media (max-width: 540px) { .rental-agreement > summary { width: 100%; font-size: 13px; } .agreement-chevron { margin-left: auto; } .agreement-content { padding: 16px; } }
+.sublet-panel .page-heading { margin-bottom: 1rem; }
+.sublet-panel form { margin: 1.25rem 0 1.75rem; }
+.sublet-panel .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.sublet-panel textarea { min-height: 6rem; }
+@media (max-width: 700px) { .sublet-panel .form-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,689 @@
+{
+  "pages": [
+    {
+      "page": "html/admin/dashboard.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/admin/dashboard.js"
+      ]
+    },
+    {
+      "page": "html/admin/profile.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/profile.js"
+      ]
+    },
+    {
+      "page": "html/auth/login.html",
+      "styles": [
+        "../../css/login.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/auth/login.js"
+      ]
+    },
+    {
+      "page": "html/auth/register.html",
+      "styles": [
+        "../../css/register.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/auth/register.js"
+      ]
+    },
+    {
+      "page": "html/landlord/add-property.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/landlord/dashboard.js"
+      ]
+    },
+    {
+      "page": "html/landlord/bookings.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/landlord/dashboard.js"
+      ]
+    },
+    {
+      "page": "html/landlord/condition.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/condition.js"
+      ]
+    },
+    {
+      "page": "html/landlord/dashboard.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/landlord/dashboard.js"
+      ]
+    },
+    {
+      "page": "html/landlord/messages.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/messages.js"
+      ]
+    },
+    {
+      "page": "html/landlord/profile.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/profile.js"
+      ]
+    },
+    {
+      "page": "html/landlord/requests.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/landlord/dashboard.js"
+      ]
+    },
+    {
+      "page": "html/public/index.html",
+      "styles": [
+        "../../css/index.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/public/index.js"
+      ]
+    },
+    {
+      "page": "html/public/market.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/public/market.js"
+      ]
+    },
+    {
+      "page": "html/public/properties.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/public/housing.js"
+      ]
+    },
+    {
+      "page": "html/public/property.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/public/housing.js"
+      ]
+    },
+    {
+      "page": "html/tenant/agreement.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/bookings.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/tenant/community.js"
+      ]
+    },
+    {
+      "page": "html/tenant/condition.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/condition.js"
+      ]
+    },
+    {
+      "page": "html/tenant/favorites.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/tenant/community.js"
+      ]
+    },
+    {
+      "page": "html/tenant/home.html",
+      "styles": [
+        "../../css/home.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/tenant/home.js"
+      ]
+    },
+    {
+      "page": "html/tenant/inspection.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/messages.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/messages.js"
+      ]
+    },
+    {
+      "page": "html/tenant/payment.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/preferences.html",
+      "styles": [
+        "../../css/preferences.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/tenant/preferences.js"
+      ]
+    },
+    {
+      "page": "html/tenant/profile.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/shared/profile.js"
+      ]
+    },
+    {
+      "page": "html/tenant/rentals.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/request.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/requests.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/flow.js",
+        "../../js/tenant/rental-flow.js"
+      ]
+    },
+    {
+      "page": "html/tenant/roommates.html",
+      "styles": [
+        "../../css/flow.css",
+        "../../css/campus-theme.css",
+        "../../css/features.css",
+        "../../css/layout.css"
+      ],
+      "scripts": [
+        "../../js/navigation.js",
+        "../../js/api.js",
+        "../../js/remote.js",
+        "../../js/shared/features.js",
+        "../../js/tenant/community.js"
+      ]
+    }
+  ],
+  "javascript": [
+    {
+      "filename": "js/access.js",
+      "functions": [
+        "route",
+        "permit",
+        "install",
+        "check"
+      ]
+    },
+    {
+      "filename": "js/admin/dashboard.js",
+      "functions": [
+        "admin",
+        "adminUsers",
+        "adminProperties",
+        "adminReports",
+        "adminAnalysis"
+      ]
+    },
+    {
+      "filename": "js/api.js",
+      "functions": [
+        "selectUser",
+        "profile",
+        "score",
+        "propertyMatch",
+        "roommateMatch",
+        "endDate",
+        "available",
+        "estimate",
+        "risk",
+        "validateListing",
+        "conversation"
+      ]
+    },
+    {
+      "filename": "js/app.js",
+      "functions": [
+        "render"
+      ]
+    },
+    {
+      "filename": "js/auth/login.js",
+      "functions": []
+    },
+    {
+      "filename": "js/auth/register.js",
+      "functions": [
+        "validatePasswords"
+      ]
+    },
+    {
+      "filename": "js/config.js",
+      "functions": []
+    },
+    {
+      "filename": "js/data.js",
+      "functions": [
+        "create",
+        "loadSeed"
+      ]
+    },
+    {
+      "filename": "js/http.js",
+      "functions": [
+        "request",
+        "reconcile",
+        "applySnapshot",
+        "hydrate"
+      ]
+    },
+    {
+      "filename": "js/landlord/dashboard.js",
+      "functions": [
+        "landlord",
+        "ownerRequests",
+        "ownerBookings",
+        "analysis",
+        "addProperty"
+      ]
+    },
+    {
+      "filename": "js/navigation.js",
+      "functions": [
+        "prepareLinks",
+        "refreshTables",
+        "feed",
+        "reply"
+      ]
+    },
+    {
+      "filename": "js/public/housing.js",
+      "functions": [
+        "catalog",
+        "render",
+        "property"
+      ]
+    },
+    {
+      "filename": "js/public/index.js",
+      "functions": [
+        "closeMenu",
+        "openDialog",
+        "saveFavorites",
+        "renderListings",
+        "updateJourney",
+        "requestJourneyUpdate"
+      ]
+    },
+    {
+      "filename": "js/public/market.js",
+      "functions": [
+        "market",
+        "render"
+      ]
+    },
+    {
+      "filename": "js/remote.js",
+      "functions": [
+        "safePayload",
+        "read",
+        "mutate",
+        "media",
+        "listing"
+      ]
+    },
+    {
+      "filename": "js/routes.js",
+      "functions": [
+        "resolve"
+      ]
+    },
+    {
+      "filename": "js/shared/condition.js",
+      "functions": [
+        "condition",
+        "renderComparison"
+      ]
+    },
+    {
+      "filename": "js/shared/features.js",
+      "functions": [
+        "form",
+        "action",
+        "dialog",
+        "input",
+        "select",
+        "activity",
+        "tenantNav",
+        "ownerNav",
+        "adminNav",
+        "render"
+      ]
+    },
+    {
+      "filename": "js/shared/flow.js",
+      "functions": [
+        "heading",
+        "progress",
+        "summary",
+        "next",
+        "action",
+        "bindForm",
+        "empty",
+        "matching",
+        "render"
+      ]
+    },
+    {
+      "filename": "js/shared/messages.js",
+      "functions": [
+        "messages",
+        "render"
+      ]
+    },
+    {
+      "filename": "js/shared/profile.js",
+      "functions": [
+        "profile"
+      ]
+    },
+    {
+      "filename": "js/tenant/community.js",
+      "functions": [
+        "favorites",
+        "roommates",
+        "render",
+        "bookings"
+      ]
+    },
+    {
+      "filename": "js/tenant/home.js",
+      "functions": [
+        "render",
+        "openDialog"
+      ]
+    },
+    {
+      "filename": "js/tenant/preferences.js",
+      "functions": [
+        "getPreferences",
+        "updateSummary",
+        "loadPreferences"
+      ]
+    },
+    {
+      "filename": "js/tenant/rental-flow.js",
+      "functions": [
+        "request",
+        "requests",
+        "stageRequest",
+        "agreement",
+        "inspection",
+        "payment",
+        "rentals"
+      ]
+    },
+    {
+      "filename": "js/validation.js",
+      "functions": [
+        "valid",
+        "field",
+        "bind",
+        "check",
+        "media"
+      ]
+    }
+  ]
+}
