@@ -1,51 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <title>Four apartment buildings of different heights on an Amman hillside</title>
-  <defs>
-    <g id="floor">
-      <path d="M12 0h15v17H12zM39 0h16v17H39zM67 0h15v17H67z"/>
-      <path d="M34 13h52v10H34zM41 16v6m9-6v6m9-6v6m9-6v6m9-6v6"/>
-    </g>
-  </defs>
-  <path d="M0 445q154-62 326-29t315-22q134-42 279-30" stroke="#769786" stroke-width="1.6"/>
-  <g transform="translate(74 265.98) scale(1.13)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
-    <path d="M0 0h96v154H0zM96 0l19-10v154l-19 10zM0 0l19-10h96L96 0z"/>
-    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
-    <use href="#floor" y="13"/>
-    <use href="#floor" y="49"/>
-    <use href="#floor" y="85"/>
-    <path d="M16 154v-25h21v25m-27 2h34" fill="none"/>
-  </g>
-  <g transform="translate(280 155.76) scale(1.02)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
-    <path d="M0 0h96v262H0zM96 0l19-10v262l-19 10zM0 0l19-10h96L96 0z"/>
-    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
-    <use href="#floor" y="13"/>
-    <use href="#floor" y="49"/>
-    <use href="#floor" y="85"/>
-    <use href="#floor" y="121"/>
-    <use href="#floor" y="157"/>
-    <use href="#floor" y="193"/>
-    <path d="M16 262v-25h21v25m-27 2h34" fill="none"/>
-  </g>
-  <g transform="translate(492 236.9) scale(0.89)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
-    <path d="M0 0h96v190H0zM96 0l19-10v190l-19 10zM0 0l19-10h96L96 0z"/>
-    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
-    <use href="#floor" y="13"/>
-    <use href="#floor" y="49"/>
-    <use href="#floor" y="85"/>
-    <use href="#floor" y="121"/>
-    <path d="M16 190v-25h21v25m-27 2h34" fill="none"/>
-  </g>
-  <g transform="translate(710 19.30000000000001) scale(1.05)" fill="#dce7d8" stroke="#39695a" stroke-width="2">
-    <path d="M0 0h96v334H0zM96 0l19-10v334l-19 10zM0 0l19-10h96L96 0z"/>
-    <path d="M12-7v-10h34v7M-2 4h99" fill="none"/>
-    <use href="#floor" y="13"/>
-    <use href="#floor" y="49"/>
-    <use href="#floor" y="85"/>
-    <use href="#floor" y="121"/>
-    <use href="#floor" y="157"/>
-    <use href="#floor" y="193"/>
-    <use href="#floor" y="229"/>
-    <use href="#floor" y="265"/>
-    <path d="M16 334v-25h21v25m-27 2h34" fill="none"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <title>Amman hillside homes drawn in soft green architectural lines</title>
+  <path d="M0 640c116-52 210-54 310-5 112 54 212 45 306-17 112-74 223-90 484-20" stroke="#6e9584" stroke-opacity=".48" stroke-width="3"/>
+  <path d="M0 704c120-42 218-45 312-8 119 47 216 43 315-16 130-77 283-78 473-17" stroke="#9db8a8" stroke-opacity=".58" stroke-width="2"/>
+  <path d="M40 678c104-26 195-25 276 4 119 43 207 34 293-23 138-91 292-89 491-25" stroke="#bdd0c2" stroke-opacity=".58" stroke-width="1.5"/>
+
+  <!-- low, curved Jordanian stone homes -->
+  <path d="M76 640V458q0-116 116-116t116 116v182" fill="#dbe8df" fill-opacity=".22" stroke="#507b6b" stroke-opacity=".68" stroke-width="3"/>
+  <path d="M106 640V462q0-86 86-86t86 86v178" stroke="#789c8c" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M132 640V488q0-60 60-60t60 60v152" stroke="#789c8c" stroke-opacity=".72" stroke-width="2"/>
+  <path d="M157 640V506q0-35 35-35t35 35v134" stroke="#789c8c" stroke-opacity=".76" stroke-width="2"/>
+  <path d="M111 548h162M112 590h160" stroke="#a9c1b2" stroke-opacity=".65" stroke-width="2"/>
+
+  <path d="M320 660V316h210v344" fill="#dbe8df" fill-opacity=".25" stroke="#456f61" stroke-opacity=".7" stroke-width="3"/>
+  <path d="M292 316h266l-28-46H320l-28 46Z" fill="#d1e1d6" fill-opacity=".26" stroke="#6f9585" stroke-opacity=".6" stroke-width="2"/>
+  <path d="M351 660V402q0-63 74-63t74 63v258" stroke="#789c8c" stroke-opacity=".72" stroke-width="2.5"/>
+  <path d="M377 660V438q0-39 48-39t48 39v222" stroke="#789c8c" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M330 470h190M330 530h190M330 590h190" stroke="#a9c1b2" stroke-opacity=".62" stroke-width="2"/>
+  <path d="M337 346h176M337 370h176" stroke="#9ab6a6" stroke-opacity=".58" stroke-width="2"/>
+
+  <path d="M598 672V414q0-103 105-103t105 103v258" fill="#dbe8df" fill-opacity=".2" stroke="#507b6b" stroke-opacity=".7" stroke-width="3"/>
+  <path d="M625 672V420q0-76 78-76t78 76v252" stroke="#789c8c" stroke-opacity=".72" stroke-width="2.5"/>
+  <path d="M652 672V447q0-50 51-50t51 50v225" stroke="#789c8c" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M608 510h190M608 571h190M608 632h190" stroke="#a9c1b2" stroke-opacity=".62" stroke-width="2"/>
+
+  <!-- olive silhouettes and a soft stepped terrace -->
+  <path d="M884 646c18-72 29-120 20-173M914 646c-7-62 12-100 43-142" stroke="#507b6b" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M810 675q62-38 124 0t124 0" stroke="#6e9584" stroke-opacity=".48" stroke-width="3"/>
+  <path d="M0 734h1100" stroke="#456f61" stroke-opacity=".48" stroke-width="3"/>
 </svg>

@@ -153,7 +153,13 @@ test('owner and tenant each have their own private pages; legacy routes preserve
     assert.equal(routes.menu('tenant').some(([path]) => path === 'tenant/bookings.html'), false);
     assert.equal(routes.menu('tenant').filter(([path]) => path === 'tenant/rentals.html').length, 1);
     assert.equal(routes.menu('tenant').some(([path]) => path === 'public/partial-offers.html'), true);
-    assert.equal(routes.menu('guest').some(([path]) => path === 'public/partial-offers.html'), true);
+    for (const privateGuestLink of [
+        'public/properties.html',
+        'public/partial-offers.html',
+        'public/market.html'
+    ]) {
+        assert.equal(routes.menu('guest').some(([path]) => path === privateGuestLink), false);
+    }
     for (const [route] of routes.menu('landlord')) assert.ok(!route.startsWith('tenant/'));
     for (const [route] of routes.menu('tenant')) assert.ok(!route.startsWith('landlord/'));
 });

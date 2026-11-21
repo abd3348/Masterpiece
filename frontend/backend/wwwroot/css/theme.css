@@ -70,6 +70,8 @@ html[data-theme='dark'] :is(.stat-card > span,.summary-list dt,.report-row > spa
 html[data-theme='dark'] body.dashboard-layout .nav nav { background:transparent; }
 html[data-theme='dark'] .danger { background:#432d26 !important; color:#f1baa2 !important; }
 html[data-theme='dark'] :is(.submit,.button:not(.outline):not(.light)) { background:#e5a574; color:#101b18; border-color:#e5a574; }
+html[data-theme='dark'] .key-copy .button:not(.outline):not(.light) { background:#e4a06f; color:#173d36; border-color:#e4a06f; }
+html[data-theme='dark'] .key-copy .button:not(.outline):not(.light):hover { background:#bd7041; border-color:#bd7041; }
 html[data-theme='dark'] .chart-grid-line { stroke:#3b5147; }
 html[data-theme='dark'] .role > span { background:#243a31; color:#f5f0e6; border-color:#3b5147; }
 html[data-theme='dark'] .role input:checked + span { background:#2c4939; border-color:#e5a574; box-shadow:inset 0 0 0 1px #e5a574; }
@@ -95,6 +97,7 @@ html[data-theme='dark'] :is(footer,.footer-bottom,.form-divider,.register-footer
 html[data-theme='dark'] dialog::backdrop { background:#030b08b3; }
 /* Page-specific surfaces must keep the same contrast as shared components. */
 html[data-theme='dark'] :is(.landing-footer,.roommates,.trust-strip,.roommate-card,.search:not(.nav .search),.creator-card,.about-value,.information-card,.faq-item,.conversation-messages,.demo-showcase) { background:#1a2b25; border-color:#3b5147; color:#f5f0e6; }
+html[data-theme='dark'] .key-stage { background:linear-gradient(90deg,#101b18f5 0%,#101b18dc 34%,#101b1870 58%,#101b181f 78%),url('../assets/images/hero-building-v3.png') center right / cover no-repeat; }
 html[data-theme='dark'] .cta { background:radial-gradient(ellipse at 90% 0%,#345747,transparent 65%),#142a22; color:#f5f0e6; }
 html[data-theme='dark'] :is(.cta h2 em,.about-main em,.profile-banner,.compatibility strong,.creator-email,.about-text-link,.team-role) { color:#e5a574; }
 html[data-theme='dark'] :is(.cta .outline,.button.outline) { background:transparent; color:#f5f0e6; border-color:#91a89b; }
@@ -118,6 +121,85 @@ html[data-theme='dark'] .area-guide p { background:#1a2b25f2; color:#b0bdb5; }
 html[data-theme='dark'] .chips input:checked + span { background:#344f41; color:#f5f0e6; border-color:#91a89b; }
 html[data-theme='dark'] body[data-screen='preferences'] .summary { background:#1a2b25; color:#f5f0e6; border:1px solid #3b5147; }
 html[data-theme='dark'] body.dashboard-layout .preview-toolbar a.active { background:#344f41; color:#f5f0e6; }
+
+/* Landing-page property story and roommate card. */
+html[data-theme='dark'] #homes {
+    background:#101b18;
+}
+html[data-theme='dark'] .homes-carousel .property {
+    background:transparent;
+    border-color:transparent;
+    box-shadow:none;
+}
+html[data-theme='dark'] .homes-carousel .property-photo {
+    background:#1a2b25;
+    border-color:#526b5b;
+    box-shadow:0 18px 42px #030b0866;
+}
+html[data-theme='dark'] .homes-carousel .property-info {
+    color:#f5f0e6;
+}
+html[data-theme='dark'] .homes-carousel .property-info :is(p,small) {
+    color:#b9c9bf;
+}
+html[data-theme='dark'] .homes-carousel .property-info .specs {
+    color:#d3dfd5;
+    border-color:#3b5147;
+}
+html[data-theme='dark'] .homes-carousel .detail {
+    background:#e5a574;
+    border-color:#e5a574;
+    color:#101b18;
+}
+html[data-theme='dark'] .homes-carousel .detail:hover {
+    background:#efbb92;
+    border-color:#efbb92;
+    color:#101b18;
+}
+html[data-theme='dark'] .homes-counter {
+    color:#91a89b;
+}
+
+html[data-theme='dark'] .roommates {
+    background:radial-gradient(circle at 12% 18%,#29483a 0,transparent 34%),#14231d;
+}
+html[data-theme='dark'] .roommate-card {
+    background:linear-gradient(145deg,#20372e,#172a23);
+    border-color:#526b5b;
+    box-shadow:0 24px 64px #030b0873;
+}
+html[data-theme='dark'] .roommate-card .profile-banner {
+    color:#e5a574;
+    border-color:#47614c;
+}
+html[data-theme='dark'] .roommate-card .avatar {
+    background:#30493d;
+    border:1px solid #526b5b;
+    color:#f5f0e6;
+}
+html[data-theme='dark'] .roommate-card .person h3 {
+    color:#f5f0e6;
+}
+html[data-theme='dark'] .roommate-card .person p,
+html[data-theme='dark'] .roommate-card .compatibility p,
+html[data-theme='dark'] .roommate-card .compatibility small {
+    color:#c0d0c5;
+}
+html[data-theme='dark'] .roommate-card .compatibility {
+    margin:20px 0;
+    padding:20px;
+    border:1px solid #47614c;
+    border-radius:18px;
+    background:#29483a;
+}
+html[data-theme='dark'] .roommate-card .compatibility strong {
+    color:#efaa78;
+}
+html[data-theme='dark'] .roommate-card .tags span {
+    background:#1d322a;
+    border-color:#607b68;
+    color:#dce7df;
+}
 ::view-transition-old(root),::view-transition-new(root) { animation:none; mix-blend-mode:normal; }
 ::view-transition-old(root) { z-index:1; }
 ::view-transition-new(root) { z-index:2; }

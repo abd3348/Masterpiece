@@ -18,6 +18,9 @@
 body {
     padding-bottom: 32px;
 }
+body[data-section='public'][data-screen='index'] {
+    padding-bottom: 0;
+}
 button,
 input,
 select,

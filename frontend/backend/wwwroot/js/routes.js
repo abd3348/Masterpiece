@@ -104,9 +104,6 @@
     const menus = {
         guest: [
             ['public/index.html', 'Home'],
-            ['public/properties.html', 'Homes'],
-            ['public/partial-offers.html', 'Partial offers'],
-            ['public/market.html', 'Market'],
             ['public/about.html', 'About us'],
             ['public/support.html', 'Support'],
             ['auth/login.html', 'Sign in']

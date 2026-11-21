@@ -408,26 +408,21 @@
     renderListings();
 
     // =========================
-    // Scroll-linked key animation
+    // Scroll-linked hero chapters
     const keyHero = document.querySelector('.key-hero');
     if (keyHero) {
         const stage = keyHero.querySelector('.key-stage');
         const cue = keyHero.querySelector('.key-cue');
         const chapters = [...stage.querySelectorAll('[data-key-chapter]')];
-        const layers = ['#key', '#keyEdge', '#keyShadow'].map(id => keyHero.querySelector(id));
         let position = 0;
         let frame = 0;
 
-        function paintKey() {
+        function paintHero() {
             const range = Math.max(1, keyHero.offsetHeight - stage.offsetHeight);
             const target = Math.min(1, Math.max(0, -keyHero.getBoundingClientRect().top / range));
             position = reducedMotion.matches || Math.abs(position - target) < 0.0003
                 ? target : position + (target - position) * 0.18;
-            const insertion = 0.2;
-            const scale = 1 - 0.2 * Math.min(1, position / insertion);
-            const turn = Math.max(0, (position - insertion) / (1 - insertion));
-            const angle = 360 * turn;
-            const chapterPosition = turn * (chapters.length - 1);
+            const chapterPosition = position * (chapters.length - 1);
             chapters.forEach((chapter, index) => {
                 const offset = index - chapterPosition;
                 const fade = clamp((Math.abs(offset) - 0.25) / 0.5);
@@ -436,23 +431,19 @@
                 chapter.style.transform = reducedMotion.matches ? 'none' : `translateY(${clamp(offset, -1, 1) * 24}px)`;
                 chapter.inert = index !== Math.round(chapterPosition);
             });
-            layers.forEach((layer, index) => {
-                const y = 330 + index * 8 * scale;
-                layer.setAttribute('transform', `translate(380 ${y}) rotate(${angle}) scale(${scale})`);
-            });
             cue.hidden = target > 0.001;
-            frame = position === target ? 0 : requestAnimationFrame(paintKey);
+            frame = position === target ? 0 : requestAnimationFrame(paintHero);
         }
-        function refreshKey() {
-            if (!frame) frame = requestAnimationFrame(paintKey);
+        function refreshHero() {
+            if (!frame) frame = requestAnimationFrame(paintHero);
         }
-        window.addEventListener('scroll', refreshKey, { passive: true });
-        window.addEventListener('resize', refreshKey);
+        window.addEventListener('scroll', refreshHero, { passive: true });
+        window.addEventListener('resize', refreshHero);
         cue.addEventListener('click', () => window.scrollBy({
             top: stage.offsetHeight * 0.65,
             behavior: reducedMotion.matches ? 'instant' : 'smooth'
         }));
-        paintKey();
+        paintHero();
     }
 
 
